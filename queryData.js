@@ -5,25 +5,9 @@ const wdk = WBK({
 });
 const fetch = require('node-fetch');
 const fs = require('fs');
-const galactic = require('galactic');
 
-const url = wdk.sparqlQuery(
-  `
-    SELECT ?parent ?parentLabel ?objectLabel ?right_ascension ?distance ?distanceUnit ?declination ?s WHERE {
-    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-    { ?object wdt:P31 wd:Q57083319;
-        wdt:P397* ?parent.
-    } UNION {
-      ?parent wdt:P361 wd:Q649112
-    }
-    OPTIONAL { ?parent wdt:P6257 ?right_ascension. }
-    OPTIONAL { ?parent wdt:P6258 ?declination. }
-    ?parent p:P2583/psv:P2583 ?distance_from_Earth.
-    ?distance_from_Earth wikibase:quantityAmount ?distance.
-    ?distance_from_Earth wikibase:quantityUnit ?distanceUnit.
-  }
-  `
-);
+const yaml = require('js-yaml');
+
 
 function degrees2radiants(degrees) {
   return degrees * (Math.PI/180);
@@ -34,9 +18,9 @@ function equatorial2galactic(ra, dec, epoch){
   var OB = 23.4333334*d2r;
       dec *= d2r;
       ra *= d2r;
-  var a = 266.416833 + 64.57535;  // The RA of the North Galactic Pole
-  var d = -29.007806 - 64.57535; // The declination of the North Galactic Pole
-  var l = 125;  // The ascending node of the Galactic plane on the equator
+  var a = 266.416833 + 65.6;  // The RA of the North Galactic Pole
+  var d = -29.007806 - 64.5; // The declination of the North Galactic Pole
+  var l = 119.2;  // The ascending node of the Galactic plane on the equator
   var sdec = Math.sin(dec);
   var cdec = Math.cos(dec);
   var sa = Math.sin(a*d2r);
@@ -89,27 +73,58 @@ function sperical2cartesian(declination, right_ascension, distance, distance_is_
   }
 }
 
-(async () => {
-  const result = await fetch(url);
-  const json = await result.json();
-  const objects = wdk.simplify.sparqlResults(json);
-  let output = []
-  for (let object of objects) {
-    if (object?.declination && object?.right_ascension && object.distance?.value) {
-      console.log('importing ' + object?.parent?.label);
-      output.push({
-        id: object?.parent?.value,
-        label: object?.parent?.label,
+async function addCoordinates(object) {
+  if (typeof object.location === 'string' && object.location.startsWith('wd:Q')) {
+    const url = wdk.sparqlQuery(
+    `
+     SELECT ?ra ?dec ?dis ?disUnit WHERE {
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+      ${object.location} wdt:P6257 ?ra.
+      ${object.location} wdt:P6258 ?dec.
+      ${object.location} p:P2583/psv:P2583 ?disStatement.
+      ?disStatement wikibase:quantityAmount ?dis.
+      ?disStatement wikibase:quantityUnit ?disUnit.        
+     }
+     LIMIT 1
+    `
+    );
+    let headers = new fetch.Headers({
+      "Accept"       : "application/json",
+      "Content-Type" : "application/json",
+      "User-Agent"   : "https://github.com/fuddl/stellarZ"
+    });
+    const result = await fetch(url, {
+      headers: headers,
+    });
+    const json = await result.json();
+    const data = wdk.simplify.sparqlResults(json)[0];
+    if (data) {
+      object.location = {
         ...sperical2cartesian(
-          object.declination,
-          object.right_ascension,
-          object.distance?.value,
-          object.distance?.unit.endsWith('Q12129'),
+          data.dec,
+          data.ra,
+          data.dis?.value,
+          data.dis?.unit.endsWith('Q12129'),
         )
-      })
-    } 
+      }
+    }
   }
-  fs.writeFile('./src/wikidata-stars.json', JSON.stringify(output, null, '  '), 'utf8', () => {
+  if (object?.orbits && object.orbits.length > 0) {
+    for (let i in object.orbits) {
+     object.orbits[i] = await addCoordinates(object.orbits[i]);
+    }
+  }
+  return object;
+}
+
+(async () => {
+  let output = []
+  const raw_data = yaml.load(fs.readFileSync('./src/catalog.yml', 'utf8'));
+  for (let object of raw_data) {
+    object = await addCoordinates(object);
+  }
+
+  fs.writeFile('./src/wikidata-stars.json', JSON.stringify(raw_data, null, '  '), 'utf8', () => {
     console.log('Done')
   });
 })()
