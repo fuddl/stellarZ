@@ -1,5 +1,4 @@
 .snowpack
 build
 node_modules
-/src/bare-minimum-2d/
 .DS_Store

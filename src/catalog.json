@@ -1,0 +1,1309 @@
+[
+  {
+    "name": "Sol",
+    "location": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "orbits": [
+      {
+        "name": "Earth",
+        "tags": [
+          "spacedock",
+          "shipyard",
+          "notable",
+          "federation member"
+        ]
+      },
+      {
+        "name": "Starbase 1",
+        "type": "station",
+        "tags": [
+          "notable",
+          "federation starbase"
+        ],
+        "location": {
+          "x": 0.498,
+          "y": -1.436,
+          "z": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Alpha Centauri",
+    "type": "system",
+    "location": {
+      "x": 3.0406055032713555,
+      "y": 3.124617167938985,
+      "z": -0.032950376278679055
+    },
+    "orbits": [
+      {
+        "name": "Proxima Centrauri",
+        "location": {
+          "x": 3.0406055032713555,
+          "y": 3.124617167938985,
+          "z": -0.032950376278679055
+        },
+        "type": "star",
+        "orbits": [
+          {
+            "name": "Proxima",
+            "wd": "Q66724436",
+            "ma:de": "Proxima_colony",
+            "tags": [
+              "notable",
+              "earth colony",
+              "federation member"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "40 Eridani",
+    "type": "system",
+    "location": {
+      "x": 4.61436968235002,
+      "y": -12.052966267965312,
+      "z": -10.160349340372164
+    },
+    "orbits": [
+      {
+        "name": "40 Eridani A",
+        "location": {
+          "x": 4.615076311273528,
+          "y": -12.05107687828057,
+          "z": -10.162269375262357
+        },
+        "orbits": [
+          {
+            "name": "Vulcan",
+            "tags": [
+              "notable",
+              "federation member"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Procyon",
+    "type": "star",
+    "location": {
+      "x": 6.167357614519523,
+      "y": -9.244139601807452,
+      "z": 2.54353751238766
+    },
+    "orbits": [
+      {
+        "name": "Andor"
+      },
+      {
+        "name": "Andoria",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "61 Cygni",
+    "location": {
+      "x": -11.199379013073603,
+      "y": 1.50369889079294,
+      "z": -1.1672186459077056
+    },
+    "orbits": [
+      {
+        "name": "Tellar Prime",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tau Ceti",
+    "type": "star",
+    "location": {
+      "x": -0.3822404917116123,
+      "y": -3.3240666228395703,
+      "z": -11.425855144514129
+    },
+    "orbits": [
+      {
+        "name": "Kaferia",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Galactic Core",
+    "type": "poi",
+    "location": {
+      "x": -0.9081233897488445,
+      "y": 25999.870931588197,
+      "z": 81.91896036359795
+    }
+  },
+  {
+    "name": "Epsilon Ceti",
+    "location": {
+      "x": 4.914563436233848,
+      "y": -37.33454261283216,
+      "z": -66.89669284395023
+    },
+    "orbits": [
+      {
+        "name": "Epsilon Ceti B",
+        "location": {
+          "x": 4.914563436233848,
+          "y": -37.33454261283216,
+          "z": -66.89669284395023
+        }
+      },
+      {
+        "name": "Risa",
+        "tags": [
+          "notable",
+          "inhabited",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eta Cassiopeiae",
+    "type": "system",
+    "location": {
+      "x": -15.962127661230992,
+      "y": -10.234061309873697,
+      "z": -1.749113299840843
+    },
+    "orbits": [
+      {
+        "name": "Terra Nova",
+        "ordinal": 3,
+        "tags": [
+          "notable",
+          "earth colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "36 Ophiuchi",
+    "type": "system",
+    "location": {
+      "x": 0.5556965911385073,
+      "y": 19.282499713434706,
+      "z": 2.4054343848256856
+    },
+    "orbits": [
+      {
+        "name": "Ophiucus III",
+        "tags": [
+          "notable",
+          "inhabited",
+          "earth colony"
+        ],
+        "ordinal": 3
+      },
+      {
+        "name": "Ophiucus VI",
+        "tags": [
+          "notable",
+          "inhabited",
+          "federation colony"
+        ],
+        "ordinal": 4
+      }
+    ]
+  },
+  {
+    "name": "Luyten's Star",
+    "type": "star",
+    "location": {
+      "x": 6.515968422386186,
+      "y": -10.282128106809802,
+      "z": 2.1992946854884936
+    },
+    "orbits": [
+      {
+        "name": "P'Jem",
+        "tags": [
+          "notable",
+          "vulcan colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Akaali",
+    "type": "planet",
+    "tags": [
+      "notable",
+      "inhabited",
+      "pre-warp"
+    ],
+    "location": {
+      "x": 11.16,
+      "y": -18.6,
+      "z": -80.9599
+    }
+  },
+  {
+    "name": "Sigma Draconis",
+    "location": {
+      "x": -17.126343064147203,
+      "y": -3.4660673496955794,
+      "z": 6.962023268499823
+    },
+    "orbits": [
+      {
+        "name": "Sigma Draconis I",
+        "ordinal": 1
+      },
+      {
+        "name": "Sigma Draconis II",
+        "ordinal": 2
+      },
+      {
+        "name": "Sigma Draconis III",
+        "ordinal": 3
+      },
+      {
+        "name": "Sigma Draconis IV",
+        "ordinal": 4
+      },
+      {
+        "name": "Sigma Draconis V",
+        "ordinal": 5
+      },
+      {
+        "name": "Sigma Draconis VI",
+        "ordinal": 6,
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      },
+      {
+        "name": "Sigma Draconis VI",
+        "ordinal": 7
+      },
+      {
+        "name": "Sigma Draconis VII",
+        "ordinal": 8
+      },
+      {
+        "name": "Sigma Draconis IX",
+        "ordinal": 9
+      }
+    ]
+  },
+  {
+    "name": "Antares",
+    "location": {
+      "x": 73.59328914858138,
+      "y": 525.366643145896,
+      "z": 145.1685849690149
+    },
+    "type": "system",
+    "tags": [
+      "federation member",
+      "notable"
+    ],
+    "orbits": [
+      {
+        "name": "Antares B",
+        "orbits": [
+          {
+            "name": "Antares B III",
+            "tags": [
+              "federation shipyard",
+              "notable"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kappa Fornacis",
+    "location": {
+      "x": 12.832684034316232,
+      "y": -22.717833687437132,
+      "z": -69.22000237677624
+    },
+    "orbits": [
+      {
+        "name": "Deneva Prime",
+        "tags": [
+          "earth colony",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chi1 Orionis",
+    "location": {
+      "x": 4.267326046769856,
+      "y": -28.475973604314213,
+      "z": -1.4789491029206048
+    },
+    "orbits": [
+      {
+        "name": "Coridan",
+        "tags": [
+          "federation member",
+          "notable",
+          "dilithium"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Eridani",
+    "location": {
+      "x": 1.9282834658186405,
+      "y": -6.684861613184924,
+      "z": -7.792055573125851
+    },
+    "orbits": [
+      {
+        "name": "Axanar",
+        "tags": [
+          "notable",
+          "inhabited",
+          "warp-capable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mu Leonis",
+    "location": {
+      "x": 27.633456384811705,
+      "y": -62.44248925423595,
+      "z": 81.61880316866402
+    },
+    "orbits": [
+      {
+        "name": "Ardana",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Serpentis",
+    "location": {
+      "x": -11.667600915728379,
+      "y": 49.15896787271704,
+      "z": 45.26029579414363
+    },
+    "orbits": [
+      {
+        "name": "Aaamazzara",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alcor",
+    "location": {
+      "x": -35.61718105899552,
+      "y": -15.213983682838712,
+      "z": 70.67949133167177
+    },
+    "orbits": [
+      {
+        "name": "Alcor IV"
+      }
+    ]
+  },
+  {
+    "name": "Wolf 424",
+    "location": {
+      "x": 2.937503716592103,
+      "y": 0.9703841363526922,
+      "z": 9.282759507699561
+    },
+    "orbits": [
+      {
+        "name": "Babel",
+        "tags": [
+          "notable",
+          "neutral"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Virginis",
+    "location": {
+      "x": 22.013210540763307,
+      "y": 19.863412407182494,
+      "z": 102.51636533673052
+    },
+    "orbits": [
+      {
+        "name": "Dessica II",
+        "tags": [
+          "ancient romulan colony",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beta Columbae",
+    "location": {
+      "x": 70.83532205720752,
+      "y": -38.4154427592194,
+      "z": -41.17989817248603
+    },
+    "orbits": [
+      {
+        "name": "Barolia",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Delta Pavonis",
+    "location": {
+      "x": 8.456414375225224,
+      "y": 14.550981980370638,
+      "z": -10.583934806486251
+    },
+    "orbits": [
+      {
+        "name": "Benzar",
+        "tags": [
+          "federation member",
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "15 Lyncis",
+    "location": {
+      "x": -51.16511353020649,
+      "y": -125.50151884894252,
+      "z": 58.50292048256563
+    },
+    "orbits": [
+      {
+        "name": "Cait",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Capella",
+    "location": {
+      "x": -12.613044901228683,
+      "y": -40.35482500468558,
+      "z": 3.1917629722484664
+    },
+    "orbits": [
+      {
+        "name": "Capella IV",
+        "tags": [
+          "near klingon empire",
+          "near federation"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lambda Sagittarii",
+    "location": {
+      "x": -11.20491039781953,
+      "y": 82.849294265816,
+      "z": -9.247556879983184
+    },
+    "orbits": [
+      {
+        "name": "Chalna",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "83 Leonis B",
+    "location": {
+      "x": 27.013684142985415,
+      "y": 44.87839861234648,
+      "z": -89.54909083226144
+    },
+    "orbits": [
+      {
+        "name": "Cheron",
+        "tags": [
+          "warp-capable",
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iota Boötis",
+    "location": {
+      "x": -46.114243082618636,
+      "y": -4.587525865106949,
+      "z": 83.02355931809299
+    },
+    "orbits": [
+      {
+        "name": "Denobula",
+        "tags": [
+          "warp-capable",
+          "inhabited",
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Indi",
+    "location": {
+      "x": 3.2126041932792018,
+      "y": 7.297562212454011,
+      "z": -8.79125569387564
+    },
+    "orbits": [
+      {
+        "name": "Draylax",
+        "tags": [
+          "notable",
+          "inhabited",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alpha Doradus",
+    "location": {
+      "x": 126.23409602715029,
+      "y": -13.047408374830889,
+      "z": -111.60518865585325
+    },
+    "orbits": [
+      {
+        "name": "Freecloud",
+        "tags": [
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gamma Hydra",
+    "location": {
+      "x": 79.47852135860619,
+      "y": 69.27396455323496,
+      "z": 86.89916002979173
+    },
+    "orbits": [
+      {
+        "name": "Gamma Hydra IV",
+        "tags": [
+          "science colony",
+          "notable",
+          "federation member",
+          "andorian colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gamma Trianguli",
+    "location": {
+      "x": -60.35730341890021,
+      "y": -79.18236056246396,
+      "z": -48.479424129476634
+    },
+    "orbits": [
+      {
+        "name": "Gamma Trianguli VI",
+        "tags": [
+          "inhabited",
+          "pre-warp"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wolf 359",
+    "location": {
+      "x": 3.2610599769631663,
+      "y": -1.6091439771271763,
+      "z": 5.41547249941391
+    }
+  },
+  {
+    "name": "Delta Muscae",
+    "location": {
+      "x": 69.27202638624946,
+      "y": 46.505943276650626,
+      "z": -12.435731788252125
+    },
+    "orbits": [
+      {
+        "name": "Garadius IV",
+        "tags": [
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Omicron Indi",
+    "location": {
+      "x": 271.5370776567273,
+      "y": 346.2883776888442,
+      "z": -369.07812657174964
+    },
+    "orbits": [
+      {
+        "name": "Halka",
+        "tags": [
+          "inhabited",
+          "neutral",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iota Geminorum",
+    "location": {
+      "x": 23.326318389619416,
+      "y": -121.68785037524273,
+      "z": 42.82539006737189
+    },
+    "orbits": [
+      {
+        "name": "Iota Geminorum IV",
+        "ordinal": 5,
+        "tags": [
+          "habitable",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beta Caeli",
+    "location": {
+      "x": 61.53400629172314,
+      "y": -35.24929883526188,
+      "z": -61.490289981705956
+    },
+    "orbits": [
+      {
+        "name": "Japori II",
+        "ordinal": 2,
+        "tag": [
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gamma Leporis",
+    "location": {
+      "x": 19.286464072878463,
+      "y": -18.008690829751416,
+      "z": -11.940501066712047
+    },
+    "orbits": [
+      {
+        "name": "Lorillia",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Fornacis",
+    "location": {
+      "x": 133.68795560466572,
+      "y": -143.44025509438788,
+      "z": -358.4506541241951
+    },
+    "orbits": [
+      {
+        "name": "Maluria",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xi Hydrae",
+    "location": {
+      "x": 97.39227431316465,
+      "y": 24.33450916351281,
+      "z": 54.02552768246252
+    },
+    "orbits": [
+      {
+        "name": "Medusa",
+        "tags": [
+          "notable",
+          "inhabited",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Omega Aurigae",
+    "location": {
+      "x": -35.80673136148579,
+      "y": -157.746689404665,
+      "z": -8.823829728328878
+    },
+    "orbits": [
+      {
+        "name": "New Paris",
+        "tags": [
+          "notable",
+          "starbase",
+          "federation colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pi3 Orionis",
+    "location": {
+      "x": 4.835113920184195,
+      "y": -23.60637200245248,
+      "z": -10.360034435018276
+    },
+    "orbits": [
+      {
+        "name": "Orion",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pollux",
+    "location": {
+      "x": 6.555771905371951,
+      "y": -30.271215067166505,
+      "z": 13.28026329114328
+    },
+    "orbits": [
+      {
+        "name": "Pollux Ⅳ",
+        "tags": [
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Psi Serpentis",
+    "location": {
+      "x": -6.131644069964925,
+      "y": 35.17180032725378,
+      "z": 32.341172132605735
+    },
+    "orbits": [
+      {
+        "name": "Sauria",
+        "tags": [
+          "notable",
+          "inhabited",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gamma Equulei",
+    "location": {
+      "x": -92.68080453307175,
+      "y": 53.79792428468925,
+      "z": -49.396880607599016
+    },
+    "orbits": [
+      {
+        "name": "Tagus Ⅲ",
+        "ordinal": 3
+      }
+    ]
+  },
+  {
+    "name": "Bellatrix",
+    "location": {
+      "x": 111.05866714754228,
+      "y": -362.46629615969243,
+      "z": -109.69130498566008
+    },
+    "aliases": [
+      "Gamma Orionis"
+    ],
+    "type": "star",
+    "tags": [
+      "landmark"
+    ]
+  },
+  {
+    "name": "Omega Fornacis",
+    "location": {
+      "x": 120.31555816989561,
+      "y": -132.14224175865996,
+      "z": -430.1225842906405
+    },
+    "orbits": [
+      {
+        "name": "Tiburon",
+        "tags": [
+          "federation member",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alpha Lyrae",
+    "location": {
+      "x": -21.8382329237072,
+      "y": 9.003910366335118,
+      "z": 8.235972146106533
+    },
+    "orbits": [
+      {
+        "name": "Vega IX",
+        "tags": [
+          "earth colony",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cor Caroli",
+    "location": {
+      "x": -83.9152058871081,
+      "y": -54.48282450651863,
+      "z": -46.16545724466274
+    },
+    "orbits": [
+      {
+        "name": "Cor Caroli V",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Azati Prime",
+    "location": {
+      "x": 17.166,
+      "y": -13.667,
+      "z": -54.60273
+    },
+    "tags": [
+      "xindi colony",
+      "delphic expanse"
+    ]
+  },
+  {
+    "name": "Alpha Eridani",
+    "location": {
+      "x": 69.84819517913796,
+      "y": 27.066609620652898,
+      "z": -122.75728441331252
+    },
+    "orbits": [
+      {
+        "name": "Alpha Eridani II",
+        "ordinal": 2,
+        "tags": [
+          "earth colony",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caldos",
+    "location": {
+      "x": 91.4635186263764,
+      "y": 72.7110216423457,
+      "z": -79.27773546380746
+    },
+    "orbits": [
+      {
+        "name": "Caldos II",
+        "ordinal": 2,
+        "tags": [
+          "earth colony",
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Regulus",
+    "location": {
+      "x": 36.804293192447695,
+      "y": -35.282154661604444,
+      "z": 58.35705607794726
+    },
+    "orbits": [
+      {
+        "name": "Regulus II",
+        "ordinal": 2,
+        "tags": [
+          "habitable"
+        ]
+      },
+      {
+        "name": "Regulus III",
+        "ordinal": 3,
+        "tags": [
+          "inhabited",
+          "notable",
+          "federation member"
+        ]
+      },
+      {
+        "name": "Regulus V",
+        "ordinal": 5,
+        "tags": [
+          "inhabited",
+          "federation member"
+        ],
+        "surface": [
+          {
+            "name": "Regulus V City",
+            "type": "city"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "B'Hava'el",
+    "type": "star",
+    "location": {
+      "x": -57.1,
+      "y": -35.8,
+      "z": -226.642943922
+    },
+    "orbits": [
+      {
+        "name": "Bajor",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ajilon Prime",
+    "location": {
+      "x": 47.8,
+      "y": -61.9,
+      "z": -226.642943922
+    },
+    "tags": [
+      "notable",
+      "federation colony"
+    ]
+  },
+  {
+    "name": "Cardassia Prime",
+    "type": "planet",
+    "tags": [
+      "notable",
+      "cardassian union"
+    ],
+    "location": {
+      "x": -62.8,
+      "y": -33.1,
+      "z": -226.642943922
+    }
+  },
+  {
+    "name": "The Binaries",
+    "type": "star",
+    "tags": [
+      "notable",
+      "klingon war battle site",
+      "claimed by klingon empire"
+    ],
+    "location": {
+      "x": 20.409,
+      "y": -69.913,
+      "z": 86.89916002979173
+    }
+  },
+  {
+    "name": "No'Mat",
+    "location": {
+      "x": 65.91498067871363,
+      "y": -67.20757749664652,
+      "z": 84.6764485021106
+    },
+    "type": "star",
+    "tags": [
+      "claimed by klingon empire",
+      "notable"
+    ]
+  },
+  {
+    "name": "Theta Hydrae",
+    "location": {
+      "x": 72.76309291852925,
+      "y": -63.98054285104947,
+      "z": 61.63885041475859
+    },
+    "orbits": [
+      {
+        "name": "Gorath",
+        "tags": [
+          "claimed by klingon empire",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cursa",
+    "location": {
+      "x": 34.57684887964993,
+      "y": -72.52781394315537,
+      "z": -38.2773787788674
+    },
+    "tags": [
+      "claimed by klingon empire",
+      "notable"
+    ]
+  },
+  {
+    "name": "Zeta Leporis",
+    "location": {
+      "x": 42.42468617262024,
+      "y": -51.38400938367773,
+      "z": -25.486819348222305
+    },
+    "orbits": [
+      {
+        "name": "Xarantine",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Quo'Nos",
+    "tags": [
+      "claimed by klingon empire",
+      "notable"
+    ],
+    "location": {
+      "x": 79.9,
+      "y": -70.6,
+      "z": -10.2855200069376
+    }
+  },
+  {
+    "name": "Delta Leporis",
+    "type": "star",
+    "location": {
+      "x": 72.41163893718183,
+      "y": -69.95119979534506,
+      "z": -41.2855200069376
+    },
+    "orbits": [
+      {
+        "name": "Brestant",
+        "tags": [
+          "claimed by klingon empire",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aldebaran",
+    "type": "star",
+    "location": {
+      "x": 1.144583839563335,
+      "y": -61.1647866444315,
+      "z": -22.839632277586777
+    },
+    "orbits": [
+      {
+        "name": "Aldebaran III",
+        "tags": [
+          "federation member",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pi Canis Majoris",
+    "type": "star",
+    "location": {
+      "x": 75.31350606548703,
+      "y": -59.84026045533587,
+      "z": -13.864549608651634
+    },
+    "orbits": [
+      {
+        "name": "Korvat",
+        "tags": [
+          "claimed by klingon empire",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Canopus",
+    "type": "star",
+    "location": {
+      "x": 277.2910673045168,
+      "y": -42.018979053974384,
+      "z": -132.07599854774375
+    },
+    "orbits": [
+      {
+        "name": "Canopus II",
+        "tags": [
+          "federation member",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "94 Aquarii",
+    "type": "star",
+    "location": {
+      "x": -27.17504073293669,
+      "y": 15.539072627688542,
+      "z": -65.5043081257611
+    },
+    "orbits": [
+      {
+        "name": "Fellebia",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xi Pegasi",
+    "type": "star",
+    "location": {
+      "x": -39.83528026581165,
+      "y": 6.218536820679433,
+      "z": -34.40238707017749
+    },
+    "orbits": [
+      {
+        "name": "Neethia",
+        "tags": [
+          "inhabited",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "26 Draconis",
+    "type": "star",
+    "location": {
+      "x": -38.36911523062057,
+      "y": -0.7998515632732952,
+      "z": 24.481871750023558
+    },
+    "orbits": [
+      {
+        "name": "Pyrithia",
+        "tags": [
+          "habitable",
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ceti Alpha",
+    "location": {
+      "x": -19.761646657871832,
+      "y": -172.36040413706627,
+      "z": -178.61234113878191
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Ceti Alpha V",
+        "type": "planet",
+        "tags": [
+          "notable"
+        ]
+      }
+    ]
+  }
+]

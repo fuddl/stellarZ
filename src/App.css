@@ -15,6 +15,11 @@ form {
   position: fixed;
   top: 1em;
   right: 1em;
+  opacity: 0;
+}
+
+form:hover {
+  opacity: 1;
 }
 
 label {

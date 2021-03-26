@@ -18,9 +18,9 @@ function equatorial2galactic(ra, dec, epoch){
   var OB = 23.4333334*d2r;
       dec *= d2r;
       ra *= d2r;
-  var a = 266.416833 + 65.6;  // The RA of the North Galactic Pole
-  var d = -29.007806 - 64.5; // The declination of the North Galactic Pole
-  var l = 119.2;  // The ascending node of the Galactic plane on the equator
+  var a = 266.416833 + 64.48;
+  var d = -29.007806 - 64.40; 
+  var l = 121.2; 
   var sdec = Math.sin(dec);
   var cdec = Math.cos(dec);
   var sa = Math.sin(a*d2r);
@@ -69,12 +69,13 @@ function sperical2cartesian(declination, right_ascension, distance, distance_is_
   return {
     x: (c * Math.cos(l)) * Math.cos(b),
     y: c * Math.sin(l),
-    z: (c * Math.cos(l)) * Math.sin(b),
+    z: ((c * Math.cos(l)) * Math.sin(b))*-1,
   }
 }
 
 async function addCoordinates(object) {
   if (typeof object.location === 'string' && object.location.startsWith('wd:Q')) {
+    console.debug(`aquireing location for ${object.name} from wikidata`)
     const url = wdk.sparqlQuery(
     `
      SELECT ?ra ?dec ?dis ?disUnit WHERE {
@@ -124,7 +125,7 @@ async function addCoordinates(object) {
     object = await addCoordinates(object);
   }
 
-  fs.writeFile('./src/wikidata-stars.json', JSON.stringify(raw_data, null, '  '), 'utf8', () => {
+  fs.writeFile('./src/catalog.json', JSON.stringify(raw_data, null, '  '), 'utf8', () => {
     console.log('Done')
   });
 })()
