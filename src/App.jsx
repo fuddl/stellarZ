@@ -72,7 +72,7 @@ tree.untreeify(objects, 'orbits')
 let fedpoints = [];
 
 for (let object of objects) {
-  if (object.location && (object?.tags?.includes('federation member') || object?.tags?.includes('earth colony') || object?.tags?.includes('federation colony') || object?.tags?.includes('federation starbase'))) {
+  if (object.location && (object?.tags?.includes('federation member') || object?.tags?.includes('federation outpost') || object?.tags?.includes('earth colony') || object?.tags?.includes('federation colony') || object?.tags?.includes('federation starbase'))) {
     fedpoints.push({
       name: object.name,
       x: [object.location.x],
@@ -195,19 +195,27 @@ function App() {
 
   let points = []
 
+  let sectorIds = []
+  let sectorSize = 20
+
   for (let object of objects) {
     if (object.location && object?.tags?.includes('notable')) {
-      let sectorSize = 20
-
-      points.push(
-        ...sector(
-          Math.round(object.location.x/sectorSize)*sectorSize,
-          Math.round(object.location.y/sectorSize)*sectorSize,
-          Math.round(object.location.z/sectorSize)*sectorSize,
+      let sectorX = Math.floor(object.location.x/sectorSize)*sectorSize
+      let sectorY = Math.floor(object.location.y/sectorSize)*sectorSize
+      let sectorZ = Math.floor(object.location.z/sectorSize)*sectorSize
+      let thisId = [sectorY, sectorY, sectorZ].join('|')
+      if (!sectorIds.includes(thisId)) {
+        sectorIds.push(thisId)
+        points.push(
+          ...sector(
+            sectorX,sectorY,sectorZ
+          )
         )
-      )
+      }
     }
   }
+
+  console.debug(sectorIds)
 
   if (flatMode) {
     const grid = {
@@ -264,11 +272,11 @@ let fedLines = []
   }
   let klingLines = []
   for (let fedpoint0 of klingpoints) {
+    let shortest = false;
     let line = {}
     for (let fedpoint1 of klingpoints) {
-      let shortest = false;
       let id = [fedpoint0.name, fedpoint1.name].sort().join('→')
-      if (fedpoints.find(e => e.id === id) === undefined) {
+      if (klingpoints.find(e => e.id === id) === undefined) {
         if (fedpoint0 !== fedpoint1) {
           let deltas = {
             x: fedpoint1.x - fedpoint0.x,
@@ -276,7 +284,7 @@ let fedLines = []
             z: fedpoint1.z - fedpoint0.z,
           }
           let distance = Math.sqrt(deltas.x * deltas.x + deltas.y * deltas.y + deltas.z * deltas.z)
-          if (!shortest || (distance < shortest && fedLines.find(e => e.id === id) === undefined)) {
+          if (!shortest || (distance < shortest && klingLines.find(e => e.id === id) === undefined)) {
             shortest = distance
             line = {
               id: id,
@@ -293,6 +301,7 @@ let fedLines = []
     }
     klingLines.push(line)
   }
+  console.debug(klingLines)
   for (let line of klingLines) {
     points.push({
       id: 'line',
@@ -320,7 +329,7 @@ let fedLines = []
   }
 
   for (let object of objects) {
-    if (object.location && (object?.tags?.includes('earth colony') || object?.tags?.includes('federtion colony') || object?.tags?.includes('federation starbase'))) {
+    if (object.location && (object?.tags?.includes('earth colony') || object?.tags?.includes('federtion colony') || object?.tags?.includes('federation outpost') || object?.tags?.includes('federation starbase'))) {
       points.push({
         id: object.name + '-earth',
         type: DataSpecType.points,
@@ -370,23 +379,26 @@ let fedLines = []
   //   }
   // }
 
-  if (!mouseGrabX && !zooming) {
+  //if (!mouseGrabX && !zooming) {
     for (let object of objects) {
       if (object.location && object?.tags?.includes('notable')) {
+        let isBase = object?.tags?.includes('federation starbase') || object?.tags?.includes('deep space station')
         points.push({
           label: object.name,
           id: object.name,
+          pointer: isBase ? '▵' : '•',
           type: 'textMarker',
           opacity: 1.0,
           color: 'white',
-          size: 18,
+          size: isBase ? 9 : 16,
+          layouts: isBase ? ['south', 'north'] : ['east', 'west'],
           x: [object.location.x],
           y: [object.location.y],
           z: flatMode ? [0] : [object.location.z],
         })
       }
     }
-  }
+  //}
 
   const { container, data } = renderScene(
     viewSettings,
@@ -420,7 +432,8 @@ let fedLines = []
         }, 100)
       }}
       style={{
-        cursor: !mouseGrabX ? 'grab' : 'grabbing', 
+        cursor: !mouseGrabX ? 'grab' : 'grabbing',
+        userSelect: mouseGrabX ? 'none' : null,
       }}
       onMouseDown={(e) => {
         setMouseGrabX(e.clientX)

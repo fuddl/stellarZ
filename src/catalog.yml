@@ -31,6 +31,21 @@
       orbits:
         - name: Vulcan
           tags: [notable, federation member]
+- name: Regulus
+  location: wd:Q13013
+  orbits:
+    - name: Regulus II
+      ordinal: 2
+      tags: [habitable]
+    - name: Regulus III 
+      ordinal: 3
+      tags: [inhabited, notable, federation member]
+    - name: Regulus V
+      ordinal: 5
+      tags: [inhabited, federation member]
+      surface:
+        - name: Regulus V City
+          type: city
 - name: Procyon
   type: star
   location: wd:Q13034
@@ -82,6 +97,13 @@
   orbits:
     - name: P'Jem
       tags: [notable, vulcan colony]
+- name: Eta Lupi
+  location: wd:Q66477132
+  type: star
+  orbits: 
+    - name: Cerberus II
+      type: planet
+      tags: [notable, federation member]
 - name: Akaali
   type: planet
   tags: [notable, inhabited, pre-warp]
@@ -273,7 +295,7 @@
 - name: Pollux
   location: wd:Q13028
   orbits:
-    - name: Pollux Ⅳ
+    - name: Pollux IV
       tags: [notable]
 - name: Psi Serpentis 
   location: wd:Q2661937
@@ -323,21 +345,6 @@
     - name: Caldos II
       ordinal: 2
       tags: [earth colony, notable, federation member]
-- name: Regulus
-  location: wd:Q13013
-  orbits:
-    - name: Regulus II
-      ordinal: 2
-      tags: [habitable]
-    - name: Regulus III 
-      ordinal: 3
-      tags: [inhabited, notable, federation member]
-    - name: Regulus V
-      ordinal: 5
-      tags: [inhabited, federation member]
-      surface:
-        - name: Regulus V City
-          type: city
 - name: B'Hava'el
   type: star
   location:
@@ -348,6 +355,14 @@
   orbits:
     - name: Bajor
       tags: [notable, inhabited]
+- name: Deep Space K-7
+  type: station
+  tags: [notable, deep space station]
+  location:
+    x: 25.3
+    y: -63.6
+    # distance to bajor '> 200ly'
+    z: -45
 - name: Ajilon Prime
   location:
     x: 47.8
@@ -364,6 +379,13 @@
     # distance to bajor exactly 5.25 ly. x/y distance is alrady 6.3071 so this
     # has to be on the same plane
     z: -226.642943922
+- name: Quo'Nos
+  tags: [claimed by klingon empire, notable]
+  location:
+    x: 79.9
+    y: -70.6
+    # assuming Kronos should be rather close to earth
+    z: 20.23
 - name: The Binaries
   type: star
   tags: [notable, klingon war battle site, claimed by klingon empire]
@@ -371,7 +393,7 @@
     x: 20.409
     y: -69.913
     # x and y given by stellar cartography. should be six lj away from gamma
-    # hydra which is not possible, so letzt put it at least in the closest possible 
+    # hydra which is not possible, so lets put it at least in the closest possible 
     # location
     z: 86.89916002979173
 - name: No'Mat
@@ -391,12 +413,12 @@
   orbits: 
     - name: Xarantine
       tags: [notable, inhabited]
-- name: Quo'Nos
-  tags: [claimed by klingon empire, notable]
-  location:
-    x: 79.9
-    y: -70.6
-    z: -10.2855200069376
+- name: Pi Canis Majoris 
+  type: star
+  location: wd:Q2278404
+  orbits:
+    - name: Korvat
+      tags: [claimed by klingon empire, notable]
 - name: Delta Leporis 
   type: star
   location: wd:Q5175876
@@ -409,12 +431,6 @@
   orbits:
     - name: Aldebaran III 
       tags: [federation member, notable]
-- name: Pi Canis Majoris 
-  type: star
-  location: wd:Q2278404
-  orbits:
-    - name: Korvat
-      tags: [claimed by klingon empire, notable]
 - name: Canopus
   type: star
   location: wd:Q12189
@@ -444,5 +460,105 @@
   type: star
   orbits: 
     - name: Ceti Alpha V
+      type: planet
+      tags: [notable]
+- name: Pi Hydrae
+  location: wd:Q978492
+  type: star
+  orbits: 
+    - name: Norkan
+      type: planet
+      tags: [notable, federation outpost]
+- name: Alpha Gruis
+  location: wd:Q854042
+  type: star
+  orbits: 
+    - name: Angel I
+      type: planet
+      tags: [notable, inhabited]
+- name: Alpha Indi
+  location: wd:Q2743021
+  type: star
+  orbits: 
+    - name: Rhaandar
+      type: planet
+      tags: [notable, federation member]
+- name: Eta Lupi
+  location: wd:Q66477132
+  type: star
+  orbits: 
+    - name: Cerberus II
+      type: planet
+      tags: [notable, federation member]
+- name: Betelgeuse
+  location: wd:Q12124
+  type: star
+  orbits: 
+    - name: Betelgeuse
+      type: planet
+      tags: [notable, federation member]
+- name: Beta Cephei
+  location: wd:Q67622053
+  type: star
+  orbits: 
+    - name: Verdanis
+      type: planet
+      tags: [notable, federation member]
+    - name: Terratin
+      type: planet
+      tags: [notable]
+- name: Kappa Delphini
+  location: wd:Q5174410
+  type: star
+  orbits: 
+    - name: Antos IV
+      type: planet
+      tags: [notable, federation member]
+- name: Epsilon Boötis
+  location: wd:Q13255
+  type: star
+  orbits: 
+    - name: Izar
+      type: planet
+      tags: [notable, federation member]
+- name: Iota Leonis
+  location: wd:Q3232250
+  type: star
+  orbits: 
+    - name: Argelius II
+      type: planet
+      tags: [notable, federation member]
+- name: Sirius
+  location: wd:Q3409
+  type: star
+  orbits: 
+    - name: Sirius IX
+      type: planet
+      tags: [notable, federation member]
+- name: Chi Eridani
+  location: wd:Q5095057
+  type: star
+  orbits: 
+    - name: Kaleb IV
+      type: planet
+      tags: [notable, federation member]
+- name: Eta Scorpii
+  location: wd:Q427630
+  type: star
+  orbits: 
+    - name: Ivor Prime 
+      type: planet
+      tags: [notable, federation colony]
+- name: Deneb
+  location: wd:Q12179
+  type: star
+  orbits: 
+    - name: Deneb V
+      type: planet
+      tags: [notable, federation member]
+- name: Beta Lyrae
+  location: wd:Q13352
+  orbits: 
+    - name: Shelia
       type: planet
       tags: [notable]

@@ -92,6 +92,46 @@
     ]
   },
   {
+    "name": "Regulus",
+    "location": {
+      "x": 36.804293192447695,
+      "y": -35.282154661604444,
+      "z": 58.35705607794726
+    },
+    "orbits": [
+      {
+        "name": "Regulus II",
+        "ordinal": 2,
+        "tags": [
+          "habitable"
+        ]
+      },
+      {
+        "name": "Regulus III",
+        "ordinal": 3,
+        "tags": [
+          "inhabited",
+          "notable",
+          "federation member"
+        ]
+      },
+      {
+        "name": "Regulus V",
+        "ordinal": 5,
+        "tags": [
+          "inhabited",
+          "federation member"
+        ],
+        "surface": [
+          {
+            "name": "Regulus V City",
+            "type": "city"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Procyon",
     "type": "star",
     "location": {
@@ -244,6 +284,25 @@
         "tags": [
           "notable",
           "vulcan colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eta Lupi",
+    "location": {
+      "x": 155.79971275782498,
+      "y": 402.4242608984709,
+      "z": 85.9136994017757
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Cerberus II",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
         ]
       }
     ]
@@ -840,7 +899,7 @@
     },
     "orbits": [
       {
-        "name": "Pollux Ⅳ",
+        "name": "Pollux IV",
         "tags": [
           "notable"
         ]
@@ -995,46 +1054,6 @@
     ]
   },
   {
-    "name": "Regulus",
-    "location": {
-      "x": 36.804293192447695,
-      "y": -35.282154661604444,
-      "z": 58.35705607794726
-    },
-    "orbits": [
-      {
-        "name": "Regulus II",
-        "ordinal": 2,
-        "tags": [
-          "habitable"
-        ]
-      },
-      {
-        "name": "Regulus III",
-        "ordinal": 3,
-        "tags": [
-          "inhabited",
-          "notable",
-          "federation member"
-        ]
-      },
-      {
-        "name": "Regulus V",
-        "ordinal": 5,
-        "tags": [
-          "inhabited",
-          "federation member"
-        ],
-        "surface": [
-          {
-            "name": "Regulus V City",
-            "type": "city"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "B'Hava'el",
     "type": "star",
     "location": {
@@ -1051,6 +1070,19 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Deep Space K-7",
+    "type": "station",
+    "tags": [
+      "notable",
+      "deep space station"
+    ],
+    "location": {
+      "x": 25.3,
+      "y": -63.6,
+      "z": -45
+    }
   },
   {
     "name": "Ajilon Prime",
@@ -1075,6 +1107,18 @@
       "x": -62.8,
       "y": -33.1,
       "z": -226.642943922
+    }
+  },
+  {
+    "name": "Quo'Nos",
+    "tags": [
+      "claimed by klingon empire",
+      "notable"
+    ],
+    "location": {
+      "x": 79.9,
+      "y": -70.6,
+      "z": 20.23
     }
   },
   {
@@ -1151,16 +1195,22 @@
     ]
   },
   {
-    "name": "Quo'Nos",
-    "tags": [
-      "claimed by klingon empire",
-      "notable"
-    ],
+    "name": "Pi Canis Majoris",
+    "type": "star",
     "location": {
-      "x": 79.9,
-      "y": -70.6,
-      "z": -10.2855200069376
-    }
+      "x": 75.31350606548703,
+      "y": -59.84026045533587,
+      "z": -13.864549608651634
+    },
+    "orbits": [
+      {
+        "name": "Korvat",
+        "tags": [
+          "claimed by klingon empire",
+          "notable"
+        ]
+      }
+    ]
   },
   {
     "name": "Delta Leporis",
@@ -1193,24 +1243,6 @@
         "name": "Aldebaran III",
         "tags": [
           "federation member",
-          "notable"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Pi Canis Majoris",
-    "type": "star",
-    "location": {
-      "x": 75.31350606548703,
-      "y": -59.84026045533587,
-      "z": -13.864549608651634
-    },
-    "orbits": [
-      {
-        "name": "Korvat",
-        "tags": [
-          "claimed by klingon empire",
           "notable"
         ]
       }
@@ -1299,6 +1331,277 @@
     "orbits": [
       {
         "name": "Ceti Alpha V",
+        "type": "planet",
+        "tags": [
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pi Hydrae",
+    "location": {
+      "x": 46.71762343783636,
+      "y": 62.056895259976834,
+      "z": 51.412608218976466
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Norkan",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation outpost"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alpha Gruis",
+    "location": {
+      "x": 10.77786768099873,
+      "y": 60.91379898200497,
+      "z": -79.83950564620734
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Angel I",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "inhabited"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alpha Indi",
+    "location": {
+      "x": 9.827191232550835,
+      "y": 75.29272874490151,
+      "z": -57.154740530244844
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Rhaandar",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eta Lupi",
+    "location": {
+      "x": 155.79971275782498,
+      "y": 402.4242608984709,
+      "z": 85.9136994017757
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Cerberus II",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Betelgeuse",
+    "location": {
+      "x": 218.93995894936333,
+      "y": -605.6845913977771,
+      "z": -103.5541363847854
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Betelgeuse",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beta Cephei",
+    "location": {
+      "x": -638.4245783804516,
+      "y": -203.03618340293832,
+      "z": 165.19795988120114
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Verdanis",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      },
+      {
+        "name": "Terratin",
+        "type": "planet",
+        "tags": [
+          "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kappa Delphini",
+    "location": {
+      "x": -76.89001135722242,
+      "y": 53.526120344463145,
+      "z": -31.231693097398686
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Antos IV",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Epsilon Boötis",
+    "location": {
+      "x": -55.29734511153554,
+      "y": 66.06151305270743,
+      "z": 183.81262230000064
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Izar",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iota Leonis",
+    "location": {
+      "x": 32.412208088499206,
+      "y": -13.657184124061743,
+      "z": 70.73846258316122
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Argelius II",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sirius",
+    "location": {
+      "x": 6.245691652409081,
+      "y": -5.758141909587069,
+      "z": -1.3398274262323855
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Sirius IX",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chi Eridani",
+    "location": {
+      "x": 25.726298355758697,
+      "y": 5.144122377742476,
+      "z": -50.427720881151174
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Kaleb IV",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eta Scorpii",
+    "location": {
+      "x": 19.049169897670712,
+      "y": 68.32032121027983,
+      "z": -2.545932310915555
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Ivor Prime",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation colony"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deneb",
+    "location": {
+      "x": -1631.127152825098,
+      "y": 161.35802633096196,
+      "z": 54.660759739190446
+    },
+    "type": "star",
+    "orbits": [
+      {
+        "name": "Deneb V",
+        "type": "planet",
+        "tags": [
+          "notable",
+          "federation member"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beta Lyrae",
+    "location": {
+      "x": -932.9843511098704,
+      "y": 469.00168150358894,
+      "z": 275.6403876990821
+    },
+    "orbits": [
+      {
+        "name": "Shelia",
         "type": "planet",
         "tags": [
           "notable"

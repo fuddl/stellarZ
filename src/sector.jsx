@@ -1,5 +1,6 @@
 export default function sector(startX, startY, startZ, offsetX = 0, offsetY = 0, offsetZ = 0, size = 20) {
   
+  const id = [startX, startY, startZ].join('|')
   startX = startX + offsetX
   startY = startY + offsetY
   startZ = startZ + offsetZ
@@ -9,7 +10,7 @@ export default function sector(startX, startY, startZ, offsetX = 0, offsetY = 0,
   const endZ = startZ + size;
   let output = []  
   output.push({
-    id: 'cube-top-' + startX,
+    id: 'cube-top-' + id,
     type: 'polygon',
     borderOpacity: .1,
     borderColor: 'white',
@@ -20,7 +21,7 @@ export default function sector(startX, startY, startZ, offsetX = 0, offsetY = 0,
   })
 
   output.push({
-    id: 'cube-bottom-' + startX,
+    id: 'cube-bottom-' + id,
     type: 'polygon',
     borderOpacity: .1,
     borderColor: 'white',
@@ -31,7 +32,7 @@ export default function sector(startX, startY, startZ, offsetX = 0, offsetY = 0,
   })
 
   output.push({
-    id: 'vert-' + startX,
+    id: 'vert-' + id,
     type: 'lines',
     opacity: .1,
     color: 'white',
