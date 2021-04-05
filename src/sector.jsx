@@ -1,48 +1,68 @@
-export default function sector(startX, startY, startZ, offsetX = 0, offsetY = 0, offsetZ = 0, size = 20) {
-  
-  const id = [startX, startY, startZ].join('|')
-  startX = startX + offsetX
-  startY = startY + offsetY
-  startZ = startZ + offsetZ
+export default class sectors {
+  constructor(offsetX = 0, offsetY = 0, offsetZ = 0, size = 20) {
+    this.offsetX = offsetX
+    this.offsetY = offsetY
+    this.offsetZ = offsetZ
+    this.size = size
+    this.ids = []
+  }
 
-  const endX = startX + size;
-  const endY = startY + size;
-  const endZ = startZ + size;
-  let output = []  
-  output.push({
-    id: 'cube-top-' + id,
-    type: 'polygon',
-    borderOpacity: .1,
-    borderColor: 'white',
-    fillColor: 'none',
-    x: [startX, endX, endX, startX],
-    y: [startY, startY, endY, endY],
-    z: [startZ, startZ, startZ, startZ],
-  })
+  getGeometry(X, Y, Z) {
+    const sectorX = Math.floor((X-this.offsetX)/this.size)*this.size;
+    const sectorY = Math.floor((Y-this.offsetY)/this.size)*this.size;
+    const sectorZ = Math.floor((Z-this.offsetZ)/this.size)*this.size;
 
-  output.push({
-    id: 'cube-bottom-' + id,
-    type: 'polygon',
-    borderOpacity: .1,
-    borderColor: 'white',
-    fillColor: 'none',
-    x: [startX, endX, endX, startX],
-    y: [startY, startY, endY, endY],
-    z: [endZ, endZ, endZ, endZ],
-  })
+    const id = [sectorX, sectorY, sectorZ].join('|')
 
-  output.push({
-    id: 'vert-' + id,
-    type: 'lines',
-    opacity: .1,
-    color: 'white',
-    x0: [startX, endX, endX, startX],
-    y0: [startY, startY, endY ,endY],
-    z0: [startZ, startZ, startZ, startZ],
-    x1: [startX, endX, endX, startX],
-    y1: [startY, startY, endY, endY],
-    z1: [endZ, endZ, endZ, endZ],
-  })
+    let startX = sectorX + this.offsetX
+    let startY = sectorY + this.offsetY
+    let startZ = sectorZ + this.offsetZ
+    
 
-  return output
+    const endX = startX + this.size
+    const endY = startY + this.size
+    const endZ = startZ + this.size
+
+    let output = []
+    if (!this.ids.includes(id)) {
+      this.ids.push(id)
+
+      output.push({
+        id: 'cube-top-' + id,
+        type: 'polygon',
+        borderOpacity: .5,
+        borderColor: 'white',
+        fillColor: 'none',
+        x: [startX, endX, endX, startX],
+        y: [startY, startY, endY, endY],
+        z: [startZ, startZ, startZ, startZ],
+      })
+
+      output.push({
+        id: 'cube-bottom-' + id,
+        type: 'polygon',
+        borderOpacity: .5,
+        borderColor: 'white',
+        fillColor: 'none',
+        x: [startX, endX, endX, startX],
+        y: [startY, startY, endY, endY],
+        z: [endZ, endZ, endZ, endZ],
+      })
+
+      output.push({
+        id: 'vert-' + id,
+        type: 'lines',
+        opacity: .5,
+        color: 'white',
+        x0: [startX, endX, endX, startX],
+        y0: [startY, startY, endY ,endY],
+        z0: [startZ, startZ, startZ, startZ],
+        x1: [startX, endX, endX, startX],
+        y1: [startY, startY, endY, endY],
+        z1: [endZ, endZ, endZ, endZ],
+      })
+    }
+
+    return output
+  }
 }

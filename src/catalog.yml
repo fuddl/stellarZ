@@ -2,7 +2,7 @@
   location: {x: 0, y: 0, z: 0}
   orbits:
     - name: Earth
-      tags: [spacedock, shipyard, notable, federation member]
+      tags: [spacedock, shipyard, notable, federation member, federation founding member, federation captital]
     - name: Starbase 1
       type: station
       tags: [notable, federation starbase]
@@ -18,10 +18,10 @@
       location: wd:Q2839483
       type: star
       orbits:
-        - name: Proxima
-          wd: Q66724436
-          ma:de: Proxima_colony
-          tags: [notable, earth colony, federation member]
+    - name: Proxima
+      wd: Q66724436
+      ma:de: Proxima_colony
+      tags: [notable, earth colony, federation member, federation founding member]
 - name: 40 Eridani
   type: system
   location: wd:Q67622062
@@ -29,8 +29,8 @@
     - name: 40 Eridani A
       location: wd:Q1052822
       orbits:
-        - name: Vulcan
-          tags: [notable, federation member]
+    - name: Vulcan
+      tags: [notable, federation member, federation founding member]
 - name: Regulus
   location: wd:Q13013
   orbits:
@@ -52,12 +52,12 @@
   orbits:
     - name: Andor 
     - name: Andoria
-      tags: [notable, federation member]
+      tags: [notable, federation member, federation founding member]
 - name: 61 Cygni
   location: wd:Q249302
   orbits:
     - name: Tellar Prime
-      tags: [notable, federation member]
+      tags: [notable, federation member, federation founding member]
 - name: Tau Ceti
   type: star
   location: wd:Q15820
@@ -97,13 +97,6 @@
   orbits:
     - name: P'Jem
       tags: [notable, vulcan colony]
-- name: Eta Lupi
-  location: wd:Q66477132
-  type: star
-  orbits: 
-    - name: Cerberus II
-      type: planet
-      tags: [notable, federation member]
 - name: Akaali
   type: planet
   tags: [notable, inhabited, pre-warp]
@@ -139,17 +132,16 @@
 - name: Antares
   location: wd:Q12166
   type: system
-  tags: [federation member, notable]
   orbits: 
     - name: Antares B 
       orbits:
-        - name: Antares B III
-          tags: [federation shipyard, notable]
+    - name: Antares B III
+      tags: [federation shipyard, notable, federation member]
 - name: Kappa Fornacis
   location: wd:Q9017189
   orbits: 
     - name: Deneva Prime
-      tags: [earth colony, notable]
+      tags: [earth colony, notable, federation member]
 - name: Chi1 Orionis
   location: wd:Q284907
   orbits: 
@@ -354,7 +346,7 @@
     z: -226.642943922
   orbits:
     - name: Bajor
-      tags: [notable, inhabited]
+      tags: [notable, inhabited, federation member]
 - name: Deep Space K-7
   type: station
   tags: [notable, deep space station]
@@ -380,7 +372,7 @@
     # has to be on the same plane
     z: -226.642943922
 - name: Quo'Nos
-  tags: [claimed by klingon empire, notable]
+  tags: [claimed by klingon empire, notable, klingon capital]
   location:
     x: 79.9
     y: -70.6

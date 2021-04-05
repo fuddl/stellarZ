@@ -13,7 +13,9 @@
           "spacedock",
           "shipyard",
           "notable",
-          "federation member"
+          "federation member",
+          "federation founding member",
+          "federation captital"
         ]
       },
       {
@@ -48,17 +50,17 @@
           "z": -0.032950376278679055
         },
         "type": "star",
-        "orbits": [
-          {
-            "name": "Proxima",
-            "wd": "Q66724436",
-            "ma:de": "Proxima_colony",
-            "tags": [
-              "notable",
-              "earth colony",
-              "federation member"
-            ]
-          }
+        "orbits": null
+      },
+      {
+        "name": "Proxima",
+        "wd": "Q66724436",
+        "ma:de": "Proxima_colony",
+        "tags": [
+          "notable",
+          "earth colony",
+          "federation member",
+          "federation founding member"
         ]
       }
     ]
@@ -79,14 +81,14 @@
           "y": -12.05107687828057,
           "z": -10.162269375262357
         },
-        "orbits": [
-          {
-            "name": "Vulcan",
-            "tags": [
-              "notable",
-              "federation member"
-            ]
-          }
+        "orbits": null
+      },
+      {
+        "name": "Vulcan",
+        "tags": [
+          "notable",
+          "federation member",
+          "federation founding member"
         ]
       }
     ]
@@ -147,7 +149,8 @@
         "name": "Andoria",
         "tags": [
           "notable",
-          "federation member"
+          "federation member",
+          "federation founding member"
         ]
       }
     ]
@@ -164,7 +167,8 @@
         "name": "Tellar Prime",
         "tags": [
           "notable",
-          "federation member"
+          "federation member",
+          "federation founding member"
         ]
       }
     ]
@@ -289,25 +293,6 @@
     ]
   },
   {
-    "name": "Eta Lupi",
-    "location": {
-      "x": 155.79971275782498,
-      "y": 402.4242608984709,
-      "z": 85.9136994017757
-    },
-    "type": "star",
-    "orbits": [
-      {
-        "name": "Cerberus II",
-        "type": "planet",
-        "tags": [
-          "notable",
-          "federation member"
-        ]
-      }
-    ]
-  },
-  {
     "name": "Akaali",
     "type": "planet",
     "tags": [
@@ -379,21 +364,17 @@
       "z": 145.1685849690149
     },
     "type": "system",
-    "tags": [
-      "federation member",
-      "notable"
-    ],
     "orbits": [
       {
         "name": "Antares B",
-        "orbits": [
-          {
-            "name": "Antares B III",
-            "tags": [
-              "federation shipyard",
-              "notable"
-            ]
-          }
+        "orbits": null
+      },
+      {
+        "name": "Antares B III",
+        "tags": [
+          "federation shipyard",
+          "notable",
+          "federation member"
         ]
       }
     ]
@@ -410,7 +391,8 @@
         "name": "Deneva Prime",
         "tags": [
           "earth colony",
-          "notable"
+          "notable",
+          "federation member"
         ]
       }
     ]
@@ -1066,7 +1048,8 @@
         "name": "Bajor",
         "tags": [
           "notable",
-          "inhabited"
+          "inhabited",
+          "federation member"
         ]
       }
     ]
@@ -1113,7 +1096,8 @@
     "name": "Quo'Nos",
     "tags": [
       "claimed by klingon empire",
-      "notable"
+      "notable",
+      "klingon capital"
     ],
     "location": {
       "x": 79.9,

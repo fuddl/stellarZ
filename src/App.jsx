@@ -7,48 +7,8 @@ import renderScene from "./bare-minimum-3d/src/index.ts"
 import { DataSpecType } from "@mithi/bare-minimum-3d/lib/cjs/primitive-types"
 import tree from "treeify-js"
 import textMarkerPlugin from 'bare-minimum-text-marker'
-import sector from './sector.jsx'
-
-const Triangle = ({ x, y, transforms, size, color, opacity, id, i }) => {
-  const cx = transforms.tx(x)
-  const cy = transforms.ty(y)
-  const ySize = size * .8626
-  return (
-    <polygon
-      {...{
-        opacity,
-        id: `${id}-${i}`,
-        fill: color
-      }}
-      points={[
-        `${cx},${cy - ySize}`,
-        `${cx + size},${cy + ySize}`,
-        `${cx - size},${cy + ySize}`
-      ].join(' ')}
-    />
-  )
-}
-
-const trianglesPlugin = {
-  triangles: (element, transforms) => {
-    const { size, color, opacity, id } = element
-    return element.x.map((x, i) => (
-      <Triangle
-        {...{
-          x,
-          y: element.y[i],
-          size,
-          color,
-          opacity,
-          id,
-          i,
-          transforms
-        }}
-        key={`${id}-${i}`}
-      />
-    ))
-  }
-}
+import sectors from './sector.jsx'
+import lineMaker from './lineMaker.jsx'
 
 function applyLocationInheritance(object) {
   if (object.location && object.orbits) {
@@ -68,32 +28,6 @@ for (let item of catalog) {
 }
 
 tree.untreeify(objects, 'orbits')
-
-let fedpoints = [];
-
-for (let object of objects) {
-  if (object.location && (object?.tags?.includes('federation member') || object?.tags?.includes('federation outpost') || object?.tags?.includes('earth colony') || object?.tags?.includes('federation colony') || object?.tags?.includes('federation starbase'))) {
-    fedpoints.push({
-      name: object.name,
-      x: [object.location.x],
-      y: [object.location.y],
-      z: [object.location.z],
-    })
-  }
-}
-
-let klingpoints = [];
-
-for (let object of objects) {
-  if (object.location && (object?.tags?.includes('claimed by klingon empire'))) {
-    klingpoints.push({
-      name: object.name,
-      x: [object.location.x],
-      y: [object.location.y],
-      z: [object.location.z],
-    })
-  }
-}
 
 let zoomTimeout
 
@@ -123,6 +57,38 @@ const baseGridGeometry = (min, max, step) => {
     z1: [...z, ...z],
   }
 }
+
+const fedlines = lineMaker(
+  objects, 
+  'federation founding member',
+  [
+    'federation member',
+    'earth colony',
+    'federation colony',
+    'federation shipyard',
+    'starbase',
+    'federation shipyard',
+    'deep space station',
+  ],
+  3,
+  {
+    color: '#98A0B5',
+    size: 1,
+  }
+)
+
+const klinglines = lineMaker(
+  objects, 
+  'klingon capital',
+  [
+    'claimed by klingon empire',
+  ],
+  3,
+  {
+    color: '#E51301',
+    size: 1,
+  }
+)
 
 
 function App() {
@@ -193,125 +159,36 @@ function App() {
     crossLines: false,
   }
 
-  let points = []
+  let points = [
+    ...fedlines,
+    ...klinglines,
+  ]
 
-  let sectorIds = []
-  let sectorSize = 20
+  // let sectorGrid = new sectors(-25,7,66.86205783298755,20)
 
-  for (let object of objects) {
-    if (object.location && object?.tags?.includes('notable')) {
-      let sectorX = Math.floor(object.location.x/sectorSize)*sectorSize
-      let sectorY = Math.floor(object.location.y/sectorSize)*sectorSize
-      let sectorZ = Math.floor(object.location.z/sectorSize)*sectorSize
-      let thisId = [sectorY, sectorY, sectorZ].join('|')
-      if (!sectorIds.includes(thisId)) {
-        sectorIds.push(thisId)
-        points.push(
-          ...sector(
-            sectorX,sectorY,sectorZ
-          )
-        )
-      }
-    }
-  }
+  // for (let object of objects) {
+  //   if (object.location && object?.tags?.includes('notable')) {
+  //     points.push(
+  //       ...sectorGrid.getGeometry(
+  //         object.location.x,
+  //         object.location.y,
+  //         object.location.z
+  //       )
+  //     )
+  //   }
+  // }
 
-  console.debug(sectorIds)
-
-  if (flatMode) {
-    const grid = {
-      id: 'base-grid',
-      type: DataSpecType.lines,
-      opacity: .5,
-      color: 'red',
-      size: 1,
-      ...baseGridGeometry(-220, 220, 20),
-    }
-    points.push(grid)
-  }
-
-let fedLines = []
-  for (let fedpoint0 of fedpoints) {
-    let shortest = false;
-    let line = {}
-    for (let fedpoint1 of fedpoints) {
-      let id = [fedpoint0.name, fedpoint1.name].sort().join('→')
-      if (fedpoints.find(e => e.id === id) === undefined) {
-        if (fedpoint0 !== fedpoint1) {
-          let deltas = {
-            x: fedpoint1.x - fedpoint0.x,
-            y: fedpoint1.y - fedpoint0.y,
-            z: fedpoint1.z - fedpoint0.z,
-          }
-          let distance = Math.sqrt(deltas.x * deltas.x + deltas.y * deltas.y + deltas.z * deltas.z)
-          if (!shortest || (distance < shortest && fedLines.find(e => e.id === id) === undefined)) {
-            shortest = distance
-            line = {
-              id: id,
-              "x0": [fedpoint0.x],
-              "y0": [fedpoint0.y],
-              "z0": flatMode ? [0] : [fedpoint0.z],
-              "x1": [fedpoint1.x],
-              "y1": [fedpoint1.y],
-              "z1": flatMode ? [0] : [fedpoint1.z],        
-            }
-          }
-        }
-      }
-    }
-    fedLines.push(line)
-  }
-  for (let line of fedLines) {
-    points.push({
-      id: 'line',
-      type: DataSpecType.lines,
-      opacity: .5,
-      color: '#98A0B5',
-      size: 2,
-      ...line,
-    })
-  }
-  let klingLines = []
-  for (let fedpoint0 of klingpoints) {
-    let shortest = false;
-    let line = {}
-    for (let fedpoint1 of klingpoints) {
-      let id = [fedpoint0.name, fedpoint1.name].sort().join('→')
-      if (klingpoints.find(e => e.id === id) === undefined) {
-        if (fedpoint0 !== fedpoint1) {
-          let deltas = {
-            x: fedpoint1.x - fedpoint0.x,
-            y: fedpoint1.y - fedpoint0.y,
-            z: fedpoint1.z - fedpoint0.z,
-          }
-          let distance = Math.sqrt(deltas.x * deltas.x + deltas.y * deltas.y + deltas.z * deltas.z)
-          if (!shortest || (distance < shortest && klingLines.find(e => e.id === id) === undefined)) {
-            shortest = distance
-            line = {
-              id: id,
-              "x0": [fedpoint0.x],
-              "y0": [fedpoint0.y],
-              "z0": flatMode ? [0] : [fedpoint0.z],
-              "x1": [fedpoint1.x],
-              "y1": [fedpoint1.y],
-              "z1": flatMode ? [0] : [fedpoint1.z],        
-            }
-          }
-        }
-      }
-    }
-    klingLines.push(line)
-  }
-  console.debug(klingLines)
-  for (let line of klingLines) {
-    points.push({
-      id: 'line',
-      type: DataSpecType.lines,
-      opacity: .5,
-      color: '#E51301',
-      size: 2,
-      ...line,
-    })
-  }
+  // if (flatMode) {
+  //   const grid = {
+  //     id: 'base-grid',
+  //     type: DataSpecType.lines,
+  //     opacity: .5,
+  //     color: 'red',
+  //     size: 1,
+  //     ...baseGridGeometry(-220, 220, 20),
+  //   }
+  //   points.push(grid)
+  // }
 
   for (let object of objects) {
     if (object.location && object?.tags?.includes('federation member')) {
@@ -360,7 +237,6 @@ let fedLines = []
 
 
 
-
   // for (let object of objects) {
   //   if (object.location && object?.tags?.includes('notable')) {
   //     points.push({
@@ -405,7 +281,6 @@ let fedLines = []
     sceneSettings,
     sceneOptions,
     points,
-    [trianglesPlugin]
   )
 
   return (
@@ -499,7 +374,7 @@ let fedLines = []
           setFlatMode(e.target.checked)
         }} />
       </form>
-      <BareMinimum2d {...{container, data}} plugins={[trianglesPlugin, textMarkerPlugin]} />
+      <BareMinimum2d {...{container, data}} plugins={[textMarkerPlugin]} />
       <svg hidden="hidden">
         <radialGradient id="fed">
           <stop offset="0%"   stopColor="#98A0B5" stopOpacity=".75" />
