@@ -11,6 +11,7 @@
     "@mithi/bare-minimum-3d": "^0.1.4",
     "bare-minimum-2d": "^0.3.0",
     "bare-minimum-text-marker": "0.0.6",
+    "clamp": "^1.0.1",
     "csv-parse": "^4.15.3",
     "csv-parser": "^3.0.0",
     "euclidean-distance": "^1.0.0",

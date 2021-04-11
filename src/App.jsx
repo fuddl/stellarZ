@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import catalog from './catalog.json';
+import hyg from './catalogHyg.json';
 import BareMinimum2d from "bare-minimum-2d"
 import renderScene from "./bare-minimum-3d/src/index.ts"
 import { DataSpecType } from "@mithi/bare-minimum-3d/lib/cjs/primitive-types"
 import tree from "treeify-js"
 import textMarkerPlugin from 'bare-minimum-text-marker'
+import clamp from 'clamp'
 import sectors from './sector.jsx'
 import lineMaker from './lineMaker.jsx'
+
+function isClose(number, number2, divergence) {
+  return clamp(number, number2 - divergence, number2 + divergence) === number
+}
 
 function applyLocationInheritance(object) {
   if (object.location && object.orbits) {
@@ -16,6 +22,11 @@ function applyLocationInheritance(object) {
       if (!orbit.location) {
         orbit = applyLocationInheritance(orbit)
         orbit.location = object.location
+      } else {
+        orbit.location = {
+          ...object.location,
+          ...orbit.location
+        }
       }
     }
   }
@@ -66,6 +77,7 @@ const fedlines = lineMaker(
     'earth colony',
     'federation colony',
     'federation shipyard',
+    'federation starbase',
     'starbase',
     'federation shipyard',
     'deep space station',
@@ -164,6 +176,43 @@ function App() {
     ...klinglines,
   ]
 
+  function class2Color(cls) {
+    const classes = {
+      'O': 'purple',
+      'B': 'blue',
+      'A': 'lightskyblue',
+      'F': 'beige',
+      'G': 'yellow',
+      'K': 'orange',
+      'M': 'red',
+    }
+    if (classes[cls]) {
+      return classes[cls]
+    } else {
+      return '#5966A4'
+    }
+  }
+
+  function mag2Size(input) {
+    return (input + 10) / 3
+  }
+
+  for (let object of hyg) {
+    if (isClose(object.x, 30.6, 1) && isClose(object.y, 41.6, 1)) {
+      points.push({
+        id: 'hyg-' + object.id,
+        type: DataSpecType.points,
+        opacity: 1,
+        color: class2Color(object.c),
+        size: mag2Size(object.m),
+        x: [object.x],
+        y: [object.y],
+        z: flatMode ? [0] : [object.z],
+      })
+    }
+  }
+
+
   // let sectorGrid = new sectors(-25,7,66.86205783298755,20)
 
   // for (let object of objects) {
@@ -235,6 +284,20 @@ function App() {
     }
   }
 
+  for (let object of objects) {
+    if (object.location && object?.tags?.includes('claimed by romulan empire')) {
+      points.push({
+        id: object.name + '-romulan',
+        type: DataSpecType.points,
+        opacity: .5,
+        color: 'url(#romul)',
+        size: 60,
+        x: [object.location.x],
+        y: [object.location.y],
+        z: flatMode ? [0] : [object.location.z],
+      })
+    }
+  }
 
 
   // for (let object of objects) {
@@ -383,6 +446,10 @@ function App() {
         <radialGradient id="kling">
           <stop offset="0%"   stopColor="#E51301" stopOpacity=".75" />
           <stop offset="100%" stopColor="#E51301" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="romul">
+          <stop offset="0%"   stopColor="#235645" stopOpacity=".75" />
+          <stop offset="100%" stopColor="#235645" stopOpacity="0" />
         </radialGradient>
       </svg>
     </div>

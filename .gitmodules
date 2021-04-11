@@ -1,0 +1,3 @@
+[submodule "src/submodules/HYG-Database"]
+	path = src/submodules/HYG-Database
+	url = https://github.com/astronexus/HYG-Database.git

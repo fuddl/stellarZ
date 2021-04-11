@@ -12,6 +12,7 @@ body {
   background: black;
   color: #98A0B6;
   font-family: 'shapes', 'League Gothic', sans-serif;
+  overflow: hidden;
 }
 
 text {

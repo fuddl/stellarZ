@@ -40,7 +40,7 @@ export default function lineMaker(points, primary, secondary, neigbors = 3, prop
 			}
 		}
 		let shortestAB = AB.sort(
-			(A, B) => B[2] < A[2],
+			(A, B) => A[2] - B[2]
 		)
 		for (var i = 0; i < neigbors; i++) {
 			g.edge(shortestAB[i][0], shortestAB[i][1], shortestAB[i][2]) 
@@ -56,6 +56,7 @@ export default function lineMaker(points, primary, secondary, neigbors = 3, prop
 	for (let primaryPoint of rPoints) {
 		if (primaryPoint?.tags.includes(primary)) {
 			for (let secondaryPoint of rPoints) {
+				const id = secondaryPoint.name + '→' + primaryPoint.name
 				if (!secondaryPoint?.tags.includes(primary)) {
 					let shortest = dijkstra.shortest(secondaryPoint.name, primaryPoint.name)
 					let path = shortest.path()
@@ -68,7 +69,7 @@ export default function lineMaker(points, primary, secondary, neigbors = 3, prop
 							x1: [],
 							y1: [],
 							z1: [],
-							id: secondaryPoint.name + '→' + primaryPoint.name,
+							id: id,
 							...props,
 						}
 						let i = 0
@@ -91,6 +92,5 @@ export default function lineMaker(points, primary, secondary, neigbors = 3, prop
 			}
 		}
 	}
-	console.log(output)
   return output
 }

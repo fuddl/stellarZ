@@ -303,7 +303,7 @@
     "location": {
       "x": 11.16,
       "y": -18.6,
-      "z": -80.9599
+      "z": 80.9599
     }
   },
   {
@@ -1589,6 +1589,84 @@
         "type": "planet",
         "tags": [
           "notable"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "x": 26.761333968090693,
+      "y": 35.14059892194757,
+      "z": 74.23284366279672
+    },
+    "orbits": [
+      {
+        "name": "Romulus",
+        "tags": [
+          "notable",
+          "claimed by romulan empire",
+          "romulan capital"
+        ],
+        "location": {
+          "x": 30.6,
+          "y": 41.6
+        }
+      },
+      {
+        "name": "Remus",
+        "tags": [
+          "notable",
+          "claimed by romulan empire"
+        ],
+        "location": {
+          "x": 30.6,
+          "y": 41.6
+        }
+      }
+    ]
+  },
+  {
+    "orbits": null,
+    "name": "Khitomer",
+    "tags": [
+      "notable",
+      "claimed by klingon empire"
+    ],
+    "location": {
+      "x": 77.5,
+      "y": 47.9,
+      "z": 47.23142
+    }
+  },
+  {
+    "name": "Gamma 400",
+    "location": {
+      "x": 12.479,
+      "y": -24,
+      "z": 30.450268756
+    },
+    "orbits": [
+      {
+        "name": "Starbase 12",
+        "tags": [
+          "notable",
+          "federation starbase"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "x": 79.6,
+      "y": 56.2,
+      "z": 0
+    },
+    "orbits": [
+      {
+        "name": "Morska",
+        "tags": [
+          "notable",
+          "claimed by klingon empire"
         ]
       }
     ]

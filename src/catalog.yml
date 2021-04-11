@@ -106,7 +106,7 @@
     # x and y coordinates given by the star charts and stellar cartography
     # z coordinate must be either 80.9599 or -80.9599 but assumed to be 
     # closer to Axanar
-    z: -80.9599 
+    z: 80.9599 
 - name: Sigma Draconis
   location: wd:Q311489
   orbits:
@@ -342,7 +342,8 @@
   location:
     x: -57.1
     y: -35.8
-    # distance to regulus regulus 300ly. -285 or +285
+    # distance to regulus regulus 300ly. 
+    # has to be either -285 or +285
     z: -226.642943922
   orbits:
     - name: Bajor
@@ -554,3 +555,41 @@
     - name: Shelia
       type: planet
       tags: [notable]
+- location: wd:Q66548104
+  orbits: 
+    - name: Romulus
+      tags: [notable, claimed by romulan empire, romulan capital]
+      location:
+        x: 30.6
+        y: 41.6
+    - name: Remus
+      tags: [notable, claimed by romulan empire]
+      location:
+        x: 30.6
+        y: 41.6
+- orbits:
+  name: Khitomer
+  tags: [notable, claimed by klingon empire]
+  location:
+    x: 77.5
+    y: 47.9
+    # lets put it between kronos and romouls
+    z: 47.23142
+- name: Gamma 400
+  location:
+    x: 12.479
+    y: -24
+    # we put it between andoria and regulus
+    z: 30.450268756
+  orbits: 
+    - name: Starbase 12
+      tags: [notable, federation starbase]
+- location:
+    x: 79.6
+    y: 56.2
+    z: 0
+  orbits:
+    - name: Morska
+      tags: [notable, claimed by klingon empire]
+
+
