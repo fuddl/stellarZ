@@ -9,18 +9,24 @@
   "dependencies": {
     "@juggle/resize-observer": "^3.3.0",
     "@mithi/bare-minimum-3d": "^0.1.4",
+    "@tmanderson/accrete": "^1.0.0",
+    "accrete-wasm": "^0.1.8",
     "bare-minimum-2d": "^0.3.0",
-    "bare-minimum-text-marker": "0.0.6",
+    "bare-minimum-quadratic-bezier": "^0.0.2",
+    "bare-minimum-text-marker": "0.0.7",
     "clamp": "^1.0.1",
     "csv-parse": "^4.15.3",
     "csv-parser": "^3.0.0",
     "euclidean-distance": "^1.0.0",
     "js-shortest-path": "^1.1.0",
     "node-fetch": "^2.6.1",
+    "node-summarizer": "^1.0.7",
     "react": "^16.14.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
+    "showdown": "^1.9.1",
     "snowpack-plugin-raw-file-loader": "^1.0.9",
+    "teaser": "^0.1.1",
     "treeify-js": "^1.0.3",
     "wikibase-sdk": "^7.9.1"
   },
@@ -31,9 +37,12 @@
     "@testing-library/react": "^11.0.0",
     "@web/test-runner": "^0.12.0",
     "chai": "^4.2.0",
+    "cheerio": "*",
     "js-yaml": "^4.0.0",
+    "make-fetch-happen": "^8.0.14",
     "prettier": "^2.0.5",
     "snowpack": "^3.0.1",
-    "snowpack-plugin-url-loader": "^1.0.0"
+    "snowpack-plugin-url-loader": "^1.0.0",
+    "turndown": "^7.0.0"
   }
 }
