@@ -15,14 +15,13 @@
           "notable",
           "federation member",
           "federation founding member",
-          "federation captital"
+          "federation captital",
+          "dma-map"
         ],
         "links": {
-          "ma:en": {
-            "id": "Earth",
-            "extract": "  \n\n**Earth**, also known as **Sol III** or **Terra**, was the [inhabited](/wiki/Inhabited_planets \"Inhabited planets\") [third](/wiki/Third_planets \"Third planets\") [planet](/wiki/Planet \"Planet\") of the [Sol](/wiki/Sol_system \"Sol system\") [system](/wiki/Star_system \"Star system\"). Earth was the [homeworld](/wiki/Homeworld \"Homeworld\") of the [Humans](/wiki/Human \"Human\") and the [Voth](/wiki/Voth \"Voth\"), among others, and was the [capital planet](/wiki/Capital_planet \"Capital planet\") of the [United Federation of Planets](/wiki/United_Federation_of_Planets \"United Federation of Planets\") and the home of [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\") from [2161](/wiki/2161 \"2161\") to [3089](/wiki/3089 \"3089\").\n\nIn [2150](/wiki/2150 \"2150\"), with the last [nation-states](/wiki/Nation-state \"Nation-state\") joining, the planet was unified under the [United Earth](/wiki/United_Earth \"United Earth\") [government](/wiki/Government \"Government\"). It was a founding member of the [Coalition of Planets](/wiki/Coalition_of_Planets \"Coalition of Planets\") in [2155](/wiki/2155 \"2155\"), and of the United Federation of Planets in [2161](/wiki/2161 \"2161\"). ([ENT](/wiki/Star_Trek:_Enterprise \"Star Trek: Enterprise\"): \"[Broken Bow](/wiki/Broken_Bow_(episode) \"Broken Bow (episode)\")\", \"[Zero Hour](/wiki/Zero_Hour_(episode) \"Zero Hour (episode)\")\", \"[Home](/wiki/Home_(episode) \"Home (episode)\")\") By the [24th century](/wiki/24th_century \"24th century\"), hundreds of [humanoid](/wiki/Humanoid \"Humanoid\") species lived there, including [Bolians](/wiki/Bolian \"Bolian\"), [Vulcans](/wiki/Vulcan \"Vulcan\"), and [Ktarians](/wiki/Ktarian \"Ktarian\"). ([VOY](/wiki/Star_Trek:_Voyager \"Star Trek: Voyager\"): \"[Hope and Fear](/wiki/Hope_and_Fear_(episode) \"Hope and Fear (episode)\")\") The [President](/wiki/Federation_President \"Federation President\")'s office, the [Federation Council](/wiki/Federation_Council \"Federation Council\"), as well as [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\") and the main campus of [Starfleet Academy](/wiki/Starfleet_Academy \"Starfleet Academy\") were all located on Earth. ([_Star Trek: The Motion Picture_](/wiki/Star_Trek:_The_Motion_Picture \"Star Trek: The Motion Picture\"); [_Star Trek IV: The Voyage Home_](/wiki/Star_Trek_IV:_The_Voyage_Home \"Star Trek IV: The Voyage Home\"); [_Star Trek VI: The Undiscovered Country_](/wiki/Star_Trek_VI:_The_Undiscovered_Country \"Star Trek VI: The Undiscovered Country\"); [TNG](/wiki/Star_Trek:_The_Next_Generation \"Star Trek: The Next Generation\"): \"[Conspiracy](/wiki/Conspiracy_(episode) \"Conspiracy (episode)\")\"; [DS9](/wiki/Star_Trek:_Deep_Space_Nine \"Star Trek: Deep Space Nine\"): \"[Homefront](/wiki/Homefront_(episode) \"Homefront (episode)\")\", \"[Paradise Lost](/wiki/Paradise_Lost_(episode) \"Paradise Lost (episode)\")\"; [VOY](/wiki/Star_Trek:_Voyager \"Star Trek: Voyager\"): \"[In the Flesh](/wiki/In_the_Flesh_(episode) \"In the Flesh (episode)\")\")\n\nLocated at the very core of the Federation, Earth's strategic importance was on par with worlds like [Andor](/wiki/Andor \"Andor\"), [Berengaria VII](/wiki/Berengaria_VII \"Berengaria VII\"), and [Vulcan](/wiki/Vulcan_(planet) \"Vulcan (planet)\") during the [Dominion War](/wiki/Dominion_War \"Dominion War\"). It was also targeted by two [Borg cubes](/wiki/Borg_cube \"Borg cube\"). ([DS9](/wiki/Star_Trek:_Deep_Space_Nine \"Star Trek: Deep Space Nine\"): \"[In the Cards](/wiki/In_the_Cards_(episode) \"In the Cards (episode)\")\"; [TNG](/wiki/Star_Trek:_The_Next_Generation \"Star Trek: The Next Generation\"): \"[The Best of Both Worlds](/wiki/The_Best_of_Both_Worlds_(episode) \"The Best of Both Worlds (episode)\")\"; [_Star Trek: First Contact_](/wiki/Star_Trek:_First_Contact \"Star Trek: First Contact\"))"
-          }
-        }
+          "ma:en": "Earth"
+        },
+        "id": 1
       },
       {
         "name": "Starbase 1",
@@ -32,19 +31,18 @@
           "federation starbase"
         ],
         "links": {
-          "ma:en": {
-            "id": "Starbase_1",
-            "extract": "**Starbase 1** was a [Federation](/wiki/Federation \"Federation\") [_Starbase 1_\\-type](/wiki/Starbase_1_type \"Starbase 1 type\") [space station](/wiki/Space_station \"Space station\") administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). It was located one hundred [au](/wiki/Astronomical_unit \"Astronomical unit\") from [Earth](/wiki/Earth \"Earth\"), near a [planetary](/wiki/Planet \"Planet\") body. In the [2250s](/wiki/2250s \"2250s\"), the [starbase](/wiki/Starbase \"Starbase\") was home to over eighty thousand Federation personnel.\n\nDuring the [Federation-Klingon War](/wiki/Federation-Klingon_War_(2256-57) \"Federation-Klingon War (2256-57)\"), the starbase was attacked and occupied by the [House of D'Ghor](/wiki/House_of_D%27Ghor \"House of D'Ghor\"). The battle went undetected until the [USS _Discovery_](/wiki/USS_Discovery \"USS Discovery\") arrived and found no life signs of the eighty thousand Federation inhabitants, which included a large contingent of leadership. Instead, 274 [Klingon](/wiki/Klingon \"Klingon\") [life signs](/wiki/Life_sign \"Life sign\") were detected on the station, as was a [painted](/wiki/Painting \"Painting\")\\-on crest of House D'Ghor. ([DIS](/wiki/Star_Trek:_Discovery \"Star Trek: Discovery\"): \"[The War Without, The War Within](/wiki/The_War_Without,_The_War_Within_(episode) \"The War Without, The War Within (episode)\")\")\n\nStarbase 1 was rebuilt after the war. In [2399](/wiki/2399 \"2399\"), Starbase 1's location was labeled in a [star chart](/wiki/Star_chart \"Star chart\") in [Fleet Admiral](/wiki/Fleet_Admiral \"Fleet Admiral\") [Kirsten Clancy](/wiki/Kirsten_Clancy \"Kirsten Clancy\")'s [office](/wiki/Office \"Office\") at [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\"). ([PIC](/wiki/Star_Trek:_Picard \"Star Trek: Picard\"): \"[Maps and Legends](/wiki/Maps_and_Legends_(episode) \"Maps and Legends (episode)\")\")"
-          },
+          "ma:en": "Starbase_1",
           "ma:mb": "Starbase_1"
         },
         "location": {
           "x": 0.498,
           "y": -1.436,
           "z": 0.5
-        }
+        },
+        "id": 2
       }
-    ]
+    ],
+    "id": 0
   },
   {
     "name": "Quo'Nos",
@@ -57,7 +55,8 @@
       "x": 79.9,
       "y": -70.6,
       "z": 20.23
-    }
+    },
+    "id": 3
   },
   {
     "location": {
@@ -76,7 +75,8 @@
         "location": {
           "x": 30.6,
           "y": 41.6
-        }
+        },
+        "id": 5
       },
       {
         "name": "Remus",
@@ -87,9 +87,11 @@
         "location": {
           "x": 30.6,
           "y": 41.6
-        }
+        },
+        "id": 6
       }
-    ]
+    ],
+    "id": 4
   },
   {
     "name": "Cardassia Prime",
@@ -102,7 +104,8 @@
       "x": -62.8,
       "y": -33.1,
       "z": -226.642943922
-    }
+    },
+    "id": 7
   },
   {
     "name": "Alpha Centauri",
@@ -121,29 +124,27 @@
           "z": -0.032950376278679055
         },
         "type": "star",
-        "orbits": null
+        "orbits": null,
+        "id": 9
       },
       {
         "name": "Proxima",
         "wd": "Q66724436",
         "links": {
-          "ma:en": {
-            "id": "Proxima_colony",
-            "extract": "**Proxima Colony** was a [Human](/wiki/Human \"Human\") settlement located near [Earth](/wiki/Earth \"Earth\").\n\n_In an [alternate timeline](/wiki/Alternate_timeline \"Alternate timeline\"), created by [Jonathan Archer](/wiki/Jonathan_Archer \"Jonathan Archer\") being [infected](/wiki/Infect \"Infect\") by [interspatial parasites](/wiki/Interspatial_parasite \"Interspatial parasite\"), the [Xindi](/wiki/Xindi \"Xindi\") destroyed [Earth](/wiki/Earth \"Earth\") in [2154](/wiki/2154 \"2154\") and then proceeded to annihilate all other Human settlements._ ([ENT](/wiki/Star_Trek:_Enterprise \"Star Trek: Enterprise\"): \"[Twilight](/wiki/Twilight_(episode) \"Twilight (episode)\")\")\n\nIn [2154](/wiki/2154 \"2154\"), after a group of Human [Augments](/wiki/Augment \"Augment\") commandeered a [Klingon Bird-of-Prey](/wiki/Klingon_Bird-of-Prey_(22nd_century) \"Klingon Bird-of-Prey (22nd century)\") and [murdered](/wiki/Murder \"Murder\") the [crew](/wiki/Crew \"Crew\"), a [Klingon](/wiki/Klingon \"Klingon\") [warship](/wiki/Warship \"Warship\") was spotted near Proxima colony, possibly conducting reconnaissance for a future strike against Humanity. ([ENT](/wiki/Star_Trek:_Enterprise \"Star Trek: Enterprise\"): \"[Borderland](/wiki/Borderland_(episode) \"Borderland (episode)\")\")\n\nLater that year, [Rigelians](/wiki/Rigelian \"Rigelian\") were hired by the Klingons to [kidnap](/wiki/Kidnap \"Kidnap\") [Doctor](/wiki/Doctor \"Doctor\") [Phlox](/wiki/Phlox \"Phlox\") and transport him to [Qu'Vat Colony](/wiki/Qu%27Vat_Colony \"Qu'Vat Colony\"). The Rigelians filed a false [flight plan](/wiki/Flight_plan \"Flight plan\") listing Proxima colony as their destination. ([ENT](/wiki/Star_Trek:_Enterprise \"Star Trek: Enterprise\"): \"[Affliction](/wiki/Affliction_(episode) \"Affliction (episode)\")\")"
-          },
-          "mb:en": {
-            "id": "Alpha_Centauri_III",
-            "extract": "**Alpha Centauri III (also known as** **Kolmyri)** was a [planet](/wiki/Planet \"Planet\"), the [third planet](/wiki/Third_planet \"Third planet\") in [orbit](/wiki/Orbit \"Orbit\") of the [star](/wiki/Star \"Star\") [Alpha Centauri A](/wiki/Alpha_Centauri_A \"Alpha Centauri A\"), located in the [Alpha Centauri](/wiki/Alpha_Centauri \"Alpha Centauri\") [system](/wiki/System \"System\"), in the [space](/wiki/Space \"Space\") of [the galaxy](/wiki/The_galaxy \"The galaxy\")'s [Beta Quadrant](/wiki/Beta_Quadrant \"Beta Quadrant\"). It became Earth's second extrasolar colony and capital planet of the [Alpha Centauri Concordium](/wiki/Alpha_Centauri_Concordium \"Alpha Centauri Concordium\")."
-          }
+          "ma:en": "Proxima_colony",
+          "mb:en": "Alpha_Centauri_III"
         },
         "tags": [
           "notable",
           "earth colony",
           "federation member",
-          "federation founding member"
-        ]
+          "federation founding member",
+          "dma-map"
+        ],
+        "id": 10
       }
-    ]
+    ],
+    "id": 8
   },
   {
     "name": "40 Eridani",
@@ -161,17 +162,21 @@
           "y": -12.05107687828057,
           "z": -10.162269375262357
         },
-        "orbits": null
+        "orbits": null,
+        "id": 12
       },
       {
         "name": "Vulcan",
         "tags": [
           "notable",
           "federation member",
-          "federation founding member"
-        ]
+          "federation founding member",
+          "dma-map"
+        ],
+        "id": 13
       }
-    ]
+    ],
+    "id": 11
   },
   {
     "name": "Regulus",
@@ -186,7 +191,8 @@
         "ordinal": 2,
         "tags": [
           "habitable"
-        ]
+        ],
+        "id": 15
       },
       {
         "name": "Regulus III",
@@ -195,7 +201,8 @@
           "inhabited",
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 16
       },
       {
         "name": "Regulus V",
@@ -209,9 +216,11 @@
             "name": "Regulus V City",
             "type": "city"
           }
-        ]
+        ],
+        "id": 17
       }
-    ]
+    ],
+    "id": 14
   },
   {
     "name": "Procyon",
@@ -223,17 +232,21 @@
     },
     "orbits": [
       {
-        "name": "Andor"
+        "name": "Andor",
+        "id": 19
       },
       {
         "name": "Andoria",
         "tags": [
           "notable",
           "federation member",
-          "federation founding member"
-        ]
+          "federation founding member",
+          "dma-map"
+        ],
+        "id": 20
       }
-    ]
+    ],
+    "id": 18
   },
   {
     "name": "61 Cygni",
@@ -248,28 +261,13 @@
         "tags": [
           "notable",
           "federation member",
-          "federation founding member"
-        ]
+          "federation founding member",
+          "dma-map"
+        ],
+        "id": 22
       }
-    ]
-  },
-  {
-    "name": "Tau Ceti",
-    "type": "star",
-    "location": {
-      "x": -0.3822404917116123,
-      "y": -3.3240666228395703,
-      "z": -11.425855144514129
-    },
-    "orbits": [
-      {
-        "name": "Kaferia",
-        "tags": [
-          "notable",
-          "inhabited"
-        ]
-      }
-    ]
+    ],
+    "id": 21
   },
   {
     "name": "Galactic Core",
@@ -278,7 +276,8 @@
       "x": -0.9081233897488445,
       "y": 25999.870931588197,
       "z": 81.91896036359795
-    }
+    },
+    "id": 23
   },
   {
     "name": "Epsilon Ceti",
@@ -294,7 +293,8 @@
           "x": 4.914563436233848,
           "y": -37.33454261283216,
           "z": -66.89669284395023
-        }
+        },
+        "id": 25
       },
       {
         "name": "Risa",
@@ -302,9 +302,11 @@
           "notable",
           "inhabited",
           "federation member"
-        ]
+        ],
+        "id": 26
       }
-    ]
+    ],
+    "id": 24
   },
   {
     "name": "Eta Cassiopeiae",
@@ -321,9 +323,11 @@
         "tags": [
           "notable",
           "earth colony"
-        ]
+        ],
+        "id": 28
       }
-    ]
+    ],
+    "id": 27
   },
   {
     "name": "36 Ophiuchi",
@@ -341,7 +345,8 @@
           "inhabited",
           "earth colony"
         ],
-        "ordinal": 3
+        "ordinal": 3,
+        "id": 30
       },
       {
         "name": "Ophiucus VI",
@@ -350,9 +355,11 @@
           "inhabited",
           "federation colony"
         ],
-        "ordinal": 4
+        "ordinal": 4,
+        "id": 31
       }
-    ]
+    ],
+    "id": 29
   },
   {
     "name": "Luyten's Star",
@@ -368,9 +375,11 @@
         "tags": [
           "notable",
           "vulcan colony"
-        ]
+        ],
+        "id": 33
       }
-    ]
+    ],
+    "id": 32
   },
   {
     "name": "Akaali",
@@ -378,13 +387,15 @@
     "tags": [
       "notable",
       "inhabited",
-      "pre-warp"
+      "pre-warp",
+      "dma-map"
     ],
     "location": {
       "x": 11.16,
       "y": -18.6,
-      "z": 80.9599
-    }
+      "z": -10.4
+    },
+    "id": 34
   },
   {
     "name": "Sigma Draconis",
@@ -396,23 +407,28 @@
     "orbits": [
       {
         "name": "Sigma Draconis I",
-        "ordinal": 1
+        "ordinal": 1,
+        "id": 36
       },
       {
         "name": "Sigma Draconis II",
-        "ordinal": 2
+        "ordinal": 2,
+        "id": 37
       },
       {
         "name": "Sigma Draconis III",
-        "ordinal": 3
+        "ordinal": 3,
+        "id": 38
       },
       {
         "name": "Sigma Draconis IV",
-        "ordinal": 4
+        "ordinal": 4,
+        "id": 39
       },
       {
         "name": "Sigma Draconis V",
-        "ordinal": 5
+        "ordinal": 5,
+        "id": 40
       },
       {
         "name": "Sigma Draconis VI",
@@ -420,21 +436,26 @@
         "tags": [
           "notable",
           "inhabited"
-        ]
+        ],
+        "id": 41
       },
       {
         "name": "Sigma Draconis VI",
-        "ordinal": 7
+        "ordinal": 7,
+        "id": 42
       },
       {
         "name": "Sigma Draconis VII",
-        "ordinal": 8
+        "ordinal": 8,
+        "id": 43
       },
       {
         "name": "Sigma Draconis IX",
-        "ordinal": 9
+        "ordinal": 9,
+        "id": 44
       }
-    ]
+    ],
+    "id": 35
   },
   {
     "name": "Antares",
@@ -447,7 +468,8 @@
     "orbits": [
       {
         "name": "Antares B",
-        "orbits": null
+        "orbits": null,
+        "id": 46
       },
       {
         "name": "Antares B III",
@@ -458,9 +480,11 @@
           "federation shipyard",
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 47
       }
-    ]
+    ],
+    "id": 45
   },
   {
     "name": "Kappa Fornacis",
@@ -475,10 +499,18 @@
         "tags": [
           "earth colony",
           "notable",
-          "federation member"
-        ]
+          "federation member",
+          "dma-map"
+        ],
+        "location": {
+          "x": 12.832684034316232,
+          "y": -22.717833687437132,
+          "z": 3
+        },
+        "id": 49
       }
-    ]
+    ],
+    "id": 48
   },
   {
     "name": "Chi1 Orionis",
@@ -494,9 +526,11 @@
           "notable",
           "dilithium",
           "federation member"
-        ]
+        ],
+        "id": 51
       }
-    ]
+    ],
+    "id": 50
   },
   {
     "name": "Epsilon Eridani",
@@ -513,9 +547,11 @@
           "inhabited",
           "warp-capable",
           "federation member"
-        ]
+        ],
+        "id": 53
       }
-    ]
+    ],
+    "id": 52
   },
   {
     "name": "Mu Leonis",
@@ -530,9 +566,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 55
       }
-    ]
+    ],
+    "id": 54
   },
   {
     "name": "Epsilon Serpentis",
@@ -547,9 +585,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 57
       }
-    ]
+    ],
+    "id": 56
   },
   {
     "name": "Alcor",
@@ -560,9 +600,11 @@
     },
     "orbits": [
       {
-        "name": "Alcor IV"
+        "name": "Alcor IV",
+        "id": 59
       }
-    ]
+    ],
+    "id": 58
   },
   {
     "name": "Wolf 424",
@@ -577,9 +619,11 @@
         "tags": [
           "notable",
           "neutral"
-        ]
+        ],
+        "id": 61
       }
-    ]
+    ],
+    "id": 60
   },
   {
     "name": "Epsilon Virginis",
@@ -593,10 +637,18 @@
         "name": "Dessica II",
         "tags": [
           "ancient romulan colony",
-          "notable"
-        ]
+          "notable",
+          "dma-map"
+        ],
+        "location": {
+          "x": 22.013210540763,
+          "y": 19.863412407182,
+          "z": 5
+        },
+        "id": 63
       }
-    ]
+    ],
+    "id": 62
   },
   {
     "name": "Beta Columbae",
@@ -611,9 +663,11 @@
         "tags": [
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 65
       }
-    ]
+    ],
+    "id": 64
   },
   {
     "name": "Delta Pavonis",
@@ -628,10 +682,13 @@
         "tags": [
           "federation member",
           "notable",
-          "inhabited"
-        ]
+          "inhabited",
+          "dma-map"
+        ],
+        "id": 67
       }
-    ]
+    ],
+    "id": 66
   },
   {
     "name": "15 Lyncis",
@@ -646,9 +703,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 69
       }
-    ]
+    ],
+    "id": 68
   },
   {
     "name": "Capella",
@@ -663,9 +722,11 @@
         "tags": [
           "near klingon empire",
           "near federation"
-        ]
+        ],
+        "id": 71
       }
-    ]
+    ],
+    "id": 70
   },
   {
     "name": "Lambda Sagittarii",
@@ -680,9 +741,11 @@
         "tags": [
           "notable",
           "inhabited"
-        ]
+        ],
+        "id": 73
       }
-    ]
+    ],
+    "id": 72
   },
   {
     "name": "83 Leonis B",
@@ -698,9 +761,11 @@
           "warp-capable",
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 75
       }
-    ]
+    ],
+    "id": 74
   },
   {
     "name": "Iota Boötis",
@@ -716,10 +781,18 @@
           "warp-capable",
           "inhabited",
           "notable",
-          "federation member"
-        ]
+          "federation member",
+          "dma-map"
+        ],
+        "location": {
+          "x": 29.033,
+          "y": -5.518,
+          "z": 0
+        },
+        "id": 77
       }
-    ]
+    ],
+    "id": 76
   },
   {
     "name": "Epsilon Indi",
@@ -734,10 +807,13 @@
         "tags": [
           "notable",
           "inhabited",
-          "federation member"
-        ]
+          "federation member",
+          "dma-map"
+        ],
+        "id": 79
       }
-    ]
+    ],
+    "id": 78
   },
   {
     "name": "Alpha Doradus",
@@ -751,9 +827,11 @@
         "name": "Freecloud",
         "tags": [
           "notable"
-        ]
+        ],
+        "id": 81
       }
-    ]
+    ],
+    "id": 80
   },
   {
     "name": "Gamma Hydra",
@@ -770,9 +848,11 @@
           "notable",
           "federation member",
           "andorian colony"
-        ]
+        ],
+        "id": 83
       }
-    ]
+    ],
+    "id": 82
   },
   {
     "name": "Gamma Trianguli",
@@ -787,9 +867,11 @@
         "tags": [
           "inhabited",
           "pre-warp"
-        ]
+        ],
+        "id": 85
       }
-    ]
+    ],
+    "id": 84
   },
   {
     "name": "Wolf 359",
@@ -797,7 +879,8 @@
       "x": 3.2610599769631663,
       "y": -1.6091439771271763,
       "z": 5.41547249941391
-    }
+    },
+    "id": 86
   },
   {
     "name": "Delta Muscae",
@@ -811,9 +894,11 @@
         "name": "Garadius IV",
         "tags": [
           "inhabited"
-        ]
+        ],
+        "id": 88
       }
-    ]
+    ],
+    "id": 87
   },
   {
     "name": "Omicron Indi",
@@ -829,9 +914,11 @@
           "inhabited",
           "neutral",
           "notable"
-        ]
+        ],
+        "id": 90
       }
-    ]
+    ],
+    "id": 89
   },
   {
     "name": "Iota Geminorum",
@@ -847,9 +934,11 @@
         "tags": [
           "habitable",
           "notable"
-        ]
+        ],
+        "id": 92
       }
-    ]
+    ],
+    "id": 91
   },
   {
     "name": "Beta Caeli",
@@ -864,9 +953,11 @@
         "ordinal": 2,
         "tag": [
           "inhabited"
-        ]
+        ],
+        "id": 94
       }
-    ]
+    ],
+    "id": 93
   },
   {
     "name": "Gamma Leporis",
@@ -881,9 +972,11 @@
         "tags": [
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 96
       }
-    ]
+    ],
+    "id": 95
   },
   {
     "name": "Epsilon Fornacis",
@@ -897,10 +990,18 @@
         "name": "Maluria",
         "tags": [
           "inhabited",
-          "notable"
-        ]
+          "notable",
+          "dma-map"
+        ],
+        "location": {
+          "x": 32.1,
+          "y": -35.3,
+          "z": 0
+        },
+        "id": 98
       }
-    ]
+    ],
+    "id": 97
   },
   {
     "name": "Xi Hydrae",
@@ -916,9 +1017,11 @@
           "notable",
           "inhabited",
           "federation member"
-        ]
+        ],
+        "id": 100
       }
-    ]
+    ],
+    "id": 99
   },
   {
     "name": "Omega Aurigae",
@@ -933,9 +1036,11 @@
         "tags": [
           "notable",
           "federation colony"
-        ]
+        ],
+        "id": 102
       }
-    ]
+    ],
+    "id": 101
   },
   {
     "name": "Pi3 Orionis",
@@ -949,10 +1054,13 @@
         "name": "Orion",
         "tags": [
           "notable",
-          "inhabited"
-        ]
+          "inhabited",
+          "dma-map"
+        ],
+        "id": 104
       }
-    ]
+    ],
+    "id": 103
   },
   {
     "name": "Pollux",
@@ -965,10 +1073,18 @@
       {
         "name": "Pollux IV",
         "tags": [
-          "notable"
-        ]
+          "notable",
+          "dma-map"
+        ],
+        "location": {
+          "x": 6.555771905371951,
+          "y": -30.271215067166505,
+          "z": 12
+        },
+        "id": 106
       }
-    ]
+    ],
+    "id": 105
   },
   {
     "name": "Psi Serpentis",
@@ -984,23 +1100,25 @@
           "notable",
           "inhabited",
           "federation member"
-        ]
+        ],
+        "id": 108
       }
-    ]
+    ],
+    "id": 107
   },
   {
     "name": "Gamma Equulei",
-    "location": {
-      "x": -92.68080453307175,
-      "y": 53.79792428468925,
-      "z": -49.396880607599016
-    },
     "orbits": [
       {
         "name": "Tagus Ⅲ",
-        "ordinal": 3
+        "ordinal": 3,
+        "tags": [
+          "dma-map"
+        ],
+        "id": 110
       }
-    ]
+    ],
+    "id": 109
   },
   {
     "name": "Bellatrix",
@@ -1015,7 +1133,8 @@
     "type": "star",
     "tags": [
       "landmark"
-    ]
+    ],
+    "id": 111
   },
   {
     "name": "Omega Fornacis",
@@ -1030,9 +1149,11 @@
         "tags": [
           "federation member",
           "notable"
-        ]
+        ],
+        "id": 113
       }
-    ]
+    ],
+    "id": 112
   },
   {
     "name": "Alpha Lyrae",
@@ -1046,10 +1167,13 @@
         "name": "Vega IX",
         "tags": [
           "earth colony",
-          "notable"
-        ]
+          "notable",
+          "dma-map"
+        ],
+        "id": 115
       }
-    ]
+    ],
+    "id": 114
   },
   {
     "name": "Cor Caroli",
@@ -1064,9 +1188,11 @@
         "tags": [
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 117
       }
-    ]
+    ],
+    "id": 116
   },
   {
     "name": "Azati Prime",
@@ -1078,7 +1204,8 @@
     "tags": [
       "xindi colony",
       "delphic expanse"
-    ]
+    ],
+    "id": 118
   },
   {
     "name": "Alpha Eridani",
@@ -1096,17 +1223,13 @@
           "notable"
         ],
         "links": {
-          "ma:en": {
-            "id": "Alpha_Eridani_II",
-            "extract": "**Alpha Eridani II** was the [inhabited](/wiki/Inhabited_planets \"Inhabited planets\") [second](/wiki/Second_planets \"Second planets\") [planet](/wiki/Planet \"Planet\") of its [star system](/wiki/Star_system \"Star system\"). This planet was aligned directly between [Earth](/wiki/Earth \"Earth\") and [Argelius II](/wiki/Argelius_II \"Argelius II\"). In the [22nd century](/wiki/22nd_century \"22nd century\"), an [Earth](/wiki/Federation_colonies#Earth_colonies \"Federation colonies\") [colony](/wiki/Colony \"Colony\") was founded on the planet.\n\nIn [2156](/wiki/2156 \"2156\"), the [Redjac](/wiki/Redjac \"Redjac\") [entity](/wiki/Entity \"Entity\") was responsible for [ten women](/wiki/Redjac%27s_Alpha_Eridani_victims_001 \"Redjac's Alpha Eridani victims 001\") being [knifed to death](/wiki/Murder \"Murder\") in the settlement of [Heliopolis](/wiki/Heliopolis \"Heliopolis\") on Alpha Eridani II. ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Wolf in the Fold](/wiki/Wolf_in_the_Fold_(episode) \"Wolf in the Fold (episode)\")\")"
-          },
-          "mb:en": {
-            "id": "Achernar_II",
-            "extract": "_For other uses, see [Achernar](/wiki/Achernar_(disambiguation) \"Achernar (disambiguation)\")._\n\n**Achernar II** (also known as **Alpha Eridani II**, [Romulan language](/wiki/Romulan_language \"Romulan language\"): **Atlai'fehill Kre**) was world orbiting the star [Achernar](/wiki/Achernar \"Achernar\").\n\nSometime in the [22nd century](/wiki/22nd_century \"22nd century\"), the planet was [colonized](/wiki/Colony \"Colony\") by [Earth](/wiki/Earth \"Earth\"). In [2156](/wiki/2156 \"2156\"), the entity known as [Redjac](/wiki/Redjac \"Redjac\") murdered several females in this planet's city [Heliopolis](/wiki/Heliopolis_(Achernar_II) \"Heliopolis (Achernar II)\"). Around the same time the colony was evacuated due to the threat of [Romulan](/wiki/Romulan \"Romulan\") invasion. [Gannet Brooks](/wiki/Gannet_Brooks \"Gannet Brooks\") reported on the evacuation. (_[TOS](/wiki/TOS \"TOS\")_ [episode](/wiki/Episode \"Episode\"): \"[Wolf in the Fold](/wiki/Wolf_in_the_Fold \"Wolf in the Fold\")\"; _[ENT](/wiki/ENT \"ENT\")_ [novel](/wiki/Novel \"Novel\"): _[Beneath the Raptor's Wing](/wiki/Beneath_the_Raptor%27s_Wing \"Beneath the Raptor's Wing\")_)\n\n_Given that [24th century](/wiki/24th_century \"24th century\") sources cite Achernar II as a Romulan planet, it seems likely that the world was captured by the Empire during the [Earth-Romulan War](/wiki/Earth-Romulan_War \"Earth-Romulan War\")._\n\nUntil December of [2379](/wiki/2379 \"2379\"), it was a [planet](/wiki/Planet \"Planet\") in the [Romulan Star Empire](/wiki/Romulan_Star_Empire \"Romulan Star Empire\"). That month, the planet fell under the control of the newly-formed [Imperial Romulan State](/wiki/Imperial_Romulan_State \"Imperial Romulan State\"), whose capital was the [Achernar Prime](/wiki/Achernar_Prime \"Achernar Prime\") in the same star system. (_[ST](/wiki/ST \"ST\")_ [novel](/wiki/Novel \"Novel\"): _[Articles of the Federation](/wiki/Articles_of_the_Federation \"Articles of the Federation\")_)"
-          }
-        }
+          "ma:en": "Alpha_Eridani_II",
+          "mb:en": "Achernar_II"
+        },
+        "id": 120
       }
-    ]
+    ],
+    "id": 119
   },
   {
     "name": "Caldos",
@@ -1123,9 +1246,11 @@
           "earth colony",
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 122
       }
-    ]
+    ],
+    "id": 121
   },
   {
     "name": "B'Hava'el",
@@ -1142,15 +1267,18 @@
           "notable",
           "inhabited",
           "federation member"
-        ]
+        ],
+        "id": 124
       },
       {
         "name": "Deep Space 9",
         "tags": [
           "deep space station"
-        ]
+        ],
+        "id": 125
       }
-    ]
+    ],
+    "id": 123
   },
   {
     "name": "Ajilon Prime",
@@ -1162,7 +1290,8 @@
       "x": 47.8,
       "y": -61.9,
       "z": -226.642943922
-    }
+    },
+    "id": 126
   },
   {
     "name": "The Binaries",
@@ -1176,7 +1305,8 @@
       "x": 20.409,
       "y": -69.913,
       "z": 86.89916002979173
-    }
+    },
+    "id": 127
   },
   {
     "name": "No'Mat",
@@ -1189,7 +1319,8 @@
     "tags": [
       "claimed by klingon empire",
       "notable"
-    ]
+    ],
+    "id": 128
   },
   {
     "name": "Theta Hydrae",
@@ -1204,9 +1335,11 @@
         "tags": [
           "claimed by klingon empire",
           "notable"
-        ]
+        ],
+        "id": 130
       }
-    ]
+    ],
+    "id": 129
   },
   {
     "name": "Cursa",
@@ -1218,7 +1351,8 @@
     "tags": [
       "claimed by klingon empire",
       "notable"
-    ]
+    ],
+    "id": 131
   },
   {
     "name": "Zeta Leporis",
@@ -1233,9 +1367,11 @@
         "tags": [
           "notable",
           "inhabited"
-        ]
+        ],
+        "id": 133
       }
-    ]
+    ],
+    "id": 132
   },
   {
     "name": "Pi Canis Majoris",
@@ -1251,9 +1387,11 @@
         "tags": [
           "claimed by klingon empire",
           "notable"
-        ]
+        ],
+        "id": 135
       }
-    ]
+    ],
+    "id": 134
   },
   {
     "name": "Delta Leporis",
@@ -1269,9 +1407,11 @@
         "tags": [
           "claimed by klingon empire",
           "notable"
-        ]
+        ],
+        "id": 137
       }
-    ]
+    ],
+    "id": 136
   },
   {
     "name": "Aldebaran",
@@ -1288,9 +1428,11 @@
           "federation member",
           "notable",
           "taurus reach"
-        ]
+        ],
+        "id": 139
       }
-    ]
+    ],
+    "id": 138
   },
   {
     "name": "Canopus",
@@ -1306,9 +1448,11 @@
         "tags": [
           "federation member",
           "notable"
-        ]
+        ],
+        "id": 141
       }
-    ]
+    ],
+    "id": 140
   },
   {
     "name": "94 Aquarii",
@@ -1324,9 +1468,11 @@
         "tags": [
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 143
       }
-    ]
+    ],
+    "id": 142
   },
   {
     "name": "Xi Pegasi",
@@ -1342,9 +1488,11 @@
         "tags": [
           "inhabited",
           "notable"
-        ]
+        ],
+        "id": 145
       }
-    ]
+    ],
+    "id": 144
   },
   {
     "name": "26 Draconis",
@@ -1359,10 +1507,18 @@
         "name": "Pyrithia",
         "tags": [
           "habitable",
-          "notable"
-        ]
+          "notable",
+          "dma-map"
+        ],
+        "location": {
+          "x": "-38.36911523062057,",
+          "y": "-0.7998515632732952,",
+          "z": -4
+        },
+        "id": 147
       }
-    ]
+    ],
+    "id": 146
   },
   {
     "name": "Ceti Alpha",
@@ -1378,9 +1534,11 @@
         "type": "planet",
         "tags": [
           "notable"
-        ]
+        ],
+        "id": 149
       }
-    ]
+    ],
+    "id": 148
   },
   {
     "name": "Pi Hydrae",
@@ -1397,9 +1555,11 @@
         "tags": [
           "notable",
           "federation outpost"
-        ]
+        ],
+        "id": 151
       }
-    ]
+    ],
+    "id": 150
   },
   {
     "name": "Alpha Gruis",
@@ -1416,9 +1576,11 @@
         "tags": [
           "notable",
           "inhabited"
-        ]
+        ],
+        "id": 153
       }
-    ]
+    ],
+    "id": 152
   },
   {
     "name": "Alpha Indi",
@@ -1432,18 +1594,17 @@
       {
         "name": "Rhaandar",
         "links": {
-          "mb:en": {
-            "id": "Rhaandarel",
-            "extract": "**Rhaandarel** or **Rhaandar** is a [class M](/wiki/Class_M \"Class M\") [planet](/wiki/Planet \"Planet\"), in the alpha quadrant, home to the [Rhaandarite](/wiki/Rhaandarite \"Rhaandarite\") [civilization](/wiki/Civilization \"Civilization\"). It orbits the Alpha Indi system. (_[Star Charts](/wiki/Star_Charts \"Star Charts\")_, United Federation of plenatet II)"
-          }
+          "mb:en": "Rhaandarel"
         },
         "type": "planet",
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 155
       }
-    ]
+    ],
+    "id": 154
   },
   {
     "name": "Eta Lupi",
@@ -1460,9 +1621,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 157
       }
-    ]
+    ],
+    "id": 156
   },
   {
     "name": "Betelgeuse",
@@ -1479,9 +1642,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 159
       }
-    ]
+    ],
+    "id": 158
   },
   {
     "name": "Beta Cephei",
@@ -1496,34 +1661,28 @@
         "name": "Verdanis",
         "type": "planet",
         "links": {
-          "ma:en": {
-            "id": "Verdanis",
-            "extract": "**Verdanis** was an [inhabited](/wiki/Inhabited_planets \"Inhabited planets\") [planet](/wiki/Planet \"Planet\") located ten [days](/wiki/Day \"Day\") away from [Terra 10](/wiki/Terra_10 \"Terra 10\"), and the [star](/wiki/Star \"Star\") [Cepheus](/wiki/Cepheus \"Cepheus\"). It was described by [James T. Kirk](/wiki/James_T._Kirk \"James T. Kirk\") as \"_very beautiful, much like [Earth](/wiki/Earth \"Earth\")_\" .\n\nIn [2269](/wiki/2269 \"2269\"), the [USS _Enterprise_](/wiki/USS_Enterprise_(NCC-1701) \"USS Enterprise (NCC-1701)\") transplanted the [Terratin](/wiki/Terratin \"Terratin\") [colony](/wiki/Colony \"Colony\") from the dying Terra 10 to a [fertile](/wiki/Fertility \"Fertility\") and well [watered](/wiki/Water \"Water\") [plain](/wiki/Plain \"Plain\") on Verdanis. ([TAS](/wiki/Star_Trek:_The_Animated_Series \"Star Trek: The Animated Series\"): \"[The Terratin Incident](/wiki/The_Terratin_Incident_(episode) \"The Terratin Incident (episode)\")\")"
-          }
+          "ma:en": "Verdanis"
         },
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 161
       },
       {
         "name": "Terratin",
         "type": "planet",
         "links": {
-          "ma:en": {
-            "id": "Terra_10",
-            "extract": "**Terra 10** was the formerly [inhabited](/wiki/Inhabited_planets \"Inhabited planets\") [M class](/wiki/Class_M \"Class M\") [first](/wiki/First_planets \"First planets\"), and only, [planet](/wiki/Planet \"Planet\") [orbiting](/wiki/Orbit \"Orbit\") the [primary](/wiki/Star \"Star\") [Cepheus](/wiki/Cepheus \"Cepheus\"). It was the home of an [Earth colony](/wiki/Federation_colonies#Earth_colonies \"Federation colonies\"). The planet was located near the [nova](/wiki/Nova_(star) \"Nova (star)\") [Arachna](/wiki/Arachna \"Arachna\").\n\nAn early exploration of the region described the planet as being class M, with a [molten](/wiki/Magma \"Magma\") [planetary core](/wiki/Planetary_core \"Planetary core\") surrounded by a [mantle](/wiki/Mantle \"Mantle\") and [crust](/wiki/Crust \"Crust\") that was entirely [crystalline](/wiki/Crystal \"Crystal\"), including a rich abundance of [dilithium](/wiki/Dilithium \"Dilithium\"). ([TAS](/wiki/Star_Trek:_The_Animated_Series \"Star Trek: The Animated Series\"): \"[The Terratin Incident](/wiki/The_Terratin_Incident_(episode) \"The Terratin Incident (episode)\")\")"
-          },
-          "mb:en": {
-            "id": "Terra_10",
-            "extract": "**Terra 10** was an early [Human](/wiki/Human \"Human\") [colony](/wiki/Colony \"Colony\"), settled during the [21st century](/wiki/21st_century \"21st century\") by emigres opposed to the political changes of the era on [Earth](/wiki/Earth \"Earth\"). (_[SCE](/wiki/SCE \"SCE\")_ [eBook](/wiki/EBook \"EBook\"): _[Out of the Cocoon](/wiki/Out_of_the_Cocoon \"Out of the Cocoon\")_) The colony was established on the only [planet](/wiki/Planet \"Planet\") orbiting [Cephenes](/wiki/Cephenes \"Cephenes\") near the Arachna Nebula.\n\nThe world had much volcanic activity and a crystalline surface. (_[ST](/wiki/ST \"ST\")_ [website](/wiki/Website \"Website\"): _[StarTrek.com](/wiki/StarTrek.com \"StarTrek.com\")_)\n\nBy the [23rd century](/wiki/23rd_century \"23rd century\"), the colony had been shrunken due to exposure to natural [radiation](/wiki/Radiation \"Radiation\") (spiroid energy waves) present on the planet where it had been established. When that planet started dying, the colonists desperately sought the help of the [USS _Enterprise_](/wiki/USS_Enterprise_(NCC-1701) \"USS Enterprise (NCC-1701)\"), shrinking the crew of that ship in the process. The _Enterprise_ was eventually able to restore its own crew to full size, rescue the colony, and relocate it to a distant [Class M](/wiki/Class_M \"Class M\") planet. (_[TAS](/wiki/TAS \"TAS\")_ [episode](/wiki/Episode \"Episode\") & _[Log Four](/wiki/Log_Four \"Log Four\")_ [novelization](/wiki/Novelization \"Novelization\"): _[The Terratin Incident](/wiki/The_Terratin_Incident \"The Terratin Incident\")_, _[ST](/wiki/ST \"ST\")_ [website](/wiki/Website \"Website\"): _[StarTrek.com](/wiki/StarTrek.com \"StarTrek.com\")_)"
-          }
+          "ma:en": "Terra_10",
+          "mb:en": "Terra_10"
         },
         "tags": [
           "notable"
-        ]
+        ],
+        "id": 162
       }
-    ]
+    ],
+    "id": 160
   },
   {
     "name": "Kappa Delphini",
@@ -1540,9 +1699,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 164
       }
-    ]
+    ],
+    "id": 163
   },
   {
     "name": "Epsilon Boötis",
@@ -1559,9 +1720,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 166
       }
-    ]
+    ],
+    "id": 165
   },
   {
     "name": "Iota Leonis",
@@ -1577,10 +1740,18 @@
         "type": "planet",
         "tags": [
           "notable",
-          "federation member"
-        ]
+          "federation member",
+          "dma-map"
+        ],
+        "location": {
+          "x": 32.412208088499206,
+          "y": -13.657184124061743,
+          "z": 4
+        },
+        "id": 168
       }
-    ]
+    ],
+    "id": 167
   },
   {
     "name": "Sirius",
@@ -1597,9 +1768,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 170
       }
-    ]
+    ],
+    "id": 169
   },
   {
     "name": "Chi Eridani",
@@ -1616,9 +1789,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 172
       }
-    ]
+    ],
+    "id": 171
   },
   {
     "name": "Eta Scorpii",
@@ -1635,9 +1810,11 @@
         "tags": [
           "notable",
           "federation colony"
-        ]
+        ],
+        "id": 174
       }
-    ]
+    ],
+    "id": 173
   },
   {
     "name": "Deneb",
@@ -1654,9 +1831,11 @@
         "tags": [
           "notable",
           "federation member"
-        ]
+        ],
+        "id": 176
       }
-    ]
+    ],
+    "id": 175
   },
   {
     "name": "Beta Lyrae",
@@ -1671,9 +1850,11 @@
         "type": "planet",
         "tags": [
           "notable"
-        ]
+        ],
+        "id": 178
       }
-    ]
+    ],
+    "id": 177
   },
   {
     "orbits": null,
@@ -1686,7 +1867,8 @@
       "x": 77.5,
       "y": -47.9,
       "z": 47.23142
-    }
+    },
+    "id": 179
   },
   {
     "name": "Gamma 400",
@@ -1699,17 +1881,16 @@
       {
         "name": "Starbase 12",
         "links": {
-          "ma:en": {
-            "id": "Starbase_12",
-            "extract": "**Starbase 12** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). It was located on a [planet](/wiki/Starbase_12_planet \"Starbase 12 planet\") in the [Gamma 400 star system](/wiki/Gamma_400_star_system \"Gamma 400 star system\"), in [Sector 25712](/wiki/Sector_25712 \"Sector 25712\"), in the [Alpha Quadrant](/wiki/Alpha_Quadrant \"Alpha Quadrant\"). It was located close to the [planets](/wiki/Planet \"Planet\") [Achrady VII](/wiki/Achrady_VII \"Achrady VII\"), [Ceti Alpha V](/wiki/Ceti_Alpha_V \"Ceti Alpha V\"), [Gemaris V](/wiki/Gemaris_V \"Gemaris V\"), [Mab-Bu VI](/wiki/Mab-Bu_VI \"Mab-Bu VI\"), [Pollux IV](/wiki/Pollux_IV \"Pollux IV\"), and [Risa](/wiki/Risa \"Risa\"). One function of the starbase was as a patrol base for starships patrolling the [Romulan Neutral Zone](/wiki/Romulan_Neutral_Zone \"Romulan Neutral Zone\"). ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Space Seed](/wiki/Space_Seed_(episode) \"Space Seed (episode)\")\", \"[Who Mourns for Adonais?](/wiki/Who_Mourns_for_Adonais%3F_(episode) \"Who Mourns for Adonais? (episode)\")\"; [TNG](/wiki/Star_Trek:_The_Next_Generation \"Star Trek: The Next Generation\"): \"[Captain's Holiday](/wiki/Captain%27s_Holiday_(episode) \"Captain's Holiday (episode)\")\", \"[Power Play](/wiki/Power_Play_(episode) \"Power Play (episode)\")\", \"[Aquiel](/wiki/Aquiel_(episode) \"Aquiel (episode)\")\")"
-          }
+          "ma:en": "Starbase_12"
         },
         "tags": [
           "notable",
           "federation starbase"
-        ]
+        ],
+        "id": 181
       }
-    ]
+    ],
+    "id": 180
   },
   {
     "location": {
@@ -1723,9 +1904,11 @@
         "tags": [
           "notable",
           "claimed by klingon empire"
-        ]
+        ],
+        "id": 183
       }
-    ]
+    ],
+    "id": 182
   },
   {
     "name": "Psi Tauri",
@@ -1741,17 +1924,16 @@
           "notable",
           "federation member",
           "inhabited"
-        ]
+        ],
+        "id": 185
       }
-    ]
+    ],
+    "id": 184
   },
   {
     "name": "Starbase 11",
     "links": {
-      "ma:en": {
-        "id": "Starbase_11",
-        "extract": "**Starbase 11** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). This starbase, located on [planet](/wiki/Planet \"Planet\") [M-11](/wiki/M-11 \"M-11\"), was in the [Alpha Quadrant](/wiki/Alpha_Quadrant \"Alpha Quadrant\"). The base had repair and maintenance facilities for [starships](/wiki/Starship \"Starship\") and at least some facilities were located on the planetary [surface](/wiki/Surface \"Surface\"). In [2267](/wiki/2267 \"2267\"), command of Starbase 11 passed from [Commodore](/wiki/Commodore \"Commodore\") [Stone](/wiki/Stone_(Commodore) \"Stone (Commodore)\") to Commodore [Mendez](/wiki/Jos%C3%A9_I._Mendez \"José I. Mendez\"). Starbase 11 was located two [light years](/wiki/Light_year \"Light year\") away from [Talos IV](/wiki/Talos_IV \"Talos IV\"). ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Court Martial](/wiki/Court_Martial_(episode) \"Court Martial (episode)\")\", \"[The Menagerie, Part I](/wiki/The_Menagerie,_Part_I_(episode) \"The Menagerie, Part I (episode)\")\"; [DIS](/wiki/Star_Trek:_Discovery \"Star Trek: Discovery\"): \"[If Memory Serves](/wiki/If_Memory_Serves_(episode) \"If Memory Serves (episode)\")\")"
-      }
+      "ma:en": "Starbase_11"
     },
     "tags": [
       "notable",
@@ -1761,15 +1943,13 @@
       "x": -21.078,
       "y": -74.729,
       "z": 31
-    }
+    },
+    "id": 186
   },
   {
     "name": "Starbase 2",
     "links": {
-      "ma:en": {
-        "id": "Starbase_2",
-        "extract": "**Starbase 2** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). It had a well-equipped and -staffed [medical facility](/wiki/Medical_facility \"Medical facility\"). It was located seventy-two [hours](/wiki/Hour \"Hour\") away from [Camus II](/wiki/Camus_II \"Camus II\") at [warp 2](/wiki/Warp_factor \"Warp factor\").\n\nIn [2269](/wiki/2269 \"2269\"), [Commander](/wiki/Commander \"Commander\") [Spock](/wiki/Spock \"Spock\") suggested taking [Doctor](/wiki/Doctor \"Doctor\") [Janice Lester](/wiki/Janice_Lester \"Janice Lester\") (with [James T. Kirk](/wiki/James_T._Kirk \"James T. Kirk\") in her [body](/wiki/Body \"Body\"), a fact unknown to anyone but the two of them at the time) to Starbase 2 instead of [Benecia Colony](/wiki/Benecia_Colony \"Benecia Colony\"), whose facilities were inferior. Given the nature of Lester's condition, \"Kirk\" (Lester in his body) was inclined to disagree, saying that \"Lester\" would die before they arrived. Spock suggested they travel at [maximum speed](/wiki/Maximum_speed \"Maximum speed\"), but \"Kirk\" dismissed his suggestions out of hand (wanting Kirk to die). ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Turnabout Intruder](/wiki/Turnabout_Intruder_(episode) \"Turnabout Intruder (episode)\")\")"
-      }
+      "ma:en": "Starbase_2"
     },
     "tags": [
       "notable",
@@ -1779,7 +1959,8 @@
       "x": -5.546,
       "y": -69.5,
       "z": -33.360341721
-    }
+    },
+    "id": 187
   },
   {
     "name": "Planet Q",
@@ -1791,7 +1972,8 @@
       "x": -4,
       "y": -69.5,
       "z": 39
-    }
+    },
+    "id": 188
   },
   {
     "name": "FGC 24187",
@@ -1807,7 +1989,8 @@
           "x": 20.3,
           "y": -74.4,
           "z": -42
-        }
+        },
+        "id": 190
       },
       {
         "name": "Deep Space K-7",
@@ -1819,9 +2002,11 @@
           "x": 25.3,
           "y": -63.6,
           "z": -45
-        }
+        },
+        "id": 191
       }
-    ]
+    ],
+    "id": 189
   },
   {
     "name": "Starbase 24",
@@ -1833,7 +2018,8 @@
       "x": 73.965,
       "y": -47.44,
       "z": -127.416499274
-    }
+    },
+    "id": 192
   },
   {
     "name": "Mempa",
@@ -1845,7 +2031,8 @@
       "x": 83.1,
       "y": -57.2,
       "z": 9.843161558
-    }
+    },
+    "id": 193
   },
   {
     "name": "Beta Lankal",
@@ -1857,7 +2044,8 @@
       "x": 86.1,
       "y": -51.2,
       "z": 12
-    }
+    },
+    "id": 194
   },
   {
     "name": "Maranga IV",
@@ -1869,7 +2057,8 @@
       "x": 248.704,
       "y": -228.946,
       "z": 0
-    }
+    },
+    "id": 195
   },
   {
     "name": "Gamma Geminorum",
@@ -1884,9 +2073,11 @@
         "tags": [
           "klingon outpost",
           "notable"
-        ]
+        ],
+        "id": 197
       }
-    ]
+    ],
+    "id": 196
   },
   {
     "name": "Vanguard",
@@ -1899,7 +2090,8 @@
       "x": -3.759,
       "y": -196.342,
       "z": -78
-    }
+    },
+    "id": 198
   },
   {
     "name": "Cestus III",
@@ -1912,7 +2104,8 @@
       "x": 81.295,
       "y": -199.678,
       "z": -82
-    }
+    },
+    "id": 199
   },
   {
     "name": "Pacifica",
@@ -1925,15 +2118,13 @@
       "x": -39.474,
       "y": -197.368,
       "z": -72.969255732
-    }
+    },
+    "id": 200
   },
   {
     "name": "Starbase 4",
     "links": {
-      "ma:en": {
-        "id": "Starbase_4",
-        "extract": "**Starbase 4** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") that was administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). The planets [Ariannus](/wiki/Ariannus \"Ariannus\"), [Marcos XII](/wiki/Marcos_XII \"Marcos XII\"), and [Triacus](/wiki/Triacus \"Triacus\"), and the [primary](/wiki/Star \"Star\") [Epsilon Indi](/wiki/Epsilon_Indi \"Epsilon Indi\") were located near this starbase.\n\nThe [survivors](/wiki/Survivor \"Survivor\") of the [Starnes Exploration Party](/wiki/Starnes_Exploration_Party \"Starnes Exploration Party\") on Triacus were transported to Starbase 4 by the [USS _Enterprise_](/wiki/USS_Enterprise_(NCC-1701) \"USS Enterprise (NCC-1701)\") in [2268](/wiki/2268 \"2268\"). ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[And the Children Shall Lead](/wiki/And_the_Children_Shall_Lead_(episode) \"And the Children Shall Lead (episode)\")\")\n\nLater in the same [year](/wiki/Year \"Year\"), one of its [shuttlecraft](/wiki/Shuttlecraft \"Shuttlecraft\"), _[da Vinci](/wiki/Da_Vinci \"Da Vinci\")_, was [stolen](/wiki/Stole \"Stole\") from the starbase by [Lokai](/wiki/Lokai \"Lokai\"), a [fugitive](/wiki/Fugitive \"Fugitive\") from the [planet](/wiki/Planet \"Planet\") [Cheron](/wiki/Cheron \"Cheron\"), two [weeks](/wiki/Week \"Week\") before it was found by the _Enterprise_. ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Let That Be Your Last Battlefield](/wiki/Let_That_Be_Your_Last_Battlefield_(episode) \"Let That Be Your Last Battlefield (episode)\")\")\n\nIn [2399](/wiki/2399 \"2399\"), the location of Starbase 4 was labeled in a [star chart](/wiki/Star_chart \"Star chart\") that was in [Fleet Admiral](/wiki/Fleet_Admiral \"Fleet Admiral\") [Kirsten Clancy](/wiki/Kirsten_Clancy \"Kirsten Clancy\")'s [office](/wiki/Office \"Office\") at [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\"). The starbase was located in or near to [Federation space](/wiki/Federation_space \"Federation space\"). ([PIC](/wiki/Star_Trek:_Picard \"Star Trek: Picard\"): \"[Maps and Legends](/wiki/Maps_and_Legends_(episode) \"Maps and Legends (episode)\")\")"
-      }
+      "ma:en": "Starbase_4"
     },
     "tags": [
       "notable",
@@ -1943,15 +2134,13 @@
       "x": 8.359,
       "y": 32.375,
       "z": 32.341172132605735
-    }
+    },
+    "id": 201
   },
   {
     "name": "Starbase 10",
     "links": {
-      "ma:en": {
-        "id": "Starbase_10",
-        "extract": "**Starbase 10** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") that was administered by [Starfleet](/wiki/Starfleet \"Starfleet\"). The base was located in the [Alpha Quadrant](/wiki/Alpha_Quadrant \"Alpha Quadrant\"), near [Deneva](/wiki/Deneva \"Deneva\"). A direct [course](/wiki/Course \"Course\") from [Gamma Hydra](/wiki/Gamma_Hydra \"Gamma Hydra\") to this base would pass through the [Romulan Neutral Zone](/wiki/Romulan_Neutral_Zone \"Romulan Neutral Zone\"). This star fell into the administrative area of the base.\n\nIn [2267](/wiki/2267 \"2267\"), the [USS _Enterprise_](/wiki/USS_Enterprise_(NCC-1701) \"USS Enterprise (NCC-1701)\") traveled to this base following its [mission](/wiki/Mission \"Mission\") to Deneva. Later that year, [Commodore](/wiki/Commodore \"Commodore\") [Stocker](/wiki/Stocker \"Stocker\") was assigned command of the base and was transported there by the _Enterprise_. ([TOS](/wiki/Star_Trek:_The_Original_Series \"Star Trek: The Original Series\"): \"[Operation -- Annihilate!](/wiki/Operation_--_Annihilate!_(episode) \"Operation -- Annihilate! (episode)\")\", \"[The Deadly Years](/wiki/The_Deadly_Years_(episode) \"The Deadly Years (episode)\")\"; [VOY](/wiki/Star_Trek:_Voyager \"Star Trek: Voyager\"): \"[Tinker Tenor Doctor Spy](/wiki/Tinker_Tenor_Doctor_Spy_(episode) \"Tinker Tenor Doctor Spy (episode)\")\")\n\nIn [2399](/wiki/2399 \"2399\"), the location of Starbase 10 was labeled in a star chart that was in [Fleet Admiral](/wiki/Fleet_Admiral \"Fleet Admiral\") [Kirsten Clancy](/wiki/Kirsten_Clancy \"Kirsten Clancy\")'s [office](/wiki/Office \"Office\") at [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\"). This base was located in or near to [Federation space](/wiki/Federation_space \"Federation space\"). ([PIC](/wiki/Star_Trek:_Picard \"Star Trek: Picard\"): \"[Maps and Legends](/wiki/Maps_and_Legends_(episode) \"Maps and Legends (episode)\")\")"
-      }
+      "ma:en": "Starbase_10"
     },
     "tags": [
       "notable",
@@ -1961,15 +2150,13 @@
       "x": 17.716,
       "y": 25.24,
       "z": -55.74853976
-    }
+    },
+    "id": 202
   },
   {
     "name": "Starbase 105",
     "links": {
-      "ma:en": {
-        "id": "Starbase_105",
-        "extract": "**Starbase 105** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") administrated by [Starfleet](/wiki/Starfleet \"Starfleet\"). This base, located in the [Beta Quadrant](/wiki/Beta_Quadrant \"Beta Quadrant\"), was in operation as early as [2257](/wiki/2257 \"2257\"). ([DIS](/wiki/Star_Trek:_Discovery \"Star Trek: Discovery\"): \"[An Obol for Charon](/wiki/An_Obol_for_Charon_(episode) \"An Obol for Charon (episode)\")\")\n\nIn 2257, its [location](/wiki/Location \"Location\") was labeled on the [star chart](/wiki/Star_chart \"Star chart\") showing the trajectory of [Lieutenant](/wiki/Lieutenant \"Lieutenant\") [Spock](/wiki/Spock \"Spock\")'s [shuttle](/wiki/SMT_05 \"SMT 05\"). ([DIS](/wiki/Star_Trek:_Discovery \"Star Trek: Discovery\"): \"[An Obol for Charon](/wiki/An_Obol_for_Charon_(episode) \"An Obol for Charon (episode)\")\")\n\n_In an [alternate timeline](/wiki/Alternate_timeline \"Alternate timeline\"), Starbase 105 was intended to be the destination of the [USS _Enterprise_\\-D](/wiki/USS_Enterprise_(NCC-1701-D)#.22Yesterday.27s_Enterprise.22 \"USS Enterprise (NCC-1701-D)\") and the salvaged [USS _Enterprise_\\-C](/wiki/USS_Enterprise_(NCC-1701-C) \"USS Enterprise (NCC-1701-C)\"), following that [vessel](/wiki/Vessel \"Vessel\")'s emergence from a [temporal rift](/wiki/Temporal_rift \"Temporal rift\") in [2366](/wiki/2366 \"2366\")._ ([TNG](/wiki/Star_Trek:_The_Next_Generation \"Star Trek: The Next Generation\"): \"[Yesterday's Enterprise](/wiki/Yesterday%27s_Enterprise_(episode) \"Yesterday's Enterprise (episode)\")\")\n\nIn [2399](/wiki/2399 \"2399\"), the starbase's location was labeled on a star chart that was in [Fleet Admiral](/wiki/Fleet_Admiral \"Fleet Admiral\") [Kirsten Clancy](/wiki/Kirsten_Clancy \"Kirsten Clancy\")'s [office](/wiki/Office \"Office\") at [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\"). This base was located in or near to [Federation space](/wiki/Federation_space \"Federation space\"). ([PIC](/wiki/Star_Trek:_Picard \"Star Trek: Picard\"): \"[Maps and Legends](/wiki/Maps_and_Legends_(episode) \"Maps and Legends (episode)\")\")"
-      }
+      "ma:en": "Starbase_105"
     },
     "tags": [
       "notable",
@@ -1979,15 +2166,13 @@
       "x": 133.994,
       "y": -45.764,
       "z": false
-    }
+    },
+    "id": 203
   },
   {
     "name": "Starbase 123",
     "links": {
-      "ma:en": {
-        "id": "Starbase_123",
-        "extract": "**Starbase 123** was a [Federation](/wiki/Federation \"Federation\") [starbase](/wiki/Starbase \"Starbase\") administered by [Starfleet](/wiki/Starfleet \"Starfleet\").\n\nIn [2366](/wiki/2366 \"2366\"), Starbase 123 detected two [Romulan](/wiki/Romulan \"Romulan\") [_D'deridex_\\-class](/wiki/D%27deridex_class \"D'deridex class\") [cruisers](/wiki/Cruiser \"Cruiser\") on an [intercept course](/wiki/Intercept_course \"Intercept course\") with [Tin Man](/wiki/Gomtuu \"Gomtuu\"), just prior to Starfleet's contact with that [lifeform](/wiki/Lifeform \"Lifeform\"). ([TNG](/wiki/Star_Trek:_The_Next_Generation \"Star Trek: The Next Generation\"): \"[Tin Man](/wiki/Tin_Man_(episode) \"Tin Man (episode)\")\")"
-      }
+      "ma:en": "Starbase_123"
     },
     "tags": [
       "notable",
@@ -1997,15 +2182,13 @@
       "x": 153.891,
       "y": -15.2,
       "z": -127.3786422
-    }
+    },
+    "id": 204
   },
   {
     "name": "Balduk",
     "links": {
-      "ma:en": {
-        "id": "Balduk_(location)",
-        "extract": "**Balduk** was a location within [Klingon space](/wiki/Klingon_space \"Klingon space\"), in the [Beta Quadrant](/wiki/Beta_Quadrant \"Beta Quadrant\").\n\nIn [2256](/wiki/2256 \"2256\"), its location was labeled on the [star chart](/wiki/Star_chart \"Star chart\") \"Alpha/Beta Quadrant Overview\" in the [ready room](/wiki/Ready_room \"Ready room\") aboard the [USS _Discovery_](/wiki/USS_Discovery \"USS Discovery\"). ([DIS](/wiki/Star_Trek:_Discovery \"Star Trek: Discovery\"): \"[Magic to Make the Sanest Man Go Mad](/wiki/Magic_to_Make_the_Sanest_Man_Go_Mad_(episode) \"Magic to Make the Sanest Man Go Mad (episode)\")\", \"[The War Without, The War Within](/wiki/The_War_Without,_The_War_Within_(episode) \"The War Without, The War Within (episode)\")\")\n\nIn [2399](/wiki/2399 \"2399\"), its location was labeled on a [star chart](/wiki/Star_chart \"Star chart\") that was in [Fleet Admiral](/wiki/Fleet_Admiral \"Fleet Admiral\") [Kirsten Clancy](/wiki/Kirsten_Clancy \"Kirsten Clancy\")'s [office](/wiki/Office \"Office\") at [Starfleet Headquarters](/wiki/Starfleet_Headquarters \"Starfleet Headquarters\"). ([PIC](/wiki/Star_Trek:_Picard \"Star Trek: Picard\"): \"[Maps and Legends](/wiki/Maps_and_Legends_(episode) \"Maps and Legends (episode)\")\")"
-      }
+      "ma:en": "Balduk_(location)"
     },
     "tags": [
       "notable",
@@ -2015,6 +2198,222 @@
       "x": 99,
       "y": -23,
       "z": 48
-    }
+    },
+    "id": 205
+  },
+  {
+    "name": "Beta Rigel",
+    "location": {
+      "x": 15.7,
+      "y": -27.6,
+      "z": 0
+    },
+    "tags": [
+      "dma-map"
+    ],
+    "orbits": [
+      {
+        "name": "Rigel X",
+        "id": 207
+      }
+    ],
+    "id": 206
+  },
+  {
+    "name": "Cor Caroli",
+    "tags": [
+      "dma-map"
+    ],
+    "location": {
+      "x": -18.8,
+      "y": -10.25,
+      "z": -4
+    },
+    "id": 208
+  },
+  {
+    "name": "Rator",
+    "location": {
+      "x": 44.481,
+      "y": 4,
+      "z": 0
+    },
+    "id": 209
+  },
+  {
+    "name": "Altair",
+    "tags": [
+      "dma-map"
+    ],
+    "location": {
+      "x": -12.437029445314954,
+      "y": 11.291470192801494,
+      "z": -2.6120871848857186
+    },
+    "id": 210
+  },
+  {
+    "name": "Nelvana",
+    "tags": [
+      "dma-map"
+    ],
+    "location": {
+      "x": 29,
+      "y": 5.5,
+      "z": 0
+    },
+    "id": 211
+  },
+  {
+    "name": "Zeta Herculis",
+    "location": {
+      "x": -21.40300532158983,
+      "y": 16.17042460637901,
+      "z": 22.7799251610795
+    },
+    "orbits": [
+      {
+        "name": "Inferna Prime",
+        "tags": [
+          "dma-map",
+          "federation member"
+        ],
+        "location": {
+          "x": -21.4,
+          "y": 16.3,
+          "z": 0
+        },
+        "id": 213
+      }
+    ],
+    "id": 212
+  },
+  {
+    "name": "Toroth",
+    "tags": [
+      "dma-map"
+    ],
+    "location": {
+      "x": 4.9,
+      "y": -38.3,
+      "z": 0
+    },
+    "id": 214
+  },
+  {
+    "name": "Tau Coronae Borealis",
+    "location": "wd:Q5098360",
+    "tags": [
+      "dma-map"
+    ],
+    "orbits": [
+      {
+        "name": "Hupyria",
+        "location": {
+          "x": -65.1,
+          "y": 40.4,
+          "z": 0
+        },
+        "id": 216
+      }
+    ],
+    "id": 215
+  },
+  {
+    "name": "Bolarus IX",
+    "tags": [
+      "dma-map",
+      "federation member"
+    ],
+    "location": {
+      "x": 8,
+      "y": 27.1,
+      "z": 2
+    },
+    "id": 217
+  },
+  {
+    "name": "Tellun",
+    "location": {
+      "x": 13.3,
+      "y": -37.4,
+      "z": -3
+    },
+    "tags": [
+      "dma-map"
+    ],
+    "orbits": [
+      {
+        "name": "Elas",
+        "id": 219
+      },
+      {
+        "name": "Troyius",
+        "id": 220
+      }
+    ],
+    "id": 218
+  },
+  {
+    "name": "Priors World",
+    "location": {
+      "x": 15,
+      "y": -34,
+      "z": -2
+    },
+    "tags": [
+      "dma-map"
+    ],
+    "id": 221
+  },
+  {
+    "name": "Nausicaa",
+    "tags": [
+      "dma-map"
+    ],
+    "location": {
+      "x": 28.2,
+      "y": -30.5,
+      "z": 3
+    },
+    "id": 222
+  },
+  {
+    "name": "Tau Ceti",
+    "type": "star",
+    "location": {
+      "x": -0.3822404917116123,
+      "y": -3.3240666228395703,
+      "z": -11.425855144514129
+    },
+    "tags": [
+      "dma-map"
+    ],
+    "orbits": [
+      {
+        "name": "Kaferia",
+        "tags": [
+          "notable",
+          "inhabited"
+        ],
+        "id": 224
+      }
+    ],
+    "id": 223
+  },
+  {
+    "name": "Zetar",
+    "orbits": [
+      {
+        "name": "Zetar II",
+        "location": {
+          "x": -14.8,
+          "y": 24.6,
+          "z": 2
+        },
+        "id": 226
+      }
+    ],
+    "id": 225
   }
 ]

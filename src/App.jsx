@@ -12,7 +12,6 @@ import quadraticBezier from 'bare-minimum-quadratic-bezier';
 import clamp from 'clamp';
 import sectors from './sector.jsx';
 import lineMaker from './lineMaker.jsx';
-import { StarSystem } from '@tmanderson/accrete';
 import showdown from 'showdown';
 
 const md = new showdown.Converter();
@@ -126,11 +125,11 @@ function App() {
   const [dataZoffset, setDataZoffset] = useState(0.5);
   const dataZoffsetRef = useRef(dataZoffset);
   const [camZoom, setCamZoom] = useState(4);
-  const [flatMode, setFlatMode] = useState(false);
+  const [flatMode, setFlatMode] = useState(true);
   const [zooming, setZooming] = useState(false);
   const [lineMode, setLineMode] = useState('lines');
 
-  const [focus, setFocus] = useState(false);
+  const [focus, setFocus] = useState(0);
   let focussedObject = null;
 
   const viewSettings = {
@@ -185,7 +184,8 @@ function App() {
     crossLines: false,
   };
 
-  let points = [...fedlines, ...klinglines];
+  let points = [];
+  //let points = [...fedlines, ...klinglines];
   if (flatMode) {
     for (let object of points) {
       if (object.type === 'lines') {
@@ -227,18 +227,15 @@ function App() {
 
   let sectorGrid = new sectors(-25, 7, 66.86205783298755, 20);
   for (let object of objects) {
-    if (object?.name === focus) {
+    if (object?.id === focus) {
       focussedObject = object;
-      const system = new StarSystem();
-      system.create();
-      focussedObject.system = system;
-      points.push(
-        ...sectorGrid.getGeometry(
-          object.location.x,
-          object.location.y,
-          object.location.z,
-        ),
-      );
+      // points.push(
+      //   ...sectorGrid.getGeometry(
+      //     object.location.x,
+      //     object.location.y,
+      //     object.location.z,
+      //   ),
+      // );
     }
   }
 
@@ -255,6 +252,52 @@ function App() {
         z: flatMode ? [0] : [object.location.z],
       });
     }
+  }
+
+  if (false) {  
+    const dmaGridSize = 26;
+    const dmaGridStartX = -50;
+    const dmaGridStartY = -52;
+    const dmaGridZ = flatMode ? 0 : -17.358;
+    const dmaGridDividers = 5;
+    const dmaGridHeight = flatMode ? 0 : 1;
+    for (var ii = 0; ii < dmaGridHeight + 1; ii++) {
+      for (var i = 0; i < dmaGridDividers + 1; i++) {
+        const z = flatMode ? 0 : dmaGridZ + (dmaGridSize * ii);
+        const x = {
+          x0: [dmaGridStartX + (dmaGridSize * i)],
+          y0: [dmaGridStartY],
+          z0: [z],
+          x1: [dmaGridStartX + (dmaGridSize * i)],
+          y1: [dmaGridSize * dmaGridDividers + dmaGridStartY],
+          z1: [z],
+        }
+        const y = {
+          x0: [dmaGridStartX],
+          y0: [dmaGridStartY + (dmaGridSize * i)],
+          z0: [z],
+          x1: [dmaGridSize * dmaGridDividers + dmaGridStartX],
+          y1: [dmaGridStartY + (dmaGridSize * i)],
+          z1: [z],
+        }
+        points.push({
+          id: ii + i + '-x-dma-grid',
+          type: 'lines',
+          opacity: 0.5,
+          color: '#98A0B5',
+          size: 1,
+          ...x,
+        });
+        points.push({
+          id: ii + i + '-y-dma-grid',
+          type: 'lines',
+          opacity: 0.5,
+          color: '#98A0B5',
+          size: 1,
+          ...y,
+        });
+      } 
+    } 
   }
 
   for (let object of objects) {
@@ -316,24 +359,25 @@ function App() {
   }
 
   for (let object of objects) {
-    if (object.location && object?.tags?.includes('notable')) {
+    if (object.location  && object?.tags?.includes('dma-map')) {
       let isBase =
         object?.tags?.includes('federation starbase') ||
         object?.tags?.includes('deep space station');
       let baseFontSize = isBase ? 9 : 16;
-      let highlightedFontSize = isBase ? 16 : 32;
+      let highlightedFontSize = isBase ? 16 : 19.2;
+      console.debug(object.id === focus);
+      console.debug(object.id);
       points.push({
         label: object.name,
         id: object.name,
         pointer: isBase ? '▵' : '•',
         type: 'textMarker',
-        opacity: 1.0,
+        size: object.id === focus ? highlightedFontSize : baseFontSize,
         color: 'white',
-        size: object.name === focus ? highlightedFontSize : baseFontSize,
         attributes: {
           style: { cursor: 'pointer' },
           onClick: () => {
-            setFocus(object.name);
+            setFocus(object.id);
             let sectorCenter = sectorGrid.getCenter(
               object.location.x,
               object.location.y,
@@ -349,20 +393,6 @@ function App() {
         y: [object.location.y],
         z: flatMode ? [0] : [object.location.z],
       });
-      if (object.location.z === false) {
-        points.push({
-          id: object.name + 'possible-locations',
-          type: 'lines',
-          color: 'white',
-          size: 3,
-          x0: [object.location.x],
-          y0: [object.location.y],
-          z0: [200],
-          x1: [object.location.x],
-          y1: [object.location.y],
-          z1: [-200],
-        });
-      }
     }
   }
 
@@ -496,8 +526,8 @@ function App() {
               setCubeRx(cubeRx - yDiff);
               setCubeRz(cubeRz - xDiff);
             } else {
-              const xDiff = (mouseGrabX - e.clientX) / 500;
-              const yDiff = (mouseGrabY - e.clientY) / 500;
+              const xDiff = (mouseGrabX - e.clientX) / 1000;
+              const yDiff = (mouseGrabY - e.clientY) / 1000;
               setDataXoffset(dataXoffset - xDiff);
               setDataYoffset(dataYoffset + yDiff);
             }
@@ -553,7 +583,7 @@ function App() {
             position: 'fixed',
             left: 0,
             top: 0,
-            margin: '1em',
+            margin: '1em 2em',
             maxWidth: '30vw',
             maxHeight: '100vh',
             overflow: 'auto',
@@ -561,15 +591,6 @@ function App() {
           }}
         >
           <h1>{focussedObject.name}</h1>
-          {focussedObject?.links &&
-            Object.keys(focussedObject.links).map((key) => (
-              <div
-                key={key}
-                dangerouslySetInnerHTML={{
-                  __html: md.makeHtml(focussedObject.links[key].extract),
-                }}
-              />
-            ))}
         </div>
       )}
     </div>

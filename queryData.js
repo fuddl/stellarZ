@@ -3,7 +3,8 @@ const wdk = WBK({
   instance: 'https://www.wikidata.org',
   sparqlEndpoint: 'https://query.wikidata.org/sparql',
 });
-const fetch = require('make-fetch-happen');
+const { fetchBuilder, MemoryCache } = require('node-fetch-cache');
+const fetch = fetchBuilder.withCache(new MemoryCache({ttl: 86400}));
 const fs = require('fs');
 const cheerio = require('cheerio');
 const TurndownService = require('turndown');
@@ -19,49 +20,13 @@ const mwIntroExtractor = (dom, selector) => {
   return turndownService.turndown(main.html());
 };
 
-const sources = {
-  'ma:en': {
-    url: 'https://memory-alpha.fandom.com/wiki/$1?printable=yes',
-    selector: '.mw-parser-output',
-    extractor: mwIntroExtractor,
-    attribution:
-      'From Memory Alpha licensed under [CC-BY-NC](https://www.fandom.com/licensing)',
-  },
-  'mb:en': {
-    url: 'https://memory-beta.fandom.com/wiki/$1?printable=yes',
-    selector: '.mw-parser-output',
-    extractor: mwIntroExtractor,
-    attribution:
-      'From Memory Beta licensed under [CC-BY-NC](https://www.fandom.com/licensing)',
-  },
-};
-
-async function processLinks(object) {
-  if (object?.links) {
-    for (let i in object.links) {
-      if (sources[i]?.extractor) {
-        let response = await fetch(
-          sources[i].url.replace('$1', object.links[i]),
-        );
-        object.links[i] = {
-          id: object.links[i],
-          extract: sources[i].extractor(
-            await response.text(),
-            sources[i].selector,
-          ),
-        };
-      }
-    }
-  }
-  if (object?.orbits) {
-    for (let i in object.orbits) {
-      object.orbits[i] = await processLinks(object.orbits[i]);
-    }
-  }
-  return object;
-}
+let idCounter = 0;
 
 async function addCoordinates(object) {
+  if (!object?.id) {
+    object.id = idCounter;
+    idCounter++;
+  }
   if (
     typeof object.location === 'string' &&
     object.location.startsWith('wd:Q')
@@ -81,14 +46,14 @@ async function addCoordinates(object) {
      LIMIT 1
     `,
     );
-    // let headers = new fetch.Headers({
-    //   Accept: 'application/json',
-    //   'Content-Type': 'application/json',
-    //   'User-Agent': 'https://github.com/fuddl/stellarZ',
-    // });
+    let headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'User-Agent': 'https://github.com/fuddl/stellarZ',
+    };
     const result = await fetch(url, {
-      //headers: headers,
-      cache: 'force-cache',
+      headers: headers,
+      cache: 'cache',
     });
     const json = await result.json();
     const data = wdk.simplify.sparqlResults(json)[0];
@@ -116,7 +81,6 @@ async function addCoordinates(object) {
   const raw_data = yaml.load(fs.readFileSync('./src/catalog.yml', 'utf8'));
   for (let object of raw_data) {
     object = await addCoordinates(object);
-    object = await processLinks(object);
   }
 
   fs.writeFile(

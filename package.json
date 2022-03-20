@@ -40,6 +40,7 @@
     "cheerio": "*",
     "js-yaml": "^4.0.0",
     "make-fetch-happen": "^8.0.14",
+    "node-fetch-cache": "^3.0.5",
     "prettier": "^2.0.5",
     "snowpack": "^3.0.1",
     "snowpack-plugin-url-loader": "^1.0.0",

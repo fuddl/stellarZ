@@ -10,6 +10,7 @@
           federation member,
           federation founding member,
           federation captital,
+          dma-map,
         ]
       links:
         ma:en: Earth
@@ -65,7 +66,7 @@
         ma:en: Proxima_colony
         mb:en: Alpha_Centauri_III
       tags:
-        [notable, earth colony, federation member, federation founding member]
+        [notable, earth colony, federation member, federation founding member, dma-map]
 - name: 40 Eridani
   type: system
   location: wd:Q67622062
@@ -74,7 +75,7 @@
       location: wd:Q1052822
       orbits:
     - name: Vulcan
-      tags: [notable, federation member, federation founding member]
+      tags: [notable, federation member, federation founding member, dma-map]
 - name: Regulus
   location: wd:Q13013
   orbits:
@@ -96,18 +97,12 @@
   orbits:
     - name: Andor
     - name: Andoria
-      tags: [notable, federation member, federation founding member]
+      tags: [notable, federation member, federation founding member, dma-map]
 - name: 61 Cygni
   location: wd:Q249302
   orbits:
     - name: Tellar Prime
-      tags: [notable, federation member, federation founding member]
-- name: Tau Ceti
-  type: star
-  location: wd:Q15820
-  orbits:
-    - name: Kaferia
-      tags: [notable, inhabited]
+      tags: [notable, federation member, federation founding member, dma-map]
 - name: Galactic Core
   type: poi
   location: wd:Q237284
@@ -143,14 +138,11 @@
       tags: [notable, vulcan colony]
 - name: Akaali
   type: planet
-  tags: [notable, inhabited, pre-warp]
+  tags: [notable, inhabited, pre-warp, dma-map]
   location:
     x: 11.16
     y: -18.6
-    # x and y coordinates given by the star charts and stellar cartography
-    # z coordinate must be either 80.9599 or -80.9599 but assumed to be
-    # closer to Axanar
-    z: 80.9599
+    z: -10.4
 - name: Sigma Draconis
   location: wd:Q311489
   orbits:
@@ -187,7 +179,11 @@
   location: wd:Q9017189
   orbits:
     - name: Deneva Prime
-      tags: [earth colony, notable, federation member]
+      tags: [earth colony, notable, federation member, dma-map]
+      location:
+        x: 12.832684034316232
+        y: -22.717833687437132
+        z: 3
 - name: Chi1 Orionis
   location: wd:Q284907
   orbits:
@@ -221,7 +217,11 @@
   location: wd:Q14198
   orbits:
     - name: Dessica II
-      tags: [ancient romulan colony, notable]
+      tags: [ancient romulan colony, notable, dma-map]
+      location:
+        x: 22.013210540763
+        y: 19.863412407182
+        z: 5
 - name: Beta Columbae
   location: wd:Q830856
   orbits:
@@ -231,7 +231,7 @@
   location: wd:Q629637
   orbits:
     - name: Benzar
-      tags: [federation member, notable, inhabited]
+      tags: [federation member, notable, inhabited, dma-map]
 - name: 15 Lyncis
   location: wd:Q4550873
   orbits:
@@ -256,12 +256,16 @@
   location: wd:Q1672154
   orbits:
     - name: Denobula Triaxa
-      tags: [warp-capable, inhabited, notable, federation member]
+      tags: [warp-capable, inhabited, notable, federation member, dma-map]
+      location:
+        x: 29.033
+        y: -5.518
+        z: 0
 - name: Epsilon Indi
   location: wd:Q15705
   orbits:
     - name: Draylax
-      tags: [notable, inhabited, federation member]
+      tags: [notable, inhabited, federation member, dma-map]
 - name: Alpha Doradus
   location: wd:Q2448989
   orbits:
@@ -314,7 +318,11 @@
   location: wd:Q385002
   orbits:
     - name: Maluria
-      tags: [inhabited, notable]
+      tags: [inhabited, notable, dma-map]
+      location:
+        x: 32.1
+        y: -35.3
+        z: 0
 - name: Xi Hydrae
   location: wd:Q1029059
   orbits:
@@ -330,22 +338,27 @@
   location: wd:Q14216
   orbits:
     - name: Orion
-      tags: [notable, inhabited]
+      tags: [notable, inhabited, dma-map]
 - name: Pollux
   location: wd:Q13028
   orbits:
     - name: Pollux IV
-      tags: [notable]
+      tags: [notable, dma-map]
+      location:
+        x: 6.555771905371951
+        y: -30.271215067166505
+        z: 12
 - name: Psi Serpentis
   location: wd:Q2661937
   orbits:
     - name: Sauria
       tags: [notable, inhabited, federation member]
 - name: Gamma Equulei
-  location: wd:Q4133098
+  # location: wd:Q4133098
   orbits:
     - name: Tagus Ⅲ
       ordinal: 3
+      tags: [dma-map]
 - name: Bellatrix
   location: wd:Q13066
   aliases: [Gamma Orionis]
@@ -360,7 +373,7 @@
   location: wd:Q3427
   orbits:
     - name: Vega IX
-      tags: [earth colony, notable]
+      tags: [earth colony, notable, dma-map]
 - name: Cor Caroli
   location: wd:Q76868858
   orbits:
@@ -475,7 +488,11 @@
   location: wd:Q2815485
   orbits:
     - name: Pyrithia
-      tags: [habitable, notable]
+      tags: [habitable, notable, dma-map]
+      location: 
+        x: -38.36911523062057,
+        y: -0.7998515632732952,
+        z: -4
 - name: Ceti Alpha
   location: wd:Q13173
   type: star
@@ -555,7 +572,11 @@
   orbits:
     - name: Argelius II
       type: planet
-      tags: [notable, federation member]
+      tags: [notable, federation member, dma-map]
+      location:
+        x: 32.412208088499206
+        y: -13.657184124061743
+        z: 4
 - name: Sirius
   location: wd:Q3409
   type: star
@@ -759,3 +780,97 @@
     x: 99
     y: -23
     z: 48
+- name: Beta Rigel
+  location:
+    x: 15.7
+    y: -27.6
+    z: 0
+  tags: [dma-map]
+  orbits:
+    - name: Rigel X
+- name: Cor Caroli
+  tags: [dma-map]
+  # location: wd:Q76868858
+  location:
+    x: -18.8
+    y: -10.25
+    z: -4
+- name: Rator
+  location:
+    x: 44.481
+    y: 4
+    z: 0
+- name: Altair
+  tags: [dma-map]
+  location: wd:Q12975
+- name: Nelvana
+  tags: [dma-map]
+  location:
+    x: 29
+    y: 5.5
+    z: 0
+- name: Zeta Herculis
+  location: wd:Q13341
+  orbits:
+    - name: Inferna Prime
+      tags: [dma-map, federation member]
+      location:
+        x: -21.4
+        y: 16.3
+        z: 0
+- name: Toroth
+  tags: [dma-map]
+  location:
+    x: 4.9
+    y: -38.3
+    z: 0
+- name: Tau Coronae Borealis
+  location: wd:Q5098360
+  tags: [dma-map]
+  orbits:
+  - name: Hupyria
+    location:
+      x: -65.1
+      y: 40.4
+      z: 0
+- name: Bolarus IX
+  tags: [dma-map, federation member]
+  location:
+    x: 8
+    y: 27.1
+    z: 2
+- name: Tellun
+  location:
+    x: 13.3
+    y: -37.4
+    z: -3
+  tags: [dma-map]
+  orbits:
+    - name: Elas
+    - name: Troyius
+- name: Priors World
+  location:
+    x: 15
+    y: -34
+    z: -2
+  tags: [dma-map]
+- name: Nausicaa
+  tags: [dma-map]
+  location:
+    x: 28.2
+    y: -30.5
+    z: 3
+- name: Tau Ceti
+  type: star
+  location: wd:Q15820
+  tags: [dma-map]
+  orbits:
+    - name: Kaferia
+      tags: [notable, inhabited]
+- name: Zetar
+  orbits:
+    - name: Zetar II
+      location:
+        x: -14.8
+        y: 24.6
+        z: 2
