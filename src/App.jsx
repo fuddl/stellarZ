@@ -24,11 +24,15 @@ function drawPlanet(object) {
   let scale = .001;
   let diameterUnscaled = object.diameter ?? 12756;
   let diameter = diameterUnscaled * scale;
-  return (
-    <svg key={ object.id } width={ diameter } height={ diameter }>
-      <circle cx={ diameter / 2 } cy={ diameter / 2 } r={ diameter / 2 } fill="white" />
-    </svg>
-  )
+  if (diameter > .5) {
+    return (
+      <svg key={ object.id } width={ diameter } height={ diameter }>
+        <circle cx={ diameter / 2 } cy={ diameter / 2 } r={ diameter / 2 } fill="white" />
+      </svg>
+    )
+  } else {
+    return [];
+  }
 }
 
 function applyLocationInheritance(object) {
@@ -120,8 +124,8 @@ function App() {
   const [flatMode, setFlatMode] = useState(true);
   const [zooming, setZooming] = useState(false);
   const [lineMode, setLineMode] = useState('lines');
-  const [courseStart, setCourseStart] = useState(1);
-  const [courseDest, setCourseDest] = useState(61);
+  const [courseStart, setCourseStart] = useState(-1);
+  const [courseDest, setCourseDest] = useState(-1);
 
   const points = [];
   let currentCourse = [];
@@ -625,18 +629,30 @@ function App() {
               <table>
                 <tr>
                   { focussedSystem.orbits.map(object => (
-                      <td style={{textAlign:'center'}}>{ drawPlanet(object) }</td>
+                    <td style={{textAlign:'center'}}>{ drawPlanet(object) }</td>
                   )) }
-                </tr> 
+                </tr>
                 <tr>
                   { focussedSystem.orbits.map(object => (
                     <th style={{whiteSpace:'nowrap', padding: '1em', fontSize: '.5em'}}>{ object.name }</th>
                   )) }
                 </tr>
+                <tr>
+                  { focussedSystem.orbits.map(object => (
+                    <td style={{textAlign:'center'}}>
+                      { object?.orbits && object.orbits.map(trabant => (
+                        <>
+                          { trabant.type == 'moon' && ( 
+                            <>{' '}{ drawPlanet(trabant) }{' '}</>
+                          ) }
+                        </>
+                      )) }
+                    </td>
+                  )) }
+                </tr> 
               </table>
             </div>
           ) }
-          <button onClick={() => { setCourseDest(focussedObject.id) }}>{'Plot a course'}</button>
         </div>
       )}
     </div>

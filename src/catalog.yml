@@ -21,6 +21,10 @@
         ]
       links:
         ma:en: Earth
+      orbits:
+        - name: Luna
+          type: moon
+          diameter: 3476.2
     - name: Mars
       diameter: 6791.432
       tags: 
@@ -30,10 +34,36 @@
       type: giant
       diameter: 142984
       ord: 5
+      orbits:
+        - name: Io
+          diameter: 3643.2
+          type: moon
+          ord: 5
+        - name: Europa
+          diameter: 3121.6
+          type: moon
+          ord: 6
+        - name: Ganymede
+          diameter: 5268.2
+          type: moon
+          ord: 7
+        - name: Callisto
+          type: moon
+          diameter: 4820.6
     - name: Saturn
       type: giant
       diameter: 120536
       ord: 6
+      orbits: 
+        - name: Enceladus
+          type: moon
+          diameter: 504
+        - name: Tethys
+          type: moon
+          diameter: 1062
+        - name: Titan
+          type: moon
+          diameter: 5149
     - name: Uranus
       type: giant
       diameter: 51118
@@ -56,7 +86,7 @@
       orbits:
       - name: Starbase 1
         type: station
-        tags: [notable, federation starbase]
+        tags: [notable, federation starbase, dma-map]
         links:
           ma:en: Starbase_1
           ma:mb: Starbase_1
@@ -71,7 +101,8 @@
     y: -70.6
     # assuming Kronos should be rather close to earth
     z: 20.23
-- location: wd:Q66548104
+- type: star
+  location: wd:Q66548104
   orbits:
     - name: Romulus
       tags: [notable, claimed by romulan empire, romulan capital]
@@ -113,16 +144,22 @@
   orbits:
     - name: 40 Eridani A
       location: wd:Q1052822
+      tye: star
     - name: Ket-Cheleb
       ord: 1
+      tye: planet
     - name: T'Khut
+      tye: planet
       orbits: 
         - name: Amma
+          type: moon
       ord: 2
     - name: Vulcan
+      tye: planet
       tags: [notable, federation member, federation founding member, dma-map]
       ord: 3
     - name: Delta Vega
+      tye: planet
       ord: 4
     - name: 40 Eridani B
       type: star
@@ -134,13 +171,13 @@
   location: wd:Q13013
   orbits:
     - name: Regulus II
-      ordinal: 2
+      ord: 2
       tags: [habitable]
     - name: Regulus III
-      ordinal: 3
+      ord: 3
       tags: [inhabited, notable, federation member]
     - name: Regulus V
-      ordinal: 5
+      ord: 5
       tags: [inhabited, federation member]
       surface:
         - name: Regulus V City
@@ -149,13 +186,36 @@
   type: star
   location: wd:Q13034
   orbits:
+    - name: Kastra
+      ord: 1
+      type: planet
+    - name: Kuy'Thela
+      type: planet
+      ord: 2
+    - name: Andron
+      type: planet
+      ord: 3
+    - name: Brok'va
+      type: planet
+      ord: 4
     - name: Andor
-    - name: Andoria
-      tags: [notable, federation member, federation founding member, dma-map]
+      type: giant
+      ord: 5
+      orbits:
+      - name: Andoria
+        type: moon
+        tags: [notable, federation member, federation founding member, dma-map]
+    - name: Kul'va
+      type: giant
+      ord: 6
+    - name: Kazaan
+      type: giant
+      ord: 7
 - name: 61 Cygni
   location: wd:Q249302
   orbits:
     - name: Tellar Prime
+      ord: 2
       tags: [notable, federation member, federation founding member, dma-map]
 - name: Galactic Core
   type: poi
@@ -172,7 +232,7 @@
   location: wd:Q13605
   orbits:
     - name: Terra Nova
-      ordinal: 3
+      ord: 3
       tags: [notable, earth colony]
 - name: 36 Ophiuchi
   type: system
@@ -180,10 +240,10 @@
   orbits:
     - name: Ophiucus III
       tags: [notable, inhabited, earth colony]
-      ordinal: 3
+      ord: 3
     - name: Ophiucus VI
       tags: [notable, inhabited, federation colony]
-      ordinal: 4
+      ord: 4
 - name: Luyten's Star
   type: star
   location: wd:Q1062596
@@ -201,24 +261,24 @@
   location: wd:Q311489
   orbits:
     - name: Sigma Draconis I
-      ordinal: 1
+      ord: 1
     - name: Sigma Draconis II
-      ordinal: 2
+      ord: 2
     - name: Sigma Draconis III
-      ordinal: 3
+      ord: 3
     - name: Sigma Draconis IV
-      ordinal: 4
+      ord: 4
     - name: Sigma Draconis V
-      ordinal: 5
+      ord: 5
     - name: Sigma Draconis VI
-      ordinal: 6
+      ord: 6
       tags: [notable, inhabited]
     - name: Sigma Draconis VI
-      ordinal: 7
+      ord: 7
     - name: Sigma Draconis VII
-      ordinal: 8
+      ord: 8
     - name: Sigma Draconis IX
-      ordinal: 9
+      ord: 9
 - name: Antares
   location: wd:Q12166
   type: system
@@ -236,8 +296,6 @@
       tags: [earth colony, notable, federation member, dma-map]
       ord: 3
       location:
-        x: 12.832684034316232
-        y: -22.717833687437132
         z: 3
 - name: Chi1 Orionis
   location: wd:Q284907
@@ -359,13 +417,13 @@
   location: wd:Q2711940
   orbits:
     - name: Iota Geminorum IV
-      ordinal: 4
+      ord: 4
       tags: [habitable, notable]
 - name: Beta Caeli
   location: wd:Q3236154
   orbits:
     - name: Japori II
-      ordinal: 2
+      ord: 2
       tag: [inhabited]
 - name: Gamma Leporis
   location: wd:Q1367757
@@ -404,19 +462,18 @@
     - name: Pollux IV
       tags: [notable, dma-map]
       location:
-        x: 6.555771905371951
-        y: -30.271215067166505
         z: 12
 - name: Psi Serpentis
   location: wd:Q2661937
   orbits:
     - name: Sauria
+      ord: 4 
       tags: [notable, inhabited, federation member]
 - name: Gamma Equulei
   # location: wd:Q4133098
   orbits:
     - name: Tagus Ⅲ
-      ordinal: 3
+      ord: 3
       tags: [dma-map]
 - name: Bellatrix
   location: wd:Q13066
@@ -448,7 +505,7 @@
   location: wd:Q12183
   orbits:
     - name: Alpha Eridani II
-      ordinal: 2
+      ord: 2
       tags: [earth colony, notable]
       links:
         ma:en: Alpha_Eridani_II
@@ -457,7 +514,7 @@
   location: wd:Q4897265
   orbits:
     - name: Caldos II
-      ordinal: 2
+      ord: 2
       tags: [earth colony, notable, federation member]
 - name: B'Hava'el
   type: star
@@ -685,6 +742,7 @@
     y: -24
     # we put it between andoria and regulus
     z: 30.450268756
+
   orbits:
     - name: Starbase 12
       links:
@@ -720,13 +778,17 @@
     y: -69.5
     # connects risa & k'normia
     z: -33.360341721
-- name: Planet Q
-  tags: [notable, federation colony]
-  location:
-    x: -4
-    y: -69.5
-    # connects planet Q, new paris & k'norma
-    z: 39
+- name: Arcturus
+  type: star
+  location: wd:Q12985
+  orbits:
+  - name: Planet Q
+    tags: [notable, federation colony, dma-map]
+    location:
+      #x: -4
+      #y: -69.5
+      # connects planet Q, new paris & k'norma
+      #z: 39
 - name: FGC 24187
   orbits:
     - name: Sherman's Planet
@@ -780,6 +842,7 @@
       tags: [klingon outpost, notable]
 
 - name: Vanguard
+  type: installation
   tags: [notable, federation starbase, taurus reach]
   location:
     x: -3.759
@@ -894,8 +957,6 @@
   orbits:
   - name: Hupyria
     location:
-      x: -65.1
-      y: 40.4
       z: 0
 - name: Bolarus
   orbits:

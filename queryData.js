@@ -18,7 +18,7 @@ const spherical2cartesian = require('./convert/spherical2cartesian.js');
 
 let idCounter = 0;
 
-async function addCoordinates(object, depth = 0) {
+async function addCoordinates(object, depth = 0, parentLocation) {
   if (!object?.id) {
     object.id = idCounter;
     idCounter++;
@@ -29,6 +29,10 @@ async function addCoordinates(object, depth = 0) {
   if (object.type == 'star') {
     generateSystem(object);
   }
+  if (!'location' in object) {
+    object.location = [];
+  }
+
   if (
     typeof object.location === 'string' &&
     object.location.startsWith('wd:Q')
@@ -69,11 +73,16 @@ async function addCoordinates(object, depth = 0) {
         ),
       };
     }
+  } else {
+    object.location = {
+      ...object.location,
+      ...parentLocation,
+    }
   }
   if (object?.orbits && object.orbits.length > 0) {
     depth++;
     for (let i in object.orbits) {
-      object.orbits[i] = await addCoordinates(object.orbits[i], depth);
+      object.orbits[i] = await addCoordinates(object.orbits[i], depth, object.location);
     }
   }
   return object;
