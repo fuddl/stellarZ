@@ -20,6 +20,17 @@ function isClose(number, number2, divergence) {
   return clamp(number, number2 - divergence, number2 + divergence) === number;
 }
 
+function drawPlanet(object) {
+  let scale = .001;
+  let diameterUnscaled = object.diameter ?? 12756;
+  let diameter = diameterUnscaled * scale;
+  return (
+    <svg key={ object.id } width={ diameter } height={ diameter }>
+      <circle cx={ diameter / 2 } cy={ diameter / 2 } r={ diameter / 2 } fill="white" />
+    </svg>
+  )
+}
+
 function applyLocationInheritance(object) {
   if (object.location && object.orbits) {
     for (let orbit of object.orbits) {
@@ -37,9 +48,27 @@ function applyLocationInheritance(object) {
   return object;
 }
 
+function addParents(item, parents = []) {
+  if (item?.orbits) {
+    for (let subitem of item.orbits) {
+      if (!subitem?.parents) {
+        subitem.parents = [];
+      }
+      subitem.parents = [...parents, item];
+
+      subitem = addParents(subitem, subitem.parents);
+    }
+  }
+  return item;
+}
+
 let objects = [];
+let systems = [];
 for (let item of catalog) {
-  objects.push(applyLocationInheritance(item));
+  let itemWithLocation = applyLocationInheritance(item);
+  systems.push(JSON.parse(JSON.stringify(itemWithLocation)));
+  itemWithLocation = addParents(itemWithLocation);
+  objects.push(itemWithLocation);
 }
 
 tree.untreeify(objects, 'orbits');
@@ -73,43 +102,6 @@ const baseGridGeometry = (min, max, step) => {
   };
 };
 
-let lineMode = 'bezier';
-
-const fedlines = lineMaker(
-  objects,
-  'federation founding member',
-  {
-    'federation member': 0,
-    'earth colony': 0,
-    'federation colony': 0,
-    'federation shipyard': 0,
-    'federation starbase': 5,
-  },
-  {
-    'federation outpost': 0,
-    'deep space station': 0,
-  },
-  4,
-  {
-    color: '#98A0B5',
-    size: 5,
-  },
-  lineMode,
-);
-
-const klinglines = lineMaker(
-  objects,
-  'klingon capital',
-  { 'claimed by klingon empire': 0.1, 'klingon colony': 0 },
-  { 'klingon outpost': 0 },
-  3,
-  {
-    color: '#E51301',
-    size: 1,
-  },
-  lineMode,
-);
-
 function App() {
   const [cubeRz, setCubeRz] = useState(0);
   const [cubeRx, setCubeRx] = useState(-40);
@@ -128,6 +120,36 @@ function App() {
   const [flatMode, setFlatMode] = useState(true);
   const [zooming, setZooming] = useState(false);
   const [lineMode, setLineMode] = useState('lines');
+  const [courseStart, setCourseStart] = useState(1);
+  const [courseDest, setCourseDest] = useState(61);
+
+  const points = [];
+  let currentCourse = [];
+  if (courseStart != -1 && courseDest != -1) {
+    currentCourse = lineMaker(
+      objects,
+      'federation founding member',
+      {
+        'federation member': 0,
+        'earth colony': 0,
+        'federation colony': 0,
+        'federation shipyard': 0,
+        'federation starbase': 5,
+      },
+      {
+        'federation outpost': 0,
+        'deep space station': 0,
+      },
+      4,
+      {
+        color: '#98A0B5',
+        size: 5,
+      },
+      'bezier',
+      courseStart,
+      courseDest,
+    );
+  }
 
   const [focus, setFocus] = useState(0);
   let focussedObject = null;
@@ -184,8 +206,6 @@ function App() {
     crossLines: false,
   };
 
-  let points = [];
-  //let points = [...fedlines, ...klinglines];
   if (flatMode) {
     for (let object of points) {
       if (object.type === 'lines') {
@@ -359,14 +379,12 @@ function App() {
   }
 
   for (let object of objects) {
-    if (object.location  && object?.tags?.includes('dma-map')) {
+    if (object.location  && object?.tags?.includes('notable')) {
       let isBase =
         object?.tags?.includes('federation starbase') ||
         object?.tags?.includes('deep space station');
       let baseFontSize = isBase ? 9 : 16;
       let highlightedFontSize = isBase ? 16 : 19.2;
-      console.debug(object.id === focus);
-      console.debug(object.id);
       points.push({
         label: object.name,
         id: object.name,
@@ -396,12 +414,18 @@ function App() {
     }
   }
 
+  points.push(...currentCourse);
   const { container, data } = renderScene(
     viewSettings,
     sceneSettings,
     sceneOptions,
     [...points, ...hygPoints],
   );
+
+  let focussedSystem = {};
+  if (focussedObject) {
+    focussedSystem = systems.find(item => item.id == (focussedObject?.parents?.[0]?.id ?? focussedObject.id));
+  }
 
   return (
     <div>
@@ -512,6 +536,7 @@ function App() {
           type="checkbox"
           step={0.25}
           min={0}
+          checked={flatMode}
           onChange={(e) => {
             setFlatMode(e.target.checked);
           }}
@@ -579,6 +604,7 @@ function App() {
       </svg>
       {focussedObject && (
         <div
+          dataId={focussedObject.id}
           style={{
             position: 'fixed',
             left: 0,
@@ -589,8 +615,28 @@ function App() {
             overflow: 'auto',
             background: '#000000cc',
           }}
-        >
-          <h1>{focussedObject.name}</h1>
+        > 
+          { focussedSystem?.name && (
+            <div>{focussedSystem?.name}</div>
+          )}
+          <h1>{focussedObject?.name}</h1>
+          { focussedSystem?.orbits && (
+            <div style={{overflow: 'auto'}}>
+              <table>
+                <tr>
+                  { focussedSystem.orbits.map(object => (
+                      <td style={{textAlign:'center'}}>{ drawPlanet(object) }</td>
+                  )) }
+                </tr> 
+                <tr>
+                  { focussedSystem.orbits.map(object => (
+                    <th style={{whiteSpace:'nowrap', padding: '1em', fontSize: '.5em'}}>{ object.name }</th>
+                  )) }
+                </tr>
+              </table>
+            </div>
+          ) }
+          <button onClick={() => { setCourseDest(focussedObject.id) }}>{'Plot a course'}</button>
         </div>
       )}
     </div>

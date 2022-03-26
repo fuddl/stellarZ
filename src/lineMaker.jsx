@@ -14,6 +14,8 @@ export default function lineMaker(
 	neigbors = 3,
 	props,
 	mode,
+	start,
+	dest,
 ) {
 	let rPoints = [];
 	let tags = { ...ends, ...secondary, primary };
@@ -31,6 +33,7 @@ export default function lineMaker(
 	const g = GraphBuilder();
 
 	let allLines = [];
+
 
 	for (let pointA of rPoints) {
 		let AB = [];

@@ -3,29 +3,31 @@ const wdk = WBK({
   instance: 'https://www.wikidata.org',
   sparqlEndpoint: 'https://query.wikidata.org/sparql',
 });
-const { fetchBuilder, MemoryCache } = require('node-fetch-cache');
-const fetch = fetchBuilder.withCache(new MemoryCache({ttl: 86400}));
+const { fetchBuilder, FileSystemCache } = require('node-fetch-cache');
+const fetch = fetchBuilder.withCache(new FileSystemCache({
+  ttl: 86400000, 
+}));
 const fs = require('fs');
 const cheerio = require('cheerio');
 const TurndownService = require('turndown');
+const generateSystem = require('./generateSystem.js');
 const turndownService = new TurndownService();
 
 const yaml = require('js-yaml');
 const spherical2cartesian = require('./convert/spherical2cartesian.js');
 
-const mwIntroExtractor = (dom, selector) => {
-  const $ = cheerio.load(dom);
-  let main = $(selector);
-  main.children('div, figure, aside, table, h2 ~ *, h2').remove();
-  return turndownService.turndown(main.html());
-};
-
 let idCounter = 0;
 
-async function addCoordinates(object) {
+async function addCoordinates(object, depth = 0) {
   if (!object?.id) {
     object.id = idCounter;
     idCounter++;
+  }
+  if (!object?.type) {
+    object.type = depth === 0 ? 'star' : 'planet';
+  }
+  if (object.type == 'star') {
+    generateSystem(object);
   }
   if (
     typeof object.location === 'string' &&
@@ -69,8 +71,9 @@ async function addCoordinates(object) {
     }
   }
   if (object?.orbits && object.orbits.length > 0) {
+    depth++;
     for (let i in object.orbits) {
-      object.orbits[i] = await addCoordinates(object.orbits[i]);
+      object.orbits[i] = await addCoordinates(object.orbits[i], depth);
     }
   }
   return object;

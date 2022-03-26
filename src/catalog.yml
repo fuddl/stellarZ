@@ -1,7 +1,14 @@
 - name: Sol
   location: { x: 0, y: 0, z: 0 }
   orbits:
+    - name: Mercury
+      diameter: 4878
+      ord: 1
+    - name: Venus
+      ord: 2
+      diameter: 12103.6
     - name: Earth
+      ord: 3
       tags:
         [
           spacedock,
@@ -14,16 +21,49 @@
         ]
       links:
         ma:en: Earth
-    - name: Starbase 1
-      type: station
-      tags: [notable, federation starbase]
-      links:
-        ma:en: Starbase_1
-        ma:mb: Starbase_1
-      location:
-        x: 0.498
-        y: -1.436
-        z: 0.5
+    - name: Mars
+      diameter: 6791.432
+      tags: 
+        - shipyard
+      ord: 4
+    - name: Jupiter
+      type: giant
+      diameter: 142984
+      ord: 5
+    - name: Saturn
+      type: giant
+      diameter: 120536
+      ord: 6
+    - name: Uranus
+      type: giant
+      diameter: 51118
+      ord: 7
+    - name: Neptune
+      type: giant
+      diameter: 49528
+      ord: 8
+    - name: Pluto
+      type: planetoid
+      diameter: 2376
+      ord: 9
+    - name: Eris
+      type: planetoid
+      diameter: 2326
+      ord: 10
+    - type: planetoid
+      ord: 11
+      diameter: 2326
+      orbits:
+      - name: Starbase 1
+        type: station
+        tags: [notable, federation starbase]
+        links:
+          ma:en: Starbase_1
+          ma:mb: Starbase_1
+        location:
+          x: 0.498
+          y: -1.436
+          z: 0.5
 - name: Quo'Nos
   tags: [claimed by klingon empire, notable, klingon capital]
   location:
@@ -73,9 +113,23 @@
   orbits:
     - name: 40 Eridani A
       location: wd:Q1052822
-      orbits:
+    - name: Ket-Cheleb
+      ord: 1
+    - name: T'Khut
+      orbits: 
+        - name: Amma
+      ord: 2
     - name: Vulcan
       tags: [notable, federation member, federation founding member, dma-map]
+      ord: 3
+    - name: Delta Vega
+      ord: 4
+    - name: 40 Eridani B
+      type: star
+      ord: 5
+    - name: 40 Eridani C
+      type: star
+      ord: 6
 - name: Regulus
   location: wd:Q13013
   orbits:
@@ -180,6 +234,7 @@
   orbits:
     - name: Deneva Prime
       tags: [earth colony, notable, federation member, dma-map]
+      ord: 3
       location:
         x: 12.832684034316232
         y: -22.717833687437132
@@ -252,10 +307,13 @@
   orbits:
     - name: Cheron
       tags: [warp-capable, inhabited, notable]
-- name: Iota Boötis
+- name: Denobula Triaxa
+  alias:
+    - Iota Boötis
   location: wd:Q1672154
   orbits:
-    - name: Denobula Triaxa
+    - name: Denobula
+      ord: 2
       tags: [warp-capable, inhabited, notable, federation member, dma-map]
       location:
         x: 29.033
@@ -301,7 +359,7 @@
   location: wd:Q2711940
   orbits:
     - name: Iota Geminorum IV
-      ordinal: 5
+      ordinal: 4
       tags: [habitable, notable]
 - name: Beta Caeli
   location: wd:Q3236154
@@ -338,6 +396,7 @@
   location: wd:Q14216
   orbits:
     - name: Orion
+      ord: 3
       tags: [notable, inhabited, dma-map]
 - name: Pollux
   location: wd:Q13028
@@ -571,6 +630,7 @@
   type: star
   orbits:
     - name: Argelius II
+      ord: 2
       type: planet
       tags: [notable, federation member, dma-map]
       location:
@@ -582,6 +642,7 @@
   type: star
   orbits:
     - name: Sirius IX
+      ord: 9
       type: planet
       tags: [notable, federation member]
 - name: Chi Eridani
@@ -611,8 +672,7 @@
     - name: Shelia
       type: planet
       tags: [notable]
-- orbits:
-  name: Khitomer
+- name: Khitomer
   tags: [notable, claimed by klingon empire]
   location:
     x: 77.5
@@ -704,12 +764,15 @@
     y: -51.2
     # magic number
     z: 12
-- name: Maranga IV
-  tags: [klingon outpost, notable]
-  location:
-    x: 248.704
-    y: -228.946
-    z: 0
+- name: Maranga
+  orbits:
+  - name: Maranga IV
+    ord: 4
+    tags: [klingon outpost, notable]
+    location:
+      x: 248.704
+      y: -228.946
+      z: 0
 - name: Gamma Geminorum
   location: wd:Q14238
   orbits:
@@ -788,6 +851,7 @@
   tags: [dma-map]
   orbits:
     - name: Rigel X
+      ord: 10
 - name: Cor Caroli
   tags: [dma-map]
   # location: wd:Q76868858
@@ -833,12 +897,15 @@
       x: -65.1
       y: 40.4
       z: 0
-- name: Bolarus IX
-  tags: [dma-map, federation member]
-  location:
-    x: 8
-    y: 27.1
-    z: 2
+- name: Bolarus
+  orbits:
+  - name: Bolarus IX
+    tags: [dma-map, federation member]
+    ord: 9
+    location:
+      x: 8
+      y: 27.1
+      z: 2
 - name: Tellun
   location:
     x: 13.3
@@ -867,9 +934,11 @@
   orbits:
     - name: Kaferia
       tags: [notable, inhabited]
+      ord: 3
 - name: Zetar
   orbits:
     - name: Zetar II
+      ord: 2
       location:
         x: -14.8
         y: 24.6

@@ -42,6 +42,8 @@
     "make-fetch-happen": "^8.0.14",
     "node-fetch-cache": "^3.0.5",
     "prettier": "^2.0.5",
+    "random-seed": "^0.3.0",
+    "roman-numerals": "^0.3.2",
     "snowpack": "^3.0.1",
     "snowpack-plugin-url-loader": "^1.0.0",
     "turndown": "^7.0.0"

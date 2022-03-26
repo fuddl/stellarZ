@@ -8,7 +8,22 @@
     },
     "orbits": [
       {
+        "name": "Mercury",
+        "diameter": 4878,
+        "ord": 1,
+        "id": 1,
+        "type": "planet"
+      },
+      {
+        "name": "Venus",
+        "ord": 2,
+        "diameter": 12103.6,
+        "id": 2,
+        "type": "planet"
+      },
+      {
         "name": "Earth",
+        "ord": 3,
         "tags": [
           "spacedock",
           "shipyard",
@@ -21,28 +36,90 @@
         "links": {
           "ma:en": "Earth"
         },
-        "id": 1
+        "id": 3,
+        "type": "planet"
       },
       {
-        "name": "Starbase 1",
-        "type": "station",
+        "name": "Mars",
+        "diameter": 6791.432,
         "tags": [
-          "notable",
-          "federation starbase"
+          "shipyard"
         ],
-        "links": {
-          "ma:en": "Starbase_1",
-          "ma:mb": "Starbase_1"
-        },
-        "location": {
-          "x": 0.498,
-          "y": -1.436,
-          "z": 0.5
-        },
-        "id": 2
+        "ord": 4,
+        "id": 4,
+        "type": "planet"
+      },
+      {
+        "name": "Jupiter",
+        "type": "giant",
+        "diameter": 142984,
+        "ord": 5,
+        "id": 5
+      },
+      {
+        "name": "Saturn",
+        "type": "giant",
+        "diameter": 120536,
+        "ord": 6,
+        "id": 6
+      },
+      {
+        "name": "Uranus",
+        "type": "giant",
+        "diameter": 51118,
+        "ord": 7,
+        "id": 7
+      },
+      {
+        "name": "Neptune",
+        "type": "giant",
+        "diameter": 49528,
+        "ord": 8,
+        "id": 8
+      },
+      {
+        "name": "Pluto",
+        "type": "planetoid",
+        "diameter": 2376,
+        "ord": 9,
+        "id": 9
+      },
+      {
+        "name": "Eris",
+        "type": "planetoid",
+        "diameter": 2326,
+        "ord": 10,
+        "id": 10
+      },
+      {
+        "type": "planetoid",
+        "ord": 11,
+        "diameter": 2326,
+        "orbits": [
+          {
+            "name": "Starbase 1",
+            "type": "station",
+            "tags": [
+              "notable",
+              "federation starbase"
+            ],
+            "links": {
+              "ma:en": "Starbase_1",
+              "ma:mb": "Starbase_1"
+            },
+            "location": {
+              "x": 0.498,
+              "y": -1.436,
+              "z": 0.5
+            },
+            "id": 12
+          }
+        ],
+        "id": 11
       }
     ],
-    "id": 0
+    "id": 0,
+    "type": "star"
   },
   {
     "name": "Quo'Nos",
@@ -56,7 +133,52 @@
       "y": -70.6,
       "z": 20.23
     },
-    "id": 3
+    "id": 14,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Quo'Nos I",
+        "ord": 1,
+        "diameter": 12216,
+        "id": 15
+      },
+      {
+        "type": "planet",
+        "name": "Quo'Nos II",
+        "ord": 2,
+        "diameter": 7515,
+        "id": 16
+      },
+      {
+        "type": "planet",
+        "name": "Quo'Nos III",
+        "ord": 3,
+        "diameter": 7402,
+        "id": 17
+      },
+      {
+        "type": "planet",
+        "name": "Quo'Nos IV",
+        "ord": 4,
+        "diameter": 9978,
+        "id": 18
+      },
+      {
+        "type": "giant",
+        "name": "Quo'Nos V",
+        "ord": 5,
+        "diameter": 117404,
+        "id": 19
+      },
+      {
+        "type": "giant",
+        "name": "Quo'Nos VI",
+        "ord": 6,
+        "diameter": 128810,
+        "id": 20
+      }
+    ]
   },
   {
     "location": {
@@ -76,7 +198,8 @@
           "x": 30.6,
           "y": 41.6
         },
-        "id": 5
+        "id": 22,
+        "type": "planet"
       },
       {
         "name": "Remus",
@@ -88,10 +211,12 @@
           "x": 30.6,
           "y": 41.6
         },
-        "id": 6
+        "id": 23,
+        "type": "planet"
       }
     ],
-    "id": 4
+    "id": 21,
+    "type": "star"
   },
   {
     "name": "Cardassia Prime",
@@ -105,7 +230,7 @@
       "y": -33.1,
       "z": -226.642943922
     },
-    "id": 7
+    "id": 24
   },
   {
     "name": "Alpha Centauri",
@@ -124,8 +249,23 @@
           "z": -0.032950376278679055
         },
         "type": "star",
-        "orbits": null,
-        "id": 9
+        "orbits": [
+          {
+            "type": "giant",
+            "name": "Proxima Centrauri II",
+            "ord": 2,
+            "diameter": 72750,
+            "id": 27
+          },
+          {
+            "type": "giant",
+            "name": "Proxima Centrauri III",
+            "ord": 3,
+            "diameter": 101220,
+            "id": 28
+          }
+        ],
+        "id": 26
       },
       {
         "name": "Proxima",
@@ -141,10 +281,11 @@
           "federation founding member",
           "dma-map"
         ],
-        "id": 10
+        "id": 29,
+        "type": "planet"
       }
     ],
-    "id": 8
+    "id": 25
   },
   {
     "name": "40 Eridani",
@@ -162,8 +303,27 @@
           "y": -12.05107687828057,
           "z": -10.162269375262357
         },
-        "orbits": null,
-        "id": 12
+        "id": 31,
+        "type": "planet"
+      },
+      {
+        "name": "Ket-Cheleb",
+        "ord": 1,
+        "id": 32,
+        "type": "planet"
+      },
+      {
+        "name": "T'Khut",
+        "orbits": [
+          {
+            "name": "Amma",
+            "id": 34,
+            "type": "planet"
+          }
+        ],
+        "ord": 2,
+        "id": 33,
+        "type": "planet"
       },
       {
         "name": "Vulcan",
@@ -173,10 +333,62 @@
           "federation founding member",
           "dma-map"
         ],
-        "id": 13
+        "ord": 3,
+        "id": 35,
+        "type": "planet"
+      },
+      {
+        "name": "Delta Vega",
+        "ord": 4,
+        "id": 36,
+        "type": "planet"
+      },
+      {
+        "name": "40 Eridani B",
+        "type": "star",
+        "ord": 5,
+        "id": 37,
+        "orbits": [
+          {
+            "type": "planet",
+            "name": "40 Eridani B I",
+            "ord": 1,
+            "diameter": 5130,
+            "id": 38
+          },
+          {
+            "type": "giant",
+            "name": "40 Eridani B II",
+            "ord": 2,
+            "diameter": 92184,
+            "id": 39
+          },
+          {
+            "type": "giant",
+            "name": "40 Eridani B III",
+            "ord": 3,
+            "diameter": 149642,
+            "id": 40
+          }
+        ]
+      },
+      {
+        "name": "40 Eridani C",
+        "type": "star",
+        "ord": 6,
+        "id": 41,
+        "orbits": [
+          {
+            "type": "planet",
+            "name": "40 Eridani C I",
+            "ord": 1,
+            "diameter": 12904,
+            "id": 42
+          }
+        ]
       }
     ],
-    "id": 11
+    "id": 30
   },
   {
     "name": "Regulus",
@@ -192,7 +404,8 @@
         "tags": [
           "habitable"
         ],
-        "id": 15
+        "id": 44,
+        "type": "planet"
       },
       {
         "name": "Regulus III",
@@ -202,7 +415,8 @@
           "notable",
           "federation member"
         ],
-        "id": 16
+        "id": 45,
+        "type": "planet"
       },
       {
         "name": "Regulus V",
@@ -217,10 +431,12 @@
             "type": "city"
           }
         ],
-        "id": 17
+        "id": 46,
+        "type": "planet"
       }
     ],
-    "id": 14
+    "id": 43,
+    "type": "star"
   },
   {
     "name": "Procyon",
@@ -233,7 +449,8 @@
     "orbits": [
       {
         "name": "Andor",
-        "id": 19
+        "id": 48,
+        "type": "planet"
       },
       {
         "name": "Andoria",
@@ -243,10 +460,11 @@
           "federation founding member",
           "dma-map"
         ],
-        "id": 20
+        "id": 49,
+        "type": "planet"
       }
     ],
-    "id": 18
+    "id": 47
   },
   {
     "name": "61 Cygni",
@@ -264,10 +482,54 @@
           "federation founding member",
           "dma-map"
         ],
-        "id": 22
+        "id": 51,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "61 Cygni I",
+        "ord": 1,
+        "diameter": 8058,
+        "id": 52
+      },
+      {
+        "type": "planet",
+        "name": "61 Cygni II",
+        "ord": 2,
+        "diameter": 8880,
+        "id": 53
+      },
+      {
+        "type": "planet",
+        "name": "61 Cygni III",
+        "ord": 3,
+        "diameter": 7314,
+        "id": 54
+      },
+      {
+        "type": "giant",
+        "name": "61 Cygni IV",
+        "ord": 4,
+        "diameter": 51113,
+        "id": 55
+      },
+      {
+        "type": "giant",
+        "name": "61 Cygni V",
+        "ord": 5,
+        "diameter": 51128,
+        "id": 56
+      },
+      {
+        "type": "giant",
+        "name": "61 Cygni VI",
+        "ord": 6,
+        "diameter": 122813,
+        "id": 57
       }
     ],
-    "id": 21
+    "id": 50,
+    "type": "star"
   },
   {
     "name": "Galactic Core",
@@ -277,7 +539,7 @@
       "y": 25999.870931588197,
       "z": 81.91896036359795
     },
-    "id": 23
+    "id": 58
   },
   {
     "name": "Epsilon Ceti",
@@ -294,7 +556,8 @@
           "y": -37.33454261283216,
           "z": -66.89669284395023
         },
-        "id": 25
+        "id": 60,
+        "type": "planet"
       },
       {
         "name": "Risa",
@@ -303,10 +566,12 @@
           "inhabited",
           "federation member"
         ],
-        "id": 26
+        "id": 61,
+        "type": "planet"
       }
     ],
-    "id": 24
+    "id": 59,
+    "type": "star"
   },
   {
     "name": "Eta Cassiopeiae",
@@ -324,10 +589,11 @@
           "notable",
           "earth colony"
         ],
-        "id": 28
+        "id": 63,
+        "type": "planet"
       }
     ],
-    "id": 27
+    "id": 62
   },
   {
     "name": "36 Ophiuchi",
@@ -346,7 +612,8 @@
           "earth colony"
         ],
         "ordinal": 3,
-        "id": 30
+        "id": 65,
+        "type": "planet"
       },
       {
         "name": "Ophiucus VI",
@@ -356,10 +623,11 @@
           "federation colony"
         ],
         "ordinal": 4,
-        "id": 31
+        "id": 66,
+        "type": "planet"
       }
     ],
-    "id": 29
+    "id": 64
   },
   {
     "name": "Luyten's Star",
@@ -376,10 +644,32 @@
           "notable",
           "vulcan colony"
         ],
-        "id": 33
+        "id": 68,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Luyten's Star I",
+        "ord": 1,
+        "diameter": 10393,
+        "id": 69
+      },
+      {
+        "type": "giant",
+        "name": "Luyten's Star II",
+        "ord": 2,
+        "diameter": 116299,
+        "id": 70
+      },
+      {
+        "type": "giant",
+        "name": "Luyten's Star III",
+        "ord": 3,
+        "diameter": 147389,
+        "id": 71
       }
     ],
-    "id": 32
+    "id": 67
   },
   {
     "name": "Akaali",
@@ -395,7 +685,7 @@
       "y": -18.6,
       "z": -10.4
     },
-    "id": 34
+    "id": 72
   },
   {
     "name": "Sigma Draconis",
@@ -408,27 +698,32 @@
       {
         "name": "Sigma Draconis I",
         "ordinal": 1,
-        "id": 36
+        "id": 74,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis II",
         "ordinal": 2,
-        "id": 37
+        "id": 75,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis III",
         "ordinal": 3,
-        "id": 38
+        "id": 76,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis IV",
         "ordinal": 4,
-        "id": 39
+        "id": 77,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis V",
         "ordinal": 5,
-        "id": 40
+        "id": 78,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis VI",
@@ -437,25 +732,30 @@
           "notable",
           "inhabited"
         ],
-        "id": 41
+        "id": 79,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis VI",
         "ordinal": 7,
-        "id": 42
+        "id": 80,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis VII",
         "ordinal": 8,
-        "id": 43
+        "id": 81,
+        "type": "planet"
       },
       {
         "name": "Sigma Draconis IX",
         "ordinal": 9,
-        "id": 44
+        "id": 82,
+        "type": "planet"
       }
     ],
-    "id": 35
+    "id": 73,
+    "type": "star"
   },
   {
     "name": "Antares",
@@ -469,7 +769,8 @@
       {
         "name": "Antares B",
         "orbits": null,
-        "id": 46
+        "id": 84,
+        "type": "planet"
       },
       {
         "name": "Antares B III",
@@ -481,10 +782,11 @@
           "notable",
           "federation member"
         ],
-        "id": 47
+        "id": 85,
+        "type": "planet"
       }
     ],
-    "id": 45
+    "id": 83
   },
   {
     "name": "Kappa Fornacis",
@@ -495,6 +797,20 @@
     },
     "orbits": [
       {
+        "type": "planet",
+        "name": "Kappa Fornacis I",
+        "ord": 1,
+        "diameter": 8410,
+        "id": 87
+      },
+      {
+        "type": "planet",
+        "name": "Kappa Fornacis II",
+        "ord": 2,
+        "diameter": 10541,
+        "id": 88
+      },
+      {
         "name": "Deneva Prime",
         "tags": [
           "earth colony",
@@ -502,15 +818,39 @@
           "federation member",
           "dma-map"
         ],
+        "ord": 3,
         "location": {
           "x": 12.832684034316232,
           "y": -22.717833687437132,
           "z": 3
         },
-        "id": 49
+        "id": 89,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Kappa Fornacis IV",
+        "ord": 4,
+        "diameter": 6985,
+        "id": 90
+      },
+      {
+        "type": "giant",
+        "name": "Kappa Fornacis VI",
+        "ord": 6,
+        "diameter": 107314,
+        "id": 91
+      },
+      {
+        "type": "giant",
+        "name": "Kappa Fornacis VII",
+        "ord": 7,
+        "diameter": 56760,
+        "id": 92
       }
     ],
-    "id": 48
+    "id": 86,
+    "type": "star"
   },
   {
     "name": "Chi1 Orionis",
@@ -527,10 +867,47 @@
           "dilithium",
           "federation member"
         ],
-        "id": 51
+        "id": 94,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Chi1 Orionis I",
+        "ord": 1,
+        "diameter": 12255,
+        "id": 95
+      },
+      {
+        "type": "planet",
+        "name": "Chi1 Orionis II",
+        "ord": 2,
+        "diameter": 8227,
+        "id": 96
+      },
+      {
+        "type": "giant",
+        "name": "Chi1 Orionis III",
+        "ord": 3,
+        "diameter": 94837,
+        "id": 97
+      },
+      {
+        "type": "giant",
+        "name": "Chi1 Orionis IV",
+        "ord": 4,
+        "diameter": 132077,
+        "id": 98
+      },
+      {
+        "type": "giant",
+        "name": "Chi1 Orionis VI",
+        "ord": 6,
+        "diameter": 88402,
+        "id": 99
       }
     ],
-    "id": 50
+    "id": 93,
+    "type": "star"
   },
   {
     "name": "Epsilon Eridani",
@@ -548,10 +925,12 @@
           "warp-capable",
           "federation member"
         ],
-        "id": 53
+        "id": 101,
+        "type": "planet"
       }
     ],
-    "id": 52
+    "id": 100,
+    "type": "star"
   },
   {
     "name": "Mu Leonis",
@@ -567,10 +946,26 @@
           "notable",
           "federation member"
         ],
-        "id": 55
+        "id": 103,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Mu Leonis I",
+        "ord": 1,
+        "diameter": 10381,
+        "id": 104
+      },
+      {
+        "type": "planet",
+        "name": "Mu Leonis II",
+        "ord": 2,
+        "diameter": 9323,
+        "id": 105
       }
     ],
-    "id": 54
+    "id": 102,
+    "type": "star"
   },
   {
     "name": "Epsilon Serpentis",
@@ -586,10 +981,33 @@
           "notable",
           "federation member"
         ],
-        "id": 57
+        "id": 107,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Serpentis I",
+        "ord": 1,
+        "diameter": 13003,
+        "id": 108
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Serpentis II",
+        "ord": 2,
+        "diameter": 87418,
+        "id": 109
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Serpentis III",
+        "ord": 3,
+        "diameter": 54895,
+        "id": 110
       }
     ],
-    "id": 56
+    "id": 106,
+    "type": "star"
   },
   {
     "name": "Alcor",
@@ -601,10 +1019,54 @@
     "orbits": [
       {
         "name": "Alcor IV",
-        "id": 59
+        "id": 112,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Alcor I",
+        "ord": 1,
+        "diameter": 5541,
+        "id": 113
+      },
+      {
+        "type": "planet",
+        "name": "Alcor II",
+        "ord": 2,
+        "diameter": 11568,
+        "id": 114
+      },
+      {
+        "type": "planet",
+        "name": "Alcor III",
+        "ord": 3,
+        "diameter": 10515,
+        "id": 115
+      },
+      {
+        "type": "planet",
+        "name": "Alcor IV",
+        "ord": 4,
+        "diameter": 8573,
+        "id": 116
+      },
+      {
+        "type": "planet",
+        "name": "Alcor V",
+        "ord": 5,
+        "diameter": 13027,
+        "id": 117
+      },
+      {
+        "type": "giant",
+        "name": "Alcor VIII",
+        "ord": 8,
+        "diameter": 129146,
+        "id": 118
       }
     ],
-    "id": 58
+    "id": 111,
+    "type": "star"
   },
   {
     "name": "Wolf 424",
@@ -620,10 +1082,47 @@
           "notable",
           "neutral"
         ],
-        "id": 61
+        "id": 120,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Wolf 424 I",
+        "ord": 1,
+        "diameter": 6878,
+        "id": 121
+      },
+      {
+        "type": "planet",
+        "name": "Wolf 424 II",
+        "ord": 2,
+        "diameter": 11261,
+        "id": 122
+      },
+      {
+        "type": "planet",
+        "name": "Wolf 424 III",
+        "ord": 3,
+        "diameter": 11899,
+        "id": 123
+      },
+      {
+        "type": "giant",
+        "name": "Wolf 424 IV",
+        "ord": 4,
+        "diameter": 87006,
+        "id": 124
+      },
+      {
+        "type": "giant",
+        "name": "Wolf 424 V",
+        "ord": 5,
+        "diameter": 134610,
+        "id": 125
       }
     ],
-    "id": 60
+    "id": 119,
+    "type": "star"
   },
   {
     "name": "Epsilon Virginis",
@@ -645,10 +1144,54 @@
           "y": 19.863412407182,
           "z": 5
         },
-        "id": 63
+        "id": 127,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Virginis I",
+        "ord": 1,
+        "diameter": 6216,
+        "id": 128
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Virginis II",
+        "ord": 2,
+        "diameter": 8894,
+        "id": 129
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Virginis III",
+        "ord": 3,
+        "diameter": 8368,
+        "id": 130
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Virginis IV",
+        "ord": 4,
+        "diameter": 9962,
+        "id": 131
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Virginis V",
+        "ord": 5,
+        "diameter": 129781,
+        "id": 132
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Virginis VI",
+        "ord": 6,
+        "diameter": 94911,
+        "id": 133
       }
     ],
-    "id": 62
+    "id": 126,
+    "type": "star"
   },
   {
     "name": "Beta Columbae",
@@ -664,10 +1207,75 @@
           "inhabited",
           "notable"
         ],
-        "id": 65
+        "id": 135,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Beta Columbae I",
+        "ord": 1,
+        "diameter": 6106,
+        "id": 136
+      },
+      {
+        "type": "planet",
+        "name": "Beta Columbae II",
+        "ord": 2,
+        "diameter": 10531,
+        "id": 137
+      },
+      {
+        "type": "planet",
+        "name": "Beta Columbae III",
+        "ord": 3,
+        "diameter": 11221,
+        "id": 138
+      },
+      {
+        "type": "planet",
+        "name": "Beta Columbae IV",
+        "ord": 4,
+        "diameter": 6606,
+        "id": 139
+      },
+      {
+        "type": "planet",
+        "name": "Beta Columbae V",
+        "ord": 5,
+        "diameter": 9911,
+        "id": 140
+      },
+      {
+        "type": "giant",
+        "name": "Beta Columbae VI",
+        "ord": 6,
+        "diameter": 119731,
+        "id": 141
+      },
+      {
+        "type": "giant",
+        "name": "Beta Columbae VII",
+        "ord": 7,
+        "diameter": 92360,
+        "id": 142
+      },
+      {
+        "type": "giant",
+        "name": "Beta Columbae VIII",
+        "ord": 8,
+        "diameter": 135329,
+        "id": 143
+      },
+      {
+        "type": "giant",
+        "name": "Beta Columbae IX",
+        "ord": 9,
+        "diameter": 132808,
+        "id": 144
       }
     ],
-    "id": 64
+    "id": 134,
+    "type": "star"
   },
   {
     "name": "Delta Pavonis",
@@ -685,10 +1293,40 @@
           "inhabited",
           "dma-map"
         ],
-        "id": 67
+        "id": 146,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Delta Pavonis I",
+        "ord": 1,
+        "diameter": 6884,
+        "id": 147
+      },
+      {
+        "type": "planet",
+        "name": "Delta Pavonis II",
+        "ord": 2,
+        "diameter": 11141,
+        "id": 148
+      },
+      {
+        "type": "planet",
+        "name": "Delta Pavonis III",
+        "ord": 3,
+        "diameter": 8217,
+        "id": 149
+      },
+      {
+        "type": "giant",
+        "name": "Delta Pavonis V",
+        "ord": 5,
+        "diameter": 114294,
+        "id": 150
       }
     ],
-    "id": 66
+    "id": 145,
+    "type": "star"
   },
   {
     "name": "15 Lyncis",
@@ -704,10 +1342,75 @@
           "notable",
           "federation member"
         ],
-        "id": 69
+        "id": 152,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis I",
+        "ord": 1,
+        "diameter": 8427,
+        "id": 153
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis II",
+        "ord": 2,
+        "diameter": 10106,
+        "id": 154
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis III",
+        "ord": 3,
+        "diameter": 10554,
+        "id": 155
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis IV",
+        "ord": 4,
+        "diameter": 10097,
+        "id": 156
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis V",
+        "ord": 5,
+        "diameter": 13857,
+        "id": 157
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis VI",
+        "ord": 6,
+        "diameter": 5547,
+        "id": 158
+      },
+      {
+        "type": "planet",
+        "name": "15 Lyncis VII",
+        "ord": 7,
+        "diameter": 11077,
+        "id": 159
+      },
+      {
+        "type": "giant",
+        "name": "15 Lyncis IX",
+        "ord": 9,
+        "diameter": 110811,
+        "id": 160
+      },
+      {
+        "type": "giant",
+        "name": "15 Lyncis XI",
+        "ord": 11,
+        "diameter": 84779,
+        "id": 161
       }
     ],
-    "id": 68
+    "id": 151,
+    "type": "star"
   },
   {
     "name": "Capella",
@@ -723,10 +1426,68 @@
           "near klingon empire",
           "near federation"
         ],
-        "id": 71
+        "id": 163,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Capella I",
+        "ord": 1,
+        "diameter": 13372,
+        "id": 164
+      },
+      {
+        "type": "planet",
+        "name": "Capella II",
+        "ord": 2,
+        "diameter": 8077,
+        "id": 165
+      },
+      {
+        "type": "planet",
+        "name": "Capella III",
+        "ord": 3,
+        "diameter": 12481,
+        "id": 166
+      },
+      {
+        "type": "planet",
+        "name": "Capella IV",
+        "ord": 4,
+        "diameter": 4979,
+        "id": 167
+      },
+      {
+        "type": "planet",
+        "name": "Capella V",
+        "ord": 5,
+        "diameter": 10608,
+        "id": 168
+      },
+      {
+        "type": "planet",
+        "name": "Capella VI",
+        "ord": 6,
+        "diameter": 13504,
+        "id": 169
+      },
+      {
+        "type": "giant",
+        "name": "Capella VII",
+        "ord": 7,
+        "diameter": 115552,
+        "id": 170
+      },
+      {
+        "type": "giant",
+        "name": "Capella VIII",
+        "ord": 8,
+        "diameter": 144386,
+        "id": 171
       }
     ],
-    "id": 70
+    "id": 162,
+    "type": "star"
   },
   {
     "name": "Lambda Sagittarii",
@@ -742,10 +1503,26 @@
           "notable",
           "inhabited"
         ],
-        "id": 73
+        "id": 173,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Lambda Sagittarii II",
+        "ord": 2,
+        "diameter": 82648,
+        "id": 174
+      },
+      {
+        "type": "giant",
+        "name": "Lambda Sagittarii III",
+        "ord": 3,
+        "diameter": 133809,
+        "id": 175
       }
     ],
-    "id": 72
+    "id": 172,
+    "type": "star"
   },
   {
     "name": "83 Leonis B",
@@ -762,13 +1539,88 @@
           "inhabited",
           "notable"
         ],
-        "id": 75
+        "id": 177,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B I",
+        "ord": 1,
+        "diameter": 5584,
+        "id": 178
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B II",
+        "ord": 2,
+        "diameter": 9463,
+        "id": 179
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B III",
+        "ord": 3,
+        "diameter": 10547,
+        "id": 180
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B IV",
+        "ord": 4,
+        "diameter": 10563,
+        "id": 181
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B V",
+        "ord": 5,
+        "diameter": 14133,
+        "id": 182
+      },
+      {
+        "type": "planet",
+        "name": "83 Leonis B VI",
+        "ord": 6,
+        "diameter": 13565,
+        "id": 183
+      },
+      {
+        "type": "giant",
+        "name": "83 Leonis B VII",
+        "ord": 7,
+        "diameter": 106945,
+        "id": 184
+      },
+      {
+        "type": "giant",
+        "name": "83 Leonis B VIII",
+        "ord": 8,
+        "diameter": 140845,
+        "id": 185
+      },
+      {
+        "type": "giant",
+        "name": "83 Leonis B IX",
+        "ord": 9,
+        "diameter": 94547,
+        "id": 186
+      },
+      {
+        "type": "giant",
+        "name": "83 Leonis B X",
+        "ord": 10,
+        "diameter": 63346,
+        "id": 187
       }
     ],
-    "id": 74
+    "id": 176,
+    "type": "star"
   },
   {
-    "name": "Iota Boötis",
+    "name": "Denobula Triaxa",
+    "alias": [
+      "Iota Boötis"
+    ],
     "location": {
       "x": -46.114243082618636,
       "y": -4.587525865106949,
@@ -776,7 +1628,15 @@
     },
     "orbits": [
       {
-        "name": "Denobula Triaxa",
+        "type": "planet",
+        "name": "Denobula Triaxa I",
+        "ord": 1,
+        "diameter": 13534,
+        "id": 189
+      },
+      {
+        "name": "Denobula",
+        "ord": 2,
         "tags": [
           "warp-capable",
           "inhabited",
@@ -789,10 +1649,40 @@
           "y": -5.518,
           "z": 0
         },
-        "id": 77
+        "id": 190,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Denobula Triaxa IV",
+        "ord": 4,
+        "diameter": 86463,
+        "id": 191
+      },
+      {
+        "type": "giant",
+        "name": "Denobula Triaxa V",
+        "ord": 5,
+        "diameter": 95326,
+        "id": 192
+      },
+      {
+        "type": "giant",
+        "name": "Denobula Triaxa VI",
+        "ord": 6,
+        "diameter": 109580,
+        "id": 193
+      },
+      {
+        "type": "giant",
+        "name": "Denobula Triaxa VII",
+        "ord": 7,
+        "diameter": 82693,
+        "id": 194
       }
     ],
-    "id": 76
+    "id": 188,
+    "type": "star"
   },
   {
     "name": "Epsilon Indi",
@@ -810,10 +1700,26 @@
           "federation member",
           "dma-map"
         ],
-        "id": 79
+        "id": 196,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Indi I",
+        "ord": 1,
+        "diameter": 9362,
+        "id": 197
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Indi II",
+        "ord": 2,
+        "diameter": 135071,
+        "id": 198
       }
     ],
-    "id": 78
+    "id": 195,
+    "type": "star"
   },
   {
     "name": "Alpha Doradus",
@@ -828,10 +1734,54 @@
         "tags": [
           "notable"
         ],
-        "id": 81
+        "id": 200,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Doradus I",
+        "ord": 1,
+        "diameter": 8432,
+        "id": 201
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Doradus II",
+        "ord": 2,
+        "diameter": 12033,
+        "id": 202
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Doradus III",
+        "ord": 3,
+        "diameter": 7806,
+        "id": 203
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Doradus IV",
+        "ord": 4,
+        "diameter": 131023,
+        "id": 204
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Doradus V",
+        "ord": 5,
+        "diameter": 138440,
+        "id": 205
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Doradus VI",
+        "ord": 6,
+        "diameter": 148326,
+        "id": 206
       }
     ],
-    "id": 80
+    "id": 199,
+    "type": "star"
   },
   {
     "name": "Gamma Hydra",
@@ -849,10 +1799,68 @@
           "federation member",
           "andorian colony"
         ],
-        "id": 83
+        "id": 208,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra I",
+        "ord": 1,
+        "diameter": 11891,
+        "id": 209
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra II",
+        "ord": 2,
+        "diameter": 8712,
+        "id": 210
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra III",
+        "ord": 3,
+        "diameter": 13714,
+        "id": 211
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra IV",
+        "ord": 4,
+        "diameter": 7527,
+        "id": 212
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra V",
+        "ord": 5,
+        "diameter": 8239,
+        "id": 213
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra VI",
+        "ord": 6,
+        "diameter": 9213,
+        "id": 214
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Hydra VII",
+        "ord": 7,
+        "diameter": 13286,
+        "id": 215
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Hydra X",
+        "ord": 10,
+        "diameter": 91228,
+        "id": 216
       }
     ],
-    "id": 82
+    "id": 207,
+    "type": "star"
   },
   {
     "name": "Gamma Trianguli",
@@ -868,10 +1876,89 @@
           "inhabited",
           "pre-warp"
         ],
-        "id": 85
+        "id": 218,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli I",
+        "ord": 1,
+        "diameter": 5960,
+        "id": 219
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli II",
+        "ord": 2,
+        "diameter": 13529,
+        "id": 220
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli III",
+        "ord": 3,
+        "diameter": 14096,
+        "id": 221
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli IV",
+        "ord": 4,
+        "diameter": 13691,
+        "id": 222
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli V",
+        "ord": 5,
+        "diameter": 7881,
+        "id": 223
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli VI",
+        "ord": 6,
+        "diameter": 7532,
+        "id": 224
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Trianguli VII",
+        "ord": 7,
+        "diameter": 13289,
+        "id": 225
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Trianguli VIII",
+        "ord": 8,
+        "diameter": 105336,
+        "id": 226
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Trianguli X",
+        "ord": 10,
+        "diameter": 55001,
+        "id": 227
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Trianguli XI",
+        "ord": 11,
+        "diameter": 100749,
+        "id": 228
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Trianguli XII",
+        "ord": 12,
+        "diameter": 144133,
+        "id": 229
       }
     ],
-    "id": 84
+    "id": 217,
+    "type": "star"
   },
   {
     "name": "Wolf 359",
@@ -880,7 +1967,38 @@
       "y": -1.6091439771271763,
       "z": 5.41547249941391
     },
-    "id": 86
+    "id": 230,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Wolf 359 I",
+        "ord": 1,
+        "diameter": 8375,
+        "id": 231
+      },
+      {
+        "type": "giant",
+        "name": "Wolf 359 II",
+        "ord": 2,
+        "diameter": 130989,
+        "id": 232
+      },
+      {
+        "type": "giant",
+        "name": "Wolf 359 III",
+        "ord": 3,
+        "diameter": 75960,
+        "id": 233
+      },
+      {
+        "type": "giant",
+        "name": "Wolf 359 IV",
+        "ord": 4,
+        "diameter": 86243,
+        "id": 234
+      }
+    ]
   },
   {
     "name": "Delta Muscae",
@@ -895,10 +2013,33 @@
         "tags": [
           "inhabited"
         ],
-        "id": 88
+        "id": 236,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Delta Muscae II",
+        "ord": 2,
+        "diameter": 115292,
+        "id": 237
+      },
+      {
+        "type": "giant",
+        "name": "Delta Muscae III",
+        "ord": 3,
+        "diameter": 56952,
+        "id": 238
+      },
+      {
+        "type": "giant",
+        "name": "Delta Muscae IV",
+        "ord": 4,
+        "diameter": 95179,
+        "id": 239
       }
     ],
-    "id": 87
+    "id": 235,
+    "type": "star"
   },
   {
     "name": "Omicron Indi",
@@ -915,10 +2056,47 @@
           "neutral",
           "notable"
         ],
-        "id": 90
+        "id": 241,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Omicron Indi I",
+        "ord": 1,
+        "diameter": 5163,
+        "id": 242
+      },
+      {
+        "type": "planet",
+        "name": "Omicron Indi II",
+        "ord": 2,
+        "diameter": 13264,
+        "id": 243
+      },
+      {
+        "type": "giant",
+        "name": "Omicron Indi III",
+        "ord": 3,
+        "diameter": 123586,
+        "id": 244
+      },
+      {
+        "type": "giant",
+        "name": "Omicron Indi IV",
+        "ord": 4,
+        "diameter": 124030,
+        "id": 245
+      },
+      {
+        "type": "giant",
+        "name": "Omicron Indi V",
+        "ord": 5,
+        "diameter": 114640,
+        "id": 246
       }
     ],
-    "id": 89
+    "id": 240,
+    "type": "star"
   },
   {
     "name": "Iota Geminorum",
@@ -930,15 +2108,45 @@
     "orbits": [
       {
         "name": "Iota Geminorum IV",
-        "ordinal": 5,
+        "ordinal": 4,
         "tags": [
           "habitable",
           "notable"
         ],
-        "id": 92
+        "id": 248,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Iota Geminorum I",
+        "ord": 1,
+        "diameter": 7626,
+        "id": 249
+      },
+      {
+        "type": "planet",
+        "name": "Iota Geminorum II",
+        "ord": 2,
+        "diameter": 9448,
+        "id": 250
+      },
+      {
+        "type": "planet",
+        "name": "Iota Geminorum III",
+        "ord": 3,
+        "diameter": 8978,
+        "id": 251
+      },
+      {
+        "type": "giant",
+        "name": "Iota Geminorum IV",
+        "ord": 4,
+        "diameter": 132073,
+        "id": 252
       }
     ],
-    "id": 91
+    "id": 247,
+    "type": "star"
   },
   {
     "name": "Beta Caeli",
@@ -954,10 +2162,33 @@
         "tag": [
           "inhabited"
         ],
-        "id": 94
+        "id": 254,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Beta Caeli I",
+        "ord": 1,
+        "diameter": 7323,
+        "id": 255
+      },
+      {
+        "type": "planet",
+        "name": "Beta Caeli II",
+        "ord": 2,
+        "diameter": 7593,
+        "id": 256
+      },
+      {
+        "type": "planet",
+        "name": "Beta Caeli III",
+        "ord": 3,
+        "diameter": 13248,
+        "id": 257
       }
     ],
-    "id": 93
+    "id": 253,
+    "type": "star"
   },
   {
     "name": "Gamma Leporis",
@@ -973,10 +2204,40 @@
           "inhabited",
           "notable"
         ],
-        "id": 96
+        "id": 259,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Leporis I",
+        "ord": 1,
+        "diameter": 10886,
+        "id": 260
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Leporis II",
+        "ord": 2,
+        "diameter": 62717,
+        "id": 261
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Leporis III",
+        "ord": 3,
+        "diameter": 60320,
+        "id": 262
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Leporis IV",
+        "ord": 4,
+        "diameter": 53232,
+        "id": 263
       }
     ],
-    "id": 95
+    "id": 258,
+    "type": "star"
   },
   {
     "name": "Epsilon Fornacis",
@@ -998,10 +2259,61 @@
           "y": -35.3,
           "z": 0
         },
-        "id": 98
+        "id": 265,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis I",
+        "ord": 1,
+        "diameter": 12553,
+        "id": 266
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis II",
+        "ord": 2,
+        "diameter": 9390,
+        "id": 267
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis III",
+        "ord": 3,
+        "diameter": 8630,
+        "id": 268
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis IV",
+        "ord": 4,
+        "diameter": 9085,
+        "id": 269
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis V",
+        "ord": 5,
+        "diameter": 12592,
+        "id": 270
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Fornacis VI",
+        "ord": 6,
+        "diameter": 9081,
+        "id": 271
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Fornacis VII",
+        "ord": 7,
+        "diameter": 79709,
+        "id": 272
       }
     ],
-    "id": 97
+    "id": 264,
+    "type": "star"
   },
   {
     "name": "Xi Hydrae",
@@ -1018,10 +2330,61 @@
           "inhabited",
           "federation member"
         ],
-        "id": 100
+        "id": 274,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Xi Hydrae I",
+        "ord": 1,
+        "diameter": 5667,
+        "id": 275
+      },
+      {
+        "type": "planet",
+        "name": "Xi Hydrae II",
+        "ord": 2,
+        "diameter": 6010,
+        "id": 276
+      },
+      {
+        "type": "planet",
+        "name": "Xi Hydrae III",
+        "ord": 3,
+        "diameter": 12188,
+        "id": 277
+      },
+      {
+        "type": "planet",
+        "name": "Xi Hydrae IV",
+        "ord": 4,
+        "diameter": 8102,
+        "id": 278
+      },
+      {
+        "type": "giant",
+        "name": "Xi Hydrae V",
+        "ord": 5,
+        "diameter": 140647,
+        "id": 279
+      },
+      {
+        "type": "giant",
+        "name": "Xi Hydrae VI",
+        "ord": 6,
+        "diameter": 112726,
+        "id": 280
+      },
+      {
+        "type": "giant",
+        "name": "Xi Hydrae VII",
+        "ord": 7,
+        "diameter": 79860,
+        "id": 281
       }
     ],
-    "id": 99
+    "id": 273,
+    "type": "star"
   },
   {
     "name": "Omega Aurigae",
@@ -1037,10 +2400,40 @@
           "notable",
           "federation colony"
         ],
-        "id": 102
+        "id": 283,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Omega Aurigae I",
+        "ord": 1,
+        "diameter": 13837,
+        "id": 284
+      },
+      {
+        "type": "planet",
+        "name": "Omega Aurigae II",
+        "ord": 2,
+        "diameter": 14056,
+        "id": 285
+      },
+      {
+        "type": "giant",
+        "name": "Omega Aurigae III",
+        "ord": 3,
+        "diameter": 122813,
+        "id": 286
+      },
+      {
+        "type": "giant",
+        "name": "Omega Aurigae IV",
+        "ord": 4,
+        "diameter": 94931,
+        "id": 287
       }
     ],
-    "id": 101
+    "id": 282,
+    "type": "star"
   },
   {
     "name": "Pi3 Orionis",
@@ -1051,16 +2444,47 @@
     },
     "orbits": [
       {
+        "type": "planet",
+        "name": "Pi3 Orionis I",
+        "ord": 1,
+        "diameter": 11620,
+        "id": 289
+      },
+      {
+        "type": "planet",
+        "name": "Pi3 Orionis II",
+        "ord": 2,
+        "diameter": 11937,
+        "id": 290
+      },
+      {
         "name": "Orion",
+        "ord": 3,
         "tags": [
           "notable",
           "inhabited",
           "dma-map"
         ],
-        "id": 104
+        "id": 291,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Pi3 Orionis V",
+        "ord": 5,
+        "diameter": 118202,
+        "id": 292
+      },
+      {
+        "type": "giant",
+        "name": "Pi3 Orionis VI",
+        "ord": 6,
+        "diameter": 90165,
+        "id": 293
       }
     ],
-    "id": 103
+    "id": 288,
+    "type": "star"
   },
   {
     "name": "Pollux",
@@ -1081,10 +2505,61 @@
           "y": -30.271215067166505,
           "z": 12
         },
-        "id": 106
+        "id": 295,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Pollux I",
+        "ord": 1,
+        "diameter": 13680,
+        "id": 296
+      },
+      {
+        "type": "planet",
+        "name": "Pollux II",
+        "ord": 2,
+        "diameter": 6885,
+        "id": 297
+      },
+      {
+        "type": "planet",
+        "name": "Pollux III",
+        "ord": 3,
+        "diameter": 13016,
+        "id": 298
+      },
+      {
+        "type": "planet",
+        "name": "Pollux IV",
+        "ord": 4,
+        "diameter": 11674,
+        "id": 299
+      },
+      {
+        "type": "planet",
+        "name": "Pollux V",
+        "ord": 5,
+        "diameter": 8635,
+        "id": 300
+      },
+      {
+        "type": "giant",
+        "name": "Pollux VIII",
+        "ord": 8,
+        "diameter": 54274,
+        "id": 301
+      },
+      {
+        "type": "giant",
+        "name": "Pollux IX",
+        "ord": 9,
+        "diameter": 70203,
+        "id": 302
       }
     ],
-    "id": 105
+    "id": 294,
+    "type": "star"
   },
   {
     "name": "Psi Serpentis",
@@ -1101,10 +2576,61 @@
           "inhabited",
           "federation member"
         ],
-        "id": 108
+        "id": 304,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Psi Serpentis I",
+        "ord": 1,
+        "diameter": 5259,
+        "id": 305
+      },
+      {
+        "type": "planet",
+        "name": "Psi Serpentis II",
+        "ord": 2,
+        "diameter": 7848,
+        "id": 306
+      },
+      {
+        "type": "planet",
+        "name": "Psi Serpentis III",
+        "ord": 3,
+        "diameter": 13475,
+        "id": 307
+      },
+      {
+        "type": "planet",
+        "name": "Psi Serpentis IV",
+        "ord": 4,
+        "diameter": 8690,
+        "id": 308
+      },
+      {
+        "type": "giant",
+        "name": "Psi Serpentis V",
+        "ord": 5,
+        "diameter": 97575,
+        "id": 309
+      },
+      {
+        "type": "giant",
+        "name": "Psi Serpentis VII",
+        "ord": 7,
+        "diameter": 76292,
+        "id": 310
+      },
+      {
+        "type": "giant",
+        "name": "Psi Serpentis VIII",
+        "ord": 8,
+        "diameter": 113890,
+        "id": 311
       }
     ],
-    "id": 107
+    "id": 303,
+    "type": "star"
   },
   {
     "name": "Gamma Equulei",
@@ -1115,10 +2641,19 @@
         "tags": [
           "dma-map"
         ],
-        "id": 110
+        "id": 313,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Equulei II",
+        "ord": 2,
+        "diameter": 69163,
+        "id": 314
       }
     ],
-    "id": 109
+    "id": 312,
+    "type": "star"
   },
   {
     "name": "Bellatrix",
@@ -1134,7 +2669,51 @@
     "tags": [
       "landmark"
     ],
-    "id": 111
+    "id": 315,
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Bellatrix I",
+        "ord": 1,
+        "diameter": 7136,
+        "id": 316
+      },
+      {
+        "type": "planet",
+        "name": "Bellatrix II",
+        "ord": 2,
+        "diameter": 13632,
+        "id": 317
+      },
+      {
+        "type": "planet",
+        "name": "Bellatrix III",
+        "ord": 3,
+        "diameter": 12102,
+        "id": 318
+      },
+      {
+        "type": "planet",
+        "name": "Bellatrix IV",
+        "ord": 4,
+        "diameter": 13291,
+        "id": 319
+      },
+      {
+        "type": "planet",
+        "name": "Bellatrix V",
+        "ord": 5,
+        "diameter": 13220,
+        "id": 320
+      },
+      {
+        "type": "planet",
+        "name": "Bellatrix VI",
+        "ord": 6,
+        "diameter": 4894,
+        "id": 321
+      }
+    ]
   },
   {
     "name": "Omega Fornacis",
@@ -1150,10 +2729,47 @@
           "federation member",
           "notable"
         ],
-        "id": 113
+        "id": 323,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Omega Fornacis I",
+        "ord": 1,
+        "diameter": 6557,
+        "id": 324
+      },
+      {
+        "type": "planet",
+        "name": "Omega Fornacis II",
+        "ord": 2,
+        "diameter": 11717,
+        "id": 325
+      },
+      {
+        "type": "planet",
+        "name": "Omega Fornacis III",
+        "ord": 3,
+        "diameter": 13545,
+        "id": 326
+      },
+      {
+        "type": "giant",
+        "name": "Omega Fornacis IV",
+        "ord": 4,
+        "diameter": 61484,
+        "id": 327
+      },
+      {
+        "type": "giant",
+        "name": "Omega Fornacis V",
+        "ord": 5,
+        "diameter": 81196,
+        "id": 328
       }
     ],
-    "id": 112
+    "id": 322,
+    "type": "star"
   },
   {
     "name": "Alpha Lyrae",
@@ -1170,10 +2786,68 @@
           "notable",
           "dma-map"
         ],
-        "id": 115
+        "id": 330,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae I",
+        "ord": 1,
+        "diameter": 10500,
+        "id": 331
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae II",
+        "ord": 2,
+        "diameter": 8643,
+        "id": 332
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae III",
+        "ord": 3,
+        "diameter": 6280,
+        "id": 333
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae IV",
+        "ord": 4,
+        "diameter": 14269,
+        "id": 334
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae V",
+        "ord": 5,
+        "diameter": 7262,
+        "id": 335
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae VI",
+        "ord": 6,
+        "diameter": 7222,
+        "id": 336
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Lyrae VII",
+        "ord": 7,
+        "diameter": 10175,
+        "id": 337
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Lyrae X",
+        "ord": 10,
+        "diameter": 84804,
+        "id": 338
       }
     ],
-    "id": 114
+    "id": 329,
+    "type": "star"
   },
   {
     "name": "Cor Caroli",
@@ -1189,10 +2863,68 @@
           "inhabited",
           "notable"
         ],
-        "id": 117
+        "id": 340,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli I",
+        "ord": 1,
+        "diameter": 6435,
+        "id": 341
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli II",
+        "ord": 2,
+        "diameter": 11488,
+        "id": 342
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli III",
+        "ord": 3,
+        "diameter": 10784,
+        "id": 343
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli IV",
+        "ord": 4,
+        "diameter": 9443,
+        "id": 344
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli V",
+        "ord": 5,
+        "diameter": 6006,
+        "id": 345
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli VI",
+        "ord": 6,
+        "diameter": 7595,
+        "id": 346
+      },
+      {
+        "type": "giant",
+        "name": "Cor Caroli VII",
+        "ord": 7,
+        "diameter": 67258,
+        "id": 347
+      },
+      {
+        "type": "giant",
+        "name": "Cor Caroli X",
+        "ord": 10,
+        "diameter": 70192,
+        "id": 348
       }
     ],
-    "id": 116
+    "id": 339,
+    "type": "star"
   },
   {
     "name": "Azati Prime",
@@ -1205,7 +2937,31 @@
       "xindi colony",
       "delphic expanse"
     ],
-    "id": 118
+    "id": 349,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Azati Prime I",
+        "ord": 1,
+        "diameter": 11214,
+        "id": 350
+      },
+      {
+        "type": "giant",
+        "name": "Azati Prime II",
+        "ord": 2,
+        "diameter": 91785,
+        "id": 351
+      },
+      {
+        "type": "giant",
+        "name": "Azati Prime IV",
+        "ord": 4,
+        "diameter": 149494,
+        "id": 352
+      }
+    ]
   },
   {
     "name": "Alpha Eridani",
@@ -1226,10 +2982,68 @@
           "ma:en": "Alpha_Eridani_II",
           "mb:en": "Achernar_II"
         },
-        "id": 120
+        "id": 354,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani I",
+        "ord": 1,
+        "diameter": 6706,
+        "id": 355
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani II",
+        "ord": 2,
+        "diameter": 7549,
+        "id": 356
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani III",
+        "ord": 3,
+        "diameter": 5940,
+        "id": 357
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani IV",
+        "ord": 4,
+        "diameter": 12170,
+        "id": 358
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani V",
+        "ord": 5,
+        "diameter": 6173,
+        "id": 359
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani VI",
+        "ord": 6,
+        "diameter": 12799,
+        "id": 360
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Eridani VII",
+        "ord": 7,
+        "diameter": 11094,
+        "id": 361
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Eridani IX",
+        "ord": 9,
+        "diameter": 55327,
+        "id": 362
       }
     ],
-    "id": 119
+    "id": 353,
+    "type": "star"
   },
   {
     "name": "Caldos",
@@ -1247,10 +3061,68 @@
           "notable",
           "federation member"
         ],
-        "id": 122
+        "id": 364,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Caldos I",
+        "ord": 1,
+        "diameter": 5566,
+        "id": 365
+      },
+      {
+        "type": "planet",
+        "name": "Caldos II",
+        "ord": 2,
+        "diameter": 7553,
+        "id": 366
+      },
+      {
+        "type": "planet",
+        "name": "Caldos III",
+        "ord": 3,
+        "diameter": 6651,
+        "id": 367
+      },
+      {
+        "type": "planet",
+        "name": "Caldos IV",
+        "ord": 4,
+        "diameter": 10889,
+        "id": 368
+      },
+      {
+        "type": "planet",
+        "name": "Caldos V",
+        "ord": 5,
+        "diameter": 13244,
+        "id": 369
+      },
+      {
+        "type": "planet",
+        "name": "Caldos VI",
+        "ord": 6,
+        "diameter": 10748,
+        "id": 370
+      },
+      {
+        "type": "planet",
+        "name": "Caldos VII",
+        "ord": 7,
+        "diameter": 6134,
+        "id": 371
+      },
+      {
+        "type": "giant",
+        "name": "Caldos XI",
+        "ord": 11,
+        "diameter": 89208,
+        "id": 372
       }
     ],
-    "id": 121
+    "id": 363,
+    "type": "star"
   },
   {
     "name": "B'Hava'el",
@@ -1268,17 +3140,19 @@
           "inhabited",
           "federation member"
         ],
-        "id": 124
+        "id": 374,
+        "type": "planet"
       },
       {
         "name": "Deep Space 9",
         "tags": [
           "deep space station"
         ],
-        "id": 125
+        "id": 375,
+        "type": "planet"
       }
     ],
-    "id": 123
+    "id": 373
   },
   {
     "name": "Ajilon Prime",
@@ -1291,7 +3165,31 @@
       "y": -61.9,
       "z": -226.642943922
     },
-    "id": 126
+    "id": 376,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "giant",
+        "name": "Ajilon Prime II",
+        "ord": 2,
+        "diameter": 132957,
+        "id": 377
+      },
+      {
+        "type": "giant",
+        "name": "Ajilon Prime III",
+        "ord": 3,
+        "diameter": 61106,
+        "id": 378
+      },
+      {
+        "type": "giant",
+        "name": "Ajilon Prime V",
+        "ord": 5,
+        "diameter": 52870,
+        "id": 379
+      }
+    ]
   },
   {
     "name": "The Binaries",
@@ -1306,7 +3204,37 @@
       "y": -69.913,
       "z": 86.89916002979173
     },
-    "id": 127
+    "id": 380,
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "The Binaries I",
+        "ord": 1,
+        "diameter": 13397,
+        "id": 381
+      },
+      {
+        "type": "planet",
+        "name": "The Binaries II",
+        "ord": 2,
+        "diameter": 5622,
+        "id": 382
+      },
+      {
+        "type": "planet",
+        "name": "The Binaries III",
+        "ord": 3,
+        "diameter": 5284,
+        "id": 383
+      },
+      {
+        "type": "giant",
+        "name": "The Binaries IV",
+        "ord": 4,
+        "diameter": 78084,
+        "id": 384
+      }
+    ]
   },
   {
     "name": "No'Mat",
@@ -1320,7 +3248,58 @@
       "claimed by klingon empire",
       "notable"
     ],
-    "id": 128
+    "id": 385,
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "No'Mat I",
+        "ord": 1,
+        "diameter": 13461,
+        "id": 386
+      },
+      {
+        "type": "planet",
+        "name": "No'Mat II",
+        "ord": 2,
+        "diameter": 10385,
+        "id": 387
+      },
+      {
+        "type": "planet",
+        "name": "No'Mat III",
+        "ord": 3,
+        "diameter": 8884,
+        "id": 388
+      },
+      {
+        "type": "planet",
+        "name": "No'Mat IV",
+        "ord": 4,
+        "diameter": 12291,
+        "id": 389
+      },
+      {
+        "type": "planet",
+        "name": "No'Mat V",
+        "ord": 5,
+        "diameter": 6404,
+        "id": 390
+      },
+      {
+        "type": "planet",
+        "name": "No'Mat VI",
+        "ord": 6,
+        "diameter": 8341,
+        "id": 391
+      },
+      {
+        "type": "giant",
+        "name": "No'Mat VII",
+        "ord": 7,
+        "diameter": 77244,
+        "id": 392
+      }
+    ]
   },
   {
     "name": "Theta Hydrae",
@@ -1336,10 +3315,68 @@
           "claimed by klingon empire",
           "notable"
         ],
-        "id": 130
+        "id": 394,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Theta Hydrae I",
+        "ord": 1,
+        "diameter": 10169,
+        "id": 395
+      },
+      {
+        "type": "planet",
+        "name": "Theta Hydrae II",
+        "ord": 2,
+        "diameter": 10691,
+        "id": 396
+      },
+      {
+        "type": "planet",
+        "name": "Theta Hydrae III",
+        "ord": 3,
+        "diameter": 9426,
+        "id": 397
+      },
+      {
+        "type": "planet",
+        "name": "Theta Hydrae IV",
+        "ord": 4,
+        "diameter": 9760,
+        "id": 398
+      },
+      {
+        "type": "planet",
+        "name": "Theta Hydrae V",
+        "ord": 5,
+        "diameter": 9442,
+        "id": 399
+      },
+      {
+        "type": "giant",
+        "name": "Theta Hydrae VI",
+        "ord": 6,
+        "diameter": 96880,
+        "id": 400
+      },
+      {
+        "type": "giant",
+        "name": "Theta Hydrae VII",
+        "ord": 7,
+        "diameter": 64426,
+        "id": 401
+      },
+      {
+        "type": "giant",
+        "name": "Theta Hydrae VIII",
+        "ord": 8,
+        "diameter": 68776,
+        "id": 402
       }
     ],
-    "id": 129
+    "id": 393,
+    "type": "star"
   },
   {
     "name": "Cursa",
@@ -1352,7 +3389,59 @@
       "claimed by klingon empire",
       "notable"
     ],
-    "id": 131
+    "id": 403,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Cursa I",
+        "ord": 1,
+        "diameter": 13976,
+        "id": 404
+      },
+      {
+        "type": "planet",
+        "name": "Cursa II",
+        "ord": 2,
+        "diameter": 7826,
+        "id": 405
+      },
+      {
+        "type": "planet",
+        "name": "Cursa III",
+        "ord": 3,
+        "diameter": 7219,
+        "id": 406
+      },
+      {
+        "type": "planet",
+        "name": "Cursa IV",
+        "ord": 4,
+        "diameter": 7382,
+        "id": 407
+      },
+      {
+        "type": "planet",
+        "name": "Cursa V",
+        "ord": 5,
+        "diameter": 10370,
+        "id": 408
+      },
+      {
+        "type": "planet",
+        "name": "Cursa VI",
+        "ord": 6,
+        "diameter": 7119,
+        "id": 409
+      },
+      {
+        "type": "giant",
+        "name": "Cursa VII",
+        "ord": 7,
+        "diameter": 142500,
+        "id": 410
+      }
+    ]
   },
   {
     "name": "Zeta Leporis",
@@ -1368,10 +3457,47 @@
           "notable",
           "inhabited"
         ],
-        "id": 133
+        "id": 412,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Zeta Leporis I",
+        "ord": 1,
+        "diameter": 6146,
+        "id": 413
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Leporis II",
+        "ord": 2,
+        "diameter": 95398,
+        "id": 414
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Leporis IV",
+        "ord": 4,
+        "diameter": 141653,
+        "id": 415
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Leporis V",
+        "ord": 5,
+        "diameter": 89974,
+        "id": 416
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Leporis VI",
+        "ord": 6,
+        "diameter": 140483,
+        "id": 417
       }
     ],
-    "id": 132
+    "id": 411,
+    "type": "star"
   },
   {
     "name": "Pi Canis Majoris",
@@ -1388,10 +3514,39 @@
           "claimed by klingon empire",
           "notable"
         ],
-        "id": 135
+        "id": 419,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Pi Canis Majoris I",
+        "ord": 1,
+        "diameter": 109156,
+        "id": 420
+      },
+      {
+        "type": "giant",
+        "name": "Pi Canis Majoris II",
+        "ord": 2,
+        "diameter": 123886,
+        "id": 421
+      },
+      {
+        "type": "giant",
+        "name": "Pi Canis Majoris III",
+        "ord": 3,
+        "diameter": 136609,
+        "id": 422
+      },
+      {
+        "type": "giant",
+        "name": "Pi Canis Majoris IV",
+        "ord": 4,
+        "diameter": 61916,
+        "id": 423
       }
     ],
-    "id": 134
+    "id": 418
   },
   {
     "name": "Delta Leporis",
@@ -1408,10 +3563,46 @@
           "claimed by klingon empire",
           "notable"
         ],
-        "id": 137
+        "id": 425,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Delta Leporis I",
+        "ord": 1,
+        "diameter": 12206,
+        "id": 426
+      },
+      {
+        "type": "giant",
+        "name": "Delta Leporis II",
+        "ord": 2,
+        "diameter": 105494,
+        "id": 427
+      },
+      {
+        "type": "giant",
+        "name": "Delta Leporis III",
+        "ord": 3,
+        "diameter": 146837,
+        "id": 428
+      },
+      {
+        "type": "giant",
+        "name": "Delta Leporis V",
+        "ord": 5,
+        "diameter": 111237,
+        "id": 429
+      },
+      {
+        "type": "giant",
+        "name": "Delta Leporis VI",
+        "ord": 6,
+        "diameter": 111282,
+        "id": 430
       }
     ],
-    "id": 136
+    "id": 424
   },
   {
     "name": "Aldebaran",
@@ -1429,10 +3620,32 @@
           "notable",
           "taurus reach"
         ],
-        "id": 139
+        "id": 432,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Aldebaran I",
+        "ord": 1,
+        "diameter": 113455,
+        "id": 433
+      },
+      {
+        "type": "giant",
+        "name": "Aldebaran II",
+        "ord": 2,
+        "diameter": 127317,
+        "id": 434
+      },
+      {
+        "type": "giant",
+        "name": "Aldebaran III",
+        "ord": 3,
+        "diameter": 55873,
+        "id": 435
       }
     ],
-    "id": 138
+    "id": 431
   },
   {
     "name": "Canopus",
@@ -1449,10 +3662,18 @@
           "federation member",
           "notable"
         ],
-        "id": 141
+        "id": 437,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Canopus II",
+        "ord": 2,
+        "diameter": 132446,
+        "id": 438
       }
     ],
-    "id": 140
+    "id": 436
   },
   {
     "name": "94 Aquarii",
@@ -1469,10 +3690,53 @@
           "inhabited",
           "notable"
         ],
-        "id": 143
+        "id": 440,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "94 Aquarii I",
+        "ord": 1,
+        "diameter": 6645,
+        "id": 441
+      },
+      {
+        "type": "planet",
+        "name": "94 Aquarii II",
+        "ord": 2,
+        "diameter": 13025,
+        "id": 442
+      },
+      {
+        "type": "planet",
+        "name": "94 Aquarii III",
+        "ord": 3,
+        "diameter": 10841,
+        "id": 443
+      },
+      {
+        "type": "giant",
+        "name": "94 Aquarii IV",
+        "ord": 4,
+        "diameter": 124970,
+        "id": 444
+      },
+      {
+        "type": "giant",
+        "name": "94 Aquarii V",
+        "ord": 5,
+        "diameter": 61671,
+        "id": 445
+      },
+      {
+        "type": "giant",
+        "name": "94 Aquarii VI",
+        "ord": 6,
+        "diameter": 108045,
+        "id": 446
       }
     ],
-    "id": 142
+    "id": 439
   },
   {
     "name": "Xi Pegasi",
@@ -1489,10 +3753,67 @@
           "inhabited",
           "notable"
         ],
-        "id": 145
+        "id": 448,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi I",
+        "ord": 1,
+        "diameter": 9743,
+        "id": 449
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi II",
+        "ord": 2,
+        "diameter": 8599,
+        "id": 450
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi III",
+        "ord": 3,
+        "diameter": 5232,
+        "id": 451
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi IV",
+        "ord": 4,
+        "diameter": 9887,
+        "id": 452
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi V",
+        "ord": 5,
+        "diameter": 10439,
+        "id": 453
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi VI",
+        "ord": 6,
+        "diameter": 12329,
+        "id": 454
+      },
+      {
+        "type": "planet",
+        "name": "Xi Pegasi VII",
+        "ord": 7,
+        "diameter": 6418,
+        "id": 455
+      },
+      {
+        "type": "giant",
+        "name": "Xi Pegasi VIII",
+        "ord": 8,
+        "diameter": 77830,
+        "id": 456
       }
     ],
-    "id": 144
+    "id": 447
   },
   {
     "name": "26 Draconis",
@@ -1515,10 +3836,46 @@
           "y": "-0.7998515632732952,",
           "z": -4
         },
-        "id": 147
+        "id": 458,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "26 Draconis I",
+        "ord": 1,
+        "diameter": 9600,
+        "id": 459
+      },
+      {
+        "type": "giant",
+        "name": "26 Draconis II",
+        "ord": 2,
+        "diameter": 143064,
+        "id": 460
+      },
+      {
+        "type": "giant",
+        "name": "26 Draconis III",
+        "ord": 3,
+        "diameter": 120908,
+        "id": 461
+      },
+      {
+        "type": "giant",
+        "name": "26 Draconis IV",
+        "ord": 4,
+        "diameter": 115877,
+        "id": 462
+      },
+      {
+        "type": "giant",
+        "name": "26 Draconis VI",
+        "ord": 6,
+        "diameter": 123575,
+        "id": 463
       }
     ],
-    "id": 146
+    "id": 457
   },
   {
     "name": "Ceti Alpha",
@@ -1535,10 +3892,31 @@
         "tags": [
           "notable"
         ],
-        "id": 149
+        "id": 465
+      },
+      {
+        "type": "planet",
+        "name": "Ceti Alpha I",
+        "ord": 1,
+        "diameter": 5475,
+        "id": 466
+      },
+      {
+        "type": "giant",
+        "name": "Ceti Alpha II",
+        "ord": 2,
+        "diameter": 109638,
+        "id": 467
+      },
+      {
+        "type": "giant",
+        "name": "Ceti Alpha III",
+        "ord": 3,
+        "diameter": 79492,
+        "id": 468
       }
     ],
-    "id": 148
+    "id": 464
   },
   {
     "name": "Pi Hydrae",
@@ -1556,10 +3934,73 @@
           "notable",
           "federation outpost"
         ],
-        "id": 151
+        "id": 470
+      },
+      {
+        "type": "planet",
+        "name": "Pi Hydrae I",
+        "ord": 1,
+        "diameter": 10885,
+        "id": 471
+      },
+      {
+        "type": "planet",
+        "name": "Pi Hydrae II",
+        "ord": 2,
+        "diameter": 10106,
+        "id": 472
+      },
+      {
+        "type": "planet",
+        "name": "Pi Hydrae III",
+        "ord": 3,
+        "diameter": 8607,
+        "id": 473
+      },
+      {
+        "type": "planet",
+        "name": "Pi Hydrae IV",
+        "ord": 4,
+        "diameter": 5081,
+        "id": 474
+      },
+      {
+        "type": "planet",
+        "name": "Pi Hydrae V",
+        "ord": 5,
+        "diameter": 14137,
+        "id": 475
+      },
+      {
+        "type": "giant",
+        "name": "Pi Hydrae VI",
+        "ord": 6,
+        "diameter": 119189,
+        "id": 476
+      },
+      {
+        "type": "giant",
+        "name": "Pi Hydrae VII",
+        "ord": 7,
+        "diameter": 147967,
+        "id": 477
+      },
+      {
+        "type": "giant",
+        "name": "Pi Hydrae VIII",
+        "ord": 8,
+        "diameter": 118378,
+        "id": 478
+      },
+      {
+        "type": "giant",
+        "name": "Pi Hydrae IX",
+        "ord": 9,
+        "diameter": 63689,
+        "id": 479
       }
     ],
-    "id": 150
+    "id": 469
   },
   {
     "name": "Alpha Gruis",
@@ -1577,10 +4018,66 @@
           "notable",
           "inhabited"
         ],
-        "id": 153
+        "id": 481
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Gruis I",
+        "ord": 1,
+        "diameter": 6952,
+        "id": 482
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Gruis II",
+        "ord": 2,
+        "diameter": 12272,
+        "id": 483
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Gruis III",
+        "ord": 3,
+        "diameter": 11284,
+        "id": 484
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Gruis IV",
+        "ord": 4,
+        "diameter": 8754,
+        "id": 485
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Gruis V",
+        "ord": 5,
+        "diameter": 13386,
+        "id": 486
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Gruis VI",
+        "ord": 6,
+        "diameter": 64993,
+        "id": 487
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Gruis VII",
+        "ord": 7,
+        "diameter": 100810,
+        "id": 488
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Gruis VIII",
+        "ord": 8,
+        "diameter": 60731,
+        "id": 489
       }
     ],
-    "id": 152
+    "id": 480
   },
   {
     "name": "Alpha Indi",
@@ -1601,10 +4098,80 @@
           "notable",
           "federation member"
         ],
-        "id": 155
+        "id": 491
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi I",
+        "ord": 1,
+        "diameter": 5280,
+        "id": 492
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi II",
+        "ord": 2,
+        "diameter": 12865,
+        "id": 493
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi III",
+        "ord": 3,
+        "diameter": 9433,
+        "id": 494
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi IV",
+        "ord": 4,
+        "diameter": 6883,
+        "id": 495
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi V",
+        "ord": 5,
+        "diameter": 7238,
+        "id": 496
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi VI",
+        "ord": 6,
+        "diameter": 10123,
+        "id": 497
+      },
+      {
+        "type": "planet",
+        "name": "Alpha Indi VII",
+        "ord": 7,
+        "diameter": 10269,
+        "id": 498
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Indi VIII",
+        "ord": 8,
+        "diameter": 140315,
+        "id": 499
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Indi IX",
+        "ord": 9,
+        "diameter": 84650,
+        "id": 500
+      },
+      {
+        "type": "giant",
+        "name": "Alpha Indi X",
+        "ord": 10,
+        "diameter": 111000,
+        "id": 501
       }
     ],
-    "id": 154
+    "id": 490
   },
   {
     "name": "Eta Lupi",
@@ -1622,10 +4189,38 @@
           "notable",
           "federation member"
         ],
-        "id": 157
+        "id": 503
+      },
+      {
+        "type": "giant",
+        "name": "Eta Lupi I",
+        "ord": 1,
+        "diameter": 128070,
+        "id": 504
+      },
+      {
+        "type": "giant",
+        "name": "Eta Lupi II",
+        "ord": 2,
+        "diameter": 79807,
+        "id": 505
+      },
+      {
+        "type": "giant",
+        "name": "Eta Lupi III",
+        "ord": 3,
+        "diameter": 95351,
+        "id": 506
+      },
+      {
+        "type": "giant",
+        "name": "Eta Lupi IV",
+        "ord": 4,
+        "diameter": 120296,
+        "id": 507
       }
     ],
-    "id": 156
+    "id": 502
   },
   {
     "name": "Betelgeuse",
@@ -1643,10 +4238,66 @@
           "notable",
           "federation member"
         ],
-        "id": 159
+        "id": 509
+      },
+      {
+        "type": "planet",
+        "name": "Betelgeuse I",
+        "ord": 1,
+        "diameter": 11410,
+        "id": 510
+      },
+      {
+        "type": "planet",
+        "name": "Betelgeuse II",
+        "ord": 2,
+        "diameter": 6952,
+        "id": 511
+      },
+      {
+        "type": "planet",
+        "name": "Betelgeuse III",
+        "ord": 3,
+        "diameter": 9440,
+        "id": 512
+      },
+      {
+        "type": "planet",
+        "name": "Betelgeuse IV",
+        "ord": 4,
+        "diameter": 13116,
+        "id": 513
+      },
+      {
+        "type": "giant",
+        "name": "Betelgeuse V",
+        "ord": 5,
+        "diameter": 74336,
+        "id": 514
+      },
+      {
+        "type": "giant",
+        "name": "Betelgeuse VI",
+        "ord": 6,
+        "diameter": 114317,
+        "id": 515
+      },
+      {
+        "type": "giant",
+        "name": "Betelgeuse VIII",
+        "ord": 8,
+        "diameter": 100358,
+        "id": 516
+      },
+      {
+        "type": "giant",
+        "name": "Betelgeuse IX",
+        "ord": 9,
+        "diameter": 75670,
+        "id": 517
       }
     ],
-    "id": 158
+    "id": 508
   },
   {
     "name": "Beta Cephei",
@@ -1667,7 +4318,7 @@
           "notable",
           "federation member"
         ],
-        "id": 161
+        "id": 519
       },
       {
         "name": "Terratin",
@@ -1679,10 +4330,10 @@
         "tags": [
           "notable"
         ],
-        "id": 162
+        "id": 520
       }
     ],
-    "id": 160
+    "id": 518
   },
   {
     "name": "Kappa Delphini",
@@ -1700,10 +4351,45 @@
           "notable",
           "federation member"
         ],
-        "id": 164
+        "id": 522
+      },
+      {
+        "type": "planet",
+        "name": "Kappa Delphini I",
+        "ord": 1,
+        "diameter": 8254,
+        "id": 523
+      },
+      {
+        "type": "planet",
+        "name": "Kappa Delphini II",
+        "ord": 2,
+        "diameter": 13029,
+        "id": 524
+      },
+      {
+        "type": "planet",
+        "name": "Kappa Delphini III",
+        "ord": 3,
+        "diameter": 5135,
+        "id": 525
+      },
+      {
+        "type": "giant",
+        "name": "Kappa Delphini IV",
+        "ord": 4,
+        "diameter": 60725,
+        "id": 526
+      },
+      {
+        "type": "giant",
+        "name": "Kappa Delphini V",
+        "ord": 5,
+        "diameter": 101025,
+        "id": 527
       }
     ],
-    "id": 163
+    "id": 521
   },
   {
     "name": "Epsilon Boötis",
@@ -1721,10 +4407,66 @@
           "notable",
           "federation member"
         ],
-        "id": 166
+        "id": 529
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis I",
+        "ord": 1,
+        "diameter": 12446,
+        "id": 530
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis II",
+        "ord": 2,
+        "diameter": 9307,
+        "id": 531
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis III",
+        "ord": 3,
+        "diameter": 8016,
+        "id": 532
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis IV",
+        "ord": 4,
+        "diameter": 9803,
+        "id": 533
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis V",
+        "ord": 5,
+        "diameter": 11791,
+        "id": 534
+      },
+      {
+        "type": "planet",
+        "name": "Epsilon Boötis VI",
+        "ord": 6,
+        "diameter": 12303,
+        "id": 535
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Boötis VIII",
+        "ord": 8,
+        "diameter": 137943,
+        "id": 536
+      },
+      {
+        "type": "giant",
+        "name": "Epsilon Boötis IX",
+        "ord": 9,
+        "diameter": 114958,
+        "id": 537
       }
     ],
-    "id": 165
+    "id": 528
   },
   {
     "name": "Iota Leonis",
@@ -1736,7 +4478,15 @@
     "type": "star",
     "orbits": [
       {
+        "type": "planet",
+        "name": "Iota Leonis I",
+        "ord": 1,
+        "diameter": 5382,
+        "id": 539
+      },
+      {
         "name": "Argelius II",
+        "ord": 2,
         "type": "planet",
         "tags": [
           "notable",
@@ -1748,10 +4498,24 @@
           "y": -13.657184124061743,
           "z": 4
         },
-        "id": 168
+        "id": 540
+      },
+      {
+        "type": "giant",
+        "name": "Iota Leonis III",
+        "ord": 3,
+        "diameter": 51869,
+        "id": 541
+      },
+      {
+        "type": "giant",
+        "name": "Iota Leonis IV",
+        "ord": 4,
+        "diameter": 143086,
+        "id": 542
       }
     ],
-    "id": 167
+    "id": 538
   },
   {
     "name": "Sirius",
@@ -1763,16 +4527,80 @@
     "type": "star",
     "orbits": [
       {
+        "type": "planet",
+        "name": "Sirius I",
+        "ord": 1,
+        "diameter": 13319,
+        "id": 544
+      },
+      {
+        "type": "planet",
+        "name": "Sirius II",
+        "ord": 2,
+        "diameter": 7117,
+        "id": 545
+      },
+      {
+        "type": "planet",
+        "name": "Sirius III",
+        "ord": 3,
+        "diameter": 6358,
+        "id": 546
+      },
+      {
+        "type": "planet",
+        "name": "Sirius IV",
+        "ord": 4,
+        "diameter": 7232,
+        "id": 547
+      },
+      {
+        "type": "planet",
+        "name": "Sirius V",
+        "ord": 5,
+        "diameter": 11572,
+        "id": 548
+      },
+      {
+        "type": "planet",
+        "name": "Sirius VI",
+        "ord": 6,
+        "diameter": 13497,
+        "id": 549
+      },
+      {
+        "type": "planet",
+        "name": "Sirius VII",
+        "ord": 7,
+        "diameter": 8438,
+        "id": 550
+      },
+      {
+        "type": "planet",
+        "name": "Sirius VIII",
+        "ord": 8,
+        "diameter": 6916,
+        "id": 551
+      },
+      {
         "name": "Sirius IX",
+        "ord": 9,
         "type": "planet",
         "tags": [
           "notable",
           "federation member"
         ],
-        "id": 170
+        "id": 552
+      },
+      {
+        "type": "giant",
+        "name": "Sirius X",
+        "ord": 10,
+        "diameter": 88912,
+        "id": 553
       }
     ],
-    "id": 169
+    "id": 543
   },
   {
     "name": "Chi Eridani",
@@ -1790,10 +4618,87 @@
           "notable",
           "federation member"
         ],
-        "id": 172
+        "id": 555
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani I",
+        "ord": 1,
+        "diameter": 10001,
+        "id": 556
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani II",
+        "ord": 2,
+        "diameter": 11463,
+        "id": 557
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani III",
+        "ord": 3,
+        "diameter": 6641,
+        "id": 558
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani IV",
+        "ord": 4,
+        "diameter": 10339,
+        "id": 559
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani V",
+        "ord": 5,
+        "diameter": 7532,
+        "id": 560
+      },
+      {
+        "type": "planet",
+        "name": "Chi Eridani VI",
+        "ord": 6,
+        "diameter": 13787,
+        "id": 561
+      },
+      {
+        "type": "giant",
+        "name": "Chi Eridani VII",
+        "ord": 7,
+        "diameter": 115970,
+        "id": 562
+      },
+      {
+        "type": "giant",
+        "name": "Chi Eridani VIII",
+        "ord": 8,
+        "diameter": 147227,
+        "id": 563
+      },
+      {
+        "type": "giant",
+        "name": "Chi Eridani IX",
+        "ord": 9,
+        "diameter": 131508,
+        "id": 564
+      },
+      {
+        "type": "giant",
+        "name": "Chi Eridani X",
+        "ord": 10,
+        "diameter": 124216,
+        "id": 565
+      },
+      {
+        "type": "giant",
+        "name": "Chi Eridani XI",
+        "ord": 11,
+        "diameter": 76388,
+        "id": 566
       }
     ],
-    "id": 171
+    "id": 554
   },
   {
     "name": "Eta Scorpii",
@@ -1811,10 +4716,59 @@
           "notable",
           "federation colony"
         ],
-        "id": 174
+        "id": 568
+      },
+      {
+        "type": "planet",
+        "name": "Eta Scorpii I",
+        "ord": 1,
+        "diameter": 6895,
+        "id": 569
+      },
+      {
+        "type": "planet",
+        "name": "Eta Scorpii II",
+        "ord": 2,
+        "diameter": 10353,
+        "id": 570
+      },
+      {
+        "type": "planet",
+        "name": "Eta Scorpii III",
+        "ord": 3,
+        "diameter": 7386,
+        "id": 571
+      },
+      {
+        "type": "planet",
+        "name": "Eta Scorpii IV",
+        "ord": 4,
+        "diameter": 8834,
+        "id": 572
+      },
+      {
+        "type": "planet",
+        "name": "Eta Scorpii V",
+        "ord": 5,
+        "diameter": 12631,
+        "id": 573
+      },
+      {
+        "type": "giant",
+        "name": "Eta Scorpii VI",
+        "ord": 6,
+        "diameter": 117862,
+        "id": 574
+      },
+      {
+        "type": "giant",
+        "name": "Eta Scorpii VII",
+        "ord": 7,
+        "diameter": 124619,
+        "id": 575
       }
     ],
-    "id": 173
+    "id": 567
   },
   {
     "name": "Deneb",
@@ -1832,10 +4786,59 @@
           "notable",
           "federation member"
         ],
-        "id": 176
+        "id": 577
+      },
+      {
+        "type": "planet",
+        "name": "Deneb I",
+        "ord": 1,
+        "diameter": 13493,
+        "id": 578
+      },
+      {
+        "type": "planet",
+        "name": "Deneb II",
+        "ord": 2,
+        "diameter": 13111,
+        "id": 579
+      },
+      {
+        "type": "planet",
+        "name": "Deneb III",
+        "ord": 3,
+        "diameter": 10224,
+        "id": 580
+      },
+      {
+        "type": "planet",
+        "name": "Deneb IV",
+        "ord": 4,
+        "diameter": 12353,
+        "id": 581
+      },
+      {
+        "type": "planet",
+        "name": "Deneb V",
+        "ord": 5,
+        "diameter": 7469,
+        "id": 582
+      },
+      {
+        "type": "planet",
+        "name": "Deneb VI",
+        "ord": 6,
+        "diameter": 11088,
+        "id": 583
+      },
+      {
+        "type": "giant",
+        "name": "Deneb VII",
+        "ord": 7,
+        "diameter": 72342,
+        "id": 584
       }
     ],
-    "id": 175
+    "id": 576
   },
   {
     "name": "Beta Lyrae",
@@ -1851,13 +4854,55 @@
         "tags": [
           "notable"
         ],
-        "id": 178
+        "id": 586
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lyrae I",
+        "ord": 1,
+        "diameter": 11565,
+        "id": 587
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lyrae II",
+        "ord": 2,
+        "diameter": 8815,
+        "id": 588
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lyrae III",
+        "ord": 3,
+        "diameter": 6286,
+        "id": 589
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lyrae IV",
+        "ord": 4,
+        "diameter": 111685,
+        "id": 590
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lyrae VI",
+        "ord": 6,
+        "diameter": 144360,
+        "id": 591
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lyrae VII",
+        "ord": 7,
+        "diameter": 89181,
+        "id": 592
       }
     ],
-    "id": 177
+    "id": 585,
+    "type": "star"
   },
   {
-    "orbits": null,
     "name": "Khitomer",
     "tags": [
       "notable",
@@ -1868,7 +4913,80 @@
       "y": -47.9,
       "z": 47.23142
     },
-    "id": 179
+    "id": 593,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Khitomer I",
+        "ord": 1,
+        "diameter": 10616,
+        "id": 594
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer II",
+        "ord": 2,
+        "diameter": 12882,
+        "id": 595
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer III",
+        "ord": 3,
+        "diameter": 6493,
+        "id": 596
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer IV",
+        "ord": 4,
+        "diameter": 14067,
+        "id": 597
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer V",
+        "ord": 5,
+        "diameter": 12040,
+        "id": 598
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer VI",
+        "ord": 6,
+        "diameter": 8527,
+        "id": 599
+      },
+      {
+        "type": "planet",
+        "name": "Khitomer VII",
+        "ord": 7,
+        "diameter": 12197,
+        "id": 600
+      },
+      {
+        "type": "giant",
+        "name": "Khitomer VIII",
+        "ord": 8,
+        "diameter": 102937,
+        "id": 601
+      },
+      {
+        "type": "giant",
+        "name": "Khitomer IX",
+        "ord": 9,
+        "diameter": 130151,
+        "id": 602
+      },
+      {
+        "type": "giant",
+        "name": "Khitomer XI",
+        "ord": 11,
+        "diameter": 105581,
+        "id": 603
+      }
+    ]
   },
   {
     "name": "Gamma 400",
@@ -1887,10 +5005,82 @@
           "notable",
           "federation starbase"
         ],
-        "id": 181
+        "id": 605,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 I",
+        "ord": 1,
+        "diameter": 5043,
+        "id": 606
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 II",
+        "ord": 2,
+        "diameter": 13194,
+        "id": 607
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 III",
+        "ord": 3,
+        "diameter": 10725,
+        "id": 608
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 IV",
+        "ord": 4,
+        "diameter": 6970,
+        "id": 609
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 V",
+        "ord": 5,
+        "diameter": 9395,
+        "id": 610
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 VI",
+        "ord": 6,
+        "diameter": 14216,
+        "id": 611
+      },
+      {
+        "type": "planet",
+        "name": "Gamma 400 VII",
+        "ord": 7,
+        "diameter": 9681,
+        "id": 612
+      },
+      {
+        "type": "giant",
+        "name": "Gamma 400 VIII",
+        "ord": 8,
+        "diameter": 106996,
+        "id": 613
+      },
+      {
+        "type": "giant",
+        "name": "Gamma 400 IX",
+        "ord": 9,
+        "diameter": 74038,
+        "id": 614
+      },
+      {
+        "type": "giant",
+        "name": "Gamma 400 X",
+        "ord": 10,
+        "diameter": 61213,
+        "id": 615
       }
     ],
-    "id": 180
+    "id": 604,
+    "type": "star"
   },
   {
     "location": {
@@ -1905,10 +5095,33 @@
           "notable",
           "claimed by klingon empire"
         ],
-        "id": 183
+        "id": 617,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "undefined I",
+        "ord": 1,
+        "diameter": 13565,
+        "id": 618
+      },
+      {
+        "type": "giant",
+        "name": "undefined II",
+        "ord": 2,
+        "diameter": 126704,
+        "id": 619
+      },
+      {
+        "type": "giant",
+        "name": "undefined III",
+        "ord": 3,
+        "diameter": 126704,
+        "id": 620
       }
     ],
-    "id": 182
+    "id": 616,
+    "type": "star"
   },
   {
     "name": "Psi Tauri",
@@ -1925,10 +5138,89 @@
           "federation member",
           "inhabited"
         ],
-        "id": 185
+        "id": 622,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri I",
+        "ord": 1,
+        "diameter": 13130,
+        "id": 623
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri II",
+        "ord": 2,
+        "diameter": 13214,
+        "id": 624
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri III",
+        "ord": 3,
+        "diameter": 12121,
+        "id": 625
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri IV",
+        "ord": 4,
+        "diameter": 8784,
+        "id": 626
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri V",
+        "ord": 5,
+        "diameter": 10827,
+        "id": 627
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri VI",
+        "ord": 6,
+        "diameter": 9952,
+        "id": 628
+      },
+      {
+        "type": "planet",
+        "name": "Psi Tauri VII",
+        "ord": 7,
+        "diameter": 6446,
+        "id": 629
+      },
+      {
+        "type": "giant",
+        "name": "Psi Tauri VIII",
+        "ord": 8,
+        "diameter": 86531,
+        "id": 630
+      },
+      {
+        "type": "giant",
+        "name": "Psi Tauri IX",
+        "ord": 9,
+        "diameter": 65194,
+        "id": 631
+      },
+      {
+        "type": "giant",
+        "name": "Psi Tauri X",
+        "ord": 10,
+        "diameter": 109108,
+        "id": 632
+      },
+      {
+        "type": "giant",
+        "name": "Psi Tauri XI",
+        "ord": 11,
+        "diameter": 50371,
+        "id": 633
       }
     ],
-    "id": 184
+    "id": 621,
+    "type": "star"
   },
   {
     "name": "Starbase 11",
@@ -1944,7 +5236,45 @@
       "y": -74.729,
       "z": 31
     },
-    "id": 186
+    "id": 634,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 11 I",
+        "ord": 1,
+        "diameter": 5573,
+        "id": 635
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 11 II",
+        "ord": 2,
+        "diameter": 8838,
+        "id": 636
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 11 III",
+        "ord": 3,
+        "diameter": 13946,
+        "id": 637
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 11 IV",
+        "ord": 4,
+        "diameter": 10811,
+        "id": 638
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 11 V",
+        "ord": 5,
+        "diameter": 10984,
+        "id": 639
+      }
+    ]
   },
   {
     "name": "Starbase 2",
@@ -1960,7 +5290,73 @@
       "y": -69.5,
       "z": -33.360341721
     },
-    "id": 187
+    "id": 640,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 2 I",
+        "ord": 1,
+        "diameter": 6374,
+        "id": 641
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 2 II",
+        "ord": 2,
+        "diameter": 7092,
+        "id": 642
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 2 III",
+        "ord": 3,
+        "diameter": 6213,
+        "id": 643
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 2 IV",
+        "ord": 4,
+        "diameter": 12966,
+        "id": 644
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 2 V",
+        "ord": 5,
+        "diameter": 66726,
+        "id": 645
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 2 VI",
+        "ord": 6,
+        "diameter": 89606,
+        "id": 646
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 2 VII",
+        "ord": 7,
+        "diameter": 78431,
+        "id": 647
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 2 VIII",
+        "ord": 8,
+        "diameter": 78980,
+        "id": 648
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 2 IX",
+        "ord": 9,
+        "diameter": 77012,
+        "id": 649
+      }
+    ]
   },
   {
     "name": "Planet Q",
@@ -1973,7 +5369,73 @@
       "y": -69.5,
       "z": 39
     },
-    "id": 188
+    "id": 650,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Planet Q I",
+        "ord": 1,
+        "diameter": 13381,
+        "id": 651
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q II",
+        "ord": 2,
+        "diameter": 8417,
+        "id": 652
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q III",
+        "ord": 3,
+        "diameter": 7609,
+        "id": 653
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q IV",
+        "ord": 4,
+        "diameter": 9288,
+        "id": 654
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q V",
+        "ord": 5,
+        "diameter": 12885,
+        "id": 655
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q VI",
+        "ord": 6,
+        "diameter": 14133,
+        "id": 656
+      },
+      {
+        "type": "planet",
+        "name": "Planet Q VII",
+        "ord": 7,
+        "diameter": 6772,
+        "id": 657
+      },
+      {
+        "type": "giant",
+        "name": "Planet Q VIII",
+        "ord": 8,
+        "diameter": 132812,
+        "id": 658
+      },
+      {
+        "type": "giant",
+        "name": "Planet Q X",
+        "ord": 10,
+        "diameter": 55792,
+        "id": 659
+      }
+    ]
   },
   {
     "name": "FGC 24187",
@@ -1990,7 +5452,8 @@
           "y": -74.4,
           "z": -42
         },
-        "id": 190
+        "id": 661,
+        "type": "planet"
       },
       {
         "name": "Deep Space K-7",
@@ -2003,10 +5466,12 @@
           "y": -63.6,
           "z": -45
         },
-        "id": 191
+        "id": 662,
+        "type": "planet"
       }
     ],
-    "id": 189
+    "id": 660,
+    "type": "star"
   },
   {
     "name": "Starbase 24",
@@ -2019,7 +5484,59 @@
       "y": -47.44,
       "z": -127.416499274
     },
-    "id": 192
+    "id": 663,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 24 I",
+        "ord": 1,
+        "diameter": 6159,
+        "id": 664
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 24 II",
+        "ord": 2,
+        "diameter": 6237,
+        "id": 665
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 24 III",
+        "ord": 3,
+        "diameter": 13099,
+        "id": 666
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 24 IV",
+        "ord": 4,
+        "diameter": 6828,
+        "id": 667
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 24 V",
+        "ord": 5,
+        "diameter": 11406,
+        "id": 668
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 24 VI",
+        "ord": 6,
+        "diameter": 9689,
+        "id": 669
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 24 VII",
+        "ord": 7,
+        "diameter": 50474,
+        "id": 670
+      }
+    ]
   },
   {
     "name": "Mempa",
@@ -2032,7 +5549,66 @@
       "y": -57.2,
       "z": 9.843161558
     },
-    "id": 193
+    "id": 671,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Mempa I",
+        "ord": 1,
+        "diameter": 10745,
+        "id": 672
+      },
+      {
+        "type": "planet",
+        "name": "Mempa II",
+        "ord": 2,
+        "diameter": 11199,
+        "id": 673
+      },
+      {
+        "type": "planet",
+        "name": "Mempa III",
+        "ord": 3,
+        "diameter": 10432,
+        "id": 674
+      },
+      {
+        "type": "planet",
+        "name": "Mempa IV",
+        "ord": 4,
+        "diameter": 12890,
+        "id": 675
+      },
+      {
+        "type": "planet",
+        "name": "Mempa V",
+        "ord": 5,
+        "diameter": 11732,
+        "id": 676
+      },
+      {
+        "type": "giant",
+        "name": "Mempa VI",
+        "ord": 6,
+        "diameter": 97780,
+        "id": 677
+      },
+      {
+        "type": "giant",
+        "name": "Mempa VIII",
+        "ord": 8,
+        "diameter": 76482,
+        "id": 678
+      },
+      {
+        "type": "giant",
+        "name": "Mempa IX",
+        "ord": 9,
+        "diameter": 58458,
+        "id": 679
+      }
+    ]
   },
   {
     "name": "Beta Lankal",
@@ -2045,20 +5621,151 @@
       "y": -51.2,
       "z": 12
     },
-    "id": 194
+    "id": 680,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Beta Lankal I",
+        "ord": 1,
+        "diameter": 7810,
+        "id": 681
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lankal II",
+        "ord": 2,
+        "diameter": 5975,
+        "id": 682
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lankal III",
+        "ord": 3,
+        "diameter": 12521,
+        "id": 683
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lankal IV",
+        "ord": 4,
+        "diameter": 5721,
+        "id": 684
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lankal V",
+        "ord": 5,
+        "diameter": 9151,
+        "id": 685
+      },
+      {
+        "type": "planet",
+        "name": "Beta Lankal VI",
+        "ord": 6,
+        "diameter": 9307,
+        "id": 686
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lankal VII",
+        "ord": 7,
+        "diameter": 126717,
+        "id": 687
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lankal VIII",
+        "ord": 8,
+        "diameter": 56859,
+        "id": 688
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lankal X",
+        "ord": 10,
+        "diameter": 73436,
+        "id": 689
+      },
+      {
+        "type": "giant",
+        "name": "Beta Lankal XI",
+        "ord": 11,
+        "diameter": 58824,
+        "id": 690
+      }
+    ]
   },
   {
-    "name": "Maranga IV",
-    "tags": [
-      "klingon outpost",
-      "notable"
+    "name": "Maranga",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Maranga I",
+        "ord": 1,
+        "diameter": 5971,
+        "id": 692
+      },
+      {
+        "type": "planet",
+        "name": "Maranga II",
+        "ord": 2,
+        "diameter": 13983,
+        "id": 693
+      },
+      {
+        "type": "planet",
+        "name": "Maranga III",
+        "ord": 3,
+        "diameter": 6044,
+        "id": 694
+      },
+      {
+        "name": "Maranga IV",
+        "ord": 4,
+        "tags": [
+          "klingon outpost",
+          "notable"
+        ],
+        "location": {
+          "x": 248.704,
+          "y": -228.946,
+          "z": 0
+        },
+        "id": 695,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Maranga V",
+        "ord": 5,
+        "diameter": 6490,
+        "id": 696
+      },
+      {
+        "type": "giant",
+        "name": "Maranga VI",
+        "ord": 6,
+        "diameter": 55101,
+        "id": 697
+      },
+      {
+        "type": "giant",
+        "name": "Maranga VII",
+        "ord": 7,
+        "diameter": 75715,
+        "id": 698
+      },
+      {
+        "type": "giant",
+        "name": "Maranga VIII",
+        "ord": 8,
+        "diameter": 85053,
+        "id": 699
+      }
     ],
-    "location": {
-      "x": 248.704,
-      "y": -228.946,
-      "z": 0
-    },
-    "id": 195
+    "id": 691,
+    "type": "star"
   },
   {
     "name": "Gamma Geminorum",
@@ -2074,10 +5781,40 @@
           "klingon outpost",
           "notable"
         ],
-        "id": 197
+        "id": 701,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Geminorum I",
+        "ord": 1,
+        "diameter": 5158,
+        "id": 702
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Geminorum II",
+        "ord": 2,
+        "diameter": 10539,
+        "id": 703
+      },
+      {
+        "type": "planet",
+        "name": "Gamma Geminorum III",
+        "ord": 3,
+        "diameter": 11842,
+        "id": 704
+      },
+      {
+        "type": "giant",
+        "name": "Gamma Geminorum IV",
+        "ord": 4,
+        "diameter": 133915,
+        "id": 705
       }
     ],
-    "id": 196
+    "id": 700,
+    "type": "star"
   },
   {
     "name": "Vanguard",
@@ -2091,7 +5828,38 @@
       "y": -196.342,
       "z": -78
     },
-    "id": 198
+    "id": 706,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Vanguard I",
+        "ord": 1,
+        "diameter": 6442,
+        "id": 707
+      },
+      {
+        "type": "planet",
+        "name": "Vanguard II",
+        "ord": 2,
+        "diameter": 8355,
+        "id": 708
+      },
+      {
+        "type": "giant",
+        "name": "Vanguard IV",
+        "ord": 4,
+        "diameter": 128156,
+        "id": 709
+      },
+      {
+        "type": "giant",
+        "name": "Vanguard V",
+        "ord": 5,
+        "diameter": 127516,
+        "id": 710
+      }
+    ]
   },
   {
     "name": "Cestus III",
@@ -2105,7 +5873,9 @@
       "y": -199.678,
       "z": -82
     },
-    "id": 199
+    "id": 711,
+    "type": "star",
+    "orbits": []
   },
   {
     "name": "Pacifica",
@@ -2119,7 +5889,24 @@
       "y": -197.368,
       "z": -72.969255732
     },
-    "id": 200
+    "id": 712,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Pacifica I",
+        "ord": 1,
+        "diameter": 7430,
+        "id": 713
+      },
+      {
+        "type": "giant",
+        "name": "Pacifica III",
+        "ord": 3,
+        "diameter": 143123,
+        "id": 714
+      }
+    ]
   },
   {
     "name": "Starbase 4",
@@ -2135,7 +5922,59 @@
       "y": 32.375,
       "z": 32.341172132605735
     },
-    "id": 201
+    "id": 715,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 4 I",
+        "ord": 1,
+        "diameter": 13793,
+        "id": 716
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 4 II",
+        "ord": 2,
+        "diameter": 9172,
+        "id": 717
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 4 III",
+        "ord": 3,
+        "diameter": 5500,
+        "id": 718
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 4 IV",
+        "ord": 4,
+        "diameter": 13357,
+        "id": 719
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 4 V",
+        "ord": 5,
+        "diameter": 7006,
+        "id": 720
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 4 VI",
+        "ord": 6,
+        "diameter": 8255,
+        "id": 721
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 4 IX",
+        "ord": 9,
+        "diameter": 74838,
+        "id": 722
+      }
+    ]
   },
   {
     "name": "Starbase 10",
@@ -2151,7 +5990,38 @@
       "y": 25.24,
       "z": -55.74853976
     },
-    "id": 202
+    "id": 723,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 10 I",
+        "ord": 1,
+        "diameter": 6572,
+        "id": 724
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 10 II",
+        "ord": 2,
+        "diameter": 13559,
+        "id": 725
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 10 III",
+        "ord": 3,
+        "diameter": 12156,
+        "id": 726
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 10 IV",
+        "ord": 4,
+        "diameter": 13071,
+        "id": 727
+      }
+    ]
   },
   {
     "name": "Starbase 105",
@@ -2167,7 +6037,38 @@
       "y": -45.764,
       "z": false
     },
-    "id": 203
+    "id": 728,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Starbase 105 I",
+        "ord": 1,
+        "diameter": 10057,
+        "id": 729
+      },
+      {
+        "type": "planet",
+        "name": "Starbase 105 II",
+        "ord": 2,
+        "diameter": 6546,
+        "id": 730
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 105 III",
+        "ord": 3,
+        "diameter": 107865,
+        "id": 731
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 105 IV",
+        "ord": 4,
+        "diameter": 56423,
+        "id": 732
+      }
+    ]
   },
   {
     "name": "Starbase 123",
@@ -2183,7 +6084,31 @@
       "y": -15.2,
       "z": -127.3786422
     },
-    "id": 204
+    "id": 733,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "giant",
+        "name": "Starbase 123 I",
+        "ord": 1,
+        "diameter": 109484,
+        "id": 734
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 123 III",
+        "ord": 3,
+        "diameter": 100186,
+        "id": 735
+      },
+      {
+        "type": "giant",
+        "name": "Starbase 123 IV",
+        "ord": 4,
+        "diameter": 113241,
+        "id": 736
+      }
+    ]
   },
   {
     "name": "Balduk",
@@ -2199,7 +6124,80 @@
       "y": -23,
       "z": 48
     },
-    "id": 205
+    "id": 737,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Balduk I",
+        "ord": 1,
+        "diameter": 12443,
+        "id": 738
+      },
+      {
+        "type": "planet",
+        "name": "Balduk II",
+        "ord": 2,
+        "diameter": 7672,
+        "id": 739
+      },
+      {
+        "type": "planet",
+        "name": "Balduk III",
+        "ord": 3,
+        "diameter": 5809,
+        "id": 740
+      },
+      {
+        "type": "planet",
+        "name": "Balduk IV",
+        "ord": 4,
+        "diameter": 9827,
+        "id": 741
+      },
+      {
+        "type": "planet",
+        "name": "Balduk V",
+        "ord": 5,
+        "diameter": 5130,
+        "id": 742
+      },
+      {
+        "type": "planet",
+        "name": "Balduk VI",
+        "ord": 6,
+        "diameter": 10180,
+        "id": 743
+      },
+      {
+        "type": "giant",
+        "name": "Balduk VII",
+        "ord": 7,
+        "diameter": 138307,
+        "id": 744
+      },
+      {
+        "type": "giant",
+        "name": "Balduk VIII",
+        "ord": 8,
+        "diameter": 100249,
+        "id": 745
+      },
+      {
+        "type": "giant",
+        "name": "Balduk IX",
+        "ord": 9,
+        "diameter": 110302,
+        "id": 746
+      },
+      {
+        "type": "giant",
+        "name": "Balduk XI",
+        "ord": 11,
+        "diameter": 98437,
+        "id": 747
+      }
+    ]
   },
   {
     "name": "Beta Rigel",
@@ -2213,11 +6211,77 @@
     ],
     "orbits": [
       {
+        "type": "planet",
+        "name": "Beta Rigel I",
+        "ord": 1,
+        "diameter": 6040,
+        "id": 749
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel II",
+        "ord": 2,
+        "diameter": 6543,
+        "id": 750
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel III",
+        "ord": 3,
+        "diameter": 14094,
+        "id": 751
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel IV",
+        "ord": 4,
+        "diameter": 13306,
+        "id": 752
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel V",
+        "ord": 5,
+        "diameter": 6891,
+        "id": 753
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel VI",
+        "ord": 6,
+        "diameter": 9462,
+        "id": 754
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel VII",
+        "ord": 7,
+        "diameter": 11996,
+        "id": 755
+      },
+      {
+        "type": "planet",
+        "name": "Beta Rigel VIII",
+        "ord": 8,
+        "diameter": 13745,
+        "id": 756
+      },
+      {
+        "type": "giant",
+        "name": "Beta Rigel IX",
+        "ord": 9,
+        "diameter": 100892,
+        "id": 757
+      },
+      {
         "name": "Rigel X",
-        "id": 207
+        "ord": 10,
+        "id": 758,
+        "type": "planet"
       }
     ],
-    "id": 206
+    "id": 748,
+    "type": "star"
   },
   {
     "name": "Cor Caroli",
@@ -2229,7 +6293,66 @@
       "y": -10.25,
       "z": -4
     },
-    "id": 208
+    "id": 759,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Cor Caroli I",
+        "ord": 1,
+        "diameter": 6435,
+        "id": 760
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli II",
+        "ord": 2,
+        "diameter": 11488,
+        "id": 761
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli III",
+        "ord": 3,
+        "diameter": 10784,
+        "id": 762
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli IV",
+        "ord": 4,
+        "diameter": 9443,
+        "id": 763
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli V",
+        "ord": 5,
+        "diameter": 6006,
+        "id": 764
+      },
+      {
+        "type": "planet",
+        "name": "Cor Caroli VI",
+        "ord": 6,
+        "diameter": 7595,
+        "id": 765
+      },
+      {
+        "type": "giant",
+        "name": "Cor Caroli VII",
+        "ord": 7,
+        "diameter": 67258,
+        "id": 766
+      },
+      {
+        "type": "giant",
+        "name": "Cor Caroli X",
+        "ord": 10,
+        "diameter": 70192,
+        "id": 767
+      }
+    ]
   },
   {
     "name": "Rator",
@@ -2238,7 +6361,52 @@
       "y": 4,
       "z": 0
     },
-    "id": 209
+    "id": 768,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Rator I",
+        "ord": 1,
+        "diameter": 6692,
+        "id": 769
+      },
+      {
+        "type": "planet",
+        "name": "Rator II",
+        "ord": 2,
+        "diameter": 6269,
+        "id": 770
+      },
+      {
+        "type": "planet",
+        "name": "Rator III",
+        "ord": 3,
+        "diameter": 10832,
+        "id": 771
+      },
+      {
+        "type": "planet",
+        "name": "Rator IV",
+        "ord": 4,
+        "diameter": 10787,
+        "id": 772
+      },
+      {
+        "type": "giant",
+        "name": "Rator VI",
+        "ord": 6,
+        "diameter": 110577,
+        "id": 773
+      },
+      {
+        "type": "giant",
+        "name": "Rator VII",
+        "ord": 7,
+        "diameter": 124793,
+        "id": 774
+      }
+    ]
   },
   {
     "name": "Altair",
@@ -2250,7 +6418,45 @@
       "y": 11.291470192801494,
       "z": -2.6120871848857186
     },
-    "id": 210
+    "id": 775,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Altair I",
+        "ord": 1,
+        "diameter": 13905,
+        "id": 776
+      },
+      {
+        "type": "giant",
+        "name": "Altair II",
+        "ord": 2,
+        "diameter": 60558,
+        "id": 777
+      },
+      {
+        "type": "giant",
+        "name": "Altair IV",
+        "ord": 4,
+        "diameter": 52014,
+        "id": 778
+      },
+      {
+        "type": "giant",
+        "name": "Altair V",
+        "ord": 5,
+        "diameter": 118524,
+        "id": 779
+      },
+      {
+        "type": "giant",
+        "name": "Altair VI",
+        "ord": 6,
+        "diameter": 104647,
+        "id": 780
+      }
+    ]
   },
   {
     "name": "Nelvana",
@@ -2262,7 +6468,31 @@
       "y": 5.5,
       "z": 0
     },
-    "id": 211
+    "id": 781,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Nelvana I",
+        "ord": 1,
+        "diameter": 6318,
+        "id": 782
+      },
+      {
+        "type": "planet",
+        "name": "Nelvana II",
+        "ord": 2,
+        "diameter": 11251,
+        "id": 783
+      },
+      {
+        "type": "giant",
+        "name": "Nelvana III",
+        "ord": 3,
+        "diameter": 113109,
+        "id": 784
+      }
+    ]
   },
   {
     "name": "Zeta Herculis",
@@ -2283,10 +6513,47 @@
           "y": 16.3,
           "z": 0
         },
-        "id": 213
+        "id": 786,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Zeta Herculis I",
+        "ord": 1,
+        "diameter": 5445,
+        "id": 787
+      },
+      {
+        "type": "planet",
+        "name": "Zeta Herculis II",
+        "ord": 2,
+        "diameter": 6530,
+        "id": 788
+      },
+      {
+        "type": "planet",
+        "name": "Zeta Herculis III",
+        "ord": 3,
+        "diameter": 11539,
+        "id": 789
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Herculis V",
+        "ord": 5,
+        "diameter": 63032,
+        "id": 790
+      },
+      {
+        "type": "giant",
+        "name": "Zeta Herculis VI",
+        "ord": 6,
+        "diameter": 136554,
+        "id": 791
       }
     ],
-    "id": 212
+    "id": 785,
+    "type": "star"
   },
   {
     "name": "Toroth",
@@ -2298,7 +6565,31 @@
       "y": -38.3,
       "z": 0
     },
-    "id": 214
+    "id": 792,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Toroth I",
+        "ord": 1,
+        "diameter": 8395,
+        "id": 793
+      },
+      {
+        "type": "planet",
+        "name": "Toroth II",
+        "ord": 2,
+        "diameter": 11934,
+        "id": 794
+      },
+      {
+        "type": "giant",
+        "name": "Toroth III",
+        "ord": 3,
+        "diameter": 103780,
+        "id": 795
+      }
+    ]
   },
   {
     "name": "Tau Coronae Borealis",
@@ -2314,23 +6605,104 @@
           "y": 40.4,
           "z": 0
         },
-        "id": 216
+        "id": 797,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Tau Coronae Borealis III",
+        "ord": 3,
+        "diameter": 136695,
+        "id": 798
       }
     ],
-    "id": 215
+    "id": 796,
+    "type": "star"
   },
   {
-    "name": "Bolarus IX",
-    "tags": [
-      "dma-map",
-      "federation member"
+    "name": "Bolarus",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Bolarus I",
+        "ord": 1,
+        "diameter": 12332,
+        "id": 800
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus II",
+        "ord": 2,
+        "diameter": 9776,
+        "id": 801
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus III",
+        "ord": 3,
+        "diameter": 11250,
+        "id": 802
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus IV",
+        "ord": 4,
+        "diameter": 11468,
+        "id": 803
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus V",
+        "ord": 5,
+        "diameter": 11542,
+        "id": 804
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus VI",
+        "ord": 6,
+        "diameter": 6461,
+        "id": 805
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus VII",
+        "ord": 7,
+        "diameter": 8864,
+        "id": 806
+      },
+      {
+        "type": "planet",
+        "name": "Bolarus VIII",
+        "ord": 8,
+        "diameter": 5885,
+        "id": 807
+      },
+      {
+        "name": "Bolarus IX",
+        "tags": [
+          "dma-map",
+          "federation member"
+        ],
+        "ord": 9,
+        "location": {
+          "x": 8,
+          "y": 27.1,
+          "z": 2
+        },
+        "id": 808,
+        "type": "planet"
+      },
+      {
+        "type": "giant",
+        "name": "Bolarus X",
+        "ord": 10,
+        "diameter": 126332,
+        "id": 809
+      }
     ],
-    "location": {
-      "x": 8,
-      "y": 27.1,
-      "z": 2
-    },
-    "id": 217
+    "id": 799,
+    "type": "star"
   },
   {
     "name": "Tellun",
@@ -2345,14 +6717,17 @@
     "orbits": [
       {
         "name": "Elas",
-        "id": 219
+        "id": 811,
+        "type": "planet"
       },
       {
         "name": "Troyius",
-        "id": 220
+        "id": 812,
+        "type": "planet"
       }
     ],
-    "id": 218
+    "id": 810,
+    "type": "star"
   },
   {
     "name": "Priors World",
@@ -2364,7 +6739,73 @@
     "tags": [
       "dma-map"
     ],
-    "id": 221
+    "id": 813,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Priors World I",
+        "ord": 1,
+        "diameter": 14161,
+        "id": 814
+      },
+      {
+        "type": "planet",
+        "name": "Priors World II",
+        "ord": 2,
+        "diameter": 7108,
+        "id": 815
+      },
+      {
+        "type": "planet",
+        "name": "Priors World III",
+        "ord": 3,
+        "diameter": 9187,
+        "id": 816
+      },
+      {
+        "type": "planet",
+        "name": "Priors World IV",
+        "ord": 4,
+        "diameter": 13454,
+        "id": 817
+      },
+      {
+        "type": "planet",
+        "name": "Priors World V",
+        "ord": 5,
+        "diameter": 11941,
+        "id": 818
+      },
+      {
+        "type": "giant",
+        "name": "Priors World VI",
+        "ord": 6,
+        "diameter": 51540,
+        "id": 819
+      },
+      {
+        "type": "giant",
+        "name": "Priors World VII",
+        "ord": 7,
+        "diameter": 123549,
+        "id": 820
+      },
+      {
+        "type": "giant",
+        "name": "Priors World IX",
+        "ord": 9,
+        "diameter": 116957,
+        "id": 821
+      },
+      {
+        "type": "giant",
+        "name": "Priors World X",
+        "ord": 10,
+        "diameter": 132360,
+        "id": 822
+      }
+    ]
   },
   {
     "name": "Nausicaa",
@@ -2376,7 +6817,45 @@
       "y": -30.5,
       "z": 3
     },
-    "id": 222
+    "id": 823,
+    "type": "star",
+    "orbits": [
+      {
+        "type": "planet",
+        "name": "Nausicaa I",
+        "ord": 1,
+        "diameter": 5038,
+        "id": 824
+      },
+      {
+        "type": "planet",
+        "name": "Nausicaa II",
+        "ord": 2,
+        "diameter": 12043,
+        "id": 825
+      },
+      {
+        "type": "planet",
+        "name": "Nausicaa III",
+        "ord": 3,
+        "diameter": 12183,
+        "id": 826
+      },
+      {
+        "type": "planet",
+        "name": "Nausicaa IV",
+        "ord": 4,
+        "diameter": 12759,
+        "id": 827
+      },
+      {
+        "type": "planet",
+        "name": "Nausicaa V",
+        "ord": 5,
+        "diameter": 8042,
+        "id": 828
+      }
+    ]
   },
   {
     "name": "Tau Ceti",
@@ -2391,29 +6870,118 @@
     ],
     "orbits": [
       {
+        "type": "planet",
+        "name": "Tau Ceti I",
+        "ord": 1,
+        "diameter": 5933,
+        "id": 830
+      },
+      {
+        "type": "planet",
+        "name": "Tau Ceti II",
+        "ord": 2,
+        "diameter": 6599,
+        "id": 831
+      },
+      {
         "name": "Kaferia",
         "tags": [
           "notable",
           "inhabited"
         ],
-        "id": 224
+        "ord": 3,
+        "id": 832,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Tau Ceti IV",
+        "ord": 4,
+        "diameter": 11517,
+        "id": 833
+      },
+      {
+        "type": "giant",
+        "name": "Tau Ceti V",
+        "ord": 5,
+        "diameter": 90088,
+        "id": 834
+      },
+      {
+        "type": "giant",
+        "name": "Tau Ceti VI",
+        "ord": 6,
+        "diameter": 149300,
+        "id": 835
       }
     ],
-    "id": 223
+    "id": 829
   },
   {
     "name": "Zetar",
     "orbits": [
       {
+        "type": "planet",
+        "name": "Zetar I",
+        "ord": 1,
+        "diameter": 14017,
+        "id": 837
+      },
+      {
         "name": "Zetar II",
+        "ord": 2,
         "location": {
           "x": -14.8,
           "y": 24.6,
           "z": 2
         },
-        "id": 226
+        "id": 838,
+        "type": "planet"
+      },
+      {
+        "type": "planet",
+        "name": "Zetar III",
+        "ord": 3,
+        "diameter": 5206,
+        "id": 839
+      },
+      {
+        "type": "planet",
+        "name": "Zetar IV",
+        "ord": 4,
+        "diameter": 12182,
+        "id": 840
+      },
+      {
+        "type": "planet",
+        "name": "Zetar V",
+        "ord": 5,
+        "diameter": 12075,
+        "id": 841
+      },
+      {
+        "type": "giant",
+        "name": "Zetar VII",
+        "ord": 7,
+        "diameter": 86033,
+        "id": 842
+      },
+      {
+        "type": "giant",
+        "name": "Zetar VIII",
+        "ord": 8,
+        "diameter": 63536,
+        "id": 843
+      },
+      {
+        "type": "giant",
+        "name": "Zetar IX",
+        "ord": 9,
+        "diameter": 64425,
+        "id": 844
       }
     ],
-    "id": 225
+    "id": 836,
+    "type": "star"
   }
 ]
