@@ -1,0 +1,1006 @@
+- name: Sol
+  location: { x: 0, y: 0, z: 0 }
+  orbits:
+    - name: Mercury
+      diameter: 4878
+      ord: 1
+    - name: Venus
+      ord: 2
+      diameter: 12103.6
+    - name: Earth
+      ord: 3
+      tags:
+        [
+          spacedock,
+          shipyard,
+          notable,
+          federation member,
+          federation founding member,
+          federation captital,
+          dma-map,
+        ]
+      links:
+        ma:en: Earth
+      orbits:
+        - name: Luna
+          type: moon
+          diameter: 3476.2
+    - name: Mars
+      diameter: 6791.432
+      tags: 
+        - shipyard
+      ord: 4
+    - name: Jupiter
+      type: giant
+      diameter: 142984
+      ord: 5
+      orbits:
+        - name: Io
+          diameter: 3643.2
+          type: moon
+          ord: 5
+        - name: Europa
+          diameter: 3121.6
+          type: moon
+          ord: 6
+        - name: Ganymede
+          diameter: 5268.2
+          type: moon
+          ord: 7
+        - name: Callisto
+          type: moon
+          diameter: 4820.6
+    - name: Saturn
+      type: giant
+      diameter: 120536
+      ord: 6
+      orbits: 
+        - name: Enceladus
+          type: moon
+          diameter: 504
+        - name: Tethys
+          type: moon
+          diameter: 1062
+        - name: Titan
+          type: moon
+          diameter: 5149
+    - name: Uranus
+      type: giant
+      diameter: 51118
+      ord: 7
+    - name: Neptune
+      type: giant
+      diameter: 49528
+      ord: 8
+    - name: Pluto
+      type: planetoid
+      diameter: 2376
+      ord: 9
+    - name: Eris
+      type: planetoid
+      diameter: 2326
+      ord: 10
+    - type: planetoid
+      ord: 11
+      diameter: 2326
+      orbits:
+      - name: Starbase 1
+        type: station
+        tags: [notable, federation starbase, dma-map]
+        links:
+          ma:en: Starbase_1
+          ma:mb: Starbase_1
+        location:
+          x: 0.498
+          y: -1.436
+          z: 0.5
+- name: Quo'Nos
+  tags: [claimed by klingon empire, notable, klingon capital]
+  location:
+    x: 79.9
+    y: -70.6
+    # assuming Kronos should be rather close to earth
+    z: 20.23
+- type: star
+  location: wd:Q66548104
+  orbits:
+    - name: Romulus
+      tags: [notable, claimed by romulan empire, romulan capital]
+      location:
+        x: 30.6
+        y: 41.6
+    - name: Remus
+      tags: [notable, claimed by romulan empire]
+      location:
+        x: 30.6
+        y: 41.6
+- name: Cardassia Prime
+  type: planet
+  tags: [notable, claimed by cardassian union]
+  location:
+    x: -62.8
+    y: -33.1
+    # distance to bajor exactly 5.25 ly. x/y distance is alrady 6.3071 so this
+    # has to be on the same plane
+    z: -226.642943922
+- name: Alpha Centauri
+  type: system
+  location: wd:Q12176
+  orbits:
+    - name: Proxima Centrauri
+      location: wd:Q2839483
+      type: star
+      orbits:
+    - name: Proxima
+      wd: Q66724436
+      links:
+        ma:en: Proxima_colony
+        mb:en: Alpha_Centauri_III
+      tags:
+        [notable, earth colony, federation member, federation founding member, dma-map]
+- name: 40 Eridani
+  type: system
+  location: wd:Q67622062
+  orbits:
+    - name: 40 Eridani A
+      location: wd:Q1052822
+      tye: star
+    - name: Ket-Cheleb
+      ord: 1
+      tye: planet
+    - name: T'Khut
+      tye: planet
+      orbits: 
+        - name: Amma
+          type: moon
+      ord: 2
+    - name: Vulcan
+      tye: planet
+      tags: [notable, federation member, federation founding member, dma-map]
+      ord: 3
+    - name: Delta Vega
+      tye: planet
+      ord: 4
+    - name: 40 Eridani B
+      type: star
+      ord: 5
+    - name: 40 Eridani C
+      type: star
+      ord: 6
+- name: Regulus
+  location: wd:Q13013
+  orbits:
+    - name: Regulus II
+      ord: 2
+      tags: [habitable]
+    - name: Regulus III
+      ord: 3
+      tags: [inhabited, notable, federation member]
+    - name: Regulus V
+      ord: 5
+      tags: [inhabited, federation member]
+      surface:
+        - name: Regulus V City
+          type: city
+- name: Procyon
+  type: star
+  location: wd:Q13034
+  orbits:
+    - name: Kastra
+      ord: 1
+      type: planet
+    - name: Kuy'Thela
+      type: planet
+      ord: 2
+    - name: Andron
+      type: planet
+      ord: 3
+    - name: Brok'va
+      type: planet
+      ord: 4
+    - name: Andor
+      type: giant
+      ord: 5
+      orbits:
+      - name: Andoria
+        type: moon
+        tags: [notable, federation member, federation founding member, dma-map]
+    - name: Kul'va
+      type: giant
+      ord: 6
+    - name: Kazaan
+      type: giant
+      ord: 7
+- name: 61 Cygni
+  location: wd:Q249302
+  orbits:
+    - name: Tellar Prime
+      ord: 2
+      tags: [notable, federation member, federation founding member, dma-map]
+- name: Galactic Core
+  type: poi
+  location: wd:Q237284
+- name: Epsilon Ceti
+  location: wd:Q1748880
+  orbits:
+    - name: Epsilon Ceti B
+      location: wd:Q105836593
+    - name: Risa
+      tags: [notable, inhabited, federation member]
+- name: Eta Cassiopeiae
+  type: system
+  location: wd:Q13605
+  orbits:
+    - name: Terra Nova
+      ord: 3
+      tags: [notable, earth colony]
+- name: 36 Ophiuchi
+  type: system
+  location: wd:Q1327863
+  orbits:
+    - name: Ophiucus III
+      tags: [notable, inhabited, earth colony]
+      ord: 3
+    - name: Ophiucus VI
+      tags: [notable, inhabited, federation colony]
+      ord: 4
+- name: Luyten's Star
+  type: star
+  location: wd:Q1062596
+  orbits:
+    - name: P'Jem
+      tags: [notable, vulcan colony]
+- name: Akaali
+  type: planet
+  tags: [notable, inhabited, pre-warp, dma-map]
+  location:
+    x: 11.16
+    y: -18.6
+    z: -10.4
+- name: Sigma Draconis
+  location: wd:Q311489
+  orbits:
+    - name: Sigma Draconis I
+      ord: 1
+    - name: Sigma Draconis II
+      ord: 2
+    - name: Sigma Draconis III
+      ord: 3
+    - name: Sigma Draconis IV
+      ord: 4
+    - name: Sigma Draconis V
+      ord: 5
+    - name: Sigma Draconis VI
+      ord: 6
+      tags: [notable, inhabited]
+    - name: Sigma Draconis VI
+      ord: 7
+    - name: Sigma Draconis VII
+      ord: 8
+    - name: Sigma Draconis IX
+      ord: 9
+- name: Antares
+  location: wd:Q12166
+  type: system
+  orbits:
+    - name: Antares B
+      orbits:
+    - name: Antares B III
+      links:
+        mb: Antares_B_III
+      tags: [federation shipyard, notable, federation member]
+- name: Kappa Fornacis
+  location: wd:Q9017189
+  orbits:
+    - name: Deneva Prime
+      tags: [earth colony, notable, federation member, dma-map]
+      ord: 3
+      location:
+        z: 3
+- name: Chi1 Orionis
+  location: wd:Q284907
+  orbits:
+    - name: Coridan
+      tags: [notable, dilithium, federation member]
+- name: Epsilon Eridani
+  location: wd:Q5383959
+  orbits:
+    - name: Axanar
+      tags: [notable, inhabited, warp-capable, federation member]
+- name: Mu Leonis
+  location: wd:Q1153864
+  orbits:
+    - name: Ardana
+      tags: [notable, federation member]
+- name: Epsilon Serpentis
+  location: wd:Q3304261
+  orbits:
+    - name: Aaamazzara
+      tags: [notable, federation member]
+- name: Alcor
+  location: wd:Q13088
+  orbits:
+    - name: Alcor IV
+- name: Wolf 424
+  location: wd:Q1328338
+  orbits:
+    - name: Babel
+      tags: [notable, neutral]
+- name: Epsilon Virginis
+  location: wd:Q14198
+  orbits:
+    - name: Dessica II
+      tags: [ancient romulan colony, notable, dma-map]
+      location:
+        x: 22.013210540763
+        y: 19.863412407182
+        z: 5
+- name: Beta Columbae
+  location: wd:Q830856
+  orbits:
+    - name: Barolia
+      tags: [inhabited, notable]
+- name: Delta Pavonis
+  location: wd:Q629637
+  orbits:
+    - name: Benzar
+      tags: [federation member, notable, inhabited, dma-map]
+- name: 15 Lyncis
+  location: wd:Q4550873
+  orbits:
+    - name: Cait
+      tags: [notable, federation member]
+- name: Capella
+  location: wd:Q12970
+  orbits:
+    - name: Capella IV
+      tags: [near klingon empire, near federation]
+- name: Lambda Sagittarii
+  location: wd:Q14040
+  orbits:
+    - name: Chalna
+      tags: [notable, inhabited]
+- name: 83 Leonis B
+  location: wd:Q9285230
+  orbits:
+    - name: Cheron
+      tags: [warp-capable, inhabited, notable]
+- name: Denobula Triaxa
+  alias:
+    - Iota Boötis
+  location: wd:Q1672154
+  orbits:
+    - name: Denobula
+      ord: 2
+      tags: [warp-capable, inhabited, notable, federation member, dma-map]
+      location:
+        x: 29.033
+        y: -5.518
+        z: 0
+- name: Epsilon Indi
+  location: wd:Q15705
+  orbits:
+    - name: Draylax
+      tags: [notable, inhabited, federation member, dma-map]
+- name: Alpha Doradus
+  location: wd:Q2448989
+  orbits:
+    - name: Freecloud
+      tags:
+        - notable
+        # https://michaelchabon.medium.com/c53d4459a41b
+        #- earth colony
+- name: Gamma Hydra
+  location: wd:Q2732974
+  orbits:
+    - name: Gamma Hydra IV
+      tags: [science colony, notable, federation member, andorian colony]
+- name: Gamma Trianguli
+  location: wd:Q3307541
+  orbits:
+    - name: Gamma Trianguli VI
+      tags: [inhabited, pre-warp]
+
+- name: Wolf 359
+  location: wd:Q291301
+- name: Delta Muscae
+  location: wd:Q3292863
+  orbits:
+    - name: Garadius IV
+      tags: [inhabited]
+- name: Omicron Indi
+  location: wd:Q10340853
+  orbits:
+    - name: Halka
+      tags: [inhabited, neutral, notable]
+- name: Iota Geminorum
+  location: wd:Q2711940
+  orbits:
+    - name: Iota Geminorum IV
+      ord: 4
+      tags: [habitable, notable]
+- name: Beta Caeli
+  location: wd:Q3236154
+  orbits:
+    - name: Japori II
+      ord: 2
+      tag: [inhabited]
+- name: Gamma Leporis
+  location: wd:Q1367757
+  orbits:
+    - name: Lorillia
+      tags: [inhabited, notable]
+- name: Epsilon Fornacis
+  location: wd:Q385002
+  orbits:
+    - name: Maluria
+      tags: [inhabited, notable, dma-map]
+      location:
+        x: 32.1
+        y: -35.3
+        z: 0
+- name: Xi Hydrae
+  location: wd:Q1029059
+  orbits:
+    - name: Medusa
+      tags: [notable, inhabited, federation member]
+- name: Omega Aurigae
+  location: wd:Q633431
+  orbits:
+    - name: New Paris
+      tags: [notable, federation colony]
+
+- name: Pi3 Orionis
+  location: wd:Q14216
+  orbits:
+    - name: Orion
+      ord: 3
+      tags: [notable, inhabited, dma-map]
+- name: Pollux
+  location: wd:Q13028
+  orbits:
+    - name: Pollux IV
+      tags: [notable, dma-map]
+      location:
+        z: 12
+- name: Psi Serpentis
+  location: wd:Q2661937
+  orbits:
+    - name: Sauria
+      ord: 4 
+      tags: [notable, inhabited, federation member]
+- name: Gamma Equulei
+  # location: wd:Q4133098
+  orbits:
+    - name: Tagus Ⅲ
+      ord: 3
+      tags: [dma-map]
+- name: Bellatrix
+  location: wd:Q13066
+  aliases: [Gamma Orionis]
+  type: star
+  tags: [landmark]
+- name: Omega Fornacis
+  location: wd:Q629292
+  orbits:
+    - name: Tiburon
+      tags: [federation member, notable]
+- name: Alpha Lyrae
+  location: wd:Q3427
+  orbits:
+    - name: Vega IX
+      tags: [earth colony, notable, dma-map]
+- name: Cor Caroli
+  location: wd:Q76868858
+  orbits:
+    - name: Cor Caroli V
+      tags: [inhabited, notable]
+- name: Azati Prime
+  location:
+    x: 17.166
+    y: -13.667
+    z: -54.60273
+  tags: [xindi colony, delphic expanse]
+- name: Alpha Eridani
+  location: wd:Q12183
+  orbits:
+    - name: Alpha Eridani II
+      ord: 2
+      tags: [earth colony, notable]
+      links:
+        ma:en: Alpha_Eridani_II
+        mb:en: Achernar_II
+- name: Caldos
+  location: wd:Q4897265
+  orbits:
+    - name: Caldos II
+      ord: 2
+      tags: [earth colony, notable, federation member]
+- name: B'Hava'el
+  type: star
+  location:
+    x: -57.1
+    y: -35.8
+    # distance to regulus regulus 300ly.
+    # has to be either -285 or +285
+    z: -226.642943922
+  orbits:
+    - name: Bajor
+      tags: [notable, inhabited, federation member]
+    - name: Deep Space 9
+      tags: [deep space station]
+- name: Ajilon Prime
+  tags: [notable, federation colony]
+  location:
+    x: 47.8
+    y: -61.9
+    # distance to bajor: 20 ly since imposible same plane
+    z: -226.642943922
+- name: The Binaries
+  type: star
+  tags: [notable, klingon war battle site, claimed by klingon empire]
+  location:
+    x: 20.409
+    y: -69.913
+    # x and y given by stellar cartography. should be six lj away from gamma
+    # hydra which is not possible, so lets put it at least in the closest possible
+    # location
+    z: 86.89916002979173
+- name: No'Mat
+  location: wd:Q637953
+  type: star
+  tags: [claimed by klingon empire, notable]
+- name: Theta Hydrae
+  location: wd:Q1029146
+  orbits:
+    - name: Gorath
+      tags: [claimed by klingon empire, notable]
+- name: Cursa
+  location: wd:Q13350
+  tags: [claimed by klingon empire, notable]
+- name: Zeta Leporis
+  location: wd:Q938829
+  orbits:
+    - name: Xarantine
+      tags: [notable, inhabited]
+- name: Pi Canis Majoris
+  type: star
+  location: wd:Q2278404
+  orbits:
+    - name: Korvat
+      tags: [claimed by klingon empire, notable]
+- name: Delta Leporis
+  type: star
+  location: wd:Q5175876
+  orbits:
+    - name: Brestant
+      tags: [claimed by klingon empire, notable]
+- name: Aldebaran
+  type: star
+  location: wd:Q12170
+  orbits:
+    - name: Aldebaran III
+      tags: [federation member, notable, taurus reach]
+- name: Canopus
+  type: star
+  location: wd:Q12189
+  orbits:
+    - name: Canopus II
+      tags: [federation member, notable]
+- name: 94 Aquarii
+  type: star
+  location: wd:Q67622055
+  orbits:
+    - name: Fellebia
+      tags: [inhabited, notable]
+- name: Xi Pegasi
+  type: star
+  location: wd:Q4262086
+  orbits:
+    - name: Neethia
+      tags: [inhabited, notable]
+- name: 26 Draconis
+  type: star
+  location: wd:Q2815485
+  orbits:
+    - name: Pyrithia
+      tags: [habitable, notable, dma-map]
+      location: 
+        x: -38.36911523062057,
+        y: -0.7998515632732952,
+        z: -4
+- name: Ceti Alpha
+  location: wd:Q13173
+  type: star
+  orbits:
+    - name: Ceti Alpha V
+      type: planet
+      tags: [notable]
+- name: Pi Hydrae
+  location: wd:Q978492
+  type: star
+  orbits:
+    - name: Norkan
+      type: planet
+      tags: [notable, federation outpost]
+- name: Alpha Gruis
+  location: wd:Q854042
+  type: star
+  orbits:
+    - name: Angel I
+      type: planet
+      tags: [notable, inhabited]
+- name: Alpha Indi
+  location: wd:Q2743021
+  type: star
+  orbits:
+    - name: Rhaandar
+      links:
+        mb:en: Rhaandarel
+      type: planet
+      tags: [notable, federation member]
+- name: Eta Lupi
+  location: wd:Q66477132
+  type: star
+  orbits:
+    - name: Cerberus II
+      type: planet
+      tags: [notable, federation member]
+- name: Betelgeuse
+  location: wd:Q12124
+  type: star
+  orbits:
+    - name: Betelgeuse
+      type: planet
+      tags: [notable, federation member]
+- name: Beta Cephei
+  location: wd:Q67622053
+  type: star
+  orbits:
+    - name: Verdanis
+      type: planet
+      links:
+        ma:en: Verdanis
+      tags: [notable, federation member]
+    - name: Terratin
+      type: planet
+      links:
+        ma:en: Terra_10
+        mb:en: Terra_10
+      tags: [notable]
+- name: Kappa Delphini
+  location: wd:Q5174410
+  type: star
+  orbits:
+    - name: Antos IV
+      type: planet
+      tags: [notable, federation member]
+- name: Epsilon Boötis
+  location: wd:Q13255
+  type: star
+  orbits:
+    - name: Izar
+      type: planet
+      tags: [notable, federation member]
+- name: Iota Leonis
+  location: wd:Q3232250
+  type: star
+  orbits:
+    - name: Argelius II
+      ord: 2
+      type: planet
+      tags: [notable, federation member, dma-map]
+      location:
+        x: 32.412208088499206
+        y: -13.657184124061743
+        z: 4
+- name: Sirius
+  location: wd:Q3409
+  type: star
+  orbits:
+    - name: Sirius IX
+      ord: 9
+      type: planet
+      tags: [notable, federation member]
+- name: Chi Eridani
+  location: wd:Q5095057
+  type: star
+  orbits:
+    - name: Kaleb IV
+      type: planet
+      tags: [notable, federation member]
+- name: Eta Scorpii
+  location: wd:Q427630
+  type: star
+  orbits:
+    - name: Ivor Prime
+      type: planet
+      tags: [notable, federation colony]
+- name: Deneb
+  location: wd:Q12179
+  type: star
+  orbits:
+    - name: Deneb V
+      type: planet
+      tags: [notable, federation member]
+- name: Beta Lyrae
+  location: wd:Q13352
+  orbits:
+    - name: Shelia
+      type: planet
+      tags: [notable]
+- name: Khitomer
+  tags: [notable, claimed by klingon empire]
+  location:
+    x: 77.5
+    y: -47.9
+    # lets put it between kronos and romulus
+    z: 47.23142
+- name: Gamma 400
+  location:
+    x: 12.479
+    y: -24
+    # we put it between andoria and regulus
+    z: 30.450268756
+
+  orbits:
+    - name: Starbase 12
+      links:
+        ma:en: Starbase_12
+      tags: [notable, federation starbase]
+- location:
+    x: 79.6
+    y: -56.2
+    # magic number
+    z: 25
+  orbits:
+    - name: Morska
+      tags: [notable, claimed by klingon empire]
+- name: Psi Tauri
+  location: wd:Q1097416
+  orbits:
+    - name: K'norma
+      tags: [notable, federation member, inhabited]
+- name: Starbase 11
+  links:
+    ma:en: Starbase_11
+  tags: [notable, federation starbase]
+  location:
+    x: -21.078
+    y: -74.729
+    z: 31
+- name: Starbase 2
+  links:
+    ma:en: Starbase_2
+  tags: [notable, federation starbase]
+  location:
+    x: -5.546
+    y: -69.5
+    # connects risa & k'normia
+    z: -33.360341721
+- name: Arcturus
+  type: star
+  location: wd:Q12985
+  orbits:
+  - name: Planet Q
+    tags: [notable, federation colony, dma-map]
+    location:
+      #x: -4
+      #y: -69.5
+      # connects planet Q, new paris & k'norma
+      #z: 39
+- name: FGC 24187
+  orbits:
+    - name: Sherman's Planet
+      tags: [notable, federation colony, klingon colony]
+      location:
+        x: 20.3
+        y: -74.4
+        # should be close to DSK-7
+        z: -42
+    - name: Deep Space K-7
+      tags: [notable, deep space station]
+      location:
+        x: 25.3
+        y: -63.6
+        # distance to bajor '> 200ly'
+        z: -45
+- name: Starbase 24
+  tags: [federation starbase, notable]
+  location:
+    x: 73.965
+    y: -47.44
+    # between alpha eridani & canopus
+    z: -127.416499274
+- name: Mempa
+  tags: [claimed by klingon empire, notable]
+  location:
+    x: 83.1
+    y: -57.2
+    # between khitormer & morska
+    z: 9.843161558
+- name: Beta Lankal
+  tags: [claimed by klingon empire, notable]
+  location:
+    x: 86.1
+    y: -51.2
+    # magic number
+    z: 12
+- name: Maranga
+  orbits:
+  - name: Maranga IV
+    ord: 4
+    tags: [klingon outpost, notable]
+    location:
+      x: 248.704
+      y: -228.946
+      z: 0
+- name: Gamma Geminorum
+  location: wd:Q14238
+  orbits:
+    - name: Alhena Station
+      tags: [klingon outpost, notable]
+
+- name: Vanguard
+  type: installation
+  tags: [notable, federation starbase, taurus reach]
+  location:
+    x: -3.759
+    y: -196.342
+    # this should be inside the taurus constellation
+    z: -78
+
+- name: Cestus III
+  tags: [notable, federation colony, taurus reach]
+  location:
+    x: 81.295
+    y: -199.678
+    z: -82
+
+- name: Pacifica
+  tags: [notable, federation colony, taurus reach]
+  location:
+    x: -39.474
+    y: -197.368
+    z: -72.969255732
+- name: Starbase 4
+  links:
+    ma:en: Starbase_4
+  tags: [notable, federation starbase]
+  location:
+    x: 8.359
+    y: 32.375
+    # todo
+    z: 32.341172132605735
+- name: Starbase 10
+  links:
+    ma:en: Starbase_10
+  tags: [notable, federation starbase]
+  location:
+    x: 17.716
+    y: 25.24
+    # between benzar and rhandar
+    z: -55.74853976
+- name: Starbase 105
+  links:
+    ma:en: Starbase_105
+  tags: [notable, federation starbase]
+  location:
+    x: 133.994
+    y: -45.764
+    z: false
+- name: Starbase 123
+  links:
+    ma:en: Starbase_123
+  tags: [notable, federation starbase]
+  location:
+    x: 153.891
+    y: -15.2
+    # between canopus and alpha eridani
+    z: -127.3786422
+- name: Balduk
+  links:
+    ma:en: Balduk_(location)
+  tags: [notable, claimed by klingon empire]
+  location:
+    x: 99
+    y: -23
+    z: 48
+- name: Beta Rigel
+  location:
+    x: 15.7
+    y: -27.6
+    z: 0
+  tags: [dma-map]
+  orbits:
+    - name: Rigel X
+      ord: 10
+- name: Cor Caroli
+  tags: [dma-map]
+  # location: wd:Q76868858
+  location:
+    x: -18.8
+    y: -10.25
+    z: -4
+- name: Rator
+  location:
+    x: 44.481
+    y: 4
+    z: 0
+- name: Altair
+  tags: [dma-map]
+  location: wd:Q12975
+- name: Nelvana
+  tags: [dma-map]
+  location:
+    x: 29
+    y: 5.5
+    z: 0
+- name: Zeta Herculis
+  location: wd:Q13341
+  orbits:
+    - name: Inferna Prime
+      tags: [dma-map, federation member]
+      location:
+        x: -21.4
+        y: 16.3
+        z: 0
+- name: Toroth
+  tags: [dma-map]
+  location:
+    x: 4.9
+    y: -38.3
+    z: 0
+- name: Tau Coronae Borealis
+  location: wd:Q5098360
+  tags: [dma-map]
+  orbits:
+  - name: Hupyria
+    location:
+      z: 0
+- name: Bolarus
+  orbits:
+  - name: Bolarus IX
+    tags: [dma-map, federation member]
+    ord: 9
+    location:
+      x: 8
+      y: 27.1
+      z: 2
+- name: Tellun
+  location:
+    x: 13.3
+    y: -37.4
+    z: -3
+  tags: [dma-map]
+  orbits:
+    - name: Elas
+    - name: Troyius
+- name: Priors World
+  location:
+    x: 15
+    y: -34
+    z: -2
+  tags: [dma-map]
+- name: Nausicaa
+  tags: [dma-map]
+  location:
+    x: 28.2
+    y: -30.5
+    z: 3
+- name: Tau Ceti
+  type: star
+  location: wd:Q15820
+  tags: [dma-map]
+  orbits:
+    - name: Kaferia
+      tags: [notable, inhabited]
+      ord: 3
+- name: Zetar
+  orbits:
+    - name: Zetar II
+      ord: 2
+      location:
+        x: -14.8
+        y: 24.6
+        z: 2

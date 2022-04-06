@@ -1,18 +1,53 @@
+@font-face {
+  font-family: 'League Gothic';
+  src: url('res/LeagueGothic-Condensed.woff2');
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-h1 {
   font-family: 'shapes', 'League Gothic', sans-serif;
+  text-transform: uppercase;
+}
+
+aside {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 1em;
+  transform: translateY(-50%);
+}
+
+button {
+  display: block;
+  width: 100%;
+}
+
+text {
+  font-family: 'shapes', 'League Gothic', sans-serif;
+  text-transform: uppercase;
+  stroke: black;
+  paint-order: stroke;
+  stroke-width: 2px;
+}
+
+#navigator {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: white; 
+  display: grid;
+  grid-template-columns: auto 1.5em;
+  margin: 0;
+  padding: .1em .2em;
+}
+
+#navigator > dt {
+  grid-column: 1 / 2;
+}
+#navigator > dd {
+  margin: 0;
+  grid-column: 2 / 3;
+  text-align: right;
 }
