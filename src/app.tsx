@@ -3,7 +3,7 @@ import { useState, useEffect } from 'preact/hooks';
 import BareMinimum2d from 'bare-minimum-2d'
 import { Scene, plugins } from './scene.tsx'
 import Navigator from './navigator.tsx'
-import Gradients from './gradients.tsx'
+import Assets from './assets.tsx'
 
 const zoomDuration = 100;
 const zoomSpeed = 16;
@@ -71,12 +71,13 @@ function App() {
     flat: flat,
     dataXoffset: dataOffset.x,
     dataYoffset: dataOffset.y,
+    dataZoffset: dataOffset.z,
     canvasToViewRatio: 300,
     defaultCamZoffset: 5,
     defaultCamOrientation: "z-forward-x-right",
   }
 
-  const data = Scene(viewSettings, setDataOffset);
+  const data = Scene(viewSettings, dataOffset, setDataOffset);
 
   return (
     <div
@@ -98,7 +99,7 @@ function App() {
       onMouseMove={(e) => {
         if (grabbing) {
           if (!flat) {
-            setCubeRx(cubeRx + (e.movementY / 2));
+            setCubeRx(Math.min(0, Math.max(-180, cubeRx + (e.movementY / 2))));
             setCubeRz(cubeRz + (e.movementX / 2));
           } else {
             setDataOffset({
@@ -138,7 +139,7 @@ function App() {
         <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
       </aside>
       <Navigator flat={flat} coordinates={dataOffset} />
-      <Gradients />
+      <Assets />
     </div>
   )
 }

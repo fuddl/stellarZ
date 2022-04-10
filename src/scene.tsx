@@ -13,8 +13,28 @@ import {
 import tree from 'treeify-js';
 import quadraticBezier from './bezier.tsx'
 import textMarker from './textMarker.tsx'
+import symbol from './symbol.tsx'
 import catalog from './catalog.json'
 import iterator from 'iterate-tree'
+
+function validLocation(object) {
+	if (!'location' in object) {
+		return false
+	}
+	if (typeof object.location != 'object') {
+		return false
+	}
+	if (typeof object.location.x != 'number') {
+		return false
+	}
+	if (typeof object.location.y != 'number') {
+		return false
+	}
+	if (typeof object.location.z != 'number') {
+		return false
+	}
+	return true;
+}
 
 const auras = [
 	{
@@ -22,7 +42,8 @@ const auras = [
 			'earth colony',
 			'federation colony',
 			'federation outpost',
-			'federation starbase'
+			'federation starbase',
+			'federation science outpost',
 		],
 		size: 30,
 		paint: 'url(#fed)',
@@ -54,6 +75,13 @@ const auras = [
 		size: 60,
 		paint: 'url(#card)',
 	},
+	{
+		tags: [
+			'claimed by ferengi aliance',
+		],
+		size: 60,
+		paint: 'url(#ferengi)',
+	},
 ];
 
 class ExtendedDataRenderer extends DataRenderer {
@@ -64,6 +92,7 @@ class ExtendedDataRenderer extends DataRenderer {
 				case 'QuadraticBezier':
 				case 'textMarker':
 				case 'points':
+				case 'symbol':
 					return this._projectPolygonOrPoints(element);
 				case 'lines':
 					return this._projectLines(element);
@@ -100,7 +129,7 @@ const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d) => {
 	};
 };
 
-function circle(radius, precision = 42, axis = 'z') {
+function circle(center, radius, precision = 42, axis = 'z') {
 	const axes = ((axis) => {
 	  switch (axis) {
 		case 'z':	
@@ -122,15 +151,15 @@ function circle(radius, precision = 42, axis = 'z') {
 	}
 
 	for (let i = 0; i < Math.PI * 2; i = i + (Math.PI / precision)) {
-	  points[axes[0]].push(Math.cos(i) * radius);
-	  points[axes[1]].push(Math.sin(i) * radius);
-	  points[axes[2]].push(0);
+	  points[axes[0]].push(center[axes[0]] + Math.cos(i) * radius);
+	  points[axes[1]].push(center[axes[1]] + Math.sin(i) * radius);
+	  points[axes[2]].push(center[axes[2]]);
 	}
 
 	return points;
 }
 
-function circleMeter(innerRadius, outerRadius, precision = 180, axis = 'z') {
+function circleMeter(center, innerRadius, outerRadius, precision = 180, axis = 'z') {
 	const axes = ((axis) => {
 	  switch (axis) {
 		case 'z':	
@@ -155,18 +184,18 @@ function circleMeter(innerRadius, outerRadius, precision = 180, axis = 'z') {
 	}
 
 	for (let i = 0; i < Math.PI * 2; i = i + (Math.PI / precision)) {
-	  points[`${axes[0]}0`].push(Math.cos(i) * innerRadius);
-	  points[`${axes[0]}1`].push(Math.cos(i) * outerRadius);
-	  points[`${axes[1]}0`].push(Math.sin(i) * innerRadius);
-	  points[`${axes[1]}1`].push(Math.sin(i) * outerRadius);
-	  points[`${axes[2]}0`].push(0);
-	  points[`${axes[2]}1`].push(0);
+	  points[`${axes[0]}0`].push(center[axes[0]] + Math.cos(i) * innerRadius);
+	  points[`${axes[0]}1`].push(center[axes[0]] + Math.cos(i) * outerRadius);
+	  points[`${axes[1]}0`].push(center[axes[1]] + Math.sin(i) * innerRadius);
+	  points[`${axes[1]}1`].push(center[axes[1]] + Math.sin(i) * outerRadius);
+	  points[`${axes[2]}0`].push(center[axes[2]]);
+	  points[`${axes[2]}1`].push(center[axes[2]]);
 	}
 
 	return points;
 }
 
-function axisCircles(axes) {
+function axisCircles(center, axes) {
 	const circles = [];
 	for (const axis of axes) {
 		circles.push({
@@ -175,7 +204,7 @@ function axisCircles(axes) {
 			type: 'QuadraticBezier',
 			id: `axis-${axis}`,
 			closed: true,
-			...circle(42, 79, axis),
+			...circle(center, 42, 79, axis),
 		})
 		circles.push({
 			color: 'deepPink',
@@ -183,7 +212,7 @@ function axisCircles(axes) {
 			type: 'lines',
 			id: `meter-${axis}`,
 			closed: true,
-			...circleMeter(42, 42.75, 180, axis),
+			...circleMeter(center, 42, 42.75, 180, axis),
 		})
 		circles.push({
 			color: 'deepPink',
@@ -191,19 +220,19 @@ function axisCircles(axes) {
 			type: 'lines',
 			id: `cross-${axis}`,
 			closed: true,
-			...circleMeter(0, 44, 2, axis),
+			...circleMeter(center, 0, 44, 2, axis),
 		})
 	}
 	return circles
 }
 
-function Scene(viewSettings, setDataOffset) {
+function Scene(viewSettings, dataOffset, setDataOffset) {
 		const sceneSettings = {
 		cubeRange: 20,
 		cubeZoffset: 0,
-		dataXoffset: viewSettings.dataXoffset,
-		dataYoffset: viewSettings.dataYoffset,
-		dataZoffset: 0,
+		dataXoffset: dataOffset.x,
+		dataYoffset: dataOffset.y,
+		dataZoffset: dataOffset.z,
 		paperXrange: window.innerWidth,
 		paperYrange: window.innerHeight,
 	}
@@ -224,9 +253,7 @@ function Scene(viewSettings, setDataOffset) {
 
 	const points = [];
 
-	let objects = [...catalog]
-
-	iterator.bfs(objects, 'orbits', (object) => {
+	iterator.bfs([...catalog], 'orbits', (object) => {
 		const aura = auras.find((item) => {
 			if (object?.tags) {
 				return item.tags.filter(value => object.tags.includes(value))[0]
@@ -234,7 +261,7 @@ function Scene(viewSettings, setDataOffset) {
 				return false;
 			}
 		});
-		if (aura) {
+		if (aura && validLocation(object)) {
 			points.push({
 				id: object.id + '-aura',
 				type: 'points',
@@ -243,22 +270,32 @@ function Scene(viewSettings, setDataOffset) {
 				size: aura.size,
 				x: [object.location.x],
 				y: [object.location.y],
+				z: viewSettings?.flat ? [object.location.z / sceneSettings.cubeRange] : [object.location.z],
+			});
+		}
+	})
+
+	iterator.bfs([...catalog], 'orbits', (object) => {
+		if (object.type === 'star' && validLocation(object)) {
+			points.push({
+				id: object.id + '-asset',
+				type: 'symbol',
+				href: 'star',
+				x: [object.location.x],
+				y: [object.location.y],
 				z: viewSettings?.flat ? [0] : [object.location.z],
 			});
 		}
 	})
 
-	objects = [...catalog]
-
-	iterator.bfs(objects, 'orbits', (object) => {
-		if (object.location  && object?.tags?.includes('notable')) {
+	iterator.bfs([...catalog], 'orbits', (object) => {
+		if (object.location  && (object?.tags?.includes('notable'))) {
 		let isBase =
 		  object?.tags?.includes('federation starbase') ||
 		  object?.tags?.includes('deep space station');
 		let baseFontSize = isBase ? 9 : 16;
 		let highlightedFontSize = isBase ? 16 : 19.2;
-		const location = object?.location;
-		if (typeof location == 'object' && 'x' in location && 'y' in location && 'z' in location) {
+		if (validLocation(object)) {
 			points.push({
 			  label: object.name,
 			  id: object.id,
@@ -272,7 +309,7 @@ function Scene(viewSettings, setDataOffset) {
 					setDataOffset({
 						x: (object.location.x / sceneSettings.cubeRange) * -1,
 						y: (object.location.y / sceneSettings.cubeRange) * -1,
-						z: viewSettings?.flat ? 0 : (object.location.z / sceneSettings.cubeRange) * -1,
+						z: (object.location.z / sceneSettings.cubeRange) * -1,
 					})
 				}
 			  },
@@ -285,21 +322,25 @@ function Scene(viewSettings, setDataOffset) {
 	}
 	});
  
-
+	const center = {
+		x: dataOffset.x * sceneSettings.cubeRange * -1,
+		y: dataOffset.y * sceneSettings.cubeRange * -1,
+		z: dataOffset.z * sceneSettings.cubeRange * -1,
+	}
 
 	let { data } = renderScene(
 		viewSettings,
 		sceneSettings,
 		emptySceneOptions,
 		[
-			...axisCircles(viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
+			...axisCircles(center, viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
 			...points,
 		],
 	)
 	return data;
 }
 
-const plugins = [quadraticBezier, textMarker]
+const plugins = [quadraticBezier, textMarker, symbol]
 
 export {
 	Scene,

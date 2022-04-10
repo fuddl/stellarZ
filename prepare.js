@@ -12,6 +12,7 @@ const generateSystem = require('./generate.js');
 
 const yaml = require('js-yaml');
 const spherical2cartesian = require('./convert/spherical2cartesian.js');
+const defaultLocation = { z: 0 }
 
 let idCounter = 0;
 
@@ -72,6 +73,7 @@ async function addCoordinates(object, depth = 0, parentLocation) {
     }
   } else {
     object.location = {
+      ...defaultLocation,
       ...parentLocation,
       ...object.location,
     }
