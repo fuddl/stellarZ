@@ -4,6 +4,7 @@ import BareMinimum2d from 'bare-minimum-2d'
 import { Scene, plugins } from './scene.tsx'
 import Navigator from './navigator.tsx'
 import Assets from './assets.tsx'
+import parseSVG from 'svg-path-parser'
 
 const zoomDuration = 100;
 const zoomSpeed = 16;

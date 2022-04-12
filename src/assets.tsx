@@ -24,6 +24,14 @@ function Gradients({flat, coordinates}) {
 				<stop offset="0%" stopColor="gold" stopOpacity=".75" />
 				<stop offset="100%" stopColor="gold" stopOpacity="0" />
 			</radialGradient>
+			<radialGradient id="breen">
+				<stop offset="0%" stopColor="#173F00" stopOpacity=".75" />
+				<stop offset="100%" stopColor="#173F00" stopOpacity="0" />
+			</radialGradient>
+			<radialGradient id="thol">
+				<stop offset="0%" stopColor="orange" stopOpacity=".75" />
+				<stop offset="100%" stopColor="orange" stopOpacity="0" />
+			</radialGradient>
 			<symbol id="star" width="32" height="32" overflow="visible" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
 				<circle cx="0" cy="0" r="2" fill="url(#sunray)"/>
 				{/*	

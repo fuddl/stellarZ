@@ -15,26 +15,10 @@ import quadraticBezier from './bezier.tsx'
 import textMarker from './textMarker.tsx'
 import symbol from './symbol.tsx'
 import catalog from './catalog.json'
+import validLocation from './valid-location.js'
 import iterator from 'iterate-tree'
+import parseSVG from 'svg-path-parser'
 
-function validLocation(object) {
-	if (!'location' in object) {
-		return false
-	}
-	if (typeof object.location != 'object') {
-		return false
-	}
-	if (typeof object.location.x != 'number') {
-		return false
-	}
-	if (typeof object.location.y != 'number') {
-		return false
-	}
-	if (typeof object.location.z != 'number') {
-		return false
-	}
-	return true;
-}
 
 const auras = [
 	{
@@ -81,6 +65,20 @@ const auras = [
 		],
 		size: 60,
 		paint: 'url(#ferengi)',
+	},
+	{
+		tags: [
+			'claimed by breen confederacy',
+		],
+		size: 60,
+		paint: 'url(#breen)',
+	},
+	{
+		tags: [
+			'claimed by tholian assembly',
+		],
+		size: 60,
+		paint: 'url(#thol)',
 	},
 ];
 
@@ -270,13 +268,13 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 				size: aura.size,
 				x: [object.location.x],
 				y: [object.location.y],
-				z: viewSettings?.flat ? [object.location.z / sceneSettings.cubeRange] : [object.location.z],
+				z: viewSettings?.flat ? [0] : [object.location.z],
 			});
 		}
 	})
 
 	iterator.bfs([...catalog], 'orbits', (object) => {
-		if (object.type === 'star' && validLocation(object)) {
+		if (object.type === 'star' && validLocation(object) && !object?.tags?.includes('notable')) {
 			points.push({
 				id: object.id + '-asset',
 				type: 'symbol',
