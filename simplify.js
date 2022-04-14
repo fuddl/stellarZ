@@ -11,14 +11,15 @@ for (let shape of shapes2D) {
 			switch (point.code) {
 			  case 'M':
 			  	newPath.push(`M${point.x},${point.y}`);
+			  	break;
 			  case 'L':
 			  case 'C':
 			    newPath.push(`L${point.x},${point.y}`);
-			  break;
+			  	break;
 			  case 'z':
 			  case 'Z':
 			    newPath.push(`z`);
-			  break;
+			  	break;
 			}
 			if (loc) {
 				existingPoints.push(loc);

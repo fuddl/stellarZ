@@ -16,11 +16,15 @@ const defaultLocation = { z: 0 }
 
 const { parse } = require('csv-parse');
 const shapes2D = require('./src/2dShapes.json');
-const parseSVG = require('svg-path-parser');
+const path2polygon = require('./d2polygon.js')
 const pointInPolygon = require('point-in-polygon');
 const Offset = require('polygon-offset');
 const iterator = require('iterate-tree');
 const gen = require('random-seed');
+const intersection = require('array-intersection');
+const distance = require('euclidean-distance');
+
+const dimensions = ['x', 'y', 'z'];
 
 const validLocation = function (object) {
   if (!'location' in object) {
@@ -129,67 +133,135 @@ async function addCoordinates(object, depth = 0, parentLocation) {
 
   let hyg = [];
   parse(hygText, {columns: true}, function(err, records) {
+    
+    const occupied = [];
     for (let shape of shapes2D) {
 
-      const occupied = [];
+      let multipolygon = [];
+      for (let d of shape.d) {
+        multipolygon.push(path2polygon(d))
+      }
+
+      const relevantPoints = [];
 
       iterator.bfs([...raw_data], 'orbits', (object) => {
-        if (object?.tags?.includes(shape.tag) && validLocation(object)) {
-          occupied.push(object.location);
+        if (intersection(object.tags, shape.tags).length > 0) {
+          relevantPoints.push(object)
         }
-      });
-
-      const randGen = gen.create(shape.d);
-
-      const path = parseSVG(shape.d);
-      let polygon = [];
-      for (const point of path) {
-        switch (point.code) {
-          case 'M':
-          case 'L':
-          case 'C':
-            polygon.push([
-              point.x,
-              point.y *-1,
-            ]);
-          break;
-        }
-      }
-      const offset = new Offset();
-      const smallerPolygon = offset.data([polygon]).padding(shape.inset ?? 6);
-
-      const recordsSorted = [ ...records ];
-      recordsSorted.sort((a, b) => { 
-        const aDist = Math.abs(parseFloat(a.Z)) - Math.abs(shape.z);
-        const bDist = Math.abs(parseFloat(b.Z)) - Math.abs(shape.z);
-        return aDist - bDist;
       })
 
-      for (let star of recordsSorted) {
-        if (pointInPolygon([star.X, star.Y], smallerPolygon[0])) {
-          let collisionDetected = false;
-          for (const point of occupied) {
-            if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, randGen.intBetween(shape.minDistance,shape.maxDistance))) {
-              collisionDetected = true;
+      const triangles = [];
+      for (let A of relevantPoints) {
+        const triangle = {
+          points: {
+            A: A,
+          },
+          center: {},
+        }
+        let DistanceB = null;
+        for (let B of relevantPoints) {
+          if (B != A) {
+            let dist = distance(
+              [A.location.x, A.location.y, A.location.z],
+              [B.location.x, B.location.y, B.location.z],
+            );
+            if (DistanceB === null || DistanceB > dist) {
+              DistanceB = dist;
+              triangle.points.B = B;
             }
           }
-
-          if (!collisionDetected) {
-            console.debug(`aquiring location of HD ${star.HD}`,)
-            occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
-            raw_data.push({
-              "name": `HD ${star.HD}`,
-              "type": "star",
-              "tags": [shape.tag], 
-              "location": {
-                "y": parseFloat(star.Y),
-                "x": parseFloat(star.X),
-                "z": parseFloat(star.Z),
-              }
-            })
+        }
+        let DistanceC = null;
+        for (let C of relevantPoints) {
+          if (C != A && C != triangle.points.B) {
+            let dist = distance(
+              [A.location.x, A.location.y, A.location.z],
+              [C.location.x, C.location.y, C.location.z],
+            );
+            if (DistanceC === null || DistanceC > dist) {
+              DistanceC = dist;
+              triangle.points.C = C;
+            }
           }
         }
+        triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
+        for (let dim of dimensions) {
+          triangle.center[dim] = (
+            triangle.points.A.location[dim] + 
+            triangle.points.B.location[dim] + 
+            triangle.points.C.location[dim]
+          ) / 3;
+        }
+        triangles.push(triangle);
       }
+      triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
+
+      for (triangle of triangles) {
+        
+        records.sort((a, b) => {
+          let aDist = 0; 
+          let bDist = 0; 
+          for (let dim of dimensions) {
+            const DIM = dim.toUpperCase();
+            aDist += Math.abs(parseFloat(a[DIM])) - Math.abs(triangle.center[dim]);
+            bDist += Math.abs(parseFloat(b[DIM])) - Math.abs(triangle.center[dim]);
+          }
+          return (aDist / 3) - (bDist / 3);
+        })
+
+        let occupied = []
+        for (let existing of relevantPoints) {
+          occupied.push({x: existing.location.x, y: existing.location.y})
+        }
+        for (let id in records) {
+          const star = records[id];
+          if (collides(triangle.center, {x: parseFloat(star.X), y: parseFloat(star.Y)}, triangle.radius)) {
+
+
+            let collisionDetected = false;
+            for (const point of occupied) {
+              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, 24)) {
+                collisionDetected = true;
+                delete records[id];
+              }
+            }
+            if (!collisionDetected) {
+              let isInsomePolygon = false;
+              for (const polygon of multipolygon) {
+                if (!isInsomePolygon) {
+                  isInsomePolygon = pointInPolygon([star.X, star.Y], polygon);
+                }
+              }
+
+              if (isInsomePolygon) {
+                console.debug(`aquireing location for ${shape.id} HD ${star.HD}`)
+                raw_data.push({
+                  "name": `HD ${star.HD}`,
+                  "type": "star",
+                  "tags": shape.tags, 
+                  "location": {
+                    "y": parseFloat(star.Y),
+                    "x": parseFloat(star.X),
+                    "z": parseFloat(star.Z),
+                  }
+                })
+                occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
+                delete records[id];
+              }
+            }
+          }
+        }
+
+
+
+
+
+
+
+
+      }
+
+
     }
 
     fs.writeFile(
