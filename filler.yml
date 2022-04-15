@@ -188,7 +188,7 @@
   tags: [claimed by klingon empire]
 - name: K'Linsann
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [claimed by klingon empire, triangle]
 - name: Klinja
   type: planet
   tags: [claimed by klingon empire]
@@ -685,6 +685,381 @@
   tags: [federation member]
 - name: Grief
   tags: [cygian colony, federation colony]
+- name: T'Vam 
+  tags: [federation colony, orion colony]
+- name: Habrenn
+  tags: [federation colony, earth colony]
+- name: Hadley II
+  tags: [federation colony]
+- name: Hafjian
+  tags: [federation colony]
+- name: Halador
+  tags: [federation colony, mining colony, earth colony]
+- name: Halcyon
+  tags: [federation colony, mining colony, earth colony]
+- name: Haldraine
+  tags: [federation colony]
+- name: Hamal IV
+  tags: [federation member]
+- name: Hannamore
+  tags: [federation member]
+- name: Harmony
+  tags: [federation colony, vulcan colony]
+- name: Heimdall
+  tags: [federation colony]
+- name: Heprinala
+  tags: [federation colony, vulcan colony]
+- name: Heristis
+  tags: [federation colony, vulcan colony]
+- name: Heronius II
+  tags: [federation colony]
+- name: Hexentrex
+  tags: [federation colony, vulcan colony]
+- name: Himalias
+  tags: [federation outpost]
+- name: Hobson Delta II 
+  tags: [federation colony]
+- name: Hofstrof
+  tags: [federation outpost, near rnz]
+- name: Holcomb's Planet 
+  tags: [federation colony]
+- name: Holly II
+  tags: [federation colony, near gorn border]
+- name: Hostoria
+  tags: [federation colony, vulcan colony]
+- name: Huan
+  tags: [federation member]
+- name: Hudson's World
+  tags: [federation colony]
+- name: Hurlin
+  tags: [federation colony, vulcan colony]
+- name: Idix
+  tags: [federation colony, vulcan colony]
+- name: Ilyria VI
+  tags: [federation colony]
+- name: Indarax
+  tags: [andorian colony, federation colony]
+- name: Ing
+  tags: [federation colony, orion colony]
+- name: Ingav
+  tags: [claimed by cardassian union, occupied]
+- name: Intar
+  tags: [federation member]
+- name: Intrator II
+  tags: [federation colony]
+- name: Jalinitir
+  tags: [federation colony, vulcan colony]
+- name: Jorindas
+  tags: [federation colony]
+- name: Jotunheim
+  tags: [federation member]
+- name: Juhraya
+  tags: [earth colony, federation colony, near cardassian border]
+- name: Julietta
+  tags: [federation colony, cygian colony]
+- name: Jungar
+  tags: [federation colony, vulcan colony]
+- name: Justinia
+  tags: [federation colony, vulcan colony]
+- name: Jurisa
+  tags: [federation colony, vulcan colony]
+- name: Kalakon
+  tags: [federation colony]
+- name: Karnor III
+  tags: [federation colony]
+- name: Keplar IV
+  tags: [federation colony, near gorn border]
+- name: Kharzh'ulla
+  tags: [federation colony, tellarite colony]
+- name: Kikal
+  tags: [federation colony]
+- name: Kinshasa
+  tags: [federation colony]
+- name: Klahmac
+  tags: [federation colony, near tholian border]
+- name: Klondike VI 
+  tags: [federation colony, mining colony]
+- name: Kobax VI
+  tags: [federation colony]
+- name: Kudao
+  tags: [federation colony, near klingon empire]
+- name: Lachian
+  tags: [federation colony, near tholian border]
+- name: Laxala
+  tags: [federation colony]
+- name: Laxaren
+  tags: [federation colony, vulcan colony]
+- name: Leora IV
+  tags: [federation colony, earth colony]
+- name: Lexor VII 
+  tags: [federation colony, vulcan colony]
+- name: Liria
+  tags: [federation member]
+- name: Lixis XI 
+  tags: [federation colony, vulcan colony]
+- name: Lochlar
+  tags: [federation colony, agricultural colony]
+- name: Loki
+  tags: [federation colony, andorian colony]
+- name: Lursen Prime 
+  tags: [federation colony, andorian colony]
+- name: Lustralva
+  tags: [federation colony, deltan colony]
+- name: Luxor
+  tags: [federation colony]
+- name: Lursen Prime 
+  tags: [federation colony, andorian colony]
+- name: Magatha IV
+  tags: [federation colony]
+- name: Maklin VIII 
+  tags: [federation colony, vulcan colony]
+- name: Maltharin II
+  tags: [gorn colony, dilithium refinery]
+- name: Maren
+  tags: [federation colony]
+- name: Marram IX
+  tags: [federation colony, earth colony]
+- name: Maxtor
+  tags: [federation colony, vulcan colony]
+- name: Mazda
+  tags: [federation member]
+- name: Meezan IV 
+  tags: [federation colony]
+- name: Meir III 
+  tags: [federation colony]
+- name: Memoxa
+  tags: [federation colony, vulcan colony]
+- name: Menith II
+  tags: [federation colony]
+- name: Merope IV
+  tags: [federation colony, earth colony]
+- name: Minidine IV 
+  tags: [federation colony, vulcan colony]
+- name: Minora
+  tags: [federation colony, vulcan colony]
+- name: Morales
+  tags: [federation colony, orion colony]
+- name: Muldoon
+  tags: [federation colony, dilithium, mining colony]
+- name: Narcissus III
+  tags: [federation colony, vulcan colony]
+- name: New Bangalore 
+  tags: [federation colony]
+- name: New Beijing 
+  tags: [federation colony]
+- name: New Camden VII 
+  tags: [federation colony]
+- name: New Hampton 
+  tags: [federation colony]
+- name: New Pangea 
+  tags: [federation colony]
+- name: New Victoria
+  tags: [federation colony]
+- name: Newton II 
+  tags: [federation colony]
+- name: Neyda Prime
+  tags: [federation member]
+- name: Nisus
+  tags: [federation colony, vulcan colony]
+- name: Norassil
+  tags: [federation colony, vulcan colony]
+- name: Nova Atar III 
+  tags: [federation colony]
+- name: Nuvidula IV 
+  tags: [near klingon empire, federation colony]
+- name: Nytis
+  tags: [federation colony, spaceport]
+- name:  Ochs V
+  tags: [federation colony]
+- name: Omicron Testus IV 
+  tags: [federation colony, andorian colony]
+- name: Ona
+  tags: [federation member]
+- name: Ontosil
+  tags: [federation colony]
+- name: Orgon
+  tags: [federation colony]
+- name: Othello
+  tags: [federation colony, earth colony, agricultural colony]
+- name: Pandril
+  tags: [federation member]
+- name: Pangea
+  tags: [federation colony]
+- name: Pangea
+  tags: [federation colony]
+- name: Phi XI 
+  tags: [federation colony]
+- name: Pluuh II 
+  tags: [federation colony]
+- name: Primavera
+  tags: [federation colony, vulcan colony]
+- name: Prithvi
+  tags: [federation colony, earth colony]
+- name: Prussura IV
+  tags: [maquis colony, badlands]
+- name: Pyrellia
+  tags: [tandaran colony]
+- name: Quadra Sigma III 
+  tags: [federation colony]
+- name: Quaraxus
+  type: planetoid
+  tags: [federation colony]
+- name: Quodar
+  tags: [federation member]
+- name: Rastan VI
+  tags: [federation colony]
+- name: Raven
+  tags: [federation colony, science colony]
+- name: Ravenna
+  tags: [federation colony]
+- name: Raville II
+  tags: [federation colony]
+- name: Reganus
+  tags: [federation colony, mining colony]
+- name: Resolution
+  tags: [federation colony, vulcan colony]
+- name: Revanche
+  tags: [federation colony, mining colony]
+- name: Rhyl
+  tags: [federation colony, mining colony]
+- name: Ribol II
+  tags: [federation colony, agricultural colony]
+- name: Rifton
+  tags: [federation colony]
+- name: Rivala II
+  tags: [federation colony, deltan colony, agricultural colony]
+- name: Rodden Prime
+  tags: [federation colony]
+- name: Rontelm
+  tags: [federation colony]
+- name: Rover Prime 
+  tags: [federation colony]
+- name: Roxan
+  tags: [federation colony]
+- name: Sachem IV
+  tags: [federation colony, agricultural colony]
+- name: Sadora
+  tags: [federation colony, deltan colony]
+- name: Salva II 
+  tags: [maquis colony, dmz]
+- name: San Sorella
+  tags: [federation colony, mining colony]
+- name: Sandpinia
+  tags: [federation member]
+- name: Santora Prime 
+  tags: [federation colony]
+- name: Sarai
+  tags: [federation colony]
+- name: Sarn
+  tags: [federation colony]
+- name: Sarona VIII
+  tags: [federation colony]
+- name: Scandha'
+  tags: [federation colony, earth colony, mining colony]
+- name: Second Chance
+  tags: [earth colony, federation colony]
+- name: Selelvia
+  tags: [federation member]
+- name: Sustenance
+  tags: [federation colony]
+- name: Syng II
+  tags: [federation colony]
+- name: Synton IV
+  tags: [federation colony]
+- name: Syrinx III
+  tags: [federation colony, resort]
+- name: Tabulon
+  tags: [federation colony, orion colony]
+- name: Talna III
+  tags: [federation colony, orion colony]
+- name: Silica Tare
+  tags: [federation colony, mining colony]
+- name: Silicasca
+  tags: [federation colony, vulcan colony]
+- name: Silivis
+  tags: [federation colony, vulcan colony]
+- name: Silva V
+  tags: [federation colony]
+- name: Sinbad IV
+  tags: [federation colony, earth colony]
+- name: Sind
+  tags: [federation colony, deltan colony]
+- name: Sindikash
+  tags: [federation colony, earth colony]
+- name: Singularity II
+  tags: [federation colony, earth colony]
+- name: Slokat
+  tags: [maquis colony, dmz]
+- name: Socrata
+  tags: [federation colony, mining colony]
+- name: Sojourn
+  tags: [federation colony, vulcan colony]
+- name: Solarion IV
+  tags: [federation colony]
+- name: Solaris VIII 
+  tags: [federation colony]
+- name: S'ti'ach'aas
+  tags: [federation member]
+- name: Stonrak
+  tags: [federation colony, near tholian border]
+- name: Succour
+  tags: [federation colony, earth colony]
+- name: Sustenance
+  tags: [federation colony, agricultural colony]
+- name: Sympathy
+  tags: [federation colony, earth colony]
+- name: Synchrinity
+  tags: [federation colony, earth colony]
+- name: Syng II
+  tags: [federation colony]
+- name: Synton IV
+  tags: [federation colony]
+- name: Syrinx III
+  tags: [federation colony, andorian colony]
+- name: Tabulon
+  tags: [federation colony, orion colony]
+- name: Talir
+  tags: [federation colony, mining colony]
+- name: Talna III
+  tags: [federation colony, orion colony]
+- name: Tamarind
+  tags: [federation colony, earth colony, mining colony, agricultural colony]
+- name: Tamerlane
+  tags: [federation colony, earth colony, agricultural colony]
+- name: Tanalorne
+  tags: [federation colony, agricultural colony]
+- name: Tanar IX 
+  tags: [federation colony, earth colony]
+- name: Tanaris IX
+  tags: [federation colony]
+- name: Tarett IV
+  tags: [federation colony]
+- name: Tarletus II
+  tags: [federation colony]
+- name: Tarod IX
+  tags: [federation outpost]
+- name: Tarry Awhile
+  tags: [federation colony]
+- name: Taryton
+  tags: [federation colony, tellarite colony]
+- name: Tau Beta IV
+  tags: [federation colony]
+- name: Tau Gamma II
+  tags: [federation colony]
+- name: Taygeta I
+  tags: [federation colony]
+- name: Tazi Prime
+  tags: [federation member]
+- name: Te Awamutu VII 
+  tags: [federation outpost]
+- name: Telamon
+  tags: [federation colony, earth colony]
+- name: Telcos
+  tags: [federation colony, andorian colony]
+- name: Tellamarkus
+  tags: [federation colony, tellarite colony]
+- name: Temelicus
+  tags: [federation colony]
 
 - name: Levaeri V
   ord: 5
