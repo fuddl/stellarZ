@@ -202,6 +202,8 @@
       - name: Andoria
         type: moon
         tags: [notable, federation member, federation founding member, dma-map]
+      - name: Alrond
+        tags: [andorian colony]
     - name: Kul'va
       type: giant
       ord: 6
@@ -304,11 +306,6 @@
   orbits:
     - name: Axanar
       tags: [notable, inhabited, warp-capable, federation member]
-- name: Mu Leonis
-  location: wd:Q1153864
-  orbits:
-    - name: Ardana
-      tags: [notable, federation member]
 - name: Epsilon Serpentis
   location: wd:Q3304261
   orbits:
@@ -529,6 +526,12 @@
       tags: [notable, inhabited, federation member]
     - name: Deep Space 9
       tags: [deep space station]
+    - name: Baseras
+      ord: 9
+      type: giant
+    - name: Ba'Syladon 
+      type: giant
+      ord: 11
 - name: Ajilon Prime
   tags: [notable, federation colony]
   location:
@@ -1302,3 +1305,57 @@
     y: -5.524
     z: 1
   tags: [dma-map, notable]
+- name: Kaitos
+  type: star
+  location: 
+    x: -14.705
+    y: -5.524
+    z: 1
+  tags: [dma-map, notable]
+- name: Breen 
+  type: planet 
+  location:  
+    x: -125.724
+    y: 31.218
+    z: -232 # should be rather close to cardassia
+  tags: [notable, claimed by breen confederacy]
+- name: Mu Leonis
+  location: wd:Q1153864
+  type: star
+  orbits:
+  - name: Ardana
+    type: planet
+    tags: [notable, federation member]
+- name: Megara
+  tags: [federation member, notable]
+  location: 
+    x: -106.597
+    y: -104.094
+    z: 3 # 🤷
+- name: Beta Renner
+  type: star 
+  location: 
+    x: -265.361
+    y: -238.735
+    z: -197.368 # 🤷
+  orbits:
+    - name: Antica
+      type: planet 
+      ord: 6
+      tags: [federation member, notable]
+    - name: Selay
+      type: planet
+      ord: 5
+      tags: [federation member, notable]
+- name: Portas
+  tags: [claimed by breen confederacy, dmz, notable]
+  location: 
+    x: -108.684
+    y: -22.194
+    z: -50
+- name: Tholia
+  tags: [claimed by tholian assembly, notable]
+  location: 
+    x: -173.863
+    y: -114.265
+    z: -25

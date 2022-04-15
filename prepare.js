@@ -125,6 +125,7 @@ async function addCoordinates(object, depth = 0, parentLocation) {
 (async () => {
   let output = [];
   const raw_data = yaml.load(fs.readFileSync('./catalog.yml', 'utf8'));
+  const filler = yaml.load(fs.readFileSync('./filler.yml', 'utf8'));
   for (let object of raw_data) {
     object = await addCoordinates(object);
   }
@@ -136,6 +137,7 @@ async function addCoordinates(object, depth = 0, parentLocation) {
     
     const occupied = [];
     for (let shape of shapes2D) {
+    const randGen = gen.create(shape.d[0]);
 
       let multipolygon = [];
       for (let d of shape.d) {
@@ -150,51 +152,76 @@ async function addCoordinates(object, depth = 0, parentLocation) {
         }
       })
 
+      let fittingFiller = [];
+      iterator.bfs([...filler], 'orbits', (object) => {
+        if (intersection(object.tags, shape.tags).length > 0) {
+          object.tags.push('notable');
+          fittingFiller.push(object);
+        }
+      })
+
+      fittingFiller = fittingFiller.sort((A, B) => randGen.intBetween(-1, 1));
+
       const triangles = [];
-      for (let A of relevantPoints) {
-        const triangle = {
-          points: {
-            A: A,
-          },
-          center: {},
-        }
-        let DistanceB = null;
-        for (let B of relevantPoints) {
-          if (B != A) {
-            let dist = distance(
-              [A.location.x, A.location.y, A.location.z],
-              [B.location.x, B.location.y, B.location.z],
-            );
-            if (DistanceB === null || DistanceB > dist) {
-              DistanceB = dist;
-              triangle.points.B = B;
+      if (relevantPoints.length > 2) {
+        for (let A of relevantPoints) {
+          const triangle = {
+            points: {
+              A: A,
+            },
+            center: {},
+          }
+          let DistanceB = null;
+          for (let B of relevantPoints) {
+            if (B != A) {
+              let dist = distance(
+                [A.location.x, A.location.y, A.location.z],
+                [B.location.x, B.location.y, B.location.z],
+              );
+              if (DistanceB === null || DistanceB > dist) {
+                DistanceB = dist;
+                triangle.points.B = B;
+              }
             }
           }
-        }
-        let DistanceC = null;
-        for (let C of relevantPoints) {
-          if (C != A && C != triangle.points.B) {
-            let dist = distance(
-              [A.location.x, A.location.y, A.location.z],
-              [C.location.x, C.location.y, C.location.z],
-            );
-            if (DistanceC === null || DistanceC > dist) {
-              DistanceC = dist;
-              triangle.points.C = C;
+          let DistanceC = null;
+          for (let C of relevantPoints) {
+            if (C != A && C != triangle.points.B) {
+              let dist = distance(
+                [A.location.x, A.location.y, A.location.z],
+                [C.location.x, C.location.y, C.location.z],
+              );
+              if (DistanceC === null || DistanceC > dist) {
+                DistanceC = dist;
+                triangle.points.C = C;
+              }
             }
           }
+          triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
+          for (let dim of dimensions) {
+            triangle.center[dim] = (
+              triangle.points.A.location[dim] + 
+              triangle.points.B.location[dim] + 
+              triangle.points.C.location[dim]
+            ) / 3;
+          }
+          triangles.push(triangle);
         }
-        triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
-        for (let dim of dimensions) {
-          triangle.center[dim] = (
-            triangle.points.A.location[dim] + 
-            triangle.points.B.location[dim] + 
-            triangle.points.C.location[dim]
-          ) / 3;
-        }
-        triangles.push(triangle);
+        triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
       }
-      triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
+
+      if (relevantPoints.length == 1 || relevantPoints.length < 3) {
+        triangles.push(
+          {
+            radius: 1000,
+            center: {
+              x: relevantPoints[0].location.x,
+              y: relevantPoints[0].location.y,
+              z: relevantPoints[0].location.z,
+            } 
+          }
+        )
+      }
 
       for (triangle of triangles) {
         
@@ -220,7 +247,8 @@ async function addCoordinates(object, depth = 0, parentLocation) {
 
             let collisionDetected = false;
             for (const point of occupied) {
-              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, 24)) {
+              const big = randGen.intBetween(0,1)
+              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? 12 : 24))) {
                 collisionDetected = true;
                 delete records[id];
               }
@@ -235,15 +263,21 @@ async function addCoordinates(object, depth = 0, parentLocation) {
 
               if (isInsomePolygon) {
                 console.debug(`aquireing location for ${shape.id} HD ${star.HD}`)
+                const location = {
+                  "y": parseFloat(star.Y),
+                  "x": parseFloat(star.X),
+                  "z": parseFloat(star.Z),
+                };
+                let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
+                if (chosenFiller.length > 0) {
+                  chosenFiller[0].location = location;
+                }
                 raw_data.push({
                   "name": `HD ${star.HD}`,
                   "type": "star",
-                  "tags": shape.tags, 
-                  "location": {
-                    "y": parseFloat(star.Y),
-                    "x": parseFloat(star.X),
-                    "z": parseFloat(star.Z),
-                  }
+                  "orbits": chosenFiller, 
+                  "tags": chosenFiller.length > 0 ? [] : shape.tags, 
+                  "location": location
                 })
                 occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
                 delete records[id];

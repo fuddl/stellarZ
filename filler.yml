@@ -1,0 +1,715 @@
+# Objects in this file should be:
+#
+# * non-canon (if it is in memory alpha, it is canon)
+# * not directly or indirectly related to real existing objects
+# * not easily be confused with a canon or an existing object
+#   * should not indicate an real constellaton
+# * not sound too specific or interesting
+
+- name: Zarral IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Yerad III 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Xuxiaz V 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Woz VII 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Vuriex II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Veska
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Rhota'Nev Prime 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Traelus II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Tozox V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Tok'Bhul VI
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Tiranax
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Ter'jas Mor
+  type: planet
+  tags: [claimed by klingon empire]
+- name: T'Dakka V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Tariax III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Taganika
+  type: planet
+  tags: [claimed by klingon empire]
+- name: TaD
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Strahkeer
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Somraw
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Scaptar
+  type: planet
+  tags: [claimed by klingon empire]
+- name: San-Tarah
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Sadatoni IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Sadachbia
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Rotanev Prime
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Rhota'Nev Prime
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Rantal
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Rai V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Qul Tuq II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Signi Beta
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Qua'Khan
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Q'Tahl
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Qi'Vol
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Qaitos VI
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Puriaz IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Phillo'tok V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Phaedus IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Penchan II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Pao'la
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Otha 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Nothra 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Nood 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Necros 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Nayyvrrra 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Munjeb III 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Muldor IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Morbus
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Miraud
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Mengel
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Mazur Prime
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Mastocal
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Marram IX
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Marcan V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Makrecha IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Lak'Tral
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Krychek VI
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kremlat
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kostner
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Korgocht V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kolothos IX
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kolm-an
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Klorgat IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: K'Linsann
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Klinja
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Klevas II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Klevaan
+  type: planet
+  tags: [claimed by klingon empire]
+- name: K'Korran VIII
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Khalas
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kerret'raa
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Keltara
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kelm
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kaskall
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kaph III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kannaga
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Kahless
+  type: planet
+  tags: [claimed by klingon empire]
+- name: K'Kaarr
+  type: planet
+  tags: [claimed by klingon empire]
+- name: HuDyuQ
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Hranrar
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Hrakkour IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Horbin
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Hadar IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Gion
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Gila III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: GarKallos
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Fuh'Rhud VIII
+  type: planet
+  tags: [claimed by klingon empire]
+- name: FGC 24187 V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Fev'Tok III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Ferasa Prime
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Fek'lhr
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Faant
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Elkauron II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Don'zali IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Delta Khinah II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Delleren V
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Dek'Go'Kor
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Dayos IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Da'Kel III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Cossina III
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Corvix
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Chal
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Cerzom II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Cereon
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Cenotaph 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Bosklave 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Beta Delphini Prime 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Bering's World
+  type: planet
+  tags: [claimed by klingon empire]
+- name: B'aaj 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Axelot II
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Aviskie
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Arnos IV
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Aquila III 
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Alaris
+  type: planet
+  tags: [claimed by klingon empire]
+- name: Abyss
+  type: planet 
+  tags: [vulcan colony, federation colony]
+- name: Accellus IX
+  type: planet 
+  tags: [federation colony]
+- name: Adhil Prime
+  type: planet 
+  tags: [federation colony]
+- name: Adoss
+  type: planet 
+  tags: [vulcan colony, federation colony]
+- name: Aesa IX 
+  type: planet 
+  tags: [vulcan colony, federation colony]
+- name: Albegad
+  type: planet 
+  tags: [federation colony, deltan colony]
+- name: Albireo II 
+  type: planet 
+  tags: [federation colony]
+- name: Alca
+  type: planet 
+  tags: [federation colony]
+- name: Aldea Prime 
+  type: planet 
+  tags: [federation colony, starfleet drydock]
+- name: Alderam III
+  type: planet 
+  tags: [federation colony]
+- name: Aleph III 
+  type: planet 
+  tags: [federation colony]
+- name: Alpheratz II 
+  type: planet 
+  tags: [federation colony]
+- name: Allamegras
+  type: planet 
+  tags: [federation colony]
+- name: Alonis
+  type: planet 
+  tags: [federation member]
+- name: Alpha Nexus I 
+  type: planet 
+  tags: [abendoned federation colony]
+- name: Alphosa
+  type: planet 
+  tags: [federation colony, orion colony]
+- name: Althos IV
+  type: planet 
+  tags: [federation member]
+- name: Altimara
+  type: planet 
+  tags: [federation mining fascillity]
+- name: Amber
+  type: planet 
+  tags: [federation member]
+- name: Amniphon
+  type: planet 
+  tags: [colony, dmz]
+- name: Anacontor
+  type: planet 
+  tags: [federation member]
+- name: Ana'siuol 
+  type: planet 
+  tags: [federation member]
+- name: Angrena
+  type: planet 
+  tags: [federation mining fascillity, otz]
+- name: Antipathy IV
+  type: planet 
+  tags: [federation colony, andorian colony]
+- name: Aplithin
+  type: planet 
+  tags: [federation member]
+- name: Apollonia
+  type: planet 
+  tags: [federation member]
+- name: Arbaza
+  type: planet 
+  tags: [federation member]
+- name: Arbaza
+  type: planet 
+  tags: [associate federation member]
+- name: Altimara
+  type: planet 
+  tags: [federation mining fascillity]
+- name: Archaria III 
+  type: planet 
+  tags: [federation colony]
+- name: Ariannus
+  type: planet 
+  tags: [federation associate member, trade colony]
+- name: Arima
+  type: planet 
+  tags: [federation member]
+- name: Arteline IV 
+  type: planet 
+  tags: [federation member]
+- name: Atabis
+  type: planet 
+  tags: [federation member]
+- name: Aulac
+  type: planet 
+  tags: [federation member]
+- name: Avalon
+  ord: 3
+  type: planet 
+  tags: [federation colony, earth colony, agricultural colony]
+- name: Ayirn
+  type: planet 
+  tags: [federation colony, orion colony]
+- name: Babylon
+  type: planet 
+  tags: [federation colony, starfleet support base]
+- name: Bactrica
+  type: planet 
+  tags: [federation member, near tzenkethi border]
+- name: Wall
+  type: planet 
+  tags: [earth colony, federation colony, mining colony]
+- name: Baladar
+  type: planet
+  tags: [federation colony, andorian colony]
+- name: Barabas
+  type: planet
+  tags: [federation colony, andorian colony]
+- name: Barrony
+  type: planet
+  tags: [federation colony]
+- name: Barsoom
+  type: planet
+  tags: [federation colony, tellarite colony, mining colony]
+- name: Baxter's World 
+  type: planet
+  tags: [federation colony, tellarite colony, mining colony, agricultural colony]
+- name: Beaulieu's World 
+  type: planet
+  tags: [cardassian colony, former federation colony, andorian colony]
+- name: Bejarus III 
+  ord: 3
+  tags: [federation colony, research colony]
+- name: Bensonia
+  tags: [federation colony, orion colony]
+- name: Bethulia III
+  type: planet
+  tags: [ogt, federation colony, mining colony]
+- name: Blackart
+  type: planet
+  tags: [tellarite colony, federation colony, mining colony]
+- name: Blithinia
+  type: planet
+  tags: [tellarite colony, federation colony, mining colony]
+- name: Blossom IV
+  type: planet
+  tags: [federation colony, agricultural colony]
+- name: Blue Rocket 
+  type: planet
+  tags: [federation colony]
+- name: Borgia V 
+  type: planet
+  tags: [federation colony]
+- name: Borigris
+  type: planet
+  tags: [federation colony, mining colony]
+- name: Borom
+  type: planet
+  tags: [federation colony, andorian colony, trading colony, industrial colony]
+- name: Brackin's Planet 
+  type: planet
+  tags: [federation colony]
+- name: Brannik IV 
+  type: planet
+  tags: [federation colony, deltan colony]
+- name: Brantik
+  type: planet
+  tags: [federation colony, tellarite colony]
+- name: Braxton
+  type: planet
+  tags: [federation colony, andorian colony, mining colony]
+- name: B'rq 
+  type: planet
+  tags: [federation member]
+- name: Butera V 
+  type: planet
+  tags: [federation colony, dilithium refinery]
+- name: Calanara
+  type: planet
+  tags: [vulcan colony, federation colony]
+- name: Calibus VII 
+  type: planet
+  tags: [federation colony]
+- name: Caliph IX
+  type: planet
+  tags: [federation colony]
+- name: Callista
+  type: planet
+  tags: [vulcan colony, federation colony]
+- name: Wolf 346 
+  type: star
+  location: wd:Q90019623
+  orbits:
+  - name: Calsa
+    type: planet
+    tags: [vulcan colony, federation colony, vulcan outpost]
+- name: Calufrax IV
+  tags: [federation colony]
+  orbits:
+  - name: Starbase 92
+    tags: [federation starbase]
+- name: Camelot
+  tags: [earth colony, federation colony]
+- name: Cameron's World
+  tags: [earth colony, federation colony]
+- name: Canara
+  tags: [near rnz, rnz federation side, federation colony]
+- name: Candelar IV 
+  tags: [federation colony]
+- name: Carnegie
+  tags: [federation colony, industrial colony]
+- name: Carson's World 
+  tags: [otz, federation colony]
+- name: Carwile's World 
+  tags: [federation colony, triangle]
+- name: Casmus III 
+  tags: [federation colony]
+  orbits:
+    - name: Starbase 42
+      tags: [federation starbase]
+- name: Cawley IV
+  tags: [federation colony]
+  orbits:
+    - name: Cawley Station 
+      type: installation
+- name: Christgen III
+  tags: [earth colony, religious colony, federation colony]
+- name: Christofi IX 
+  tags: [federation colony, resort colony]
+- name: Cimera III 
+  tags: [federation colony, andorian colony]
+- name: Codis Nu VI 
+  tags: [near rnz]
+- name: Corola III
+  tags: [federation colony, orion colony]
+- name: Coromindas
+  tags: [federation colony, tellarite colony]
+- name: Cyclopus
+  tags: [triangle, federation colony]
+- name: Cymkoe IV
+- name: Cynur IV
+  tags: [federation member]
+- name: Dagem II
+  tags: [orion colony, federation colony]
+- name: Dak-Alpha 
+  tags: [federation member]
+- name: Damiano
+  tags: [federation member]
+- name: Danter
+  tags: [federation member]
+- name: Delta Darius IV 
+  tags: [federation colony, starfleet orbital fascillity]
+- name: Dartanian
+  tags: [federation colony]
+- name: Dedderai
+  tags: [federation member]
+- name: Delanos VI
+  tags: [federation colony, research colony]
+- name: Delma
+  tags: [federation colony]
+- name: Diogenes
+  tags: [near tholian border, federation colony, religious colony]
+- name: Dizok IV 
+  tags: [mining colony, triangle]
+- name: Djana
+  tags: [federation member, near romulan empire]
+- name: Djelifa
+  tags: [federation member]
+- name: Drago Prime
+  tags: [federation colony]
+- name: Drema IV
+  tags: [federation member]
+- name: Drovoer II
+  tags: [dmz, maquis colony]
+- name: Durala V
+  tags: [federation colony]
+- name: Duran XII 
+  tags: [starfleet outpost]
+- name: Ecora
+  tags: [federation colony, cygian colony]
+- name: Ecstasy
+  tags: [federation colony]
+- name: Eeiauo
+  tags: [federation member]
+- name: Elysium
+  tags: [federation colony]
+- name: Emben III
+  tags: [federation member]
+- name: Emila II 
+  tags: [federation colony]
+- name: Empyrion VI
+  tags: [federation colony]
+- name: Enas
+  tags: [cygian colony, federation colony]
+- name: Enid VI 
+  tags: [federation colony, industrial colony]
+- name: Epictetus III
+  tags: [federation colony]
+- name: Errigal
+  tags: [federation colony]
+- name: Escara
+  tags: [federation colony, cygian colony]
+- name: Etrolopar
+  tags: [federation colony, cygian colony]
+- name: Europa Nova 
+  tags: [earth colony]
+- name: Faience
+  tags: [federation colony]
+- name: Falas
+  tags: [federation colony, cygian colony]
+- name: Familiarity
+  tags: [federation colony]
+- name: Fellowship
+  tags: [federation colony]
+- name: Femininity
+  tags: [federation colony]
+- name:  Surak I 
+  tags: [federation colony, vulcan colony]
+- name: Foladan IX 
+  tags: [federation colony, otz]
+- name: Galagos VI 
+  tags: [federation colony, earth colony]
+- name: Galion
+  tags: [maquis colony, dmz]
+- name: Gamma Erigena
+  tags: [earth colony]
+- name: Gamma Velorum
+  tags: [federation member]
+- name: Ganjitsu
+  tags: [federation colony, near klingon empire]
+- name: Garrus
+  tags: [federation member]
+- name: Vesuvi V
+  tags: [federation colony, mining colony]
+- name: Gibraltar
+  tags: [triangle]
+- name: Gnala
+  tags: [federation member]
+- name: Grief
+  tags: [cygian colony, federation colony]
+
+- name: Levaeri V
+  ord: 5
+  type: planet
+  tags: [claimed by romulan empire]
+- name: Berry VII
+  ord: 7
+  type: planet
+  tags: [federation colony]
+- name: Bersallis III 
+  ord: 3
+  type: planet
+  tags: [federation colony, research colony]
+- name: Grevven II 
+  ord: 3 
+  tags: [claimed by breen confederacy]
+- name: Pacluro Prime
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Resinoor Prime
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Salavat
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Zenstala II
+  type: planet
+  tags: [claimed by tholian assembly]
