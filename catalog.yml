@@ -483,15 +483,15 @@
     - name: Vega IX
       tags: [earth colony, notable, dma-map]
 - name: Cor Caroli
-  location: wd:Q76868858
+  #location: wd:Q76868858
+  location:
+    x: -19.148
+    y: -10.14
+    z: -4
   orbits:
     - name: Cor Caroli V
       ord: 5
       tags: [inhabited, notable, dma-map]
-      location:
-        x: -19.148
-        y: -10.14
-        z: -4
 - name: Azati Prime
   location:
     x: 17.166
@@ -665,6 +665,9 @@
     - name: Cerberus II
       type: planet
       tags: [notable, federation member]
+- name: Adhara
+  location: wd:Q13414
+  tags: [notable]
 - name: Betelgeuse
   location: wd:Q12124
   type: star
@@ -852,13 +855,13 @@
     # magic number
     z: 12
 - name: Maranga
+  location:
+    x: 248.704
+    y: -228.946
   orbits:
   - name: Maranga IV
     ord: 4
     tags: [klingon outpost, notable]
-    location:
-      x: 248.704
-      y: -228.946
 - name: Gamma Geminorum
   location: wd:Q14238
   orbits:
@@ -1027,72 +1030,60 @@
   location:
     x: -46.5
     y: -54.9
-    z: -226 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Chin'Toka
   location:
     x: -30.1
     y: -47.2
-    z: -152 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Amleth Prime
   location:
     x: -59.1
     y: -42.4
-    z: -173 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Kelvas V
   location:
     x: -74
     y: -42.4
-    z: -241 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Simperia
   location:
     x: -84.3
     y: -29.4
-    z: -222 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Torros III
   location:
     x: -75.1
     y: -38
-    z: -224 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Monac IV
   location:
     x: -77.5
     y: -34.2
-    z: -219 #assuming it should be close to cardassia prime
 - name: Dopa
   location:
     x: -96.4
     y: -50.7
-    z: -229 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Sarpedion V
   location:
     x: -86.3
     y: -42.1
-    z: -204 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Atbar Prime
   location:
     x: -76.8
     y: -27.7
-    z: -223 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Septimus III
   location:
     x: -86.5
     y: -21.8
-    z: -234 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Lazon II
   location:
     x: -96.8
     y: -28
-    z: -231 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Adarak Prime
   type: planet
@@ -1117,7 +1108,6 @@
   location:
     x: -44.732
     y: -43.513
-    z: -226 #assuming it should be close to cardassia prime
   tags: [notable, claimed by cardassian union]
 - name: Pentath III
   tags: [notable, claimed by cardassian union]
@@ -1132,7 +1122,6 @@
   location:
     x: -78.3
     y: -55.7
-    z: -255 #assuming it should be close to cardassia prime
   orbits:
   - name: Velos VII
     type: planet
@@ -1147,25 +1136,21 @@
   location:
     x: -52.1
     y: 21
-    z: -254 #assuming it should be close to ferenginar
   tags: [notable, claimed by ferengi aliance]
 - name: Rog
   location:
     x: -57.3
     y: 21
-    z: -234 #assuming it should be close to ferenginar
   tags: [notable, claimed by ferengi aliance]
 - name: Clarus
   location:
     x: -62.6
     y: 19.4
-    z: -212 #assuming it should be close to ferenginar
   tags: [notable, claimed by ferengi aliance]
 - name: Betazed
   location:
     x: -16.6
     y: -49.8
-    z: -174
   tags: [notable, federation member]
 - name: Epsilon Scorpii
   type: star
@@ -1174,25 +1159,21 @@
   location:
     x: 108.7
     y: -8.5
-    z: 0
   tags: [notable, claimed by romulan empire]
 - name: Vendor II
   location:
     x: 48.2
     y: 6.9
-    z: 0
   tags: [notable, claimed by romulan empire]
 - name: Unroth III
   location:
     x: 65
     y: -14.4
-    z: 0
   tags: [notable, claimed by romulan empire]
 - name: Galorndon Core
   location:
     x: 48.5
     y: -11.1
-    z: 0
   tags: 
     - notable
     # TOMALAK: I'm sure you will understand when I explain. 
@@ -1278,12 +1259,12 @@
         z: -5
   tags: [notable, dma-map, ancient romulan ruins]
 - name: Kelfour
+  location:
+    x: 38.529
+    y: -20.403
   orbits:
   - name: Kelfour VI
     ord: 6
-    location:
-      x: 38.529
-      y: -20.403
     tags: [notable, dma-map]
 - name: Memory Alpha
   wd: Q2302286
@@ -1331,13 +1312,11 @@
   location: 
     x: -106.597
     y: -104.094
-    z: 3 # 🤷
 - name: Beta Renner
   type: star 
   location: 
     x: -265.361
     y: -238.735
-    z: -197.368 # 🤷
   orbits:
     - name: Antica
       type: planet 
@@ -1352,10 +1331,14 @@
   location: 
     x: -108.684
     y: -22.194
-    z: -50
 - name: Tholia
   tags: [claimed by tholian assembly, notable]
   location: 
     x: -173.863
     y: -114.265
-    z: -25
+- name: Mira 
+  tags: [notable]
+  location: wd:Q12965
+- name: Omicron Cephei
+  tags: [notable]
+  location: wd:Q5097864

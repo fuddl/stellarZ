@@ -12,7 +12,6 @@ const generateSystem = require('./generate.js');
 
 const yaml = require('js-yaml');
 const spherical2cartesian = require('./convert/spherical2cartesian.js');
-const defaultLocation = { z: 0 }
 
 const { parse } = require('csv-parse');
 const shapes2D = require('./src/2dShapes.json');
@@ -45,8 +44,12 @@ const validLocation = function (object) {
   return true;
 }
 
+const distance2D = function(p1, p2) {
+  return Math.sqrt((Math.pow(p1.x-p2.x,2))+(Math.pow(p1.y-p2.y,2)));
+}
+
 const collides = function (p1, p2, r) {
-  return Math.sqrt((Math.pow(p1.x-p2.x,2))+(Math.pow(p1.y-p2.y,2))) < r;
+  return distance2D(p1, p2) < r;
 }
 
 let idCounter = 0;
@@ -108,7 +111,6 @@ async function addCoordinates(object, depth = 0, parentLocation) {
     }
   } else {
     object.location = {
-      ...defaultLocation,
       ...parentLocation,
       ...object.location,
     }
@@ -122,13 +124,53 @@ async function addCoordinates(object, depth = 0, parentLocation) {
   return object;
 }
 
+function addZ(object, z) {
+  if (object?.location && !object.location?.z) {
+    object.location.z = z;
+  }
+  for (let k in object.orbits) {
+    addZ(object.orbits[k], z);
+  }
+}
+
+function addMissingZ(objects) {
+  const ObjectsWithZ = [];
+  iterator.bfs([...objects], 'orbits', (object) => {
+    if (typeof object?.location?.z === 'number') {
+      ObjectsWithZ.push(object);
+    }
+  })
+
+  for (let object of objects) {
+    if (typeof object?.location?.z !== 'number' && typeof object?.location?.x == 'number' && typeof object?.location?.y == 'number') {
+      let shrtestDistance = null;
+      let closestZ = null;
+      let dist;
+      let othername = '';
+      for (const other of ObjectsWithZ) {
+        dist = distance2D(object.location, other.location);
+        if (shrtestDistance === null || shrtestDistance > dist) {
+          shrtestDistance = dist;
+          closestZ = other.location.z;
+          othername = other.name;
+        }
+      }
+      const randGen = gen.create(object.name);
+      const randDist = dist / 2;
+      console.debug(`${object.name} found, near ${othername}`)
+      addZ(object, closestZ + randGen.floatBetween(randDist*-1, randDist));
+    }
+  }
+}
+
 (async () => {
-  let output = [];
   const raw_data = yaml.load(fs.readFileSync('./catalog.yml', 'utf8'));
   const filler = yaml.load(fs.readFileSync('./filler.yml', 'utf8'));
   for (let object of raw_data) {
     object = await addCoordinates(object);
   }
+
+  addMissingZ(raw_data);
 
   const hygText = fs.readFileSync('.resources/hygxyz.csv', {encoding:'utf8', flag:'r'});
 
@@ -155,7 +197,7 @@ async function addCoordinates(object, depth = 0, parentLocation) {
       let fittingFiller = [];
       iterator.bfs([...filler], 'orbits', (object) => {
         if (intersection(object.tags, shape.tags).length > 0) {
-          object.tags.push('notable');
+          //object.tags.push('notable');
           fittingFiller.push(object);
         }
       })
@@ -221,19 +263,22 @@ async function addCoordinates(object, depth = 0, parentLocation) {
             } 
           }
         )
+        console.debug(triangles);
       }
 
       for (triangle of triangles) {
         
         records.sort((a, b) => {
-          let aDist = 0; 
-          let bDist = 0; 
-          for (let dim of dimensions) {
-            const DIM = dim.toUpperCase();
-            aDist += Math.abs(parseFloat(a[DIM])) - Math.abs(triangle.center[dim]);
-            bDist += Math.abs(parseFloat(b[DIM])) - Math.abs(triangle.center[dim]);
-          }
-          return (aDist / 3) - (bDist / 3);
+          let aDist = distance(
+            [parseFloat(a.X), parseFloat(a.Y), parseFloat(a.Z)],
+            [triangle.center.x, triangle.center.y, triangle.center.z],
+          );
+          let bDist = distance(
+            [parseFloat(b.X), parseFloat(b.Y), parseFloat(b.Z)],
+            [triangle.center.x, triangle.center.y, triangle.center.z],
+          );
+          
+          return aDist < bDist ? -1 : 1;
         })
 
         let occupied = []
@@ -285,13 +330,6 @@ async function addCoordinates(object, depth = 0, parentLocation) {
             }
           }
         }
-
-
-
-
-
-
-
 
       }
 

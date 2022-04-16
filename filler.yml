@@ -1060,6 +1060,32 @@
   tags: [federation colony, tellarite colony]
 - name: Temelicus
   tags: [federation colony]
+- name: Tempe
+  tags: [federation colony, orion colony]
+- name: Terga VII
+  tags: [federation colony]
+- name: Termala
+  tags: [federation colony]
+- name: Testament
+  tags: [federation colony]
+- name: Thesalla
+  tags: [federation colony, mining colony, andorian colony]
+- name: Theta Cobrini V
+  tags: [federation outpost]
+- name: Th'allt
+  tags: [federation colony, andorian colony]
+- name: Theta Kalyb
+  tags: [federation colony]
+- name: Zorn I 
+  tags: [federation colony, earth colony, agricultural colony]
+- name: T'hirada 
+  tags: [federation member]
+- name: Thonolan IV
+  tags: [federation colony, andorian colony]
+- name: Thoris
+  tags: [federation colony, earth colony, agricultural colony]
+- name: Thranstor IV
+  tags: [federation colony]
 
 - name: Levaeri V
   ord: 5
