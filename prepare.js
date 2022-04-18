@@ -25,6 +25,8 @@ const distance = require('euclidean-distance');
 
 const dimensions = ['x', 'y', 'z'];
 
+let newId = 347601;
+
 const validLocation = function (object) {
   if (!'location' in object) {
     return false
@@ -109,6 +111,15 @@ async function addCoordinates(object, depth = 0, parentLocation) {
         ),
       };
     }
+  } else if (object?.location?.ra && object?.location?.dec && object?.location?.dis) {
+    object.location = {
+      ...spherical2cartesian(
+        object.location.dec,
+        object.location.ra,
+        object.location.dis,
+        false,
+      ),
+    };
   } else {
     object.location = {
       ...parentLocation,
@@ -263,7 +274,6 @@ function addMissingZ(objects) {
             } 
           }
         )
-        console.debug(triangles);
       }
 
       for (triangle of triangles) {
@@ -277,7 +287,7 @@ function addMissingZ(objects) {
             [parseFloat(b.X), parseFloat(b.Y), parseFloat(b.Z)],
             [triangle.center.x, triangle.center.y, triangle.center.z],
           );
-          
+
           return aDist < bDist ? -1 : 1;
         })
 
@@ -299,6 +309,7 @@ function addMissingZ(objects) {
               }
             }
             if (!collisionDetected) {
+              newId++;
               let isInsomePolygon = false;
               for (const polygon of multipolygon) {
                 if (!isInsomePolygon) {
@@ -307,7 +318,7 @@ function addMissingZ(objects) {
               }
 
               if (isInsomePolygon) {
-                console.debug(`aquireing location for ${shape.id} HD ${star.HD}`)
+                console.debug(`aquireing location for FGC-${newId}`)
                 const location = {
                   "y": parseFloat(star.Y),
                   "x": parseFloat(star.X),
@@ -318,7 +329,8 @@ function addMissingZ(objects) {
                   chosenFiller[0].location = location;
                 }
                 raw_data.push({
-                  "name": `HD ${star.HD}`,
+                  "id": newId,
+                  "name": `FGC-${newId}`,
                   "type": "star",
                   "orbits": chosenFiller, 
                   "tags": chosenFiller.length > 0 ? [] : shape.tags, 

@@ -669,7 +669,10 @@
   location: wd:Q13414
   tags: [notable]
 - name: Betelgeuse
-  location: wd:Q12124
+  location:
+    ra: 88.792938991
+    dec: 7.407063995
+    dis: 431.74754
   type: star
   orbits:
     - name: Betelgeuse
@@ -875,14 +878,13 @@
     x: -3.759
     y: -196.342
     # this should be inside the taurus constellation
-    z: -78
+    #z: -78
 
 - name: Cestus III
   tags: [notable, federation colony, taurus reach]
   location:
     x: 81.295
     y: -199.678
-    z: -82
 
 - name: Pacifica
   tags: [notable, federation colony, taurus reach]
@@ -1342,3 +1344,53 @@
 - name: Omicron Cephei
   tags: [notable]
   location: wd:Q5097864
+- name: Spica
+  tags: [notable]
+  location: wd:Q13008
+- name: Zalkon
+  tags: [notable, federation member]
+  location: 
+    x: 157.905
+    y: 97.13
+- name: Muliphein
+  location: wd:Q617675
+  tags: [notable]
+- name: Bellatrix
+  location:
+    ra: 81.282763557
+    dec: 6.349703264 
+    dis: 266
+  tags: [notable]
+- name: Gamma Trianguli
+  location: wd:Q3307541
+  orbits:
+    - name: Gamma Trianguli VI
+      ord: 6
+      tags: [notable, inhabited]
+- name: Gamma Tauri
+  location: wd:Q1493218
+  orbits:
+    name: Gamma Tauri IV 
+    ord: 4
+    tags: [notable]
+- name: Jouret
+  type: star
+  location:
+    x: 61 
+    y: -22.72
+
+    # The assumption is, that this should be 'behind' Wolf 359 
+    # when seen from earth.
+    # An approximation of such a point can be acceived with the
+    # following coordinates:
+    #
+    # ra: 164.1201092000 
+    # dec: 7.0145400000
+    # dis: 112
+    z: 92.98191296175054
+  orbits: 
+    - name: Jouret IV
+      type: planet
+      ord: 4
+      tags: [former federation colony, notable, remote]
+
