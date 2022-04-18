@@ -303,7 +303,7 @@ function addMissingZ(objects) {
             let collisionDetected = false;
             for (const point of occupied) {
               const big = randGen.intBetween(0,1)
-              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? 12 : 24))) {
+              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? 8 : 17))) {
                 collisionDetected = true;
                 delete records[id];
               }

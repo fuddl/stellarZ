@@ -283,11 +283,12 @@
   type: system
   orbits:
     - name: Antares B
+      type: star 
       orbits:
-    - name: Antares B III
-      links:
-        mb: Antares_B_III
-      tags: [federation shipyard, notable, federation member]
+      - name: Antares B III
+        links:
+          mb: Antares_B_III
+        tags: [federation shipyard, notable, federation member]
 - name: Kappa Fornacis
   location: wd:Q9017189
   orbits:
@@ -447,7 +448,7 @@
   orbits:
     - name: Orion
       ord: 3
-      tags: [notable, inhabited, dma-map]
+      tags: [notable, inhabited, dma-map, orion homeword]
 - name: Pollux
   location: wd:Q13028
   orbits:

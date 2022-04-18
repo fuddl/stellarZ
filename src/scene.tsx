@@ -14,6 +14,7 @@ import tree from 'treeify-js';
 import quadraticBezier from './bezier.tsx'
 import textMarker from './textMarker.tsx'
 import symbol from './symbol.tsx'
+import sphere from './sphere.tsx'
 import catalog from './catalog.json'
 import validLocation from './valid-location.js'
 import iterator from 'iterate-tree'
@@ -29,12 +30,12 @@ const auras = [
 			'federation starbase',
 			'federation science outpost',
 		],
-		size: 30,
+		size: 170,
 		paint: 'url(#fed)',
 	},
 	{
 		tags: ['federation member'],
-		size: 60,
+		size: 260,
 		paint: 'url(#fed)',
 	},
 	{
@@ -42,47 +43,101 @@ const auras = [
 			'claimed by klingon empire',
 			'klingon outpost',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#kling)',
 	},
 	{
 		tags: [
 			'claimed by romulan empire',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#romul)',
 	},
 	{
 		tags: [
 			'claimed by cardassian union',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#card)',
 	},
 	{
 		tags: [
 			'claimed by ferengi aliance',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#ferengi)',
 	},
 	{
 		tags: [
 			'claimed by breen confederacy',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#breen)',
 	},
 	{
 		tags: [
 			'claimed by tholian assembly',
 		],
-		size: 60,
+		size: 260,
 		paint: 'url(#thol)',
 	},
 ];
 
 class ExtendedDataRenderer extends DataRenderer {
+	constructor(
+		sceneRange: number,
+        dataXoffset: number,
+        dataYoffset: number,
+        dataZoffset: number,
+        transformMatrix: matrix4x4,
+        projectionConstant: number,
+        flat: bool,
+        flatOffset: number,
+	) {
+		super(sceneRange, dataXoffset, dataYoffset, dataZoffset, transformMatrix, projectionConstant)
+		this.flat = flat;
+		this.flatOffset = flatOffset;
+	}
+    _projectPointWithDist(x_: number, y_: number, z_: number, i: number): Vector {
+        const {
+            sceneRange,
+            dataXoffset,
+            dataYoffset,
+            dataZoffset,
+            transformMatrix,
+            projectionConstant,
+        } = this
+        const x = x_ / sceneRange + dataXoffset
+        const y = y_ / sceneRange + dataYoffset
+        const z = z_ / sceneRange + dataZoffset
+
+	   const pointWrtCam = new Vector(x, y, z, `${i}`).transform(transformMatrix)
+       let virtualDistanceWrtCam = this.flat ? this.flatOffset : Math.sqrt(pointWrtCam.x**2 + pointWrtCam.y**2 + pointWrtCam.z**2);
+       return {
+         point2d: pointWrtCam.project(projectionConstant),
+         dist: virtualDistanceWrtCam,
+       }
+    }
+	_projectPolygonOrPointsWithDist (element: PolygonOrPoints3d): PolygonOrPoints2d {
+        const xs: Array<number> = []
+        const ys: Array<number> = []
+        const dists: Array<number> = []
+
+        element.x.forEach((rawX: number, index: number) => {
+            const point = this._projectPointWithDist(
+                rawX,
+                element.y[index],
+                element.z[index],
+                index
+            )
+            xs.push(point.point2d.x)
+            ys.push(point.point2d.y)
+            dists.push(point.dist)
+        })
+
+        const { z, ...elementWithoutZ } = element
+        return { ...elementWithoutZ, x: xs, y: ys, dist: dists }
+    }
 	render(data) {
 		return data.map((element) => {
 			switch (element.type) {
@@ -90,16 +145,18 @@ class ExtendedDataRenderer extends DataRenderer {
 				case 'QuadraticBezier':
 				case 'textMarker':
 				case 'points':
-				case 'symbol':
 					return this._projectPolygonOrPoints(element);
 				case 'lines':
 					return this._projectLines(element);
+				case 'symbol':
+				case 'sphere':
+					return this._projectPolygonOrPointsWithDist(element);
 			}
 		});
 	}
 }
 
-const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d) => {
+const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d, flat) => {
 	const { camTx, camTy, camTz, defaultCamZoffset, defaultCamOrientation } = viewSettings;
 	const camPosition = {
 		x: camTx,
@@ -114,7 +171,16 @@ const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d) => {
 	const cubeOrientation = { x: cubeRx, y: cubeRy, z: cubeRz };
 	const cube = new SceneCube(cubeOrientation, worldWrtCameraMatrix, cubeZoffset, cubeRange, projectionConstant);
 	const { dataXoffset, dataYoffset, dataZoffset } = sceneSettings;
-	const models = new ExtendedDataRenderer(cube.range, dataXoffset, dataYoffset, dataZoffset, cube.wrtCameraMatrix, projectionConstant).render(data3d);
+	const models = new ExtendedDataRenderer(
+		cube.range,
+		dataXoffset,
+		dataYoffset,
+		dataZoffset,
+		cube.wrtCameraMatrix,
+		projectionConstant,
+		flat,
+		defaultCamZoffset,
+	).render(data3d);
 	const container = {
 		color: sceneOptions.paper.color,
 		opacity: sceneOptions.paper.opacity || 1,
@@ -262,7 +328,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 		if (aura && validLocation(object)) {
 			points.push({
 				id: object.id + '-aura',
-				type: 'points',
+				type: 'sphere',
 				opacity: 0.5,
 				color: aura.paint,
 				size: aura.size,
@@ -334,11 +400,12 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 			...axisCircles(center, viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
 			...points,
 		],
+		viewSettings?.flat,
 	)
 	return data;
 }
 
-const plugins = [quadraticBezier, textMarker, symbol]
+const plugins = [quadraticBezier, textMarker, symbol, sphere]
 
 export {
 	Scene,

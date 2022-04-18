@@ -9,6 +9,15 @@ import parseSVG from 'svg-path-parser'
 const zoomDuration = 100;
 const zoomSpeed = 16;
 
+const minCamOffset = 1;
+const maxCamOffset = 5;
+
+const minCamZoom = 1;
+const maxCamZoom = 15;
+
+const minZoom = .5;
+const maxZoom = 10;
+
 const windowDimensions = function() {
   return {
     height: window.innerHeight,
@@ -52,7 +61,6 @@ function App() {
   );
 
 
-
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [grabbing, setGrabbing] = useState(false);
@@ -68,13 +76,13 @@ function App() {
     cubeRx: flat ? 0 : cubeRx,
     cubeRy: 0,
     cubeRz: flat ? 0 : cubeRz,
-    camZoom: zoom,
+    camZoom: 2,
+    defaultCamZoffset: (maxZoom / maxCamOffset) * zoom,
     flat: flat,
     dataXoffset: dataOffset.x,
     dataYoffset: dataOffset.y,
     dataZoffset: dataOffset.z,
     canvasToViewRatio: 300,
-    defaultCamZoffset: 5,
     defaultCamOrientation: "z-forward-x-right",
   }
 
@@ -91,9 +99,9 @@ function App() {
       onWheel={(e) => {
         e.preventDefault()
         if (e.ctrlKey) {
-          let destZoom = zoom +- (e.deltaY/100)
+          let destZoom = zoom +- (e.deltaY*-1/100)
           if (destZoom > 0) {
-            setZoom(destZoom)
+            setZoom(Math.max(minZoom, Math.min(maxZoom, destZoom)))
           }
         }
       }}
@@ -135,9 +143,10 @@ function App() {
         plugins={plugins}
       />
       <aside>
-        <button onClick={() => { setEasing(true); setTargetZoom(zoom + 2) }}>+</button>
-        <button onClick={() => { setEasing(true); setTargetZoom(Math.max(.1, zoom - 2)) }}>-</button>
+        <button onClick={() => { setEasing(true); setTargetZoom(Math.min(maxZoom, zoom + 2)) }}>+</button>
+        <button onClick={() => { setEasing(true); setTargetZoom(Math.max(minZoom, zoom - 2)) }}>-</button>
         <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
+        <input type="number" value={zoom} step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
       </aside>
       <Navigator flat={flat} coordinates={dataOffset} />
       <Assets />
