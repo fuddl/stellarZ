@@ -10,12 +10,13 @@ function Gradients({flat, coordinates}) {
 		'breen': '#173F00',
 		'thol': 'orange',
 	}
+
 	return (
 		<svg hidden>
 		<defs>
 			{Object.entries(colours).map((colour) => (
 				<radialGradient id={colour[0]}>
-					<stop offset="0%" stopColor={colour[1]} stopOpacity=".75" />
+					<stop offset="10%" stopColor={colour[1]} stopOpacity=".5" />
 					<stop offset="100%" stopColor={colour[1]} stopOpacity="0" />
 				</radialGradient>
 			)) }

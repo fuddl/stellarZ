@@ -30,12 +30,12 @@ const auras = [
 			'federation starbase',
 			'federation science outpost',
 		],
-		size: 170,
+		size: 3,
 		paint: 'url(#fed)',
 	},
 	{
 		tags: ['federation member'],
-		size: 260,
+		size: 6,
 		paint: 'url(#fed)',
 	},
 	{
@@ -43,42 +43,42 @@ const auras = [
 			'claimed by klingon empire',
 			'klingon outpost',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#kling)',
 	},
 	{
 		tags: [
 			'claimed by romulan empire',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#romul)',
 	},
 	{
 		tags: [
 			'claimed by cardassian union',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#card)',
 	},
 	{
 		tags: [
 			'claimed by ferengi aliance',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#ferengi)',
 	},
 	{
 		tags: [
 			'claimed by breen confederacy',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#breen)',
 	},
 	{
 		tags: [
 			'claimed by tholian assembly',
 		],
-		size: 260,
+		size: 6,
 		paint: 'url(#thol)',
 	},
 ];
@@ -187,6 +187,14 @@ const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d, flat) =>
 		xRange: sceneSettings.paperXrange,
 		yRange: sceneSettings.paperYrange
 	};
+	if (!flat) {
+		models.sort((a, b) => {
+			if (a?.dist?.[0] && b?.dist?.[0]) {
+				return a.dist[0] > b.dist[0] ? -1 : 1;
+			}
+			return 0;
+		})
+	}
 	return {
 		container,
 		data: [...models]
@@ -331,7 +339,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 				type: 'sphere',
 				opacity: 0.5,
 				color: aura.paint,
-				size: aura.size,
+				size: aura.size * 30,
 				x: [object.location.x],
 				y: [object.location.y],
 				z: viewSettings?.flat ? [0] : [object.location.z],

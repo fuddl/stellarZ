@@ -1114,3 +1114,33 @@
 - name: Zenstala II
   type: planet
   tags: [claimed by tholian assembly]
+- name: Weibak IV 
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Varian II 
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Slokat
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Sunzek
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Gulvaria VI 
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Doltec VI 
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Devniad
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Cuellar IV
+  type: planet 
+  tags: [claimed by cardassian union]
+- name: Ithic II 
+  type: planet 
+  tags: [claimed by cardassian union, dmz]
+- name: Kestian
+  type: planet 
+  tags: [claimed by cardassian union]

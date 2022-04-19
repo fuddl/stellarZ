@@ -143,10 +143,10 @@ function App() {
         plugins={plugins}
       />
       <aside>
-        <button onClick={() => { setEasing(true); setTargetZoom(Math.min(maxZoom, zoom + 2)) }}>+</button>
-        <button onClick={() => { setEasing(true); setTargetZoom(Math.max(minZoom, zoom - 2)) }}>-</button>
+        <button onClick={() => { setEasing(true); setTargetZoom(Math.min(maxZoom, zoom - 1)) }}>+</button>
+        <button onClick={() => { setEasing(true); setTargetZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
         <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
-        <input type="number" value={zoom} step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
+        <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
       </aside>
       <Navigator flat={flat} coordinates={dataOffset} />
       <Assets />
