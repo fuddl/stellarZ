@@ -1339,9 +1339,17 @@
   location: 
     x: -173.863
     y: -114.265
-- name: Mira 
-  tags: [notable]
-  location: wd:Q12965
+- name: Omicron Ceti
+  alt_names: [Mira] 
+  location:
+    ra: 34.836633758
+    dec: -2.977637673
+    dis: 425
+  orbits:
+    - name: Omicron Ceti III
+      ord: 3
+      tags: [notable, federation colony]
+
 - name: Omicron Cephei
   tags: [notable]
   location: wd:Q5097864
@@ -1394,4 +1402,27 @@
       type: planet
       ord: 4
       tags: [former federation colony, notable, remote]
+- name: Velara
+  type: star 
+  location:
+    x: -78.086
+    y: -331.621
+    z: -157.17841005464018
+    # should be close the the Pleiades
+    # 
+    # ra: 56.7500
+    # dec: 24.1167
+    # dis: 390
+  orbits:
+    - name: Velara III
+      type: planet
+      tags: [notable]
+- name: Rigel
+  type: star 
+  alt_names: [Beta Orionis]
+  tags: [notable]
+  location:
+    ra: 78.634467067
+    dec: -8.201638365
+    dis: 800
 

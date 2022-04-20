@@ -541,11 +541,6 @@
   - name: Calsa
     type: planet
     tags: [vulcan colony, federation colony, vulcan outpost]
-- name: Calufrax IV
-  tags: [federation colony]
-  orbits:
-  - name: Starbase 92
-    tags: [federation starbase]
 - name: Camelot
   tags: [earth colony, federation colony]
 - name: Cameron's World
@@ -560,11 +555,6 @@
   tags: [otz, federation colony]
 - name: Carwile's World 
   tags: [federation colony, triangle]
-- name: Casmus III 
-  tags: [federation colony]
-  orbits:
-    - name: Starbase 42
-      tags: [federation starbase]
 - name: Cawley IV
   tags: [federation colony]
   orbits:
@@ -1086,7 +1076,6 @@
   tags: [federation colony, earth colony, agricultural colony]
 - name: Thranstor IV
   tags: [federation colony]
-
 - name: Levaeri V
   ord: 5
   type: planet
@@ -1144,3 +1133,531 @@
 - name: Kestian
   type: planet 
   tags: [claimed by cardassian union]
+- name: Starbase 8
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 13
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 15
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 16
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 17
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 26
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 30
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 31
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 33
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 34
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 35
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 38
+  type: installation
+  tags: [federation starbase]
+- name: Casmus III 
+  tags: [federation colony]
+  orbits:
+    - name: Starbase 42
+      type: installation
+      tags: [federation starbase]
+- name: Starbase 43
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 44
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 49
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 50
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 51
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 52
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 54
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 57
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 59
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 60
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 61
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 62
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 64
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 65
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 66
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 68
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 69
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 70
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 71
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 72
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 76
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 77
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 79
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 81
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 85
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 89
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 90
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 91
+  type: installation
+  tags: [federation starbase]
+- name: Calufrax IV
+  tags: [federation colony]
+  orbits:
+  - name: Starbase 92
+    type: installation
+    tags: [federation starbase]
+- name: Starbase 93
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 94
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 95
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 96
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 98
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 99
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 100
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 101
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 102
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 104
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 106
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 107
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 108
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 109
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 110
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 111
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 113
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 114
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 115
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 116
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 119
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 120
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 124
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 125
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 126
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 127
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 128
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 130
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 131
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 135
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 136
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 138
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 139
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 140
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 141
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 142
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 143
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 144
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 145
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 146
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 147
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 148
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 149
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 150
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 151
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 154
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 155
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 156
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 158
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 159
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 160
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 161
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 162
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 163
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 164
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 165
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 166
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 167
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 168
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 169
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 170
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 171
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 173
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 174
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 175
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 176
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 177
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 178
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 180
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 181
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 182
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 183
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 184
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 186
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 187
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 188
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 189
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 190
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 191
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 192
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 193
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 194
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 195
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 196
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 197
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 198
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 199
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 202
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 203
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 204
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 205
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 206
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 207
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 208
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 209
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 210
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 213
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 215
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 216
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 217
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 218
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 219
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 221
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 222
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 223
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 224
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 225
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 226
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 228
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 229
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 230
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 232
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 233
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 238
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 239
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 240
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 241
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 242
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 243
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 244
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 245
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 246
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 248
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 249
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 250
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 251
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 252
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 253
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 254
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 255
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 256
+  type: installation
+  tags: [federation starbase]
+- name: Starbase 257
+  type: installation
+  tags: [federation starbase]

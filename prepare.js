@@ -27,6 +27,18 @@ const dimensions = ['x', 'y', 'z'];
 
 let newId = 347601;
 
+const applyLocation = function (object, location) {
+  object.location = {
+    ...object.location,
+    ...location,
+  }
+  if (object?.orbits) {
+    for (let orbit of object.orbits) {
+      applyLocation(orbit, location);
+    }
+  }
+}
+
 const validLocation = function (object) {
   if (!'location' in object) {
     return false
@@ -52,6 +64,10 @@ const distance2D = function(p1, p2) {
 
 const collides = function (p1, p2, r) {
   return distance2D(p1, p2) < r;
+}
+
+const collides3d = function (p1, p2, r) {
+  return distance([p1.x, p1.y, p1.z], [p2.x, p2.y, p2.z]) < r;
 }
 
 let idCounter = 0;
@@ -111,7 +127,8 @@ async function addCoordinates(object, depth = 0, parentLocation) {
         ),
       };
     }
-  } else if (object?.location?.ra && object?.location?.dec && object?.location?.dis) {
+  } 
+  if (object?.location?.ra && object?.location?.dec && object?.location?.dis) {
     object.location = {
       ...spherical2cartesian(
         object.location.dec,
@@ -190,159 +207,201 @@ function addMissingZ(objects) {
     
     const occupied = [];
     for (let shape of shapes2D) {
-    const randGen = gen.create(shape.d[0]);
+      const randGen = gen.create(shape.d[0]);
 
       let multipolygon = [];
       for (let d of shape.d) {
         multipolygon.push(path2polygon(d))
       }
 
-      const relevantPoints = [];
+      for (let layer of shape.layers) {
 
-      iterator.bfs([...raw_data], 'orbits', (object) => {
-        if (intersection(object.tags, shape.tags).length > 0) {
-          relevantPoints.push(object)
-        }
-      })
-
-      let fittingFiller = [];
-      iterator.bfs([...filler], 'orbits', (object) => {
-        if (intersection(object.tags, shape.tags).length > 0) {
-          //object.tags.push('notable');
-          fittingFiller.push(object);
-        }
-      })
-
-      fittingFiller = fittingFiller.sort((A, B) => randGen.intBetween(-1, 1));
-
-      const triangles = [];
-      if (relevantPoints.length > 2) {
-        for (let A of relevantPoints) {
-          const triangle = {
-            points: {
-              A: A,
-            },
-            center: {},
-          }
-          let DistanceB = null;
-          for (let B of relevantPoints) {
-            if (B != A) {
-              let dist = distance(
-                [A.location.x, A.location.y, A.location.z],
-                [B.location.x, B.location.y, B.location.z],
-              );
-              if (DistanceB === null || DistanceB > dist) {
-                DistanceB = dist;
-                triangle.points.B = B;
-              }
+        let fittingFiller = [];
+        iterator.bfs([...filler], 'orbits', (object) => {
+          if (intersection(object.tags, layer.fillerTags).length > 0) {
+            if (layer.strategy === 'connect') {
+              //object.tags.push('notable');
             }
+            fittingFiller.push(object);
           }
-          let DistanceC = null;
-          for (let C of relevantPoints) {
-            if (C != A && C != triangle.points.B) {
-              let dist = distance(
-                [A.location.x, A.location.y, A.location.z],
-                [C.location.x, C.location.y, C.location.z],
-              );
-              if (DistanceC === null || DistanceC > dist) {
-                DistanceC = dist;
-                triangle.points.C = C;
-              }
-            }
-          }
-          triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
-          for (let dim of dimensions) {
-            triangle.center[dim] = (
-              triangle.points.A.location[dim] + 
-              triangle.points.B.location[dim] + 
-              triangle.points.C.location[dim]
-            ) / 3;
-          }
-          triangles.push(triangle);
-        }
-        triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
-      }
-
-      if (relevantPoints.length == 1 || relevantPoints.length < 3) {
-        triangles.push(
-          {
-            radius: 1000,
-            center: {
-              x: relevantPoints[0].location.x,
-              y: relevantPoints[0].location.y,
-              z: relevantPoints[0].location.z,
-            } 
-          }
-        )
-      }
-
-      for (triangle of triangles) {
-        
-        records.sort((a, b) => {
-          let aDist = distance(
-            [parseFloat(a.X), parseFloat(a.Y), parseFloat(a.Z)],
-            [triangle.center.x, triangle.center.y, triangle.center.z],
-          );
-          let bDist = distance(
-            [parseFloat(b.X), parseFloat(b.Y), parseFloat(b.Z)],
-            [triangle.center.x, triangle.center.y, triangle.center.z],
-          );
-
-          return aDist < bDist ? -1 : 1;
         })
 
+        if (layer?.sortFiller === 'random') {
+          fittingFiller = fittingFiller.sort((A, B) => randGen.intBetween(-1, 1));
+        }
+
+        const relevantPoints = [];
+
+        iterator.bfs([...raw_data], 'orbits', (object) => {
+          if (intersection(object.tags, layer.tags).length > 0) {
+            relevantPoints.push(object)
+          }
+        })
+
+
+        const triangles = [];
+        if (relevantPoints.length > 2) {
+          for (let A of relevantPoints) {
+            const triangle = {
+              points: {
+                A: A,
+              },
+              center: {},
+            }
+            let DistanceB = null;
+            for (let B of relevantPoints) {
+              if (B != A) {
+                let dist = distance(
+                  [A.location.x, A.location.y, A.location.z],
+                  [B.location.x, B.location.y, B.location.z],
+                );
+                if (DistanceB === null || DistanceB > dist) {
+                  DistanceB = dist;
+                  triangle.points.B = B;
+                }
+              }
+            }
+            let DistanceC = null;
+            for (let C of relevantPoints) {
+              if (C != A && C != triangle.points.B) {
+                let dist = distance(
+                  [A.location.x, A.location.y, A.location.z],
+                  [C.location.x, C.location.y, C.location.z],
+                );
+                if (DistanceC === null || DistanceC > dist) {
+                  DistanceC = dist;
+                  triangle.points.C = C;
+                }
+              }
+            }
+            triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
+            for (let dim of dimensions) {
+              triangle.center[dim] = (
+                triangle.points.A.location[dim] + 
+                triangle.points.B.location[dim] + 
+                triangle.points.C.location[dim]
+              ) / 3;
+            }
+            triangles.push(triangle);
+          }
+          if (layer?.sort == 'by_distance') {
+            triangles.sort((A, B) => {
+              const aDist = distance(A.center, layer.center);
+              const bDist = distance(B.center, layer.center);
+              return aDist < bDist ? -1 : 1;
+            });
+          } else {
+            triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
+          }
+        }
+
+        if (relevantPoints.length == 1 || relevantPoints.length < 3) {
+          triangles.push(
+            {
+              radius: 1000,
+              center: {
+                x: relevantPoints[0].location.x,
+                y: relevantPoints[0].location.y,
+                z: relevantPoints[0].location.z,
+              } 
+            }
+          )
+        }
         let occupied = []
         for (let existing of relevantPoints) {
           occupied.push({x: existing.location.x, y: existing.location.y})
         }
-        for (let id in records) {
-          const star = records[id];
-          if (collides(triangle.center, {x: parseFloat(star.X), y: parseFloat(star.Y)}, triangle.radius)) {
-
-
+        if (layer.strategy === 'connect') {
+          for (triangle of triangles) {
             let collisionDetected = false;
             for (const point of occupied) {
               const big = randGen.intBetween(0,1)
-              if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? 5 : 25))) {
+              if (collides3d(point, triangle.center, (big ? layer.density.min : layer.density.max))) {
                 collisionDetected = true;
-                delete records[id];
               }
             }
             if (!collisionDetected) {
+              let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
               newId++;
-              let isInsomePolygon = false;
-              for (const polygon of multipolygon) {
-                if (!isInsomePolygon) {
-                  isInsomePolygon = pointInPolygon([star.X, star.Y], polygon);
-                }
-              }
-
-              if (isInsomePolygon) {
-                console.debug(`aquireing location for FGC-${newId}`)
-                const location = {
-                  "y": parseFloat(star.Y),
-                  "x": parseFloat(star.X),
-                  "z": parseFloat(star.Z),
-                };
-                let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
-                if (chosenFiller.length > 0) {
-                  chosenFiller[0].location = location;
-                }
-                raw_data.push({
-                  "id": newId,
-                  "name": `FGC-${newId}`,
-                  "type": "star",
-                  "orbits": chosenFiller, 
-                  "tags": chosenFiller.length > 0 ? [] : shape.tags, 
-                  "location": location
-                })
-                occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
-                delete records[id];
+              if (chosenFiller.length > 0) {
+                //chosenFiller[0].tags.push('notable')
+                console.debug(`aquireing location for ${chosenFiller[0].name}`)
+                applyLocation(chosenFiller[0], triangle.center)
+                chosenFiller[0].id = newId;
+                raw_data.push(chosenFiller[0])
+                occupied.push(triangle.center)
               }
             }
           }
-        }
+        } else
+        if (layer.strategy === 'fill') {
 
+
+          for (triangle of triangles) {
+            
+            records.sort((a, b) => {
+              let aDist = distance(
+                [parseFloat(a.X), parseFloat(a.Y), parseFloat(a.Z)],
+                [triangle.center.x, triangle.center.y, triangle.center.z],
+              );
+              let bDist = distance(
+                [parseFloat(b.X), parseFloat(b.Y), parseFloat(b.Z)],
+                [triangle.center.x, triangle.center.y, triangle.center.z],
+              );
+
+              return aDist < bDist ? -1 : 1;
+            })
+
+            for (let id in records) {
+              const star = records[id];
+              if (collides(triangle.center, {x: parseFloat(star.X), y: parseFloat(star.Y)}, triangle.radius)) {
+
+
+                let collisionDetected = false;
+                for (const point of occupied) {
+                  const big = randGen.intBetween(0,1)
+                  if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? layer.density.min : layer.density.max))) {
+                    collisionDetected = true;
+                    delete records[id];
+                  }
+                }
+                if (!collisionDetected) {
+                  newId++;
+                  let isInsomePolygon = false;
+                  for (const polygon of multipolygon) {
+                    if (!isInsomePolygon) {
+                      isInsomePolygon = pointInPolygon([star.X, star.Y], polygon);
+                    }
+                  }
+
+                  if (isInsomePolygon) {
+                    console.debug(`aquireing location for FGC-${newId}`)
+                    const location = {
+                      "y": parseFloat(star.Y),
+                      "x": parseFloat(star.X),
+                      "z": parseFloat(star.Z),
+                    };
+                    let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
+                    if (chosenFiller.length > 0) {
+                      applyLocation(chosenFiller[0], location)
+                    }
+                    raw_data.push({
+                      "id": newId,
+                      "name": `FGC-${newId}`,
+                      "type": "star",
+                      "orbits": chosenFiller, 
+                      "tags": chosenFiller.length > 0 ? [] : layer.fillerTags, 
+                      "location": location
+                    })
+                    occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
+                    delete records[id];
+                  }
+                }
+              }
+            }
+
+          }
+        }
       }
 
 
