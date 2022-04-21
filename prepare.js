@@ -313,23 +313,32 @@ function addMissingZ(objects) {
         }
         if (layer.strategy === 'connect') {
           for (triangle of triangles) {
-            let collisionDetected = false;
-            for (const point of occupied) {
-              const big = randGen.intBetween(0,1)
-              if (collides3d(point, triangle.center, (big ? layer.density.min : layer.density.max))) {
-                collisionDetected = true;
+            let isInsomePolygon = false;
+            for (const polygon of multipolygon) {
+              if (!isInsomePolygon) {
+                isInsomePolygon = pointInPolygon([triangle.center.x, triangle.center.y], polygon);
               }
             }
-            if (!collisionDetected) {
-              let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
-              newId++;
-              if (chosenFiller.length > 0) {
-                //chosenFiller[0].tags.push('notable')
-                console.debug(`aquireing location for ${chosenFiller[0].name}`)
-                applyLocation(chosenFiller[0], triangle.center)
-                chosenFiller[0].id = newId;
-                raw_data.push(chosenFiller[0])
-                occupied.push(triangle.center)
+
+            if (isInsomePolygon) {
+              let collisionDetected = false;
+              for (const point of occupied) {
+                const big = randGen.intBetween(0,1)
+                if (collides3d(point, triangle.center, (big ? layer.density.min : layer.density.max))) {
+                  collisionDetected = true;
+                }
+              }
+              if (!collisionDetected) {
+                let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
+                newId++;
+                if (chosenFiller.length > 0) {
+                  //chosenFiller[0].tags.push('notable')
+                  console.debug(`aquireing location for ${chosenFiller[0].name}`)
+                  applyLocation(chosenFiller[0], triangle.center)
+                  chosenFiller[0].id = newId;
+                  raw_data.push(chosenFiller[0])
+                  occupied.push(triangle.center)
+                }
               }
             }
           }
