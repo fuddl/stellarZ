@@ -27,6 +27,37 @@ const dimensions = ['x', 'y', 'z'];
 
 let newId = 347601;
 
+function distanceToLine(l1, l2, p) {
+  const { x: lx1, y: ly1, z: lz1 } = l1;
+  const { x: lx2, y: ly2, z: lz2 } = l2;
+  const { x: px, y: py, z: pz } = p;
+
+  const ldx = lx2 - lx1;
+  const ldz = lz2 - lz1;
+  const ldy = ly2 - ly1;
+  const lineLengthSquared = ldx*ldx + ldy*ldy + ldz*ldz;
+  let t;
+  if (!lineLengthSquared) {
+    t = 0;
+  } else {
+    t = ((px - lx1) * ldx + (py - ly1) * ldy + (pz - lz1) * ldz) / lineLengthSquared;
+
+    if (t < 0)
+      t = 0;
+    else if (t > 1)
+      t = 1;
+  }
+
+  const lx = lx1 + t * ldx;
+  const ly = ly1 + t * ldy;
+  const lz = lz1 + t * ldz;
+  const dx = px - lx;
+  const dy = py - ly;
+  const dz = pz - lz;
+
+  return Math.sqrt(dx*dx + dy*dy + dz*dz);
+}
+
 const applyLocation = function (object, location) {
   object.location = {
     ...object.location,
@@ -118,6 +149,10 @@ async function addCoordinates(object, depth = 0, parentLocation) {
     const json = await result.json();
     const data = wdk.simplify.sparqlResults(json)[0];
     if (data) {
+      if (!object?.tags) {
+        object.tags = [];
+      }
+      object.tags.push('real');
       object.location = {
         ...spherical2cartesian(
           data.dec,
@@ -204,8 +239,12 @@ function addMissingZ(objects) {
 
   let hyg = [];
   parse(hygText, {columns: true}, function(err, records) {
+    for (const record of records) {
+      record.x = parseFloat(record.X);
+      record.y = parseFloat(record.Y);
+      record.z = parseFloat(record.Z);
+    }
     
-    const occupied = [];
     for (let shape of shapes2D) {
       const randGen = gen.create(shape.d[0]);
 
@@ -215,12 +254,13 @@ function addMissingZ(objects) {
       }
 
       for (let layer of shape.layers) {
+        const occupied = [];
 
         let fittingFiller = [];
         iterator.bfs([...filler], 'orbits', (object) => {
           if (intersection(object.tags, layer.fillerTags).length > 0) {
             if (layer.strategy === 'connect') {
-              //object.tags.push('notable');
+              object.tags.push('notable');
             }
             fittingFiller.push(object);
           }
@@ -299,17 +339,12 @@ function addMissingZ(objects) {
           triangles.push(
             {
               radius: 1000,
-              center: {
-                x: relevantPoints[0].location.x,
-                y: relevantPoints[0].location.y,
-                z: relevantPoints[0].location.z,
-              } 
+              center: relevantPoints[0].location
             }
           )
         }
-        let occupied = []
         for (let existing of relevantPoints) {
-          occupied.push({x: existing.location.x, y: existing.location.y})
+          occupied.push(existing.location)
         }
         if (layer.strategy === 'connect') {
           for (triangle of triangles) {
@@ -347,31 +382,40 @@ function addMissingZ(objects) {
 
 
           for (triangle of triangles) {
-            
             records.sort((a, b) => {
-              let aDist = distance(
-                [parseFloat(a.X), parseFloat(a.Y), parseFloat(a.Z)],
-                [triangle.center.x, triangle.center.y, triangle.center.z],
-              );
-              let bDist = distance(
-                [parseFloat(b.X), parseFloat(b.Y), parseFloat(b.Z)],
-                [triangle.center.x, triangle.center.y, triangle.center.z],
-              );
-
-              return aDist < bDist ? -1 : 1;
+              if (triangle.points) {
+                let shortestA = null;
+                let shortestB = null;
+                for (const p of ['AB', 'AC', 'BC']) {
+                  let distA = distanceToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, a)
+                  let distB = distanceToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, b)
+                  shortestA = shortestA == null || shortestA > distA ? distA : shortestA;
+                  shortestB = shortestB == null || shortestB > distB ? distB : shortestB;
+                }
+                return shortestA < shortestB ? -1 : 1;
+              } else {
+                let aDist = distance(
+                  [a.x, a.y, a.z],
+                  [triangle.center.x, triangle.center.y, triangle.center.z],
+                );
+                let bDist = distance(
+                  [b.x, b.y, b.z],
+                  [triangle.center.x, triangle.center.y, triangle.center.z],
+                );
+                return aDist < bDist ? -1 : 1;
+              }
             })
 
             for (let id in records) {
               const star = records[id];
-              if (collides(triangle.center, {x: parseFloat(star.X), y: parseFloat(star.Y)}, triangle.radius)) {
+              if (collides(triangle.center, star, triangle.radius)) {
 
 
                 let collisionDetected = false;
                 for (const point of occupied) {
                   const big = randGen.intBetween(0,1)
-                  if (collides(point, {x: parseFloat(star.X), y: parseFloat(star.Y)}, (big ? layer.density.min : layer.density.max))) {
+                  if (collides(point, star, (big ? layer.density.min : layer.density.max))) {
                     collisionDetected = true;
-                    delete records[id];
                   }
                 }
                 if (!collisionDetected) {
@@ -402,7 +446,7 @@ function addMissingZ(objects) {
                       "tags": chosenFiller.length > 0 ? [] : layer.fillerTags, 
                       "location": location
                     })
-                    occupied.push({x: parseFloat(star.X), y: parseFloat(star.Y)})
+                    occupied.push(star)
                     delete records[id];
                   }
                 }

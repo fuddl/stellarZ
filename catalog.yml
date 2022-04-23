@@ -389,12 +389,6 @@
   orbits:
     - name: Gamma Hydra IV
       tags: [science colony, notable, federation member, andorian colony]
-- name: Gamma Trianguli
-  location: wd:Q3307541
-  orbits:
-    - name: Gamma Trianguli VI
-      tags: [inhabited, pre-warp]
-
 - name: Wolf 359
   location: wd:Q291301
 - name: Delta Muscae
@@ -468,11 +462,6 @@
     - name: Tagus Ⅲ
       ord: 3
       tags: [dma-map]
-- name: Bellatrix
-  location: wd:Q13066
-  aliases: [Gamma Orionis]
-  type: star
-  tags: [landmark]
 - name: Omega Fornacis
   location: wd:Q629292
   orbits:
@@ -668,13 +657,14 @@
       tags: [notable, federation member]
 - name: Adhara
   location: wd:Q13414
-  tags: [notable]
+  tags: [notable, real]
 - name: Betelgeuse
   location:
     ra: 88.792938991
     dec: 7.407063995
     dis: 431.74754
   type: star
+  tags: [real]
   orbits:
     - name: Betelgeuse
       type: planet
@@ -1340,7 +1330,8 @@
     x: -173.863
     y: -114.265
 - name: Omicron Ceti
-  alt_names: [Mira] 
+  alt_names: [Mira]
+  tags: [real]
   location:
     ra: 34.836633758
     dec: -2.977637673
@@ -1365,17 +1356,21 @@
   location: wd:Q617675
   tags: [notable]
 - name: Bellatrix
+  alt_names: [Gamma Orionis]
+  type: star
   location:
+    # wd:Q13066
     ra: 81.282763557
     dec: 6.349703264 
     dis: 266
-  tags: [notable]
+  tags: [notable, real, landmark]
+
 - name: Gamma Trianguli
   location: wd:Q3307541
   orbits:
     - name: Gamma Trianguli VI
       ord: 6
-      tags: [notable, inhabited]
+      tags: [notable, inhabited, pre-warp]
 - name: Gamma Tauri
   location: wd:Q1493218
   orbits:
@@ -1420,7 +1415,7 @@
 - name: Rigel
   type: star 
   alt_names: [Beta Orionis]
-  tags: [notable]
+  tags: [notablem real]
   location:
     ra: 78.634467067
     dec: -8.201638365
