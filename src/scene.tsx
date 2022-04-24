@@ -99,6 +99,13 @@ const auras = [
 		size: 6,
 		paint: 'url(#tzenketh)',
 	},
+	{
+		tags: [
+			'claimed by gorn'
+		],
+		size: 6,
+		paint: 'url(#gorn)',
+	},
 ];
 
 class ExtendedDataRenderer extends DataRenderer {

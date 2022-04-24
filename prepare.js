@@ -336,13 +336,19 @@ function addMissingZ(objects) {
           } else {
             triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
           }
-        }
-
-        if (relevantPoints.length == 1 || relevantPoints.length < 3) {
+        } else if (relevantPoints.length > 0 && relevantPoints.length < 3) {
+          console.debug(relevantPoints.length)
           triangles.push(
             {
               radius: shape.radius,
               center: relevantPoints[0].location
+            }
+          )
+        } else if(relevantPoints.length === 0) {
+          triangles.push(
+            {
+              radius: shape.radius,
+              center: layer.center,
             }
           )
         }

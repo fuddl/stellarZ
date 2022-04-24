@@ -482,6 +482,11 @@
     - name: Cor Caroli V
       ord: 5
       tags: [inhabited, notable, dma-map]
+- name: Tzenketh
+  location:
+    x: -47.438
+    y: -14.112
+  tags: [tzenketh homeword, notable]
 - name: Azati Prime
   location:
     x: 17.166
@@ -531,7 +536,7 @@
     z: -226.642943922
 - name: The Binaries
   type: star
-  tags: [notable, klingon war battle site, claimed by klingon empire]
+  tags: [notable, klingon war battle site, klingon holy site]
   location:
     x: 20.409
     y: -69.913
@@ -539,10 +544,15 @@
     # hydra which is not possible, so lets put it at least in the closest possible
     # location
     z: 86.89916002979173
+- name: Boreth
+  tags: [klingon holy site, notable]
+  location:
+    x: 24
+    y: -101.5
 - name: No'Mat
   location: wd:Q637953
   type: star
-  tags: [claimed by klingon empire, notable]
+  tags: [klingon colony, notable]
 - name: Theta Hydrae
   location: wd:Q1029146
   orbits:
@@ -856,11 +866,8 @@
   - name: Maranga IV
     ord: 4
     tags: [klingon outpost, notable]
-- name: Gamma Geminorum
+- name: Alhena
   location: wd:Q14238
-  orbits:
-    - name: Alhena Station
-      tags: [klingon outpost, notable]
 
 - name: Vanguard
   type: installation
@@ -1415,9 +1422,62 @@
 - name: Rigel
   type: star 
   alt_names: [Beta Orionis]
-  tags: [notablem real]
+  tags: [notable, real]
   location:
     ra: 78.634467067
     dec: -8.201638365
     dis: 800
-
+- name: Theta Cygni
+  location: wd:Q3304173
+  type: star 
+  tags: [notable, real]
+- name: Alkaid
+  location: wd:Q13093
+  tags: [notable, real]
+- name: Nashira
+  location: wd:Q1571085
+  tags: [notable, real]
+- name: Gamma Coronae Borealis
+  location: wd:Q5098340
+  tags: [notable, real]
+- name: Zeta Aquilae 
+  location: wd:Q13212
+  tags: [notable, real]
+- name: Tyberius
+  location: wd:Q3050364
+  tags: [notable, real]
+- name: Capella
+  location: wd:Q12970
+  orbits:
+    - name: Capella IV 
+      tags: [notable, inhabited]
+- name: Alpha Trianguli
+  location: wd:Q1302050
+  orbits:
+    - name: Starbase 310
+      type: installation
+- name: Janus IV
+  tags: [federation colony, mining colony]
+  location:
+    x: -31.922 
+    y: -99.412
+- name: Starbase 200
+  tags: [federation starbase]
+  location:
+    x: -69.303
+    y: -183.587 
+- name: Starbase 27
+  tags: [federation starbase]
+  location:
+    x: -31.369
+    y: -187.187
+- name: Ventax
+  tags: [notable]
+  location:
+    x: 8.781 
+    y: -185.526
+- name: Gateway
+  tags: [notable, quarantained]
+  location:
+    x: -105.022
+    y: -267.887

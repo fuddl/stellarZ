@@ -9,6 +9,8 @@ function Gradients({flat, coordinates}) {
 		'ferengi': 'gold',
 		'breen': '#173F00',
 		'thol': 'orange',
+		'tzenketh': 'lime',
+		'gorn': '#8b0a50',
 	}
 
 	return (
