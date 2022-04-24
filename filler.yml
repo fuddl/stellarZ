@@ -29,7 +29,7 @@
   tags: [claimed by klingon empire]
 - name: Traelus II
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony]
 - name: Tozox V
   type: planet
   tags: [claimed by klingon empire]
@@ -38,7 +38,7 @@
   tags: [claimed by klingon empire]
 - name: Tiranax
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony, mining colony]
 - name: Ter'jas Mor
   type: planet
   tags: [claimed by klingon empire]
@@ -80,7 +80,7 @@
   tags: [claimed by klingon empire]
 - name: Rantal
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [occupied by klingon empire]
 - name: Rai V
   type: planet
   tags: [claimed by klingon empire]
@@ -89,7 +89,7 @@
   tags: [claimed by klingon empire]
 - name: Signi Beta
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony]
 - name: Qua'Khan
   type: planet
   tags: [claimed by klingon empire]
@@ -98,7 +98,7 @@
   tags: [claimed by klingon empire]
 - name: Qi'Vol
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony]
 - name: Qaitos VI
   type: planet
   tags: [claimed by klingon empire]
@@ -110,7 +110,7 @@
   tags: [claimed by klingon empire]
 - name: Phaedus IV
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [occupied by klingon empire]
 - name: Penchan II
   type: planet
   tags: [claimed by klingon empire]
@@ -236,7 +236,7 @@
   tags: [claimed by klingon empire]
 - name: Hrakkour IV
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony]
 - name: Horbin
   type: planet
   tags: [claimed by klingon empire]
@@ -272,13 +272,13 @@
   tags: [claimed by klingon empire]
 - name: Elkauron II
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [klingon colony]
 - name: Don'zali IV
   type: planet
   tags: [claimed by klingon empire]
 - name: Delta Khinah II
   type: planet
-  tags: [claimed by klingon empire]
+  tags: [occupied by klingon empire]
 - name: Delleren V
   type: planet
   tags: [claimed by klingon empire]
@@ -336,6 +336,9 @@
 - name: Alaris
   type: planet
   tags: [claimed by klingon empire]
+- name: Ferasa Prime 
+  type: planet 
+  tags: [occupied by klingon empire]
 - name: Abyss
   type: planet 
   tags: [vulcan colony, federation colony]
@@ -1661,3 +1664,14 @@
 - name: Starbase 257
   type: installation
   tags: [federation starbase]
+- name: Alhena
+  location: wd:Q14238
+  orbits:
+    - name: Alhena Station
+      tags: [klingon outpost]
+- name: Gauran Ja-Tem
+  tags: [tzenketh colony, industrial colony]
+- name: Kliradon
+  tags: [tzenketh colony]
+- name: M'kemas III
+  tags: [tzenketh colony]

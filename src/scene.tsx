@@ -40,10 +40,20 @@ const auras = [
 	},
 	{
 		tags: [
-			'claimed by klingon empire',
-			'klingon outpost',
+			'klingon capital',
+			'occupied by klingon empire',
 		],
 		size: 6,
+		paint: 'url(#kling)',
+	},
+	{
+		tags: [
+			'claimed by klingon empire',
+			'klingon outpost',
+			'klingon colony',
+			'klingon holy site',
+		],
+		size: 3,
 		paint: 'url(#kling)',
 	},
 	{
@@ -80,6 +90,14 @@ const auras = [
 		],
 		size: 6,
 		paint: 'url(#thol)',
+	},
+	{
+		tags: [
+			'tzenketh homeword',
+			'tzenketh colony'
+		],
+		size: 6,
+		paint: 'url(#tzenketh)',
 	},
 ];
 

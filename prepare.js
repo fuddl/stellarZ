@@ -235,18 +235,22 @@ function addMissingZ(objects) {
 
   addMissingZ(raw_data);
 
-  const hygText = fs.readFileSync('.resources/hygxyz.csv', {encoding:'utf8', flag:'r'});
+  const hygText = fs.readFileSync('.resources/hygdata_v3.csv', {encoding:'utf8', flag:'r'});
 
   let hyg = [];
   parse(hygText, {columns: true}, function(err, records) {
     for (const record of records) {
-      record.x = parseFloat(record.X);
-      record.y = parseFloat(record.Y);
-      record.z = parseFloat(record.Z);
+      record.X = record.x;
+      record.x = parseFloat(record.x);
+      record.Y = record.y;
+      record.y = parseFloat(record.y);
+      record.Z = record.z;
+      record.z = parseFloat(record.z);
     }
     
     for (let shape of shapes2D) {
       const randGen = gen.create(shape.d[0]);
+      const occupied = [];
 
       let multipolygon = [];
       for (let d of shape.d) {
@@ -254,13 +258,12 @@ function addMissingZ(objects) {
       }
 
       for (let layer of shape.layers) {
-        const occupied = [];
 
         let fittingFiller = [];
         iterator.bfs([...filler], 'orbits', (object) => {
           if (intersection(object.tags, layer.fillerTags).length > 0) {
             if (layer.strategy === 'connect') {
-              object.tags.push('notable');
+              //object.tags.push('notable');
             }
             fittingFiller.push(object);
           }
@@ -338,7 +341,7 @@ function addMissingZ(objects) {
         if (relevantPoints.length == 1 || relevantPoints.length < 3) {
           triangles.push(
             {
-              radius: 1000,
+              radius: shape.radius,
               center: relevantPoints[0].location
             }
           )
@@ -408,7 +411,7 @@ function addMissingZ(objects) {
 
             for (let id in records) {
               const star = records[id];
-              if (collides(triangle.center, star, triangle.radius)) {
+              if (collides3d(triangle.center, star, triangle.radius)) {
 
 
                 let collisionDetected = false;
