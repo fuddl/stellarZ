@@ -1102,8 +1102,14 @@
   tags: [notable, claimed by cardassian union]
 - name: Kora II
   tags: [notable, claimed by cardassian union]
+  location: 
+    x: -89.266
+    y: -37.5
 - name: Orias III
   tags: [notable, claimed by cardassian union]
+  location:
+    x: -81.928
+    y: -45.8
 - name: Panora
   location:
     x: -44.732
@@ -1113,8 +1119,14 @@
   tags: [notable, claimed by cardassian union]
 - name: Pullock V
   tags: [notable, claimed by cardassian union]
+  location:
+    x: -66.726
+    y: -27.819
 - name: Quinor VII
   tags: [notable, claimed by cardassian union]
+  location:
+    x: -69.526
+    y: -24.32 
 - name: Rondac III
   tags: [notable, claimed by cardassian union]
 - name: Velos
