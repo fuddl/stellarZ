@@ -196,32 +196,22 @@ function addZ(object, z) {
   }
 }
 
-function addMissingZ(objects) {
-  const ObjectsWithZ = [];
-  iterator.bfs([...objects], 'orbits', (object) => {
-    if (typeof object?.location?.z === 'number') {
-      ObjectsWithZ.push(object);
-    }
-  })
+function addMissingZ(objects, ObjectsWithZ) {
 
   for (let object of objects) {
     if (typeof object?.location?.z !== 'number' && typeof object?.location?.x == 'number' && typeof object?.location?.y == 'number') {
-      let shrtestDistance = null;
-      let closestZ = null;
-      let dist;
-      let othername = '';
-      for (const other of ObjectsWithZ) {
-        dist = distance2D(object.location, other.location);
-        if (shrtestDistance === null || shrtestDistance > dist) {
-          shrtestDistance = dist;
-          closestZ = other.location.z;
-          othername = other.name;
-        }
+      for (const key of Object.keys(ObjectsWithZ)) {
+        ObjectsWithZ[key].dist = distance2D(object.location, ObjectsWithZ[key].object.location);
       }
+      let closest = ObjectsWithZ.sort((A, B) => {
+        return A.dist < B.dist ? -1 : 1;
+      });
+
       const randGen = gen.create(object.name);
-      const randDist = dist / 2;
-      console.debug(`${object.name} found, near ${othername}`)
-      addZ(object, closestZ + randGen.floatBetween(randDist*-1, randDist));
+      const randDist = closest[0].dist / 2;
+
+      console.debug(`${object.name} found, near ${closest[0].object.name}, ${closest[1].object.name}, and ${closest[2].object.name}`)
+      addZ(object, ((closest[0].object.location.z + closest[1].object.location.z + closest[2].object.location.z) / 3) + randGen.floatBetween(randDist*-1, randDist));
     }
   }
 }
@@ -233,7 +223,17 @@ function addMissingZ(objects) {
     object = await addCoordinates(object);
   }
 
-  addMissingZ(raw_data);
+  let ObjectsWithZ = [];
+  let ObjectsWithZOccupied = [];
+  iterator.bfs([...raw_data], 'orbits', (object) => {
+    let locationString = JSON.stringify(object.location)
+    if (typeof object?.location?.z === 'number' && !ObjectsWithZOccupied.includes(locationString)) {
+      ObjectsWithZ.push({ dist: null, object: object });
+      ObjectsWithZOccupied.push(locationString)
+    }
+  })
+
+  addMissingZ(raw_data, ObjectsWithZ);
 
   const hygText = fs.readFileSync('.resources/hygdata_v3.csv', {encoding:'utf8', flag:'r'});
 
