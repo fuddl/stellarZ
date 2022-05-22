@@ -16,10 +16,11 @@ import textMarker from './textMarker.tsx'
 import symbol from './symbol.tsx'
 import sphere from './sphere.tsx'
 import catalog from './catalog.json'
+import connections from './connections.json'
 import validLocation from './valid-location.js'
 import iterator from 'iterate-tree'
 import parseSVG from 'svg-path-parser'
-
+import Assets from './assets.tsx'
 
 const auras = [
 	{
@@ -44,7 +45,7 @@ const auras = [
 			'occupied by klingon empire',
 		],
 		size: 6,
-		paint: 'url(#kling)',
+		paint: 'url(#kli)',
 	},
 	{
 		tags: [
@@ -54,42 +55,42 @@ const auras = [
 			'klingon holy site',
 		],
 		size: 3,
-		paint: 'url(#kling)',
+		paint: 'url(#kli)',
 	},
 	{
 		tags: [
 			'claimed by romulan empire',
 		],
 		size: 6,
-		paint: 'url(#romul)',
+		paint: 'url(#rom)',
 	},
 	{
 		tags: [
 			'claimed by cardassian union',
 		],
 		size: 6,
-		paint: 'url(#card)',
+		paint: 'url(#car)',
 	},
 	{
 		tags: [
 			'claimed by ferengi aliance',
 		],
 		size: 6,
-		paint: 'url(#ferengi)',
+		paint: 'url(#fer)',
 	},
 	{
 		tags: [
 			'claimed by breen confederacy',
 		],
 		size: 6,
-		paint: 'url(#breen)',
+		paint: 'url(#bre)',
 	},
 	{
 		tags: [
 			'claimed by tholian assembly',
 		],
 		size: 6,
-		paint: 'url(#thol)',
+		paint: 'url(#tho)',
 	},
 	{
 		tags: [
@@ -97,14 +98,14 @@ const auras = [
 			'tzenketh colony'
 		],
 		size: 6,
-		paint: 'url(#tzenketh)',
+		paint: 'url(#tze)',
 	},
 	{
 		tags: [
 			'claimed by gorn'
 		],
 		size: 6,
-		paint: 'url(#gorn)',
+		paint: 'url(#gor)',
 	},
 ];
 
@@ -163,6 +164,40 @@ class ExtendedDataRenderer extends DataRenderer {
         const { z, ...elementWithoutZ } = element
         return { ...elementWithoutZ, x: xs, y: ys, dist: dists }
     }
+    _projectLinesWithDist(lines: Lines3dSpecs): Lines2dSpecs {
+        const xs0: Array<number> = []
+        const ys0: Array<number> = []
+        const xs1: Array<number> = []
+        const ys1: Array<number> = []
+        const dists: Array<number> = []
+
+        lines.x0.forEach((rawX0: number, index: number) => {
+            const points0 = this._projectPointWithDist(
+                rawX0,
+                lines.y0[index],
+                lines.z0[index],
+                index
+            )
+
+            const points1 = this._projectPointWithDist(
+                lines.x1[index],
+                lines.y1[index],
+                lines.z1[index],
+                index
+            )
+
+            xs0.push(points0.point2d.x)
+            ys0.push(points0.point2d.y)
+            dists.push(points0.dist)
+            xs1.push(points1.point2d.x)
+            ys1.push(points1.point2d.y)
+            dists.push(points1.dist)
+        })
+
+
+        const { z0, z1, ...linesWithoutZ } = lines
+        return { ...linesWithoutZ, x0: xs0, y0: ys0, x1: xs1, y1: ys1, dist: dists }
+    }
 	render(data) {
 		return data.map((element) => {
 			switch (element.type) {
@@ -172,7 +207,7 @@ class ExtendedDataRenderer extends DataRenderer {
 				case 'points':
 					return this._projectPolygonOrPoints(element);
 				case 'lines':
-					return this._projectLines(element);
+					return this._projectLinesWithDist(element);
 				case 'symbol':
 				case 'sphere':
 					return this._projectPolygonOrPointsWithDist(element);
@@ -219,10 +254,31 @@ const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d, flat) =>
 			}
 			return 0;
 		})
+
+		const maxX = sceneSettings.paperXrange / 2
+		const minX = maxX * -1
+
+		for (const key in models) {
+			if (models[key].type === 'lines') {
+				if (
+					(
+						models[key].x0 <= minX || models[key].x0 >= maxX &&
+						models[key].y0 <= 0 || models[key].y0 >= sceneSettings.paperYrange
+					) || (
+						models[key].x1 <= minX || models[key].x1 >= maxX &&
+						models[key].y1 <= 0 || models[key].y1 >= sceneSettings.paperYrange
+					)
+				) {
+					models[key].hidden = true;
+				}
+			}
+		}
 	}
 	return {
 		container,
-		data: [...models]
+		data: [...models.filter(function (v) {
+			return !('hidden' in v)
+		})]
 	};
 };
 
@@ -350,6 +406,23 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 
 	const points = [];
 
+	for (const cluster of connections) {
+
+		for (const connection of cluster.connections) {
+			points.push({
+			  id: connection.hash,
+			  type: 'lines',
+			  color: Assets.colours[cluster.id],
+			  x0: [connection.A.x],
+			  x1: [connection.B.x],
+			  y0: [connection.A.y],
+			  y1: [connection.B.y],
+			  z0: viewSettings?.flat ? [0] : [connection.A.z],
+			  z1: viewSettings?.flat ? [0] : [connection.B.z],
+			});
+		}
+	}
+
 	iterator.bfs([...catalog], 'orbits', (object) => {
 		const aura = auras.find((item) => {
 			if (object?.tags) {
@@ -385,40 +458,41 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 		}
 	})
 
-	iterator.bfs([...catalog], 'orbits', (object) => {
-		if (object.location  && (object?.tags?.includes('notable'))) {
-		let isBase =
-		  object?.tags?.includes('federation starbase') ||
-		  object?.tags?.includes('deep space station');
-		let baseFontSize = isBase ? 9 : 16;
-		let highlightedFontSize = isBase ? 16 : 19.2;
-		if (validLocation(object)) {
-			points.push({
-			  label: object.name,
-			  id: object.id,
-			  pointer: isBase ? '▵' : '●',
-			  type: 'textMarker',
-			  size: object.id === focus ? highlightedFontSize : baseFontSize,
-			  color: 'white',
-			  attributes: {
-				style: { cursor: 'pointer' },
-				onClick: () => {
-					setDataOffset({
-						x: (object.location.x / sceneSettings.cubeRange) * -1,
-						y: (object.location.y / sceneSettings.cubeRange) * -1,
-						z: (object.location.z / sceneSettings.cubeRange) * -1,
-					})
-				}
-			  },
-			  layouts: isBase ? ['south', 'north'] : ['east', 'west'],
-			  x: [object.location.x],
-			  y: [object.location.y],
-			  z: viewSettings?.flat ? [0] : [object.location.z],
-			});
-		}
-	}
-	});
- 
+	// iterator.bfs([...catalog], 'orbits', (object) => {
+	// 	if (object.location  && (object?.tags?.includes('notable'))) {
+	// 	let isBase =
+	// 	  object?.tags?.includes('federation starbase') ||
+	// 	  object?.tags?.includes('deep space station');
+	// 	let baseFontSize = isBase ? 9 : 16;
+	// 	let highlightedFontSize = isBase ? 16 : 19.2;
+	// 	if (validLocation(object)) {
+	// 		points.push({
+	// 		  label: object.name,
+	// 		  id: object.id,
+	// 		  pointer: isBase ? '▵' : '●',
+	// 		  type: 'textMarker',
+	// 		  size: object.id === focus ? highlightedFontSize : baseFontSize,
+	// 		  color: 'white',
+	// 		  attributes: {
+	// 			style: { cursor: 'pointer' },
+	// 			onClick: () => {
+	// 				setDataOffset({
+	// 					x: (object.location.x / sceneSettings.cubeRange) * -1,
+	// 					y: (object.location.y / sceneSettings.cubeRange) * -1,
+	// 					z: (object.location.z / sceneSettings.cubeRange) * -1,
+	// 				})
+	// 			}
+	// 		  },
+	// 		  layouts: isBase ? ['south', 'north'] : ['east', 'west'],
+	// 		  x: [object.location.x],
+	// 		  y: [object.location.y],
+	// 		  z: viewSettings?.flat ? [0] : [object.location.z],
+	// 		});
+	// 	}
+	// }
+	// });
+
+
 	const center = {
 		x: dataOffset.x * sceneSettings.cubeRange * -1,
 		y: dataOffset.y * sceneSettings.cubeRange * -1,
@@ -430,7 +504,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 		sceneSettings,
 		emptySceneOptions,
 		[
-			...axisCircles(center, viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
+			//...axisCircles(center, viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
 			...points,
 		],
 		viewSettings?.flat,

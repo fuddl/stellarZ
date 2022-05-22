@@ -1,18 +1,18 @@
 import Preact from 'preact'
 
-function Gradients({flat, coordinates}) {
-	const colours = {
-		'fed': '#98A0B5',
-		'kling': '#E51301',
-		'romul': '#235645',
-		'card': 'brown',
-		'ferengi': 'gold',
-		'breen': '#173F00',
-		'thol': 'orange',
-		'tzenketh': 'lime',
-		'gorn': '#8b0a50',
-	}
+const colours = {
+	'fed': '#98A0B5',
+	'kli': '#E51301',
+	'rom': '#235645',
+	'car': 'brown',
+	'fer': 'gold',
+	'bre': '#173F00',
+	'tho': 'orange',
+	'tze': 'lime',
+	'gor': '#8b0a50',
+}
 
+function Gradients() {
 	return (
 		<svg hidden>
 		<defs>
@@ -38,4 +38,6 @@ function Gradients({flat, coordinates}) {
 	)
 }
 
-export default Gradients
+export default { colours, Gradients }
+
+

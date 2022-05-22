@@ -149,7 +149,7 @@ function App() {
         <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
       </aside>
       <Navigator flat={flat} coordinates={dataOffset} />
-      <Assets />
+      <Assets.Gradients />
     </div>
   )
 }

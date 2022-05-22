@@ -428,7 +428,7 @@ function addMissingZ(objects, ObjectsWithZ) {
                   }
                 }
                 if (!collisionDetected) {
-                  newId++;
+                  newId
                   let isInsomePolygon = false;
                   for (const polygon of multipolygon) {
                     if (!isInsomePolygon) {
@@ -446,7 +446,10 @@ function addMissingZ(objects, ObjectsWithZ) {
                     let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
                     if (chosenFiller.length > 0) {
                       applyLocation(chosenFiller[0], location)
+                      newId++;
+                      chosenFiller[0].id = newId;
                     }
+                    newId++;
                     raw_data.push({
                       "id": newId,
                       "name": `FGC-${newId}`,

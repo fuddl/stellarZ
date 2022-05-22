@@ -18,6 +18,7 @@
           federation founding member,
           federation captital,
           dma-map,
+          interesting,
         ]
       links:
         ma:en: Earth
@@ -95,7 +96,7 @@
           y: -1.436
           z: 0.5
 - name: Quo'Nos
-  tags: [claimed by klingon empire, notable, klingon capital]
+  tags: [claimed by klingon empire, notable, klingon capital, interesting]
   location:
     x: 79.9
     y: -70.6
@@ -113,7 +114,7 @@
       tags: [notable, claimed by romulan empire]
 - name: Cardassia Prime
   type: planet
-  tags: [notable, claimed by cardassian union]
+  tags: [notable, claimed by cardassian union, interesting]
   location:
     x: -62.8
     y: -33.1
@@ -1163,7 +1164,7 @@
   location:
     x: -16.6
     y: -49.8
-  tags: [notable, federation member]
+  tags: [notable, federation member, interesting]
 - name: Epsilon Scorpii
   type: star
   location: wd:Q14249
