@@ -1,15 +1,16 @@
 import Preact from 'preact'
 
 const colours = {
-	'fed': '#98A0B5',
-	'kli': '#E51301',
-	'rom': '#235645',
-	'car': 'brown',
-	'fer': 'gold',
-	'bre': '#173F00',
-	'tho': 'orange',
-	'tze': 'lime',
-	'gor': '#8b0a50',
+	'fed': '#267BBA',
+	'kli': '#D02C45',
+	'rom': '#12B6BB',
+	'car': '#39793F',
+	'fer': '#D3AF2B',
+	'bre': '#245452',
+	'tho': '#BD5328',
+	'tze': '#5E48A9',
+	'gor': '#5E0B09',
+	'tal': '#270B6D',
 }
 
 function Gradients() {
@@ -17,10 +18,16 @@ function Gradients() {
 		<svg hidden>
 		<defs>
 			{Object.entries(colours).map((colour) => (
-				<radialGradient id={colour[0]}>
-					<stop offset="10%" stopColor={colour[1]} stopOpacity=".5" />
-					<stop offset="100%" stopColor={colour[1]} stopOpacity="0" />
-				</radialGradient>
+				<>
+					<radialGradient id={colour[0]}>
+						<stop offset="10%" stopColor={colour[1]} stopOpacity=".5" />
+						<stop offset="100%" stopColor={colour[1]} stopOpacity="0" />
+					</radialGradient>
+					<radialGradient id={`${colour[0]}-inverted`}>
+						<stop offset="10%" stopColor={colour[1]} stopOpacity="0" />
+						<stop offset="100%" stopColor={colour[1]} stopOpacity=".5" />
+					</radialGradient>
+				</>
 			)) }
 			<symbol id="star" width="32" height="32" overflow="visible" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
 				<circle cx="0" cy="0" r="2" fill="url(#sunray)"/>

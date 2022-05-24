@@ -112,6 +112,14 @@
       tags: [notable, claimed by romulan empire, romulan capital]
     - name: Remus
       tags: [notable, claimed by romulan empire]
+- type: star
+  orbits:
+  - name: Talar
+    type: planet
+    tags: [notable, talarian homeworld]
+    location:
+      x: -85.858
+      y: -78.5
 - name: Cardassia Prime
   type: planet
   tags: [notable, claimed by cardassian union, interesting]
@@ -1019,117 +1027,180 @@
       tags: [notable, inhabited]
       ord: 3
 - name: Zetar
+  location:
+    x: -14.8
+    y: 24.6
+    z: 2
   orbits:
-    - name: Zetar
+    - name: Zetar II
       ord: 2
-      location:
-        x: -14.8
-        y: 24.6
-        z: 2
       tags: [dma-map]
 - name: Rakal
   location:
     x: -46.5
     y: -54.9
   tags: [notable, claimed by cardassian union]
-- name: Chin'Toka
+- type: star
+  name: Chin'Toka
   location:
     x: -30.1
     y: -47.2
   tags: [notable, claimed by cardassian union]
-- name: Amleth Prime
+- type: star
   location:
     x: -59.1
     y: -42.4
-  tags: [notable, claimed by cardassian union]
-- name: Kelvas V
+  orbits:
+  - name: Amleth Prime
+    tags: [notable, claimed by cardassian union]
+- name: Kelvas
+  type: star
   location:
     x: -74
     y: -42.4
-  tags: [notable, claimed by cardassian union]
-- name: Simperia
+  orbits:
+  - name: Kelvas V
+    tags: [notable, claimed by cardassian union]
+- type: star
   location:
     x: -84.3
     y: -29.4
-  tags: [notable, claimed by cardassian union]
-- name: Torros III
+  orbits:
+  - name: Simperia
+    tags: [notable, claimed by cardassian union]
+- name: Torros
+  type: star
   location:
     x: -75.1
     y: -38
-  tags: [notable, claimed by cardassian union]
-- name: Monac IV
+  orbits:
+  - name: Torros III
+    tags: [notable, claimed by cardassian union]
+- name: Monac
+  type: star
   location:
     x: -77.5
     y: -34.2
+  orbits:
+  - name: Monac IV
+    tags: [notable, claimed by cardassian union]
 - name: Dopa
+  type: star
   location:
     x: -96.4
     y: -50.7
   tags: [notable, claimed by cardassian union]
-- name: Sarpedion V
+- name: Sarpedion
+  type: star
   location:
     x: -86.3
     y: -42.1
-  tags: [notable, claimed by cardassian union]
-- name: Atbar Prime
+  orbits:
+  - name: Sarpedion V
+    tags: [notable, claimed by cardassian union]
+- name: Atbar
+  type: star
   location:
     x: -76.8
     y: -27.7
-  tags: [notable, claimed by cardassian union]
-- name: Septimus III
+  orbits:
+  - name: Atbar Prime
+    tags: [notable, claimed by cardassian union]
+- name: Septimus
+  type: star
   location:
     x: -86.5
     y: -21.8
-  tags: [notable, claimed by cardassian union]
-- name: Lazon II
+  orbits:
+  - name: Septimus III
+    tags: [notable, claimed by cardassian union]
+- name: Lazon
+  type: star
   location:
     x: -96.8
     y: -28
-  tags: [notable, claimed by cardassian union]
-- name: Adarak Prime
-  type: planet
-  tags: [notable, claimed by cardassian union]
-- name: Aschelan V
-  type: planet
-  tags: [notable, claimed by cardassian union]
-- name: Avenal VII
-  type: planet
-  tags: [notable, claimed by cardassian union]
-- name: Bryma
-  type: planet
-  tags: [notable, claimed by cardassian union]
-- name: Dorvan V
-  type: planet
-  tags: [notable, claimed by cardassian union]
-- name: Kora II
-  tags: [notable, claimed by cardassian union]
+  orbits:
+  - name: Lazon II
+    tags: [notable, claimed by cardassian union]
+- name: Adarak
+  type: star
+  orbits:
+  - name: Adarak Prime
+    type: planet
+    tags: [notable, claimed by cardassian union]
+- name: Aschelan
+  type: star
+  orbits:
+  - name: Aschelan V
+    type: planet
+    tags: [notable, claimed by cardassian union]
+- name: Aschelan
+  type: star
+  orbits:
+  - name: Avenal VII
+    type: planet
+    tags: [notable, claimed by cardassian union]
+- name: Aschelan
+  type: star
+  orbits:
+  - name: Bryma
+    type: planet
+    tags: [notable, claimed by cardassian union]
+- name: Dorvan
+  type: star
+  orbits:
+  - name: Dorvan V
+    type: planet
+    tags: [notable, claimed by cardassian union]
+- name: Kora
+  type: star
   location: 
     x: -89.266
     y: -37.5
-- name: Orias III
-  tags: [notable, claimed by cardassian union]
+  orbits:
+  - name: Kora II
+    tags: [notable, claimed by cardassian union]
+- name: Orias
+  type: star
   location:
     x: -81.928
     y: -45.8
+  orbits:
+  - name: Orias III
+    tags: [notable, claimed by cardassian union]
 - name: Panora
+  type: star
   location:
     x: -44.732
     y: -43.513
   tags: [notable, claimed by cardassian union]
-- name: Pentath III
-  tags: [notable, claimed by cardassian union]
-- name: Pullock V
-  tags: [notable, claimed by cardassian union]
+- name: Pentath
+  type: star
+  orbits:
+  - name: Pentath III
+    ord: 3
+    tags: [notable, claimed by cardassian union]
+- name: Pullock
+  type: star
   location:
     x: -66.726
     y: -27.819
-- name: Quinor VII
-  tags: [notable, claimed by cardassian union]
+  orbits:
+  - name: Pullock V
+    tags: [notable, claimed by cardassian union]
+- name: Quinor
+  type: star
   location:
     x: -69.526
     y: -24.32 
-- name: Rondac III
-  tags: [notable, claimed by cardassian union]
+  orbits:
+  - name: Quinor VII
+    tags: [notable, claimed by cardassian union]
+- name: Rondac
+  type: star
+  orbits:
+  - name: Rondac III
+    tags: [notable, claimed by cardassian union]
 - name: Velos
   type: star
   location:
@@ -1169,20 +1240,30 @@
   type: star
   location: wd:Q14249
 - name: Chaltok IV
+  tags: [notable, claimed by romulan empire]
   location:
     x: 108.7
     y: -8.5
+- name: Talvath
   tags: [notable, claimed by romulan empire]
+  location:
+    x: 105.984 
+    y: 41.42
+- name: T'Met
+  tags: [notable, claimed by romulan empire, romulan colony]
+  location:
+    x: 45.417 
+    y: 51.927
 - name: Vendor II
+  tags: [notable, claimed by romulan empire]
   location:
     x: 48.2
     y: 6.9
-  tags: [notable, claimed by romulan empire]
 - name: Unroth III
+  tags: [notable, claimed by romulan empire]
   location:
     x: 65
     y: -14.4
-  tags: [notable, claimed by romulan empire]
 - name: Galorndon Core
   location:
     x: 48.5

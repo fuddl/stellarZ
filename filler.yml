@@ -1664,6 +1664,180 @@
 - name: Starbase 257
   type: installation
   tags: [federation starbase]
+- name: Espoir Station
+  type: installation
+  tags: [federation research facility]
+- name:  Avogadro Center
+  type: installation
+  tags: [federation research facility]
+- name: Avogadro Center
+  type: installation
+  tags: [federation research facility]
+- name: Brahms Center
+  type: installation
+  tags: [federation research facility]
+- name: Cochrane Center
+  type: installation
+  tags: [federation research facility]
+- name: Daystrom Center
+  type: installation
+  tags: [federation research facility]
+- name: Doppler Center
+  type: installation
+  tags: [federation research facility]
+- name: Frege Center
+  type: installation
+  tags: [federation research facility]
+- name: Planck Center
+  type: installation
+  tags: [federation research facility]
+- name: Soong Center
+  type: installation
+  tags: [federation research facility]
+- name: Manheim Center
+  type: installation
+  tags: [federation research facility]
+- name: FTC-549
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-680
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-1059
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-1080
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-8243
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-9400
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-9835
+  type: installation
+  tags: [federation trading kontor]
+- name: FTC-9874
+  type: installation
+  tags: [federation trading kontor]
+- name: Asimov Center
+  type: installation
+  tags: [federation research facility]
+- name: Bradbury Center
+  type: installation
+  tags: [federation research facility]
+- name: Bova Center
+  type: installation
+  tags: [federation research facility]
+- name: Brin Center
+  type: installation
+  tags: [federation research facility]
+- name: Clark Center
+  type: installation
+  tags: [federation research facility]
+- name: Gibson Center
+  type: installation
+  tags: [federation research facility]
+- name: Heinlein Center
+  type: installation
+  tags: [federation research facility]
+- name: Huxley Center
+  type: installation
+  tags: [federation research facility]
+- name: Niven Center
+  type: installation
+  tags: [federation research facility]
+- name: Pournelle Center
+  type: installation
+  tags: [federation research facility]
+- name: Sagan Center
+  type: installation
+  tags: [federation research facility]
+- name: Simmons Center
+  type: installation
+  tags: [federation research facility]
+- name: Verne Center
+  type: installation
+  tags: [federation research facility]
+- name: Welles Center
+  type: installation
+  tags: [federation research facility]
+- name: Ariadne I
+  type: installation
+  tags: [federation research facility]
+- name: Boundary I
+  type: installation
+  tags: [federation research facility]
+- name: Cassiopeia I
+  type: installation
+  tags: [federation research facility]
+- name: Gilgamesh I
+  type: installation
+  tags: [federation research facility]
+- name: Landisa I
+  type: installation
+  tags: [federation research facility]
+- name: Othello I
+  type: installation
+  tags: [federation research facility]
+- name: Pallas I
+  type: installation
+  tags: [federation research facility]
+- name: Landisa I
+  type: installation
+  tags: [federation research facility]
+- name: Landisa I
+  type: installation
+  tags: [federation research facility]
+- name: Unitas I
+  type: installation
+  tags: [federation research facility]
+- name: Bargrik I
+  type: installation
+  tags: [federation research facility]
+- name: Chimera I
+  type: installation
+  tags: [federation research facility]
+- name: Namu I
+  type: installation
+  tags: [federation research facility]
+- name: Bugblatter 1
+  type: installation
+  tags: [federation research facility, near gorn space]
+- name: Gammorah I
+  type: installation
+  tags: [federation research facility, near gorn space]
+- name: Polladori I
+  type: installation
+  tags: [federation research facility, near gorn space]
+- name: Raven I 
+  type: installation
+  tags: [federation research facility, near tholian space]
+- name: Rodan I
+  type: installation
+  tags: [federation research facility, near tholian space]
+- name: T'prelki I
+  type: installation
+  tags: [federation research facility, near tholian space]
+- name: Vlad I
+  type: installation
+  tags: [federation research facility, near tholian space]
+- name:  Charybdis I
+  type: installation
+  tags: [federation research facility, near klingon space]
+- name: Grendel I
+  type: installation
+  tags: [federation research facility, near klingon space]
+- name: Bargrik I
+  type: installation
+  tags: [federation research facility]
+- name: Memory Epsilon
+  type: installation
+  tags: [federation library archive]
+- name: Symphony Alpha 
+  type: installation
+  tags: [federation library archive]
 - name: Alhena
   location: wd:Q14238
   orbits:
@@ -1689,3 +1863,199 @@
   tags: [claimed by gorn]
 - name: Ozannot
   tags: [claimed by gorn]
+- name: Qltlh VaS Starbase
+  tags: [klingon starbase]
+- name: Resten Mobile base
+  tags: [klingon starbase]
+- name: Kat'va mobile repair facility
+  tags: [klingon starbase]
+- name: qvaQ Starbase
+  tags: [klingon starbase]
+- name: DoHInup Battlestation
+  tags: [klingon starbase]
+- name: Ejyowaw 10
+  tags: [klingon starbase]
+- name: B'Alda'ar Base
+  tags: [klingon starbase]
+- name: Gorkon's Retreat
+  tags: [klingon starbase]
+- name: ejyo'waw
+  tags: [klingon starbase]
+- name: Outpost Ch'targh
+  tags: [klingon starbase]
+- name: Outpost Gi'ral
+  tags: [klingon starbase]
+- name: Outpost Kretorg
+  tags: [klingon starbase]
+- name: Nu'Daq Station
+  tags: [klingon starbase]
+- name: Porcin' Chikto
+  tags: [klingon starbase]
+- name: Cefta Nor-6D
+  tags: [cardassian starbase]
+- name: Cefta Nor-7R
+  tags: [cardassian starbase]
+- name: Cefta Nor-9H
+  tags: [cardassian starbase]
+- name: Cerat Nor-A
+  tags: [cardassian starbase]
+- name: Cefta Nor-0P
+  tags: [cardassian starbase]
+- name: Cefta Nor-3E
+  tags: [cardassian starbase]
+- name: Elvok Nor
+  tags: [cardassian starbase]
+- name: Sentok Nor
+  tags: [cardassian starbase]
+- name: Opek Nor
+  tags: [cardassian starbase]
+- name: Tantok Nor
+  tags: [cardassian starbase]
+- name: Tral Kliban
+  tags: [cardassian starbase]
+- name: Arbak-1T4
+  tags: [cardassian trading kontor]
+- name: Arbak-1T7
+  tags: [cardassian trading kontor]
+- name: Arbak-1T9
+  tags: [cardassian trading kontor]
+- name: Arbak-1T3
+  tags: [cardassian trading kontor]
+- name: Arbak-4T2
+  tags: [cardassian trading kontor]
+- name: Arbak-4T4
+  tags: [cardassian trading kontor]
+- name: Arbak-4T7 
+  tags: [cardassian trading kontor]
+- name: Arbak-4T0
+  tags: [cardassian trading kontor]
+- name: Aerimea
+  tags: [claimed by romulan empire]
+- name: Aerie
+  tags: [claimed by romulan empire]
+- name: Aesir
+  tags: [claimed by romulan empire]
+- name: Aesuri
+  tags: [claimed by romulan empire]
+- name: Alatum
+  tags: [claimed by romulan empire]
+- name: Altanea
+  tags: [claimed by romulan empire]
+- name: Argentomea
+  tags: [claimed by romulan empire]
+- name: Arnab
+  tags: [claimed by romulan empire]
+- name: Baraka
+  tags: [claimed by romulan empire]
+- name: Biruin
+  tags: [claimed by romulan empire]
+- name: Caerulum
+  tags: [claimed by romulan empire]
+- name: Campus Stellae
+  tags: [claimed by romulan empire]
+- name: Cillers
+  tags: [claimed by romulan empire]
+- name: Constina
+  tags: [claimed by romulan empire]
+- name: Dauouuy
+  tags: [claimed by romulan empire]
+- name: Davidul
+  tags: [claimed by romulan empire]
+- name: T'sau Prime
+  tags: [claimed by romulan empire]
+- name: Gaius Prime
+  tags: [claimed by romulan empire]
+- name: Hasdrebar Prime
+  tags: [claimed by romulan empire]
+- name: Valdore outpost
+  tags: [romulan starbase]
+- name: Volitok Station
+  tags: [romulan starbase]
+- name: D'deras Station
+  tags: [romulan starbase]
+- name: Cirgius Station
+  tags: [romulan starbase]
+- name: Atreuis Station
+  tags: [romulan starbase]
+- name: Ferraria
+  tags: [claimed by romulan empire]
+- name: Gradientes
+  tags: [claimed by romulan empire]
+- name: Huebr
+  tags: [claimed by romulan empire]
+- name: Iapedes
+  tags: [claimed by romulan empire]
+- name: Izanagi 
+  tags: [claimed by romulan empire]
+- name: Jaq
+  tags: [claimed by romulan empire]
+- name: Jeuaiei
+  tags: [claimed by romulan empire]
+- name: Kaisu
+  tags: [claimed by romulan empire]
+- name: Khazara
+  tags: [claimed by romulan empire]
+- name: Koltiska
+  tags: [claimed by romulan empire]
+- name: Lapedes
+  tags: [claimed by romulan empire]
+- name: Lempo 
+  tags: [claimed by romulan empire]
+- name: Llorrac
+  tags: [claimed by romulan empire]
+- name: Lloyd
+  tags: [claimed by romulan empire]
+- name: Mada
+  tags: [claimed by romulan empire]
+- name: Mewudoh
+  tags: [claimed by romulan empire]
+- name: Nabok
+  tags: [claimed by romulan empire]
+- name: Nasturta Nipaj
+  tags: [claimed by romulan empire]
+- name: Oppidum Frumenti
+  tags: [claimed by romulan empire]
+- name: Parka
+  tags: [claimed by romulan empire]
+- name: Posel
+  tags: [claimed by romulan empire]
+- name: Rana Nur
+  tags: [claimed by romulan empire]
+- name: Robeton 
+  tags: [claimed by romulan empire]
+- name: Decius Outpost
+  tags: [romulan starbase]
+- name: Rooth
+  tags: [claimed by romulan empire]
+- name: Rosec
+  tags: [claimed by romulan empire]
+- name: Ruxuley
+  tags: [claimed by romulan empire]
+- name: Stagnimea
+  tags: [claimed by romulan empire]
+- name: Strezhi
+  tags: [claimed by romulan empire]
+- name: Sufiday 
+  tags: [claimed by romulan empire]
+- name: Terminimurus
+  tags: [claimed by romulan empire]
+- name: Tillicu
+  tags: [claimed by romulan empire]
+- name: Timore
+  tags: [claimed by romulan empire]
+- name: Tolo
+  tags: [claimed by romulan empire]
+- name: Tufem 
+  tags: [claimed by romulan empire]
+- name: Tyee
+  tags: [claimed by romulan empire]
+- name: Umbra Minima 
+  tags: [claimed by romulan empire]
+- name: V'vari
+  tags: [claimed by romulan empire]
+- name: Wauoxic
+  tags: [claimed by romulan empire]
+- name: Zova Rhen
+  tags: [claimed by romulan empire]
+
+

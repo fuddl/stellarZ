@@ -53,6 +53,7 @@ const auras = [
 			'klingon outpost',
 			'klingon colony',
 			'klingon holy site',
+			'klingon starbase',
 		],
 		size: 3,
 		paint: 'url(#kli)',
@@ -60,6 +61,7 @@ const auras = [
 	{
 		tags: [
 			'claimed by romulan empire',
+			'romulan starbase',
 		],
 		size: 6,
 		paint: 'url(#rom)',
@@ -67,6 +69,7 @@ const auras = [
 	{
 		tags: [
 			'claimed by cardassian union',
+			'cardassian starbase',
 		],
 		size: 6,
 		paint: 'url(#car)',
@@ -106,6 +109,14 @@ const auras = [
 		],
 		size: 6,
 		paint: 'url(#gor)',
+	},
+	{
+		tags: [
+			'talarian homeworld',
+			'claimed by talarian',
+		],
+		size: 6,
+		paint: 'url(#tal)',
 	},
 ];
 
@@ -255,9 +266,9 @@ const renderScene = (viewSettings, sceneSettings, sceneOptions, data3d, flat) =>
 			return 0;
 		})
 
+
 		const maxX = sceneSettings.paperXrange / 2
 		const minX = maxX * -1
-
 		for (const key in models) {
 			if (models[key].type === 'lines') {
 				if (
@@ -412,7 +423,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 			points.push({
 			  id: connection.hash,
 			  type: 'lines',
-			  color: Assets.colours[cluster.id],
+			  color: `url(#${cluster.id}-inverted)`,
 			  x0: [connection.A.x],
 			  x1: [connection.B.x],
 			  y0: [connection.A.y],
@@ -436,6 +447,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 				id: object.id + '-aura',
 				type: 'sphere',
 				opacity: 0.5,
+				title: object?.name ?? 'Object', 
 				color: aura.paint,
 				size: aura.size * 30,
 				x: [object.location.x],
@@ -446,10 +458,11 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 	})
 
 	iterator.bfs([...catalog], 'orbits', (object) => {
-		if (object.type === 'star' && validLocation(object) && !object?.tags?.includes('notable')) {
+		if (object.type === 'star' && validLocation(object)) {
 			points.push({
 				id: object.id + '-asset',
 				type: 'symbol',
+				title: object?.name ?? 'Star',
 				href: 'star',
 				x: [object.location.x],
 				y: [object.location.y],

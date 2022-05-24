@@ -1,4 +1,4 @@
-const Circle = ({ x, y, dist, transforms, href, id, i, size, color }) => {
+const Circle = ({ x, y, dist, transforms, href, id, i, size, color, title }) => {
   const ratio = 1 / dist;
   return (
     <circle
@@ -10,13 +10,15 @@ const Circle = ({ x, y, dist, transforms, href, id, i, size, color }) => {
         fill: color,
         'data-dist': ratio,
       }}
-    />
+    >
+      { title ? <title>{ title }</title> : '' }
+    </circle>
   )
 }
 
 const spheresPlugin = {
   sphere: (element, transforms) => {
-    const { x, y, href, id, color } = element
+    const { x, y, href, id, color, title } = element
     return element.x.map((x, i) => (
       <Circle
         {...{
@@ -28,7 +30,8 @@ const spheresPlugin = {
           id,
           i,
           href,
-          transforms
+          transforms,
+          title,
         }}
         key={`${id}-${i}`}
       />

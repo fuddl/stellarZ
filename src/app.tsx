@@ -28,7 +28,7 @@ const windowDimensions = function() {
 function App() {
   const [dimensions, setDimensions] = useState(windowDimensions());
   const [targetZoom, setTargetZoom] = useState(1);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(5);
   const [zoomStep, setZoomStep] = useState(0);
   const [easing, setEasing] = useState(false);
 

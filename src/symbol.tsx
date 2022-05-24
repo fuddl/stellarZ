@@ -1,4 +1,4 @@
-const SvgSymbol = ({ x, y, dist, transforms, href, id }) => {
+const SvgSymbol = ({ x, y, dist, transforms, href, id, title }) => {
   return (
     <use
       {...{
@@ -7,14 +7,16 @@ const SvgSymbol = ({ x, y, dist, transforms, href, id }) => {
         id: `${id}`,
         href: `#${href}`,
       }}
-    />
+    >
+      { title ?? <title>{ title }</title> }
+    </use>
   )
 }
 
 const symbolsPlugin = {
   symbol: (element, transforms) => {
     //console.debug(element);
-    const { x, y, href, id } = element
+    const { x, y, href, id, title } = element
     return element.x.map((x, i) => (
       <SvgSymbol
         {...{
@@ -24,7 +26,8 @@ const symbolsPlugin = {
           id,
           i,
           href,
-          transforms
+          transforms,
+          title,
         }}
         key={`${id}-${i}`}
       />
