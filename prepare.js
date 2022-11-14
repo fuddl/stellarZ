@@ -235,7 +235,7 @@ function addMissingZ(objects, ObjectsWithZ) {
 
   addMissingZ(raw_data, ObjectsWithZ);
 
-  const hygText = fs.readFileSync('.resources/hygdata_v3.csv', {encoding:'utf8', flag:'r'});
+  const hygText = fs.readFileSync('./resources/hygdata_v3.csv', {encoding:'utf8', flag:'r'});
 
   let hyg = [];
   parse(hygText, {columns: true}, function(err, records) {

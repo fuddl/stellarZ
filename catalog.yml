@@ -821,6 +821,11 @@
     y: -69.5
     # connects risa & k'normia
     z: -33.360341721
+- name: Starbase 25
+  tags: [notable, federation starbase]
+  location:
+    x: -30.633
+    y: -45.189
 - name: Arcturus
   type: star
   location: wd:Q12985
@@ -1575,3 +1580,8 @@
   location:
     x: -105.022
     y: -267.887
+- name: Fesarius
+  tags: [notable, 'claimed by first federation']
+  location:
+    x: -44.819
+    y: 53.256 

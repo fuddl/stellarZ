@@ -342,8 +342,18 @@
 - name: Abyss
   type: planet 
   tags: [vulcan colony, federation colony]
+- name: Goran IV
+  tags: [in federation space, inhabited, potw]
 - name: Accellus IX
   type: planet 
+  tags: [federation colony]
+- name: Polymax VIII 
+  type: planet 
+  tags: [federation world]
+- name: Europa Nova 
+  type: planet 
+  tags: [federation colony, earth colony]
+- name: Valerian
   tags: [federation colony]
 - name: Adhil Prime
   type: planet 
@@ -525,6 +535,9 @@
 - name: Butera V 
   type: planet
   tags: [federation colony, dilithium refinery]
+- name: Akladi
+  type: planet
+  tags: [federation colony, dilithium refinery]
 - name: Calanara
   type: planet
   tags: [vulcan colony, federation colony]
@@ -592,6 +605,8 @@
   tags: [federation colony, starfleet orbital fascillity]
 - name: Dartanian
   tags: [federation colony]
+- name: Prairie
+  tags: [farming colony, local space]
 - name: Dedderai
   tags: [federation member]
 - name: Delanos VI
@@ -710,6 +725,8 @@
   tags: [federation colony, vulcan colony]
 - name: Himalias
   tags: [federation outpost]
+- name: Tanis
+  tags: [federation outpost]
 - name: Hobson Delta II 
   tags: [federation colony]
 - name: Hofstrof
@@ -776,6 +793,8 @@
   tags: [federation colony]
 - name: Kudao
   tags: [federation colony, near klingon empire]
+- name: Mobita
+  tags: [potw, local space, near klingon empire]
 - name: Lachian
   tags: [federation colony, near tholian border]
 - name: Laxala
@@ -808,6 +827,8 @@
   tags: [federation colony, vulcan colony]
 - name: Maltharin II
   tags: [gorn colony, dilithium refinery]
+- name: Cenotaph
+  tags: [gorn colony]
 - name: Maren
   tags: [federation colony]
 - name: Marram IX
@@ -858,6 +879,8 @@
   tags: [federation colony, vulcan colony]
 - name: Nova Atar III 
   tags: [federation colony]
+- name: Jubal
+  tags: [federation colony]
 - name: Nuvidula IV 
   tags: [near klingon empire, federation colony]
 - name: Nytis
@@ -897,7 +920,7 @@
 - name: Quaraxus
   type: planetoid
   tags: [federation colony]
-- name: Quodar
+- name: Salvum
   tags: [federation member]
 - name: Rastan VI
   tags: [federation colony]
@@ -1068,7 +1091,7 @@
 - name: Th'allt
   tags: [federation colony, andorian colony]
 - name: Theta Kalyb
-  tags: [federation colony]
+  tags: [federation colony, near tholian space]
 - name: Zorn I 
   tags: [federation colony, earth colony, agricultural colony]
 - name: T'hirada 
@@ -1103,9 +1126,61 @@
 - name: Salavat
   type: planet
   tags: [claimed by breen confederacy]
+- name: Beku
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Ber'Tho
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Bimasa
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Brellan
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Duportas
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Gelida
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Nujord
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Saldeti
+  type: planet
+  tags: [claimed by breen confederacy]
+- name: Zamaro
+  type: planet
+  tags: [claimed by breen confederacy]
 - name: Zenstala II
   type: planet
   tags: [claimed by tholian assembly]
+- name: Kakrafoon
+  type: planet
+  tags: [claimed by tholian assembly]
+- &fleetCommandTholian
+  name: Adia
+  type: planet
+  tags: [claimed by tholian assembly]
+- <<: *fleetCommandTholian
+  name: Temeri
+- <<: *fleetCommandTholian
+  name: Thosz
+- <<: *fleetCommandTholian
+  name: Ayulus 
+- <<: *fleetCommandTholian
+  name: Tazolka 
+- <<: *fleetCommandTholian
+  name: Anzat
+- <<: *fleetCommandTholian
+  name: Hrojost 
+- <<: *fleetCommandTholian
+  name: Abilakk 
+- <<: *fleetCommandTholian
+  name: Tholus
+- <<: *fleetCommandTholian
+  name: Tezera  
 - name: Weibak IV 
   type: planet 
   tags: [claimed by cardassian union]
@@ -1829,6 +1904,10 @@
 - name: Grendel I
   type: installation
   tags: [federation research facility, near klingon space]
+- name: Temazi
+  tags: [near federation space, near klingon space, inhabited, local space]
+- name: Tally
+  tags: [near federation space, near klingon space, inhabited, local space]
 - name: Bargrik I
   type: installation
   tags: [federation research facility]
@@ -1953,6 +2032,8 @@
   tags: [claimed by romulan empire]
 - name: Campus Stellae
   tags: [claimed by romulan empire]
+- name: Jenjor VI
+  tags: [claimed by romulan empire]
 - name: Cillers
   tags: [claimed by romulan empire]
 - name: Constina
@@ -2057,5 +2138,203 @@
   tags: [claimed by romulan empire]
 - name: Zova Rhen
   tags: [claimed by romulan empire]
-
-
+- name: Cherela
+  tags: [claimed by first federation]
+- name: Niatok
+  tags: [claimed by first federation]
+- name: Pillagra
+  tags: [Bajoran colony, local space]
+- name: Velat Nol
+  tags: [Bajoran colony, local space]
+- name: Gelladorn
+  tags: [Bajoran colony, local space]
+- name: Tomarii
+  tags: [inhabited, local space]
+- name: Aritani
+  tags: [inhabited, local space]
+- name: Yalbo
+  tags: [human colony, local space]
+- name: Aleriad
+  tags: [inhabited, local space]
+- name: Mercan
+  tags: [inhabited, local space]
+- name: Voran
+  tags: [inhabited, local space]
+- name: Njura
+  tags: [inhabited, local space, inhabited]
+- name: Bira III 
+  tags: [inhabited, local space]
+- name: Sycorax
+  tags: [human colony, augment colony]
+- name: Kwettir
+  tags: [inhabited, local space]
+- name: Artemys 314
+  tags: [inhabited, local space]
+- name: Okeanos
+  tags: [inhabited, local space]
+- name: Sarai
+  tags: [inhabited, local space]
+- name: Briamos
+  tags: [inhabited, local space]
+- name: Pandro
+  tags: [inhabited, local space]
+- name: Boqu II
+  tags: [inhabited, local space]
+- name: Kuban
+  tags: [uninhabited, local space]
+- name: N'cai
+  tags: [uninhabited, in federation space]
+- name: Andronicus 
+  tags: [potw, in federation space, inhabited]
+- name: Thallus
+  tags: [uninhabited, in federation space, inhabited]
+- name: Belarius IV 
+  tags: [in federation space]
+- name: Vehtora IV
+  tags: [inhabited, local space]
+- name: Dramia II
+  tags: [inhabited, local space]
+- name: Pelos
+  tags: [inhabited, local space]
+- name: T-262 
+  tags: [uninhabited, rogue, local space]
+- name: Beta Mariotia III
+  tags: [inhabited, local space]
+- name: Donico II
+  tags: [inhabited, local space]
+- name: Cragon V
+  tags: [homeworld, organian treaty zone, inhabited]
+- name: Hephaestus
+  tags: [homeworld, organian treaty zone, inhabited]
+- name: Hohweyn VII
+  tags: [uninhabited, local space]
+- name: Oblik III
+  tags: [potw, local space]
+- name: K-G
+  tags: [potw, local space]
+- name: Nabu
+  tags: [potw, local space]
+- name: Zarta
+  tags: [potw, local space, inhabited]
+- name: Metamorpha
+  tags: [potw, local space, inhabited]
+- name: Doona
+  tags: [potw, local space]
+- name: Inicrust
+  tags: [potw, local space]
+- name: Morti
+  tags: [potw, local space]
+- name: Voodoo
+  tags: [potw, local space]
+- name: Gamma Alpha V
+  tags: [potw, local space]
+- name: Taos IV
+  tags: [potw, local space]
+- name: Tortuga VI
+  tags: [potw, local space]
+- name: Zeron II
+  tags: [potw, local space]
+- name: Madras IV 
+  tags: [potw, local space, inhabited]
+- name: Krugar III 
+  tags: [potw, local space, inhabited]
+- name: Dukar
+  tags: [potw, local space, inhabited]
+- name: Neesan 
+  tags: [potw, local space, inhabited]
+- name: Lurota 
+  tags: [potw, local space]
+- name: Styra 
+  tags: [potw, local space]
+- name: Nukolee 
+  tags: [potw, federation ally]
+- name: Heitius VII 
+  tags: [potw, near romulan empire, local space]
+- name: Ominnus
+  tags: [potw, local space, inhabited]
+- name: Kujal
+  tags: [potw, local space, inhabited]
+- name: Floe I 
+  tags: [potw, federation member]
+- name: Tactis II 
+  tags: [potw, local space]
+- name: Isis III
+  tags: [potw, local space]
+- name: Quodar
+  tags: [potw, federation member]
+- name: Quaraxus
+  tags: [potw, federation colony]
+- name: New Milan
+  tags: [federation colony, near tholian space]
+- name: Tristas
+  tags: [potw, near klingon empire, local space]
+- name: Hercula
+  tags: [potw, inhabited, local space]
+- name: Lado 
+  tags: [federation colony, resort colony]
+- name: Oorego IV 
+  tags: [federation colony]
+- name: Nraka
+  tags: [potw, local space, inhabited]
+- name: Oordon
+  tags: [potw, local space, inhabited]
+- name: Bwuja
+  tags: [potw, local space, inhabited]
+- name: Fayo
+  tags: [potw, local space, inhabited]
+- name: Riza
+  tags: [potw, local space, inhabited]
+- name: Nraka
+  tags: [potw, local space, inhabited]
+- name: Jodarr
+  tags: [potw, local space, inhabited]
+- name: Terrellian II 
+  tags: [potw, local space, inhabited]
+- name: Yannid VI 
+  tags: [potw, local space, inhabited]
+- name: Andrea IV
+  tags: [potw, local space, inhabited]
+- name: Barak VII
+  tags: [potw, local space, inhabited]
+- name: Phaeton
+  tags: [potw, local space, inhabited]
+- name: Eulus
+  tags: [potw, local space, near klingon empire]
+- name: Miaplacidus II 
+  tags: [potw, local space, inhabited]
+- name: Solopziz
+  tags: [potw, local space, inhabited]
+- name: Marrat
+  tags: [local space, near klingon empire]
+- name: Darien 224 
+  tags: [local space, vulcan colony]
+- name: Lycos V
+  tags: [potw, local space, inhabited]
+- name: Rejak VI
+  tags: [federation space]
+- name: Beta Epsilon VI
+  tags: [local space]
+- name: Narktos V
+  tags: [local space]
+- name: Pelham V
+  tags: [local space]
+- name: Enoch IV 
+  tags: [local space]
+- name: Krylon XI 
+  tags: [potw, local space]
+- name: Endicor
+  tags: [local space]
+- name: Triaminus IV
+  tags: [local space]
+- name: Chapin I
+  tags: [local space]
+- name: Levinius V
+  tags: [local space, inhabited]
+- name: Calydon
+  tags: [local space, inhabited]
+- name: Draxis II 
+  tags: [local space, inhabited]
+- name: Chronian III 
+  tags: [local space, inhabited]
+- name: Beta Nirobi II 
+  tags: [federation colony]
