@@ -27,6 +27,9 @@
 - name: Rhota'Nev Prime 
   type: planet
   tags: [claimed by klingon empire]
+- name: Borzha II
+  type: planet
+  tags: [claimed by klingon empire]
 - name: Traelus II
   type: planet
   tags: [klingon colony]
@@ -48,6 +51,8 @@
 - name: Tariax III
   type: planet
   tags: [claimed by klingon empire]
+- name: Davlos III 
+  tags: [in klingon space]
 - name: Taganika
   type: planet
   tags: [claimed by klingon empire]
@@ -421,6 +426,8 @@
 - name: Antipathy IV
   type: planet 
   tags: [federation colony, andorian colony]
+- name: Trilith VII
+  tags: [andorian colony]
 - name: Aplithin
   type: planet 
   tags: [federation member]
@@ -664,7 +671,7 @@
 - name: Falas
   tags: [federation colony, cygian colony]
 - name: Familiarity
-  tags: [federation colony]
+  tags: [federation colony, near tholian space]
 - name: Fellowship
   tags: [federation colony]
 - name: Femininity
@@ -2338,3 +2345,7 @@
   tags: [local space, inhabited]
 - name: Beta Nirobi II 
   tags: [federation colony]
+- name: Gamma Istris III 
+  tags: [ferengi trading post]
+- name: Tammeron
+  tags: [inhabited, local space]
