@@ -887,7 +887,7 @@
 - name: Nova Atar III 
   tags: [federation colony]
 - name: Jubal
-  tags: [federation colony]
+  tags: [federation colony, near tholian space]
 - name: Nuvidula IV 
   tags: [near klingon empire, federation colony]
 - name: Nytis
@@ -1170,6 +1170,27 @@
   name: Adia
   type: planet
   tags: [claimed by tholian assembly]
+- name: Chakuun
+  type: planet
+  tags: [inhabited, claimed by tholian assembly]
+- name: Praetus
+  type: planet
+  tags: [claimed by tholian assembly]
+- name: Delta Neezott III 
+  type: planet
+  tags: [claimed by tholian assembly]
+- name: Vintaak
+  type: planet
+  tags: [claimed by tholian assembly]
+- name: Qilydra
+  type: planet
+  tags: [claimed by tholian assembly]
+- name: Thaleris
+  type: planet
+  tags: [claimed by tholian assembly, mining station]
+- name: Tambor
+  type: planet
+  tags: [claimed by tholian assembly, mining station]
 - <<: *fleetCommandTholian
   name: Temeri
 - <<: *fleetCommandTholian
@@ -2348,4 +2369,6 @@
 - name: Gamma Istris III 
   tags: [ferengi trading post]
 - name: Tammeron
+  tags: [inhabited, local space]
+- name: Nova XIII
   tags: [inhabited, local space]
