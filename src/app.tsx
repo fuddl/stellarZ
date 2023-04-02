@@ -28,7 +28,7 @@ const windowDimensions = function() {
 function App() {
   const [dimensions, setDimensions] = useState(windowDimensions());
   const [targetZoom, setTargetZoom] = useState(1);
-  const [zoom, setZoom] = useState(5);
+  const [zoom, setZoom] = useState(20);
   const [zoomStep, setZoomStep] = useState(0);
   const [easing, setEasing] = useState(false);
 
@@ -68,6 +68,8 @@ function App() {
   const [cubeRx, setCubeRx] = useState(-40);
   const [cubeRz, setCubeRz] = useState(-40);
   const [flat, setFlat] = useState(true);
+
+
 
   const viewSettings = {
     camTx: 0,

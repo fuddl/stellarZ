@@ -23,6 +23,14 @@ const gen = require('random-seed');
 const intersection = require('array-intersection');
 const distance = require('euclidean-distance');
 
+function squaredDistance(point1, point2) {
+  const dx = point1.x - point2.x;
+  const dy = point1.y - point2.y;
+  const dz = point1.z - point2.z;
+  return dx * dx + dy * dy + dz * dz;
+}
+
+
 const dimensions = ['x', 'y', 'z'];
 
 let newId = 347601;
@@ -74,16 +82,16 @@ const validLocation = function (object) {
   if (!'location' in object) {
     return false
   }
-  if (typeof object.location != 'object') {
+  if (typeof object.location !== 'object') {
     return false
   }
-  if (typeof object.location.x != 'number') {
+  if (typeof object.location.x !== 'number') {
     return false
   }
-  if (typeof object.location.y != 'number') {
+  if (typeof object.location.y !== 'number') {
     return false
   }
-  if (typeof object.location.z != 'number') {
+  if (typeof object.location.z !== 'number') {
     return false
   }
   return true;
@@ -97,7 +105,10 @@ const collides = function (p1, p2, r) {
   return distance2D(p1, p2) < r;
 }
 
-const collides3d = function (p1, p2, r) {
+const collides3d = function (p1, p2, r, debug = false) {
+  if (debug) {
+    console.debug(distance([p1.x, p1.y, p1.z], [p2.x, p2.y, p2.z]))
+  }
   return distance([p1.x, p1.y, p1.z], [p2.x, p2.y, p2.z]) < r;
 }
 
@@ -235,18 +246,33 @@ function addMissingZ(objects, ObjectsWithZ) {
 
   addMissingZ(raw_data, ObjectsWithZ);
 
-  const hygText = fs.readFileSync('./resources/hygdata_v3.csv', {encoding:'utf8', flag:'r'});
+  // the content of this file can be queried at
+  // https://gea.esac.esa.int/archive/
+  // using the following query:
+  //
+  // SELECT source_id, ra, dec, pmra, pmdec, parallax
+  //   FROM gaiadr3.gaia_source
+  //   WHERE parallax > 3.874
+  // ORDER BY parallax DESC
+  const hygText = fs.readFileSync('./resources/1672477955958O-result.csv', {encoding:'utf8', flag:'r'});
 
   let hyg = [];
   parse(hygText, {columns: true}, function(err, records) {
-    for (const record of records) {
-      record.X = record.x;
-      record.x = parseFloat(record.x);
-      record.Y = record.y;
-      record.y = parseFloat(record.y);
-      record.Z = record.z;
-      record.z = parseFloat(record.z);
+    for (let record of records) {
+      const ra = parseFloat(record.ra)
+      const dec = parseFloat(record.dec)
+      const parallax = parseFloat(record.parallax) 
+      const parallax_arcsec = parallax * .001
+      const dist_pc = 1 / parallax_arcsec
+      const dist = dist_pc*3.261564
+
+      Object.assign(record, {
+        dist: dist,
+        ...spherical2cartesian(dec, ra, dist, false)
+      })
     }
+
+    console.debug(`finished processing raw data`)
     
     for (let shape of shapes2D) {
       const randGen = gen.create(shape.d[0]);
@@ -280,7 +306,6 @@ function addMissingZ(objects, ObjectsWithZ) {
             relevantPoints.push(object)
           }
         })
-
 
         const triangles = [];
         if (relevantPoints.length > 2) {
@@ -337,7 +362,6 @@ function addMissingZ(objects, ObjectsWithZ) {
             triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
           }
         } else if (relevantPoints.length > 0 && relevantPoints.length < 3) {
-          console.debug(relevantPoints.length)
           triangles.push(
             {
               radius: shape.radius,
@@ -352,6 +376,7 @@ function addMissingZ(objects, ObjectsWithZ) {
             }
           )
         }
+
         for (let existing of relevantPoints) {
           occupied.push(existing.location)
         }
@@ -360,7 +385,7 @@ function addMissingZ(objects, ObjectsWithZ) {
             let isInsomePolygon = false;
             for (const polygon of multipolygon) {
               if (!isInsomePolygon) {
-                isInsomePolygon = pointInPolygon([triangle.center.x, triangle.center.y], polygon);
+                isInsomePolygon = squaredDistance([triangle.center.x, triangle.center.y], polygon);
               }
             }
 
@@ -388,11 +413,27 @@ function addMissingZ(objects, ObjectsWithZ) {
           }
         } else
         if (layer.strategy === 'fill') {
-
-
           for (triangle of triangles) {
+            if (triangle.points) {
+              const minX = Math.min(triangle.points.A.location.x, triangle.points.B.location.x, triangle.points.C.location.x)
+              const minY = Math.min(triangle.points.A.location.y, triangle.points.B.location.y, triangle.points.C.location.y)
+              const minZ = Math.min(triangle.points.A.location.z, triangle.points.B.location.z, triangle.points.C.location.z)
+
+              const maxX = Math.max(triangle.points.A.location.x, triangle.points.B.location.x, triangle.points.C.location.x)
+              const maxY = Math.max(triangle.points.A.location.y, triangle.points.B.location.y, triangle.points.C.location.y)
+              const maxZ = Math.max(triangle.points.A.location.z, triangle.points.B.location.z, triangle.points.C.location.z)
+            }
+            const triangleCenter = [triangle.center.x, triangle.center.y, triangle.center.z]
+
+            console.debug(`sorting records by distance to point`)
             records.sort((a, b) => {
-              if (triangle.points) {
+              if (typeof minX !== 'undefined') {
+                if (
+                    (a.x < minX && a.y < minY && a.z < minZ) && 
+                    (a.y > maxX && a.y > maxY && a.z > maxZ)
+                  ) {
+                  return -1
+                }
                 let shortestA = null;
                 let shortestB = null;
                 for (const p of ['AB', 'AC', 'BC']) {
@@ -403,22 +444,21 @@ function addMissingZ(objects, ObjectsWithZ) {
                 }
                 return shortestA < shortestB ? -1 : 1;
               } else {
-                let aDist = distance(
+                let aDist = squaredDistance(
                   [a.x, a.y, a.z],
-                  [triangle.center.x, triangle.center.y, triangle.center.z],
+                  triangleCenter,
                 );
-                let bDist = distance(
+                let bDist = squaredDistance(
                   [b.x, b.y, b.z],
-                  [triangle.center.x, triangle.center.y, triangle.center.z],
+                  triangleCenter,
                 );
                 return aDist < bDist ? -1 : 1;
               }
             })
-
+            console.debug(`finished sorting records by distance to point`)
             for (let id in records) {
               const star = records[id];
               if (collides3d(triangle.center, star, triangle.radius)) {
-
 
                 let collisionDetected = false;
                 for (const point of occupied) {
@@ -432,22 +472,27 @@ function addMissingZ(objects, ObjectsWithZ) {
                   let isInsomePolygon = false;
                   for (const polygon of multipolygon) {
                     if (!isInsomePolygon) {
-                      isInsomePolygon = pointInPolygon([star.X, star.Y], polygon);
+                      isInsomePolygon = pointInPolygon([star.x, star.y], polygon);
                     }
                   }
 
                   if (isInsomePolygon) {
-                    console.debug(`aquireing location for FGC-${newId}`)
                     const location = {
-                      "y": parseFloat(star.Y),
-                      "x": parseFloat(star.X),
-                      "z": parseFloat(star.Z),
+                      "x": star.x,
+                      "y": star.y,
+                      "z": star.z,
                     };
+
+
                     let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
                     if (chosenFiller.length > 0) {
                       applyLocation(chosenFiller[0], location)
                       newId++;
                       chosenFiller[0].id = newId;
+                    }
+                    console.debug(`aquireing location for ${chosenFiller?.[0]?.name ?? `FGC-${newId}`}`)
+                    if (chosenFiller?.[0]?.tags) {
+                      chosenFiller[0].tags.push('filler')
                     }
                     newId++;
                     raw_data.push({

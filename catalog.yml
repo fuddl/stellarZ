@@ -95,13 +95,17 @@
           x: 0.498
           y: -1.436
           z: 0.5
+- name: Omega Leonis
+  location: wd:Q3882142
+  tags: [notable, real]
+  ## Quo'Nos should be somewhat near Omega Leonis because https://memory-alpha.fandom.com/wiki/Block_27
 - name: Quo'Nos
   tags: [claimed by klingon empire, notable, klingon capital, interesting]
   location:
     x: 79.9
     y: -70.6
-    # assuming Kronos should be rather close to earth
-    z: 20.23
+    # assuming Kronos should be rather close to earth and to Omega Leonis
+    z: 44.013
 - type: star
   location:
     x: 30.6
@@ -452,6 +456,9 @@
     - name: Orion
       ord: 3
       tags: [notable, inhabited, dma-map, orion homeword]
+- name: Gamma Serpentis
+  location: wd:Q1326427
+  tags: [notable, near federation core worlds]
 - name: Pollux
   location: wd:Q13028
   orbits:

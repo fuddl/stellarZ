@@ -1,10 +1,13 @@
 # Objects in this file should be:
 #
 # * non-canon (if it is in memory alpha, it is canon)
+# * be present in a licensed star trek novel, comic, game etc.
+# * Star Fleet Universe is also allowed
 # * not directly or indirectly related to real existing objects
 # * not easily be confused with a canon or an existing object
 #   * should not indicate an real constellaton
 # * not sound too specific or interesting
+# * not obviously proceduraly generated
 
 - name: Zarral IV
   type: planet
@@ -12,13 +15,7 @@
 - name: Yerad III 
   type: planet
   tags: [claimed by klingon empire]
-- name: Xuxiaz V 
-  type: planet
-  tags: [claimed by klingon empire]
 - name: Woz VII 
-  type: planet
-  tags: [claimed by klingon empire]
-- name: Vuriex II
   type: planet
   tags: [claimed by klingon empire]
 - name: Veska
@@ -670,13 +667,9 @@
   tags: [federation colony]
 - name: Falas
   tags: [federation colony, cygian colony]
-- name: Familiarity
-  tags: [federation colony, near tholian space]
-- name: Fellowship
-  tags: [federation colony]
-- name: Femininity
-  tags: [federation colony]
-- name:  Surak I 
+- name: Filtra I
+  alt_names:
+   - Surak I 
   tags: [federation colony, vulcan colony]
 - name: Foladan IX 
   tags: [federation colony, otz]
@@ -783,6 +776,8 @@
 - name: Kalakon
   tags: [federation colony]
 - name: Karnor III
+  alt_names:
+  - Salazaar
   tags: [federation colony]
 - name: Keplar IV
   tags: [federation colony, near gorn border]
@@ -1004,6 +999,8 @@
 - name: Silva V
   tags: [federation colony]
 - name: Sinbad IV
+  alt_names: 
+  - Scheherazad IV
   tags: [federation colony, earth colony]
 - name: Sind
   tags: [federation colony, deltan colony]
@@ -1025,14 +1022,6 @@
   tags: [federation member]
 - name: Stonrak
   tags: [federation colony, near tholian border]
-- name: Succour
-  tags: [federation colony, earth colony]
-- name: Sustenance
-  tags: [federation colony, agricultural colony]
-- name: Sympathy
-  tags: [federation colony, earth colony]
-- name: Synchrinity
-  tags: [federation colony, earth colony]
 - name: Syng II
   tags: [federation colony]
 - name: Synton IV
@@ -1083,7 +1072,9 @@
   tags: [federation colony, tellarite colony]
 - name: Temelicus
   tags: [federation colony]
-- name: Tempe
+- name: Khoosin II
+  alt_names: 
+  - Tempe
   tags: [federation colony, orion colony]
 - name: Terga VII
   tags: [federation colony]
@@ -1185,6 +1176,12 @@
 - name: Qilydra
   type: planet
   tags: [claimed by tholian assembly]
+- name: Rudellia
+  type: planet
+  tags: [claimed by tholian assembly]
+- name: Vanden
+  type: planet
+  tags: [claimed by tholian assembly]
 - name: Thaleris
   type: planet
   tags: [claimed by tholian assembly, mining station]
@@ -1211,7 +1208,7 @@
   name: Tezera  
 - name: Weibak IV 
   type: planet 
-  tags: [claimed by cardassian union]
+  tags: [claimed by cardassian union, former federation colony]
 - name: Varian II 
   type: planet 
   tags: [claimed by cardassian union]
@@ -2372,3 +2369,53 @@
   tags: [inhabited, local space]
 - name: Nova XIII
   tags: [inhabited, local space]
+- name: Vargus
+  tags: [federation colony, tellarite mining colony, mining colony]
+- name: Vesuvi VI 
+  tags: [federation colony]
+- name: Videtu
+  tags: [federation colony, deltan colony]
+- name: Vola V 
+  tags: [federation colony, orion colony]
+- name: Vistil Major 
+  tags: [vulcan colony, federation colony]
+- name: Vardaine
+  tags: [federation colony]
+- name: Vandalora
+  tags: [federation colony]
+- name: Zannaduu IV 
+  tags: [federation colony, earth colony]
+- name: Zacarious
+  tags: [federation colony, earth colony]
+- name: Ephrata IV 
+  tags: [federation outpost]
+- name: Duo III
+  tags: [federation colony]
+- name: Dulisian IV
+  tags: [federation colony, near romulan empire]
+- name: Andichron VI 
+  tags: [federation colony]
+- name: Gordan's Planet
+  tags: [federation colony, sfu]
+- name: Morkedia III
+  tags: [federation colony, sfu]
+- name: Mynienix 
+  tags: [federation colony, sfu]
+- name: Mynienix 
+  tags: [federation colony, sfu]
+- name: Naramar III 
+  tags: [federation minor world, sfu]
+- name: Sebelia IV
+  tags: [federation colony, sfu]
+- name: Vidalia
+  tags: [federation minor world, sfu]
+- name: Allen's Planet 
+  tags: [federation colony, sfu]
+- name: Skoleos
+  tags: [federation colony, sfu]
+- name: Codimark
+  tags: [federation colony, sfu]
+- name: Meva 
+  tags: [federation colony, sfu]
+- name: Ponderosa IV 
+  tags: [federation colony, sfu]

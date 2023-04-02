@@ -390,8 +390,25 @@ function axisCircles(center, axes) {
 	return circles
 }
 
+function localSpaceGrid(center) {
+	const circles = [];
+	for (let step = 1; step < 8; step++) {
+		circles.push({
+			color: 'white',
+			size: 1,
+			type: 'QuadraticBezier',
+			id: `local-${step}`,
+			closed: true,
+			...circle(center, 50*step, 79, 'z'),
+		})
+	}
+	return circles
+}
+
+const localSpaceCenter = {x: 16, y: -142, z: 0}
+
 function Scene(viewSettings, dataOffset, setDataOffset) {
-		const sceneSettings = {
+	const sceneSettings = {
 		cubeRange: 20,
 		cubeZoffset: 0,
 		dataXoffset: dataOffset.x,
@@ -418,7 +435,9 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 	const points = [];
 
 	for (const cluster of connections) {
-
+		if (!cluster?.connections) {
+			continue
+		}
 		for (const connection of cluster.connections) {
 			points.push({
 			  id: connection.hash,
@@ -471,39 +490,43 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 		}
 	})
 
-	// iterator.bfs([...catalog], 'orbits', (object) => {
-	// 	if (object.location  && (object?.tags?.includes('notable'))) {
-	// 	let isBase =
-	// 	  object?.tags?.includes('federation starbase') ||
-	// 	  object?.tags?.includes('deep space station');
-	// 	let baseFontSize = isBase ? 9 : 16;
-	// 	let highlightedFontSize = isBase ? 16 : 19.2;
-	// 	if (validLocation(object)) {
-	// 		points.push({
-	// 		  label: object.name,
-	// 		  id: object.id,
-	// 		  pointer: isBase ? '▵' : '●',
-	// 		  type: 'textMarker',
-	// 		  size: object.id === focus ? highlightedFontSize : baseFontSize,
-	// 		  color: 'white',
-	// 		  attributes: {
-	// 			style: { cursor: 'pointer' },
-	// 			onClick: () => {
-	// 				setDataOffset({
-	// 					x: (object.location.x / sceneSettings.cubeRange) * -1,
-	// 					y: (object.location.y / sceneSettings.cubeRange) * -1,
-	// 					z: (object.location.z / sceneSettings.cubeRange) * -1,
-	// 				})
-	// 			}
-	// 		  },
-	// 		  layouts: isBase ? ['south', 'north'] : ['east', 'west'],
-	// 		  x: [object.location.x],
-	// 		  y: [object.location.y],
-	// 		  z: viewSettings?.flat ? [0] : [object.location.z],
-	// 		});
-	// 	}
-	// }
-	// });
+	iterator.bfs([...catalog], 'orbits', (object) => {
+		if (object.location && (object?.tags?.includes('notable') || object?.tags?.includes('filler'))) {
+		let isBase =
+		  object?.tags?.includes('federation starbase') ||
+		  object?.tags?.includes('deep space station');
+		let isFiller = object?.tags?.includes('filler');
+		let baseFontSize = isBase ? 9 : 16;
+		if (isFiller) {
+			baseFontSize = baseFontSize * .5
+		}
+		baseFontSize = baseFontSize 
+		if (validLocation(object)) {
+			points.push({
+			  label: object.name,
+			  id: object.id,
+			  pointer: isBase ? '▵' : '●',
+			  type: 'textMarker',
+			  size: object.id === focus ? highlightedFontSize : baseFontSize,
+			  color: 'white',
+			  attributes: {
+				style: { cursor: 'pointer' },
+				onClick: () => {
+					setDataOffset({
+						x: (object.location.x / sceneSettings.cubeRange) * -1,
+						y: (object.location.y / sceneSettings.cubeRange) * -1,
+						z: (object.location.z / sceneSettings.cubeRange) * -1,
+					})
+				}
+			  },
+			  layouts: isBase ? ['south', 'north'] : ['east', 'west'],
+			  x: [object.location.x],
+			  y: [object.location.y],
+			  z: viewSettings?.flat ? [0] : [object.location.z],
+			});
+		}
+	}
+	});
 
 
 	const center = {
@@ -517,6 +540,7 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 		sceneSettings,
 		emptySceneOptions,
 		[
+			...localSpaceGrid(localSpaceCenter),
 			//...axisCircles(center, viewSettings?.flat ? ['z'] : ['x', 'z', 'y']),
 			...points,
 		],
