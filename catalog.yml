@@ -110,7 +110,10 @@
   location:
     x: 30.6
     y: 41.6
-
+    # should be precisely between Omicron Gruis & Epsilon Phoenicis since both 
+    # where destroyed by the romulan supernova as depicted on the
+    # bridge map of the SS Eleos XII 
+    z: -107.83541184044
   orbits:
     - name: Romulus
       tags: [notable, claimed by romulan empire, romulan capital]
@@ -368,11 +371,14 @@
   orbits:
     - name: Chalna
       tags: [notable, inhabited]
-- name: 83 Leonis B
+- name: Omicron Gruis
   location: wd:Q9285230
   orbits:
     - name: Cheron
       tags: [warp-capable, inhabited, notable]
+- name: Epsilon Phoenicis
+  location: wd:Q3730750
+  tags: [notable, real]
 - name: Denobula Triaxa
   alias:
     - Iota Boötis
@@ -785,7 +791,7 @@
     x: 77.5
     y: -47.9
     # lets put it between kronos and romulus
-    z: 47.23142
+    z: -31.91120592022
 - name: Gamma 400
   location:
     x: 12.479
@@ -870,8 +876,6 @@
   location:
     x: 83.1
     y: -57.2
-    # between khitormer & morska
-    z: 9.843161558
 - name: Beta Lankal
   tags: [claimed by klingon empire, notable]
   location:
