@@ -5,6 +5,15 @@ import { Scene, plugins } from './scene.tsx'
 import Navigator from './navigator.tsx'
 import Assets from './assets.tsx'
 import parseSVG from 'svg-path-parser'
+import catalog from './catalog.json'
+import validLocation from './valid-location.js'
+import flatten from './flattenCatalog.tsx'
+
+flatten(catalog)
+
+const renderableCatalog = catalog.filter(entry => !validLocation(entry));
+
+console.debug(renderableCatalog)
 
 const zoomDuration = 100;
 const zoomSpeed = 16;
@@ -88,7 +97,7 @@ function App() {
     defaultCamOrientation: "z-forward-x-right",
   }
 
-  const data = Scene(viewSettings, dataOffset, setDataOffset);
+  const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog);
 
   return (
     <div
@@ -131,7 +140,7 @@ function App() {
         setGrabbing(false);
       }}
       onDoubleClick={()=> {
-        setEasing(true); setTargetZoom(zoom + 2)
+        setZoom(zoom + 2)
       }}
     >
       <BareMinimum2d
@@ -145,8 +154,8 @@ function App() {
         plugins={plugins}
       />
       <aside>
-        <button onClick={() => { setEasing(true); setTargetZoom(Math.min(maxZoom, zoom - 1)) }}>+</button>
-        <button onClick={() => { setEasing(true); setTargetZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
+        <button onClick={() => { setZoom(Math.min(maxZoom, zoom - 1)) }}>+</button>
+        <button onClick={() => { setZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
         <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
         <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
       </aside>

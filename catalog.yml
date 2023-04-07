@@ -1,4 +1,5 @@
 - name: Sol
+  machine_name: sol
   location: { x: 0, y: 0, z: 0 }
   orbits:
     - name: Mercury
@@ -100,6 +101,7 @@
   tags: [notable, real]
   ## Quo'Nos should be somewhat near Omega Leonis because https://memory-alpha.fandom.com/wiki/Block_27
 - name: Quo'Nos
+  machine_name: kronos
   tags: [claimed by klingon empire, notable, klingon capital, interesting]
   location:
     x: 79.9
@@ -107,13 +109,16 @@
     # assuming Kronos should be rather close to earth and to Omega Leonis
     z: 44.013
 - type: star
+  machine_name: romulus
   location:
     x: 30.6
     y: 41.6
-    # should be precisely between Omicron Gruis & Epsilon Phoenicis since both 
-    # where destroyed by the romulan supernova as depicted on the
-    # bridge map of the SS Eleos XII 
-    z: -107.83541184044
+    z: 
+      # should be precisely between Omicron Gruis & Epsilon Phoenicis since both 
+      # where destroyed by the romulan supernova as depicted on the
+      # bridge map of the SS Eleos XII 
+      between: omicron-gruis
+      and: epsilon-phoenicis
   orbits:
     - name: Romulus
       tags: [notable, claimed by romulan empire, romulan capital]
@@ -195,6 +200,17 @@
       surface:
         - name: Regulus V City
           type: city
+- name: Talos
+  location:
+    x: -33.965
+    y: -79.7
+    z:
+      between: rigel
+      and: vega
+  orbits:
+    - name: Talos IV
+      ord: 4
+      tags: [quarantained, inhabited, notable]
 - name: Procyon
   type: star
   location: wd:Q13034
@@ -342,10 +358,6 @@
   orbits:
     - name: Dessica II
       tags: [ancient romulan colony, notable, dma-map]
-      location:
-        x: 22.013210540763
-        y: 19.863412407182
-        z: 5
 - name: Beta Columbae
   location: wd:Q830856
   orbits:
@@ -372,12 +384,15 @@
     - name: Chalna
       tags: [notable, inhabited]
 - name: Omicron Gruis
+  machine_name: omicron-gruis
   location: wd:Q9285230
   orbits:
     - name: Cheron
       tags: [warp-capable, inhabited, notable]
 - name: Epsilon Phoenicis
+  machine_name: epsilon-phoenicis
   location: wd:Q3730750
+  type: star
   tags: [notable, real]
 - name: Denobula Triaxa
   alias:
@@ -409,6 +424,7 @@
     - name: Gamma Hydra IV
       tags: [science colony, notable, federation member, andorian colony]
 - name: Wolf 359
+  machine_name: wolf-359
   location: wd:Q291301
 - name: Delta Muscae
   location: wd:Q3292863
@@ -490,6 +506,7 @@
     - name: Tiburon
       tags: [federation member, notable]
 - name: Alpha Lyrae
+  machine_name: vega
   location: wd:Q3427
   orbits:
     - name: Vega IX
@@ -571,10 +588,11 @@
   location:
     x: 24
     y: -101.5
-- name: No'Mat
-  location: wd:Q637953
+- location: wd:Q637953
   type: star
-  tags: [klingon colony, notable]
+  orbits:
+    - name: No'Mat
+      tags: [klingon colony, notable]
 - name: Theta Hydrae
   location: wd:Q1029146
   orbits:
@@ -790,8 +808,9 @@
   location:
     x: 77.5
     y: -47.9
-    # lets put it between kronos and romulus
-    z: -31.91120592022
+    z:
+      between: kronos
+      and: romulus
 - name: Gamma 400
   location:
     x: 12.479
@@ -1150,7 +1169,7 @@
   - name: Aschelan V
     type: planet
     tags: [notable, claimed by cardassian union]
-- name: Aschelan
+- name: Avenal
   type: star
   orbits:
   - name: Avenal VII
@@ -1396,13 +1415,6 @@
     y: -5.524
     z: 1
   tags: [dma-map, notable]
-- name: Kaitos
-  type: star
-  location: 
-    x: -14.705
-    y: -5.524
-    z: 1
-  tags: [dma-map, notable]
 - name: Breen 
   type: planet 
   location:  
@@ -1491,9 +1503,9 @@
 - name: Gamma Tauri
   location: wd:Q1493218
   orbits:
-    name: Gamma Tauri IV 
-    ord: 4
-    tags: [notable]
+    - name: Gamma Tauri IV 
+      ord: 4
+      tags: [notable]
 - name: Jouret
   type: star
   location:
@@ -1501,35 +1513,31 @@
     y: -22.72
 
     # The assumption is, that this should be 'behind' Wolf 359 
-    # when seen from earth.
-    # An approximation of such a point can be acceived with the
-    # following coordinates:
-    #
-    # ra: 164.1201092000 
-    # dec: 7.0145400000
-    # dis: 112
-    z: 92.98191296175054
+    # when seen from sol.
+    z: 
+      - wolf-359
+      - sol
   orbits: 
     - name: Jouret IV
       type: planet
       ord: 4
       tags: [former federation colony, notable, remote]
+- name: Pleiades
+  machine_name: pleiades
+  location: wd:Q13423
 - name: Velara
   type: star 
   location:
     x: -78.086
     y: -331.621
-    z: -157.17841005464018
-    # should be close the the Pleiades
-    # 
-    # ra: 56.7500
-    # dec: 24.1167
-    # dis: 390
+    z:
+      near: pleiades
   orbits:
     - name: Velara III
       type: planet
       tags: [notable]
 - name: Rigel
+  machine_name: rigel
   type: star 
   alt_names: [Beta Orionis]
   tags: [notable, real]

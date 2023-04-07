@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "init": "git clone git@github.com:astronexus/HYG-Database.git .resources",
-    "prepare": "node prepare.js"
+    "prepare": "node prepare/index.js"
   },
   "dependencies": {
     "@mithi/bare-minimum-3d": "^0.4.0",
@@ -15,6 +15,7 @@
     "bare-minimum-2d": "^0.3.0",
     "bare-minimum-quadratic-bezier": "^0.0.2",
     "csv-parse": "^5.0.4",
+    "delay": "^5.0.0",
     "euclidean-distance": "^1.0.0",
     "iterate-tree": "^2.0.1",
     "js-yaml": "^4.1.0",

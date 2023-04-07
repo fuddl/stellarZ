@@ -1,19 +1,14 @@
 function validLocation(object) {
-	if (!'location' in object) {
+	if (object?.location?.x && typeof object.location.x == 'number') {
 		return false
 	}
-	if (typeof object.location != 'object') {
+	if (object?.location?.y && typeof object.location.y == 'number') {
 		return false
 	}
-	if (typeof object.location.x != 'number') {
+	if (object?.location?.z && typeof object.location.z == 'number') {
 		return false
 	}
-	if (typeof object.location.y != 'number') {
-		return false
-	}
-	if (typeof object.location.z != 'number') {
-		return false
-	}
+
 	return true;
 }
 

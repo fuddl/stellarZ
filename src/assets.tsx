@@ -17,6 +17,7 @@ function Gradients() {
 	return (
 		<svg hidden>
 		<defs>
+			<style>{Object.entries(colours).map(([k, v]) => `.${k} { fill: ${v} }`).join(' ')}</style>
 			{Object.entries(colours).map((colour) => (
 				<>
 					<radialGradient id={colour[0]}>

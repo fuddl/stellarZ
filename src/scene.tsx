@@ -15,9 +15,10 @@ import quadraticBezier from './bezier.tsx'
 import textMarker from './textMarker.tsx'
 import symbol from './symbol.tsx'
 import sphere from './sphere.tsx'
-import catalog from './catalog.json'
 import connections from './connections.json'
-import validLocation from './valid-location.js'
+
+
+
 import iterator from 'iterate-tree'
 import parseSVG from 'svg-path-parser'
 import Assets from './assets.tsx'
@@ -32,11 +33,13 @@ const auras = [
 			'federation science outpost',
 		],
 		size: 3,
+		class: 'fed',
 		paint: 'url(#fed)',
 	},
 	{
 		tags: ['federation member'],
 		size: 6,
+		class: 'fed',
 		paint: 'url(#fed)',
 	},
 	{
@@ -45,6 +48,7 @@ const auras = [
 			'occupied by klingon empire',
 		],
 		size: 6,
+		class: 'kli',
 		paint: 'url(#kli)',
 	},
 	{
@@ -56,6 +60,7 @@ const auras = [
 			'klingon starbase',
 		],
 		size: 3,
+		class: 'kli',
 		paint: 'url(#kli)',
 	},
 	{
@@ -64,6 +69,7 @@ const auras = [
 			'romulan starbase',
 		],
 		size: 6,
+		class: 'rom',
 		paint: 'url(#rom)',
 	},
 	{
@@ -72,6 +78,7 @@ const auras = [
 			'cardassian starbase',
 		],
 		size: 6,
+		class: 'car',
 		paint: 'url(#car)',
 	},
 	{
@@ -79,6 +86,7 @@ const auras = [
 			'claimed by ferengi aliance',
 		],
 		size: 6,
+		class: 'fer',
 		paint: 'url(#fer)',
 	},
 	{
@@ -86,6 +94,7 @@ const auras = [
 			'claimed by breen confederacy',
 		],
 		size: 6,
+		class: 'bre',
 		paint: 'url(#bre)',
 	},
 	{
@@ -93,6 +102,7 @@ const auras = [
 			'claimed by tholian assembly',
 		],
 		size: 6,
+		class: 'tho',
 		paint: 'url(#tho)',
 	},
 	{
@@ -101,6 +111,7 @@ const auras = [
 			'tzenketh colony'
 		],
 		size: 6,
+		class: 'tze',
 		paint: 'url(#tze)',
 	},
 	{
@@ -108,6 +119,7 @@ const auras = [
 			'claimed by gorn'
 		],
 		size: 6,
+		class: 'gor',
 		paint: 'url(#gor)',
 	},
 	{
@@ -116,6 +128,7 @@ const auras = [
 			'claimed by talarian',
 		],
 		size: 6,
+		class: 'tal',
 		paint: 'url(#tal)',
 	},
 ];
@@ -407,7 +420,7 @@ function localSpaceGrid(center) {
 
 const localSpaceCenter = {x: 16, y: -142, z: 0}
 
-function Scene(viewSettings, dataOffset, setDataOffset) {
+function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 	const sceneSettings = {
 		cubeRange: 20,
 		cubeZoffset: 0,
@@ -434,99 +447,71 @@ function Scene(viewSettings, dataOffset, setDataOffset) {
 
 	const points = [];
 
-	for (const cluster of connections) {
-		if (!cluster?.connections) {
-			continue
-		}
-		for (const connection of cluster.connections) {
-			points.push({
-			  id: connection.hash,
-			  type: 'lines',
-			  color: `url(#${cluster.id}-inverted)`,
-			  x0: [connection.A.x],
-			  x1: [connection.B.x],
-			  y0: [connection.A.y],
-			  y1: [connection.B.y],
-			  z0: viewSettings?.flat ? [0] : [connection.A.z],
-			  z1: viewSettings?.flat ? [0] : [connection.B.z],
-			});
-		}
-	}
+	// for (const cluster of connections) {
+	// 	if (!cluster?.connections) {
+	// 		continue
+	// 	}
+	// 	for (const connection of cluster.connections) {
+	// 		points.push({
+	// 		  id: connection.hash,
+	// 		  type: 'lines',
+	// 		  color: `url(#${cluster.id}-inverted)`,
+	// 		  x0: [connection.A.x],
+	// 		  x1: [connection.B.x],
+	// 		  y0: [connection.A.y],
+	// 		  y1: [connection.B.y],
+	// 		  z0: viewSettings?.flat ? [0] : [connection.A.z],
+	// 		  z1: viewSettings?.flat ? [0] : [connection.B.z],
+	// 		});
+	// 	}
+	// }
 
-	iterator.bfs([...catalog], 'orbits', (object) => {
-		const aura = auras.find((item) => {
-			if (object?.tags) {
-				return item.tags.filter(value => object.tags.includes(value))[0]
-			} else {
-				return false;
+	for (const entry of catalog) {
+		const notablePlanets = []
+		for (const notableChild of entry.notable) {
+			if (notableChild.type === 'planet') {
+				notablePlanets.push(notableChild)
 			}
-		});
-		if (aura && validLocation(object)) {
-			points.push({
-				id: object.id + '-aura',
-				type: 'sphere',
-				opacity: 0.5,
-				title: object?.name ?? 'Object', 
-				color: aura.paint,
-				size: aura.size * 30,
-				x: [object.location.x],
-				y: [object.location.y],
-				z: viewSettings?.flat ? [0] : [object.location.z],
-			});
 		}
-	})
-
-	iterator.bfs([...catalog], 'orbits', (object) => {
-		if (object.type === 'star' && validLocation(object)) {
-			points.push({
-				id: object.id + '-asset',
-				type: 'symbol',
-				title: object?.name ?? 'Star',
-				href: 'star',
-				x: [object.location.x],
-				y: [object.location.y],
-				z: viewSettings?.flat ? [0] : [object.location.z],
-			});
+		if (entry.id == 295) {
+			console.debug(entry)
 		}
-	})
-
-	iterator.bfs([...catalog], 'orbits', (object) => {
-		if (object.location && (object?.tags?.includes('notable') || object?.tags?.includes('filler'))) {
-		let isBase =
-		  object?.tags?.includes('federation starbase') ||
-		  object?.tags?.includes('deep space station');
-		let isFiller = object?.tags?.includes('filler');
-		let baseFontSize = isBase ? 9 : 16;
-		if (isFiller) {
-			baseFontSize = baseFontSize * .5
-		}
-		baseFontSize = baseFontSize 
-		if (validLocation(object)) {
-			points.push({
-			  label: object.name,
-			  id: object.id,
-			  pointer: isBase ? '▵' : '●',
-			  type: 'textMarker',
-			  size: object.id === focus ? highlightedFontSize : baseFontSize,
-			  color: 'white',
-			  attributes: {
-				style: { cursor: 'pointer' },
-				onClick: () => {
-					setDataOffset({
-						x: (object.location.x / sceneSettings.cubeRange) * -1,
-						y: (object.location.y / sceneSettings.cubeRange) * -1,
-						z: (object.location.z / sceneSettings.cubeRange) * -1,
-					})
+		if (notablePlanets.length > 0) {
+			const aura = auras.find((item) => {
+				if (entry?.tags) {
+					return item.tags.filter(value => entry.tags.includes(value))[0]
+				} else {
+					return false;
 				}
-			  },
-			  layouts: isBase ? ['south', 'north'] : ['east', 'west'],
-			  x: [object.location.x],
-			  y: [object.location.y],
-			  z: viewSettings?.flat ? [0] : [object.location.z],
+			});
+
+			points.push({
+				label: notablePlanets.map((item) => item.name).join('/'),
+				id: entry.id,
+				pointer: '●',
+				type: 'textMarker',
+				attributes: { class: aura?.class },
+				size: 16,
+				color: 'white',
+				x: [entry.location.x],
+				y: [entry.location.y],
+				z: viewSettings?.flat ? [0] : [entry.location.z],
+			});
+		}
+		else if (entry.type === 'star' || entry.type === 'system') {
+			points.push({
+				label: entry.name,
+				id: entry.id,
+				pointer: '✴',
+				type: 'textMarker',
+				size: 12,
+				color: 'white',
+				x: [entry.location.x],
+				y: [entry.location.y],
+				z: viewSettings?.flat ? [0] : [entry.location.z],
 			});
 		}
 	}
-	});
 
 
 	const center = {
