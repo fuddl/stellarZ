@@ -17,6 +17,8 @@ function Gradients() {
 	return (
 		<svg hidden>
 		<defs>
+			<style>{`:root {--undefined: white}`}</style>
+			<style>{`:root {${ Object.entries(colours).map(([k, v]) => `--${k}: ${v}`).join(';')}}`}</style>
 			<style>{Object.entries(colours).map(([k, v]) => `.${k} { fill: ${v} }`).join(' ')}</style>
 			{Object.entries(colours).map((colour) => (
 				<>

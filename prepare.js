@@ -468,7 +468,7 @@ function addMissingZ(objects, ObjectsWithZ) {
                   }
                 }
                 if (!collisionDetected) {
-                  newId
+                  newId++
                   let isInsomePolygon = false;
                   for (const polygon of multipolygon) {
                     if (!isInsomePolygon) {
@@ -483,38 +483,44 @@ function addMissingZ(objects, ObjectsWithZ) {
                       "z": star.z,
                     };
 
-
-                    let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
-                    if (chosenFiller.length > 0) {
-                      applyLocation(chosenFiller[0], location)
-                      newId++;
-                      chosenFiller[0].id = newId;
-                    }
-                    console.debug(`aquireing location for ${chosenFiller?.[0]?.name ?? `FGC-${newId}`}`)
-                    if (chosenFiller?.[0]?.tags) {
-                      chosenFiller[0].tags.push('filler')
-                    }
-                    newId++;
                     raw_data.push({
                       "id": newId,
-                      "name": `FGC-${newId}`,
-                      "type": "star",
-                      "orbits": chosenFiller, 
-                      "tags": chosenFiller.length > 0 ? [] : layer.fillerTags, 
-                      "location": location
+                      "tags": ['filler'],
+                      "filler": true,
+                      "location": location,
                     })
-                    occupied.push(star)
                     delete records[id];
+                    occupied.push(star)
                   }
                 }
               }
             }
-
           }
         }
       }
+    }
+    for (let key in raw_data) {
+      if (raw_data[key]['filler'] === true) {
+        let fittingFiller = [];
+        console.debug(filler)
+        iterator.bfs([...filler], 'orbits', (object) => {
+          if (intersection(object.tags, raw_data[key].tags).length > 0) {
+            fittingFiller.push(object);
+          }
+        })
 
-
+        let chosenFiller = fittingFiller.length > 0 ? [fittingFiller.shift()] : [];
+        if (chosenFiller.length > 0) {
+          applyLocation(chosenFiller[0], location)
+          newId++;
+          chosenFiller[0].id = newId;
+        }
+        console.debug(`aquireing location for ${chosenFiller?.[0]?.name ?? `FGC-${newId}`}`)
+        newId++;
+        raw_data[key]["name"] = `FGC-${newId}`
+        raw_data[key]["type"] = "star"
+        raw_data[key]["orbits"] = chosenFiller
+      }
     }
 
     fs.writeFile(

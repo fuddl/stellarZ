@@ -18,7 +18,7 @@ async function addMissingZ(objects, callback) {
   })
 
   for (let object of objects) {
-    if (typeof object?.location?.z !== 'number' && typeof object?.location?.x == 'number' && typeof object?.location?.y == 'number') {
+    if (object?.location?.z === undefined && typeof object?.location?.x == 'number' && typeof object?.location?.y == 'number') {
       for (const key of Object.keys(ObjectsWithZ)) {
         ObjectsWithZ[key].dist = distance2D(object.location, ObjectsWithZ[key].object.location);
       }

@@ -7,6 +7,7 @@ const addRealStarCoords = require('./addRealStarCoords.js');
 const addZbyLineSegment = require('./addZbyLineSegment.js');
 const normalizeCoords = require('./normalizeCoords.js');
 const addMissingZ = require('./addMissingZ.js');
+const addFiller = require('./addFiller.js');
 const addIds = require('./addIds.js');
 
 
@@ -22,6 +23,7 @@ const addIds = require('./addIds.js');
   await addRealStarCoords(data, 0, updateOutputfile)
   addZbyLineSegment(data, updateOutputfile)
   await addMissingZ(data, updateOutputfile)
+  await addFiller(data, updateOutputfile)
 
   addIds(data)
   

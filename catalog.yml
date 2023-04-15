@@ -10,6 +10,7 @@
       diameter: 12103.6
     - name: Earth
       ord: 3
+      type: planet
       tags:
         [
           spacedock,
@@ -21,8 +22,6 @@
           dma-map,
           interesting,
         ]
-      links:
-        ma:en: Earth
       orbits:
         - name: Luna
           type: moon
@@ -97,17 +96,19 @@
           y: -1.436
           z: 0.5
 - name: Omega Leonis
+  machine_name: omega-leonis
   location: wd:Q3882142
+  type: star
   tags: [notable, real]
-  ## Quo'Nos should be somewhat near Omega Leonis because https://memory-alpha.fandom.com/wiki/Block_27
 - name: Quo'Nos
   machine_name: kronos
   tags: [claimed by klingon empire, notable, klingon capital, interesting]
   location:
     x: 79.9
     y: -70.6
-    # assuming Kronos should be rather close to earth and to Omega Leonis
-    z: 44.013
+    z:
+      ## Quo'Nos should be somewhat near Omega Leonis because https://memory-alpha.fandom.com/wiki/Block_27
+      near: omega-leonis
 - type: star
   machine_name: romulus
   location:
@@ -202,8 +203,13 @@
           type: city
 - name: Talos
   location:
-    x: -33.965
-    y: -79.7
+    # according to star charts
+    # x: -33.965
+    # y: -79.7
+
+    # according to chart seen in Spock Amok
+    x: -40.346
+    y: -61.685
     z:
       between: rigel
       and: vega
@@ -395,8 +401,6 @@
   type: star
   tags: [notable, real]
 - name: Denobula Triaxa
-  alias:
-    - Iota Boötis
   location: wd:Q1672154
   orbits:
     - name: Denobula
@@ -649,8 +653,8 @@
     - name: Pyrithia
       tags: [habitable, notable, dma-map]
       location: 
-        x: -38.36911523062057,
-        y: -0.7998515632732952,
+        x: -38.36911523062057
+        y: -0.7998515632732952
         z: -4
 - name: Ceti Alpha
   location: wd:Q13173
@@ -853,6 +857,11 @@
     y: -69.5
     # connects risa & k'normia
     z: -33.360341721
+- name: Starbase 46
+  tags: [notable, federation starbase]
+  location:
+    x: 10.076
+    y: -79.903
 - name: Starbase 25
   tags: [notable, federation starbase]
   location:
@@ -923,6 +932,7 @@
     #z: -78
 
 - name: Cestus III
+  type: planet
   tags: [notable, federation colony, taurus reach]
   location:
     x: 81.295
@@ -981,11 +991,43 @@
   location:
     x: 15.7
     y: -27.6
-    z: 0 
+    z: 
+      between: sol 
+      and: kronos
   tags: [dma-map]
   orbits:
+    - name: Rigel II
+      type: planet
+      tags: [notable, inhabited]
+      ord: 1
+    - name: Rigel II
+      type: planet
+      tags: [notable, inhabited]
+      ord: 2
+    - name: Rigel IV
+      type: planet
+      tags: [notable, inhabited]
+      ord: 4
+    - name: Rigel V
+      type: planet
+      tags: [notable, inhabited]
+      ord: 5
+    - name: Rigel VI
+      type: planet
+      tags: [notable, inhabited]
+      ord: 6
+    - name: Rigel VII
+      type: planet
+      tags: [notable, inhabited]
+      ord: 7
     - name: Rigel X
+      type: planet
+      tags: [notable, inhabited]
       ord: 10
+    - name: Rigel XII
+      type: planet
+      tags: [notable, inhabited]
+      ord: 12
 - name: Rator III 
   location:
     x: 44.481
@@ -1280,10 +1322,17 @@
     x: 108.7
     y: -8.5
 - name: Talvath
-  tags: [notable, claimed by romulan empire]
+  type: planet
+  tags: [notable, claimed by romulan empire, romulan colony]
   location:
-    x: 105.984 
-    y: 41.42
+    # coordinates given in star charts
+    # x: 105.984 
+    # y: 41.42
+
+    # coordinates given by A Quality of Mercy chart
+    x: 120.011
+    y: 45.978
+
 - name: T'Met
   tags: [notable, claimed by romulan empire, romulan colony]
   location:
@@ -1316,8 +1365,8 @@
 - name: Romii
   location:
     x: 29.5
-    y: -39.3
-  tags: [notable]
+    y: 39.3
+  tags: [notable, claimed by romulan empire]
 - name: Berengaria VII
   location:
     x: -64.7
@@ -1340,6 +1389,12 @@
       type: planet
       ord: 4
       tags: [notable]
+- name: Maxia
+  type: star
+  location:
+    x: -46.239
+    y: -13.978
+  tags: [notable]
 - name: Alpha Onias
   type: star
   orbits:
@@ -1371,7 +1426,7 @@
     x: 21.364
     y: -0.99
     z: .2
-  tags: [notable, dma-map]
+  tags: [notable, dma-map, federation]
 - name: Qualor II
   location:
     x: 43.358
@@ -1497,6 +1552,9 @@
 - name: Gamma Trianguli
   location: wd:Q3307541
   orbits:
+    - name: Gamma Trianguli IV 
+      ord: 4
+      tags: [notable, inhabited]
     - name: Gamma Trianguli VI
       ord: 6
       tags: [notable, inhabited, pre-warp]
@@ -1604,3 +1662,120 @@
   location:
     x: -44.819
     y: 53.256 
+- name: Terix
+  location:
+    x: 35.879
+    y: 32.432
+  orbits:
+    - name: Terix II
+      type: planet 
+      tags: ['claimed by romulan empire', notable]
+- name: Tranome Sar
+  type: star
+  location:
+    x: 113.204
+    y: -22.627
+  tags: ['claimed by romulan empire', notable]
+- name: R'ongovia
+  type: planet
+  location:
+    x: 132.01
+    y: -33.985
+  tags: ['affiliated with federation', notable]
+- name: Alpha Majoris
+  type: star 
+  location: wd:Q13084
+  orbits:
+    - name: Alpha Majoris I 
+      ord: 1
+      tags: [inhabited, notable]
+- name: Xahea
+  type: planet
+  tags: [inhabited, notable, warp-capable]
+  location:
+    x: -61.89
+    y: -78.125
+- name: Algol
+  type: star 
+  location: wd:Q13080
+  orbits:
+    - name: Algol I 
+      type: planet 
+      tags: [notable, warp-capable]
+- name: Beta Niobe 
+  type: star
+  orbits: 
+    - name: Sarpeidon
+      ord: 1
+      tags: [notable, warp-capable]
+- name: Persephone
+  type: planet
+  tags: [notable, pre-warp]
+  location: 
+    x: -81.963
+    y: -132.644
+- location:
+    x: -75.643
+    y: -96.257
+  orbits:
+    - name: Galen IV
+      ord: 5
+      tags: [notable, warp-capable, federation member]
+- location:
+    x: 3.391
+    y: 55.895
+  orbits:
+    - name: Crepuscula
+      type: planet
+      tags: [notable, pre-warp, inhabited]
+- name: FGC-347601
+  location:
+    x: 3.391
+    y: 44.277
+  orbits:
+    - name: Miri
+      type: planet
+      tags: [inhabited, notable]
+      ord: 3
+- name: Tarod
+  location:
+    x: 31.957
+    y: 59.417
+  orbits:
+    - name: Tarod IX
+      type: planet
+      tags: [notable, federation outpost]
+- name: Garadius
+  location:
+    x: 85.011
+    y: 53.603
+  orbits:
+    - name: Garadius IV
+      type: planet
+      tags: [notable, federation outpost]
+- name: Omega Sagittarii
+  location: wd:Q1720188
+  orbits:
+    - name: Madena VI
+      ords: 6
+      type: planet
+      tags: [notable, inhabited]
+- name: Cygni
+  location: 
+    x: -16.233
+    y: -116.886
+  orbits:
+    - name: Cygnet IV 
+      tags: [notable]    
+    - name: Cygnet XIV 
+      tags: [notable]
+- name: Renavi
+  tags: [notable, inhabited]
+  location:
+    x: 31.511
+    y: -169.698
+- name: Kazar
+  type: planet 
+  location:
+    x: -27.318
+    y: -94.407

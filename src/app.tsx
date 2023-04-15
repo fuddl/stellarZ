@@ -73,7 +73,7 @@ function App() {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [grabbing, setGrabbing] = useState(false);
-  const [dataOffset, setDataOffset] = useState({x: 0, y: 0, z: 0})
+  const [dataOffset, setDataOffset] = useState({x: -16 / zoom, y: 142 / zoom, z: 0})
   const [cubeRx, setCubeRx] = useState(-40);
   const [cubeRz, setCubeRz] = useState(-40);
   const [flat, setFlat] = useState(true);
@@ -87,7 +87,7 @@ function App() {
     cubeRx: flat ? 0 : cubeRx,
     cubeRy: 0,
     cubeRz: flat ? 0 : cubeRz,
-    camZoom: 2,
+    camZoom: 4,
     defaultCamZoffset: (maxZoom / maxCamOffset) * zoom,
     flat: flat,
     dataXoffset: dataOffset.x,

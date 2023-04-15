@@ -405,16 +405,34 @@ function axisCircles(center, axes) {
 
 function localSpaceGrid(center) {
 	const circles = [];
+	const minR = 50
+	const maxR = 350
+	const A = Math.PI / 6
+	for (let step = 0; step < Math.PI * 2; step += A) {
+		circles.push({
+			color: '#222',
+			size: 1,
+			type: 'lines',
+			id: `radial-local-${step}`,
+	        x0: [center.x + minR * Math.cos(step)],
+	        y0: [center.y + minR * Math.sin(step)],
+	        z0: [0],
+	        x1: [center.x + maxR * Math.cos(step)],
+	        y1: [center.y + maxR * Math.sin(step)],
+	        z1: [0],
+		})
+	}
 	for (let step = 1; step < 8; step++) {
 		circles.push({
-			color: 'white',
+			color: '#222',
 			size: 1,
 			type: 'QuadraticBezier',
-			id: `local-${step}`,
+			id: `concentric-local-${step}`,
 			closed: true,
 			...circle(center, 50*step, 79, 'z'),
 		})
 	}
+	console.debug(circles)
 	return circles
 }
 
@@ -467,50 +485,52 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 	// }
 
 	for (const entry of catalog) {
-		const notablePlanets = []
-		for (const notableChild of entry.notable) {
-			if (notableChild.type === 'planet') {
-				notablePlanets.push(notableChild)
+		const aura = auras.find((item) => {
+			if (entry?.tags) {
+				return item.tags.filter(value => entry.tags.includes(value))[0]
+			} else {
+				return false;
 			}
-		}
-		if (entry.id == 295) {
-			console.debug(entry)
-		}
-		if (notablePlanets.length > 0) {
-			const aura = auras.find((item) => {
-				if (entry?.tags) {
-					return item.tags.filter(value => entry.tags.includes(value))[0]
-				} else {
-					return false;
-				}
-			});
+		});
 
+		// if (entry?.notablePlanets || entry?.tags.includes('notable')) {
+		// 	points.push({
+		// 		label: entry.notablePlanets || entry.name,
+		// 		id: entry.id,
+		// 		pointer: '●',
+		// 		type: 'textMarker',
+		// 		attributes: { class: aura?.class },
+		// 		size: 16,
+		// 		color: 'white',
+		// 		x: [entry.location.x],
+		// 		y: [entry.location.y],
+		// 		z: viewSettings?.flat ? [0] : [entry.location.z],
+		// 	});
+		// }
+		// else if (entry.type === 'star' || entry.type === 'system') {
+		// 	points.push({
+		// 		label: entry.name,
+		// 		id: entry.id,
+		// 		pointer: '✴',
+		// 		attributes: { class: aura?.class },
+		// 		type: 'textMarker',
+		// 		size: 12,
+		// 		color: 'white',
+		// 		x: [entry.location.x],
+		// 		y: [entry.location.y],
+		// 		z: viewSettings?.flat ? [0] : [entry.location.z],
+		// 	});
+		// } else {
 			points.push({
-				label: notablePlanets.map((item) => item.name).join('/'),
 				id: entry.id,
-				pointer: '●',
-				type: 'textMarker',
-				attributes: { class: aura?.class },
-				size: 16,
-				color: 'white',
+				type: 'points',
+				size: 2,
+				color: `var(--${aura?.class})`,
 				x: [entry.location.x],
 				y: [entry.location.y],
 				z: viewSettings?.flat ? [0] : [entry.location.z],
 			});
-		}
-		else if (entry.type === 'star' || entry.type === 'system') {
-			points.push({
-				label: entry.name,
-				id: entry.id,
-				pointer: '✴',
-				type: 'textMarker',
-				size: 12,
-				color: 'white',
-				x: [entry.location.x],
-				y: [entry.location.y],
-				z: viewSettings?.flat ? [0] : [entry.location.z],
-			});
-		}
+		//}
 	}
 
 
