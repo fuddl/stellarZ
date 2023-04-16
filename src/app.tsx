@@ -1,5 +1,5 @@
 import Preact from 'preact'
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'preact/hooks';
 import BareMinimum2d from 'bare-minimum-2d'
 import { Scene, plugins } from './scene.tsx'
 import Navigator from './navigator.tsx'
@@ -8,6 +8,7 @@ import parseSVG from 'svg-path-parser'
 import catalog from './catalog.json'
 import validLocation from './valid-location.js'
 import flatten from './flattenCatalog.tsx'
+import { Pannellum } from "pannellum-react"
 
 flatten(catalog)
 
@@ -38,6 +39,8 @@ function App() {
   const [zoom, setZoom] = useState(20);
   const [zoomStep, setZoomStep] = useState(0);
   const [easing, setEasing] = useState(false);
+
+  const panoramaRef = useRef(null)
 
   useEffect(() => {
       setZoomStep((targetZoom - zoom) / Math.ceil(zoomDuration / zoomSpeed));
@@ -74,8 +77,15 @@ function App() {
   const [dataOffset, setDataOffset] = useState({x: -16 / zoom, y: 142 / zoom, z: 120 / zoom})
   const [cubeRx, setCubeRx] = useState(-40);
   const [cubeRz, setCubeRz] = useState(-40);
-  const [flat, setFlat] = useState(true);
+  const [flat, setFlat] = useState(false);
 
+
+  useEffect(() => {
+      panoramaRef.current.panorama.setYaw(cubeRz, 0)
+      panoramaRef.current.panorama.setPitch((cubeRx*2 + 180)*-1, 0)
+    },
+    [cubeRx, cubeRz]
+  );
 
 
   const viewSettings = {
@@ -97,6 +107,7 @@ function App() {
 
   const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog);
 
+
   return (
     <div
       style={{
@@ -105,6 +116,7 @@ function App() {
         cursor: grabbing ? 'grabbing' : 'grab',
         userSelect: !grabbing ? 'initial' : 'none',
       }}
+      id="map"
       onWheel={(e) => {
         e.preventDefault()
         if (e.ctrlKey) {
@@ -141,9 +153,25 @@ function App() {
         setZoom(zoom + 2)
       }}
     >
+    {!flat &&
+      <Pannellum
+        width={window.innerWidth}
+        height={window.innerHeight}
+        image="https://upload.wikimedia.org/wikipedia/commons/6/60/ESO_-_Milky_Way.jpg"
+        pitch={(cubeRx*2 + 180)*-1}
+        minPitch={-180}
+        maxPitch={180}
+        yaw={cubeRz}
+        hfov={100}
+        autoLoad={true}
+        draggable={false}
+        showControls={false}
+        ref={panoramaRef}
+      />
+    }
       <BareMinimum2d
         container={{
-          color: 'black',
+          color: flat ? 'black' : 'transparent',
           opacity: 'black',
           xRange: window.innerWidth,
           yRange: window.innerHeight

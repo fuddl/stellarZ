@@ -17,6 +17,7 @@ aside {
   right: 0;
   padding: 1em;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 button {
@@ -50,4 +51,18 @@ text {
   margin: 0;
   grid-column: 2 / 3;
   text-align: right;
+}
+
+#map {
+  display: grid;
+  grid-template-areas: 'only';
+}
+
+#map > .pnlm-container {
+  grid-area: only;
+}
+
+#map > .pnlm-container + svg {
+  grid-area: only;
+  z-index: 1;
 }
