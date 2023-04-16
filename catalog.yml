@@ -1514,23 +1514,32 @@
     x: -173.863
     y: -114.265
 - name: Omicron Ceti
-  alt_names: [Mira]
   tags: [real]
-  location:
-    ra: 34.836633758
-    dec: -2.977637673
-    dis: 425
+  location: wd:Q12965
   orbits:
     - name: Omicron Ceti III
       ord: 3
       tags: [notable, federation colony]
-
+- name: Gamma Canis Majoris
+  location: wd:Q617675
+  tags: [notable]
+- name: Theta Pictoris
+  location: wd:Q14256
+  tags: [notable]
+- name: Epsilon Carinae
+  location: wd:Q76496999
+  tags: [notable]
 - name: Omicron Cephei
   tags: [notable]
   location: wd:Q5097864
 - name: Spica
   tags: [notable]
   location: wd:Q13008
+- name: Beta Stromgren
+  tags: [notable]
+  location: 
+    x: 248.713
+    y: 98.899
 - name: Zalkon
   tags: [notable, federation member]
   location: 
@@ -1779,3 +1788,6 @@
   location:
     x: -27.318
     y: -94.407
+- name: Sigma Librae
+  location: wd:Q15719
+  tags: [notable]

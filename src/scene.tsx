@@ -416,10 +416,10 @@ function localSpaceGrid(center) {
 			id: `radial-local-${step}`,
 	        x0: [center.x + minR * Math.cos(step)],
 	        y0: [center.y + minR * Math.sin(step)],
-	        z0: [0],
+	        z0: [center.z],
 	        x1: [center.x + maxR * Math.cos(step)],
 	        y1: [center.y + maxR * Math.sin(step)],
-	        z1: [0],
+	        z1: [center.z],
 		})
 	}
 	for (let step = 1; step < 8; step++) {
@@ -432,11 +432,10 @@ function localSpaceGrid(center) {
 			...circle(center, 50*step, 79, 'z'),
 		})
 	}
-	console.debug(circles)
 	return circles
 }
 
-const localSpaceCenter = {x: 16, y: -142, z: 0}
+const localSpaceCenter = {x: 16, y: -142, z: -120}
 
 function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 	const sceneSettings = {

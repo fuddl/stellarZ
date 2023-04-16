@@ -9,13 +9,15 @@ const normalizeCoords = require('./normalizeCoords.js');
 const addMissingZ = require('./addMissingZ.js');
 const addFiller = require('./addFiller.js');
 const addIds = require('./addIds.js');
-
+const makeConnections = require('./makeConnections.js')
+const pruneFillerByHeat = require('./pruneFillerByHeat.js');
 
 (async () => {
-  const data = yaml.load(await fs.readFile('./catalog.yml', 'utf8'))
+  let data = yaml.load(await fs.readFile('./catalog.yml', 'utf8'))
 
   const updateOutputfile = async () => {
     await delay(50)
+    addIds(data)
     await fs.writeFile('./src/catalog.json', JSON.stringify(data, null, '  '), 'utf8');
   }
 
@@ -24,8 +26,10 @@ const addIds = require('./addIds.js');
   addZbyLineSegment(data, updateOutputfile)
   await addMissingZ(data, updateOutputfile)
   await addFiller(data, updateOutputfile)
-
-  addIds(data)
   
+  data = pruneFillerByHeat(data)
+
   await updateOutputfile()
+
+  makeConnections(data)
 })();
