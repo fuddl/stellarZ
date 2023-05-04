@@ -17,8 +17,6 @@ import symbol from './symbol.tsx'
 import sphere from './sphere.tsx'
 import connections from './connections.json'
 
-
-
 import iterator from 'iterate-tree'
 import parseSVG from 'svg-path-parser'
 import Assets from './assets.tsx'
@@ -124,8 +122,8 @@ const auras = [
 	},
 	{
 		tags: [
+			'claimed by talarian republic',
 			'talarian homeworld',
-			'claimed by talarian',
 		],
 		size: 6,
 		class: 'tal',
@@ -435,9 +433,9 @@ function localSpaceGrid(center) {
 	return circles
 }
 
-const localSpaceCenter = {x: 16, y: -142, z: -120}
+const localSpaceCenter = {x: 16, y: -142, z: -230}
 
-function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
+function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
 	const sceneSettings = {
 		cubeRange: 20,
 		cubeZoffset: 0,
@@ -464,6 +462,35 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 
 	const points = [];
 
+	// for (const k in debug) {
+	// 	let counter = 0
+	// 	for (const triangle of debug[k].triangles) {
+	// 		const vert = triangle?.points
+	// 		counter++
+	// 		if (vert) {
+	// 			points.push({
+	// 			  id: `debug-triangle-${k}-${counter}`,
+	// 			  type: 'lines',
+	// 			  color: `var(--${k})`,
+	// 			  x0: [vert.A.location.x, vert.B.location.x, vert.A.location.x],
+	// 			  x1: [vert.B.location.x, vert.C.location.x, vert.C.location.x],
+	// 			  y0: [vert.A.location.y, vert.B.location.y, vert.A.location.y],
+	// 			  y1: [vert.B.location.y, vert.C.location.y, vert.C.location.y],
+	// 			  z0: viewSettings?.flat ? [0, 0, 0] : [vert.A.location.z, vert.B.location.z, vert.A.location.z],
+	// 			  z1: viewSettings?.flat ? [0, 0, 0] : [vert.B.location.z, vert.C.location.z, vert.C.location.z],
+	// 			});
+	// 			// points.push({
+	// 			//   id: `debug-triangle-${k}-${counter}`,
+	// 			//   type: 'points',
+	// 			//   size: 10,
+	// 			//   color: `var(--${k})`,
+	// 			//   x: [triangle.center.x],
+	// 			//   y: [triangle.center.y],
+	// 			//   z: viewSettings?.flat ? [0] : [triangle.center.z],
+	// 			// });
+	// 		}
+	// 	}
+	// }
 	// for (const cluster of connections) {
 	// 	if (!cluster?.connections) {
 	// 		continue
@@ -491,21 +518,6 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 				return false;
 			}
 		});
-
-		// if (entry?.notablePlanets || entry?.tags.includes('notable')) {
-		// 	points.push({
-		// 		label: entry.notablePlanets || entry.name,
-		// 		id: entry.id,
-		// 		pointer: '●',
-		// 		type: 'textMarker',
-		// 		attributes: { class: aura?.class },
-		// 		size: 16,
-		// 		color: 'white',
-		// 		x: [entry.location.x],
-		// 		y: [entry.location.y],
-		// 		z: viewSettings?.flat ? [0] : [entry.location.z],
-		// 	});
-		// }
 		// else if (entry.type === 'star' || entry.type === 'system') {
 		// 	points.push({
 		// 		label: entry.name,
@@ -517,20 +529,65 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog) {
 		// 		color: 'white',
 		// 		x: [entry.location.x],
 		// 		y: [entry.location.y],
+			//if (aura?.class) {
+				points.push({
+					id: entry.id + 'point',
+					type: 'points',
+					title: entry.name,
+					size: 2,
+					color: `var(--${aura?.class})`,
+					x: [entry.location.x],
+					y: [entry.location.y],
+					z: viewSettings?.flat ? [0] : [entry.location.z],
+				});
+			//}
 		// 		z: viewSettings?.flat ? [0] : [entry.location.z],
 		// 	});
 		// } else {
+
+		//}
+	}
+	for (const entry of catalog) {
+		const aura = auras.find((item) => {
+			if (entry?.tags) {
+				return item.tags.filter(value => entry.tags.includes(value))[0]
+			} else {
+				return false;
+			}
+		});
+
+		if (entry?.tags?.includes('landmark')) {
 			points.push({
-				id: entry.id,
-				type: 'points',
-				size: 2,
-				color: `var(--${aura?.class})`,
+				label: entry.notablePlanets || entry.name,
+				//label: entry.id,
+				id: entry.id + 'mark',
+				pointer: '●',
+				type: 'textMarker',
+				attributes: { class: aura?.class },
+				size: 16,
+				color: 'white',
 				x: [entry.location.x],
 				y: [entry.location.y],
 				z: viewSettings?.flat ? [0] : [entry.location.z],
 			});
-		//}
+		}
 	}
+
+	// for (const entry of catalog) {
+	// 	if (entry?.tags.includes('real')) {
+	// 		points.push({
+	// 			label: entry.name,
+	// 			id: `${entry.id}-labeled`,
+	// 			pointer: '✴',
+	// 			type: 'textMarker',
+	// 			size: 12,
+	// 			color: 'white',
+	// 			x: [entry.location.x],
+	// 			y: [entry.location.y],
+	// 			z: viewSettings?.flat ? [0] : [entry.location.z],
+	// 		});
+	// 	}
+	// }
 
 
 	const center = {

@@ -21,6 +21,7 @@
           federation captital,
           dma-map,
           interesting,
+          landmark,
         ]
       orbits:
         - name: Luna
@@ -102,7 +103,7 @@
   tags: [notable, real]
 - name: Quo'Nos
   machine_name: kronos
-  tags: [claimed by klingon empire, notable, klingon capital, interesting]
+  tags: [claimed by klingon empire, notable, klingon capital, interesting, landmark]
   location:
     x: 79.9
     y: -70.6
@@ -122,26 +123,35 @@
       and: epsilon-phoenicis
   orbits:
     - name: Romulus
-      tags: [notable, claimed by romulan empire, romulan capital]
+      tags: [notable, claimed by romulan empire, romulan capital, landmark]
     - name: Remus
       tags: [notable, claimed by romulan empire]
 - type: star
   orbits:
   - name: Talar
     type: planet
-    tags: [notable, talarian homeworld]
+    tags: [notable, talarian homeworld, landmark, claimed by talarian republic]
     location:
       x: -85.858
       y: -78.5
 - name: Cardassia Prime
+  machine_name: cardassia
   type: planet
-  tags: [notable, claimed by cardassian union, interesting]
+  tags: [notable, claimed by cardassian union, interesting, landmark]
   location:
     x: -62.8
     y: -33.1
     # distance to bajor exactly 5.25 ly. x/y distance is alrady 6.3071 so this
     # has to be on the same plane
-    z: -226.642943922
+    z:
+      near: bhavael
+- name: Arawath
+  tags: [claimed by cardassian union, notable]
+  location:
+    x: -103.518
+    y: -36.917
+    z: 
+      near: cardassia
 - name: Alpha Centauri
   type: system
   location: wd:Q12176
@@ -326,7 +336,7 @@
       - name: Antares B III
         links:
           mb: Antares_B_III
-        tags: [federation shipyard, notable, federation member]
+        tags: [federation shipyard, notable, federation member, landmark]
 - name: Kappa Fornacis
   location: wd:Q9017189
   orbits:
@@ -552,6 +562,7 @@
       ord: 2
       tags: [earth colony, notable, federation member]
 - name: B'Hava'el
+  machine_name: bhavael
   type: star
   location:
     x: -57.1
@@ -657,7 +668,6 @@
         y: -0.7998515632732952
         z: -4
 - name: Ceti Alpha
-  location: wd:Q13173
   type: star
   orbits:
     - name: Ceti Alpha V
@@ -718,11 +728,14 @@
     dec: 7.407063995
     dis: 431.74754
   type: star
-  tags: [real]
+  tags: [real, landmark]
   orbits:
     - name: Betelgeuse
       type: planet
       tags: [notable, federation member]
+- name: Mu Andromedae
+  tags: [real]
+  location: wd:Q1150445
 - name: Beta Cephei
   location: wd:Q67622053
   type: star
@@ -878,20 +891,24 @@
       y: -69.5
 - name: FGC 24187
   orbits:
+    # - name: Deep Space K-7
+    #   machine_name: k7
+    #   tags: [notable, deep space station]
+    #   location:
+    #     x: 25.3
+    #     y: -63.6
+    #     z: 
+    #       # has to be somewhat near to cardassia
+    #       between: cardassia
+    #       and: kronos
     - name: Sherman's Planet
       tags: [notable, federation colony, klingon colony]
       location:
         x: 20.3
         y: -74.4
-        # should be close to DSK-7
-        z: -42
-    - name: Deep Space K-7
-      tags: [notable, deep space station]
-      location:
-        x: 25.3
-        y: -63.6
-        # distance to bajor '> 200ly'
-        z: -45
+        z: 
+          between: cardassia
+          and: kronos
 - name: Starbase 24
   tags: [federation starbase, notable]
   location:
@@ -943,7 +960,6 @@
   location:
     x: -39.474
     y: -197.368
-    z: -72.969255732
 - name: Starbase 4
   links:
     ma:en: Starbase_4
@@ -994,7 +1010,7 @@
     z: 
       between: sol 
       and: kronos
-  tags: [dma-map]
+  tags: [dma-map, landmark]
   orbits:
     - name: Rigel II
       type: planet
@@ -1122,11 +1138,15 @@
   location:
     x: -30.1
     y: -47.2
+    z:
+      between: sol 
+      and: cardassia
   tags: [notable, claimed by cardassian union]
 - type: star
   location:
     x: -59.1
     y: -42.4
+    near: cardassia
   orbits:
   - name: Amleth Prime
     tags: [notable, claimed by cardassian union]
@@ -1135,6 +1155,8 @@
   location:
     x: -74
     y: -42.4
+    z: 
+      near: cardassia
   orbits:
   - name: Kelvas V
     tags: [notable, claimed by cardassian union]
@@ -1142,6 +1164,8 @@
   location:
     x: -84.3
     y: -29.4
+    z:
+      near: cardassia
   orbits:
   - name: Simperia
     tags: [notable, claimed by cardassian union]
@@ -1158,6 +1182,8 @@
   location:
     x: -77.5
     y: -34.2
+    z:
+      near: cardassia
   orbits:
   - name: Monac IV
     tags: [notable, claimed by cardassian union]
@@ -1172,6 +1198,8 @@
   location:
     x: -86.3
     y: -42.1
+    z:
+      near: cardassia
   orbits:
   - name: Sarpedion V
     tags: [notable, claimed by cardassian union]
@@ -1180,6 +1208,8 @@
   location:
     x: -76.8
     y: -27.7
+    z:
+      near: cardassia
   orbits:
   - name: Atbar Prime
     tags: [notable, claimed by cardassian union]
@@ -1188,6 +1218,8 @@
   location:
     x: -86.5
     y: -21.8
+    z:
+      near: cardassia
   orbits:
   - name: Septimus III
     tags: [notable, claimed by cardassian union]
@@ -1225,10 +1257,52 @@
     tags: [notable, claimed by cardassian union]
 - name: Dorvan
   type: star
+  location:
+    x: -39.742
+    y: -41.033
+    z: 
+      between: sol 
+      and: cardassia
   orbits:
   - name: Dorvan V
     type: planet
-    tags: [notable, claimed by cardassian union]
+    tags: [notable, claimed by cardassian union, former federation colony, dmz]
+- name: Salva II
+  type: planet 
+  tags: [notable, former federation colony, dmz]
+  location:
+    x: -27.492
+    y: -44.62
+    z:
+      between: sol 
+      and: cardassia
+- name: Setlik III
+  type: planet 
+  tags: [notable, former federation outpost]
+  location:
+    x: -29.883
+    y: -55.956
+    z:
+      between: sol 
+      and: cardassia
+- name: Umoth VIII  
+  type: planet 
+  tags: [notable, former federation outpost]
+  location:
+    x: -42.044 
+    y: -56.822
+    z:
+      between: sol 
+      and: cardassia
+- name: Minos Korva
+  type: planet 
+  tags: [notable, federation colony]
+  location:
+    x: -22.216 
+    y: -52.205
+    z:
+      between: sol 
+      and: cardassia
 - name: Kora
   type: star
   location: 
@@ -1288,15 +1362,19 @@
     type: planet
     tags: [notable, claimed by cardassian union]
 - name: Ferenginar
+  machine_name: ferenginar
   location:
     x: -56.5
     y: 24.7
-    z: -231 #assuming it should be close to cardassia prime
-  tags: [notable, claimed by ferengi aliance]
+    z: 
+      near: cardassia
+  tags: [notable, claimed by ferengi aliance, landmark]
 - name: Irtok
   location:
     x: -52.1
     y: 21
+    z:
+      near: ferenginar
   tags: [notable, claimed by ferengi aliance]
 - name: Rog
   location:
@@ -1307,11 +1385,16 @@
   location:
     x: -62.6
     y: 19.4
+    z:
+      near: ferenginar
   tags: [notable, claimed by ferengi aliance]
 - name: Betazed
   location:
     x: -16.6
     y: -49.8
+    z: 
+      between: sol 
+      and: cardassia
   tags: [notable, federation member, interesting]
 - name: Epsilon Scorpii
   type: star
@@ -1376,14 +1459,19 @@
   location:
     x: -43.6
     y: -39
-    z: -111 # assumed to be close to cardassia
+    z:
+      between: sol 
+      and: cardassia
   tags: [notable, dmz, maquis colony]
 - name: Maxia Zeta
   type: star
   location:
     x: -41.8
     y: 15.9
-    z: -143 #assuming it should be close to ferenginar
+    z: 
+      # assuming it should be close to ferenginar
+      between: sol 
+      and: ferenginar
   orbits:
     - name: Maxia Zeta IV
       type: planet
@@ -1470,13 +1558,16 @@
     y: -5.524
     z: 1
   tags: [dma-map, notable]
-- name: Breen 
+- name: Breen
+  machine_name: breen
   type: planet 
   location:  
     x: -125.724
     y: 31.218
-    z: -232 # should be rather close to cardassia
-  tags: [notable, claimed by breen confederacy]
+    z:
+      # should be rather close to cardassia
+      near: cardassia
+  tags: [notable, claimed by breen confederacy, landmark]
 - name: Mu Leonis
   location: wd:Q1153864
   type: star
@@ -1508,8 +1599,11 @@
   location: 
     x: -108.684
     y: -22.194
+    z:
+      between: cardassia
+      and: breen
 - name: Tholia
-  tags: [claimed by tholian assembly, notable]
+  tags: [claimed by tholian assembly, notable, landmark]
   location: 
     x: -173.863
     y: -114.265
@@ -1549,6 +1643,7 @@
   location: wd:Q617675
   tags: [notable]
 - name: Bellatrix
+  machine_name: bellatrix
   alt_names: [Gamma Orionis]
   type: star
   location:
@@ -1641,6 +1736,7 @@
   orbits:
     - name: Starbase 310
       type: installation
+      tags: [federation starbase]
 - name: Janus IV
   tags: [federation colony, mining colony]
   location:
@@ -1791,3 +1887,26 @@
 - name: Sigma Librae
   location: wd:Q15719
   tags: [notable]
+- name: Betreka Nebula
+  type: nebula
+  location:
+    x: -4.778
+    y: -64.752 
+    z: 
+      between: cardassia
+      and: kronos
+- name: Kessik
+  location:
+    x: 30.971
+    y: -207.963
+    z: 
+      near: bellatrix
+  orbits:
+    - name: Kessik IV 
+      tags: [federation colony, notable]
+- name: FGC-82659
+  location: 
+    x: 15.226
+    y: 247.311
+    z:
+      near: bellatrix

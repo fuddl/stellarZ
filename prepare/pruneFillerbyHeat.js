@@ -68,7 +68,7 @@ function pruneFillerByHeat(data, callback) {
       if (!relevantPoints[i].object?.tags?.includes('filler')) {
         continue
       }
-      if (relevantPoints[i].heat < averageHeat) {
+      if (relevantPoints[i].heat < averageHeat * 3) {
         continue
       }
       relevantPoints[i].object.tooCold = true

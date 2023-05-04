@@ -10,7 +10,7 @@ const colours = {
 	'tho': '#BD5328',
 	'tze': '#5E48A9',
 	'gor': '#5E0B09',
-	'tal': '#270B6D',
+	'tal': '#6F2608',
 }
 
 function Gradients() {

@@ -8,6 +8,7 @@ import parseSVG from 'svg-path-parser'
 import catalog from './catalog.json'
 import validLocation from './valid-location.js'
 import flatten from './flattenCatalog.tsx'
+import fillerDebug from './fillerDebug.json'
 
 flatten(catalog)
 
@@ -39,6 +40,33 @@ function App() {
   const [zoomStep, setZoomStep] = useState(0);
   const [easing, setEasing] = useState(false);
 
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [grabbing, setGrabbing] = useState(false);
+  const [dataOffset, setDataOffset] = useState({x: -16 / zoom, y: 142 / zoom, z: 120 / zoom})
+  const [cubeRx, setCubeRx] = useState(-40);
+  const [cubeRz, setCubeRz] = useState(-40);
+
+
+  const [ flat, setFlat ] = useState(true)
+  const [ autoRotate, setAutoRotate] = useState(true)
+  const [ frame, setFrame ] = useState(0)
+
+
+  const nextFrame = () => {
+    setFrame((frame) => frame + 1.2)
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!flat && !grabbing) {
+        setCubeRz((cubeRz) => cubeRz - 1)
+      }
+      nextFrame()
+    }, 40)
+    return () => clearInterval(timer)
+  }, [])
+
   useEffect(() => {
       setZoomStep((targetZoom - zoom) / Math.ceil(zoomDuration / zoomSpeed));
     },
@@ -68,13 +96,6 @@ function App() {
   );
 
 
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [grabbing, setGrabbing] = useState(false);
-  const [dataOffset, setDataOffset] = useState({x: -16 / zoom, y: 142 / zoom, z: 120 / zoom})
-  const [cubeRx, setCubeRx] = useState(-40);
-  const [cubeRz, setCubeRz] = useState(-40);
-  const [flat, setFlat] = useState(true);
 
 
 
@@ -95,7 +116,7 @@ function App() {
     defaultCamOrientation: "z-forward-x-right",
   }
 
-  const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog);
+  const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog, fillerDebug);
 
   return (
     <div
@@ -156,6 +177,7 @@ function App() {
         <button onClick={() => { setZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
         <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
         <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
+        
       </aside>
       <Navigator flat={flat} coordinates={dataOffset} />
       <Assets.Gradients />

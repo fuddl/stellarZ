@@ -8,6 +8,7 @@ const fetch = fetchBuilder.withCache(new FileSystemCache({
   ttl: 86400000, 
 }));
 const fs = require('fs');
+const fspromis = require('fs').promises
 const generateSystem = require('./generate.js');
 
 const yaml = require('js-yaml');
@@ -22,6 +23,7 @@ const iterator = require('iterate-tree');
 const gen = require('random-seed');
 const intersection = require('array-intersection');
 const distance = require('euclidean-distance');
+const delay = require('delay');
 
 function squaredDistance(point1, point2) {
   const dx = point1.x - point2.x;
@@ -32,6 +34,16 @@ function squaredDistance(point1, point2) {
 
 
 const dimensions = ['x', 'y', 'z'];
+
+const updateDebugputfile = (file) => {
+  (async () => {
+    await delay(50)
+    await fspromis.writeFile('src/FillerDebug.json', JSON.stringify(file, null, '  '), 'utf8');
+  })()
+}
+const debugFile = {}
+
+
 
 let newId = 347601;
 
@@ -275,6 +287,8 @@ function addMissingZ(objects, ObjectsWithZ) {
     console.debug(`finished processing raw data`)
     
     for (let shape of shapes2D) {
+      debugFile[shape.id] = { triangles: [] }
+
       const randGen = gen.create(shape.d[0]);
       const occupied = [];
 
@@ -456,6 +470,9 @@ function addMissingZ(objects, ObjectsWithZ) {
               }
             })
             console.debug(`finished sorting records by distance to point`)
+            debugFile[shape.id].triangles.push(triangle)
+            updateDebugputfile(debugFile)
+
             for (let id in records) {
               const star = records[id];
               if (collides3d(triangle.center, star, triangle.radius)) {

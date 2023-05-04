@@ -8,6 +8,7 @@ const fs = require('fs').promises
 const { parse } = require('csv-parse')
 const yaml = require('js-yaml')
 const pointInPolygon = require('point-in-polygon')
+const delay = require('delay');
 
 const dimensions = ['x', 'y', 'z']
 
@@ -110,7 +111,16 @@ function distanceSquaredToLine(l1, l2, p) {
 }
 
 
+const updateDebugputfile = (file) => {
+	(async () => {
+		await delay(50)
+  	await fs.writeFile('./src/FillerDebug.json', JSON.stringify(file, null, '  '), 'utf8');
+	})()
+}
+
 async function addFiller(data, callback) {
+	const debugFile = {}
+
 	console.debug('adding filler')
 
 	const filler = yaml.load(await fs.readFile('./filler.yml', 'utf8'));
@@ -136,6 +146,8 @@ async function addFiller(data, callback) {
 
 
 		  for (let shape of shapes) {
+		  	console.debug(`Scanning for filler "${shape.id}"`)
+	    	debugFile[shape.id] = { triangles: [] }
 
 		    const randGen = gen.create(shape.d[0]);
 		    const occupied = [];
@@ -146,35 +158,26 @@ async function addFiller(data, callback) {
 		    }
 		    for (let layer of shape.layers) {
 
-		      let fittingFiller = [];
-		      iterator.bfs([...filler], 'orbits', (object) => {
-		        if (intersection(object.tags, layer.fillerTags).length > 0) {
-		          if (layer.strategy === 'connect') {
-		            //object.tags.push('notable');
-		          }
-		          fittingFiller.push(object);
-		        }
-		      })
-
-		      if (layer?.sortFiller === 'random') {
-		        fittingFiller = fittingFiller.sort((A, B) => randGen.intBetween(-1, 1));
-		      }
 
 		      const relevantPoints = [];
 
+		      const findRelevantPoints = (data, parentLocation = {}) => {
+		      	for (let object of data) {
+			        if (intersection(object.tags, layer.tags).length > 0) {
+			          relevantPoints.push({
+			          	object: object,
+			          	location: { ...parentLocation, ...object.location }
+			          })
+			        }
+			        if (object.orbits) {
+			        	findRelevantPoints(object.orbits, { ...parentLocation, ...object.location })
+			        }
+			      }
+		      }
 
-		      let lastLocation = {x: 0, y: 0, z: 0}
-		      iterator.bfs([...data], 'orbits', (object) => {
-		        if (object?.location?.x && object?.location?.y && object?.location?.z) {
-		        	lastLocation = object.location 
-		        }
-		        if (intersection(object.tags, layer.tags).length > 0) {
-		          relevantPoints.push({
-		          	location: { ...lastLocation, ...object.location }
-		          })
-		        }
-		      })
-
+		      findRelevantPoints(data)
+		      console.debug(relevantPoints.length)
+		      
 		      const triangles = [];
 		      if (relevantPoints.length > 2) {
 		        for (let A of relevantPoints) {
@@ -223,14 +226,15 @@ async function addFiller(data, callback) {
 	            triangles.push(triangle);
 	          }
 		        if (layer?.sort == 'by_distance') {
-		          triangles.sort((A, B) => {
-		            const aDist = distance(A.center, layer.center);
-		            const bDist = distance(B.center, layer.center);
+		        	triangles.sort((A, B) => {
+		            const aDist = squaredDistance(A.center, layer.center);
+		            const bDist = squaredDistance(B.center, layer.center);
 		            return aDist < bDist ? -1 : 1;
 		          });
 		        } else {
 		          triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
 		        }
+
 		      } else if (relevantPoints.length > 0 && relevantPoints.length < 3) {
 		        triangles.push(
 		          {
@@ -255,7 +259,7 @@ async function addFiller(data, callback) {
 		          let isInsomePolygon = false;
 		          for (const polygon of multipolygon) {
 		            if (!isInsomePolygon) {
-		              isInsomePolygon = squaredDistance([triangle.center.x, triangle.center.y], polygon);
+		              isInsomePolygon = pointInPolygon([triangle.center.x, triangle.center.y], polygon);
 		            }
 		          }
 
@@ -293,9 +297,18 @@ async function addFiller(data, callback) {
 		          }
 		          const triangleCenter = [triangle.center.x, triangle.center.y, triangle.center.z]
 
+		          const squaredRadius = triangle.radius ** 2;
+
+		          const candidateRecords = records.filter(obj => {
+								const dx = obj.x - triangle.center.x;
+								const dy = obj.y - triangle.center.y;
+								const dz = obj.z - triangle.center.z;
+								const squaredDistance = dx ** 2 + dy ** 2 + dz ** 2;
+								return squaredDistance <= squaredRadius;
+							});
 
 		          //console.debug(`sorting records by distance to point`)
-		          records.sort((a, b) => {
+		          candidateRecords.sort((a, b) => {
 		            if (typeof minX !== 'undefined') {
 		              if (
 		                  (a.x < minX && a.y < minY && a.z < minZ) && 
@@ -324,12 +337,11 @@ async function addFiller(data, callback) {
 		              return aDist < bDist ? -1 : 1;
 		            }
 		          })
-		          //console.debug(`finished sorting records by distance to point`)
-
-	           // console.debug({'triangle.center': triangle.center})
-	           // console.debug({'triangle.radius': triangle.radius})
-		          for (let id in records) {
-		            const star = records[id];
+		          
+		          debugFile[shape.id].triangles.push(triangle)
+		        	updateDebugputfile(debugFile)
+		          for (let id in candidateRecords) {
+		            const star = candidateRecords[id];
 
 		            if (collides3d(triangle.center, star, triangle.radius)) {
 		              let collisionDetected = false;
@@ -363,7 +375,7 @@ async function addFiller(data, callback) {
 		                    "filler": true,
 		                    "location": location,
 		                  })
-		                  delete records[id];
+		                  delete candidateRecords[id];
 		                  //console.debug({found: star})
 		                  occupied.push(star)
 
