@@ -408,7 +408,7 @@ function localSpaceGrid(center) {
 	const A = Math.PI / 6
 	for (let step = 0; step < Math.PI * 2; step += A) {
 		circles.push({
-			color: '#222',
+			color: 'black',
 			size: 1,
 			type: 'lines',
 			id: `radial-local-${step}`,
@@ -422,7 +422,7 @@ function localSpaceGrid(center) {
 	}
 	for (let step = 1; step < 8; step++) {
 		circles.push({
-			color: '#222',
+			color: 'black',
 			size: 1,
 			type: 'QuadraticBezier',
 			id: `concentric-local-${step}`,
@@ -529,18 +529,19 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
 		// 		color: 'white',
 		// 		x: [entry.location.x],
 		// 		y: [entry.location.y],
-			//if (aura?.class) {
+			if (aura?.paint) {
+
 				points.push({
 					id: entry.id + 'point',
 					type: 'points',
 					title: entry.name,
-					size: 2,
-					color: `var(--${aura?.class})`,
+					size: 20,
+					color: `${aura?.paint}`,
 					x: [entry.location.x],
 					y: [entry.location.y],
 					z: viewSettings?.flat ? [0] : [entry.location.z],
 				});
-			//}
+			}
 		// 		z: viewSettings?.flat ? [0] : [entry.location.z],
 		// 	});
 		// } else {
@@ -556,15 +557,15 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
 			}
 		});
 
-		if (entry?.tags?.includes('landmark')) {
+		if ((entry?.tags?.includes('notable') && !entry?.tags?.includes('filler'))) {
 			points.push({
 				label: entry.notablePlanets || entry.name,
 				//label: entry.id,
 				id: entry.id + 'mark',
 				pointer: '●',
-				type: 'textMarker',
+				type: 'points',
 				attributes: { class: aura?.class },
-				size: 16,
+				size: 1,
 				color: 'white',
 				x: [entry.location.x],
 				y: [entry.location.y],

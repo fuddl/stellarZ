@@ -388,7 +388,7 @@
   location: wd:Q4550873
   orbits:
     - name: Cait
-      tags: [notable, federation member]
+      tags: [notable, federation member, caitan homeword]
 - name: Capella
   location: wd:Q12970
   orbits:
@@ -732,7 +732,13 @@
   orbits:
     - name: Betelgeuse
       type: planet
-      tags: [notable, federation member]
+      tags: [notable, federation member, betelgeusean homeworld]
+- name: Grazer
+  type: planet 
+  tags: [notable, federation member, grazerite homeword]
+  location:
+    x: -83.743
+    y: -103.866
 - name: Mu Andromedae
   tags: [real]
   location: wd:Q1150445
@@ -949,12 +955,21 @@
     #z: -78
 
 - name: Cestus III
+  machine_name: cestus
   type: planet
   tags: [notable, federation colony, taurus reach]
   location:
     x: 81.295
     y: -199.678
-
+- name: Gorn Hegemony
+  tags: [center of terriory, gorn territory]
+  type: region
+  location:
+    x: 109.705,
+    y: -213.474,
+    z:
+      near:
+        cestus
 - name: Pacifica
   tags: [notable, federation colony, taurus reach]
   location:
@@ -1589,11 +1604,11 @@
     - name: Antica
       type: planet 
       ord: 6
-      tags: [federation member, notable]
+      tags: [federation member, notable, antican homeword]
     - name: Selay
       type: planet
       ord: 5
-      tags: [federation member, notable]
+      tags: [federation member, notable, selay homeword]
 - name: Portas
   tags: [claimed by breen confederacy, dmz, notable]
   location: 

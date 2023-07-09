@@ -110,6 +110,101 @@ function distanceSquaredToLine(l1, l2, p) {
   return dx * dx + dy * dy + dz * dz;
 }
 
+const fillCircle = async (center, radius, records, shape, layer, occupied, data, callback) => {
+
+	const randGen = gen.create(shape.d[0]);
+
+  let multipolygon = [];
+  for (let d of shape.d) {
+    multipolygon.push(path2polygon(d))
+  }
+
+  const squaredRadius = radius ** 2;
+
+  const candidateRecords = records.filter(obj => {
+		const dx = obj.x - center.x;
+		const dy = obj.y - center.y;
+		const dz = obj.z - center.z;
+		const squaredDistance = dx ** 2 + dy ** 2 + dz ** 2;
+		return squaredDistance <= squaredRadius;
+	});
+
+  //console.debug(`sorting records by distance to point`)
+  candidateRecords.sort((a, b) => {
+    if (typeof minX !== 'undefined') {
+      if (
+          (a.x < minX && a.y < minY && a.z < minZ) && 
+          (a.y > maxX && a.y > maxY && a.z > maxZ)
+        ) {
+        return -1
+      }
+      let shortestA = null;
+      let shortestB = null;
+      for (const p of ['AB', 'AC', 'BC']) {
+        let distA = distanceSquaredToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, a)
+        let distB = distanceSquaredToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, b)
+        shortestA = shortestA == null || shortestA > distA ? distA : shortestA;
+        shortestB = shortestB == null || shortestB > distB ? distB : shortestB;
+      }
+      return shortestA < shortestB ? -1 : 1;
+    } else {
+      let aDist = squaredDistance(
+        [a.x, a.y, a.z],
+        center,
+      );
+      let bDist = squaredDistance(
+        [b.x, b.y, b.z],
+        center,
+      );
+      return aDist < bDist ? -1 : 1;
+    }
+  })
+ 
+  for (let id in candidateRecords) {
+    const star = candidateRecords[id];
+
+    if (collides3d(center, star, radius)) {
+      let collisionDetected = false;
+      for (const point of occupied) {
+        const big = randGen.intBetween(0,1)
+        if (collides(point, star, (big ? layer.density.min : layer.density.max))) {
+          collisionDetected = true;
+        }
+      }
+
+      if (!collisionDetected) {
+        let isInsomePolygon = false;
+        for (const polygon of multipolygon) {
+          if (!isInsomePolygon) {
+            isInsomePolygon = pointInPolygon([star.x, star.y], polygon);
+          }
+        }
+
+        //console.debug({isInsomePolygon})
+        if (isInsomePolygon) {
+          const location = {
+            "x": star.x,
+            "y": star.y,
+            "z": star.z,
+          };
+
+
+          data.push({
+            "tags": ['filler', ...layer.fillerTags],
+            "filler": true,
+            "location": location,
+          })
+          delete candidateRecords[id];
+          //console.debug({found: star})
+          occupied.push(star)
+
+          await callback()
+        }
+      }
+    }
+  }
+}
+
 
 const updateDebugputfile = (file) => {
 	(async () => {
@@ -144,20 +239,12 @@ async function addFiller(data, callback) {
 	    }
 	  
 
-
+	    const occupied = [];
 		  for (let shape of shapes) {
 		  	console.debug(`Scanning for filler "${shape.id}"`)
 	    	debugFile[shape.id] = { triangles: [] }
 
-		    const randGen = gen.create(shape.d[0]);
-		    const occupied = [];
-
-		    let multipolygon = [];
-		    for (let d of shape.d) {
-		      multipolygon.push(path2polygon(d))
-		    }
 		    for (let layer of shape.layers) {
-
 
 		      const relevantPoints = [];
 
@@ -176,114 +263,76 @@ async function addFiller(data, callback) {
 		      }
 
 		      findRelevantPoints(data)
-		      console.debug(relevantPoints.length)
 		      
-		      const triangles = [];
-		      if (relevantPoints.length > 2) {
-		        for (let A of relevantPoints) {
-	            const triangle = {
-	              points: {
-	                A: A,
-	              },
-	              center: {},
-	            }
-	            let DistanceB = null;
-	            for (let B of relevantPoints) {
-	            	if (JSON.stringify(B) === JSON.stringify(A)) {
-	            		continue
-	            	}
-	              let dist = distance(
-	                [A.location.x, A.location.y, A.location.z],
-	                [B.location.x, B.location.y, B.location.z],
-	              );
-	              if (dist > 0 || DistanceB === null || DistanceB > dist) {
-	                DistanceB = dist;
-	                triangle.points.B = B;
-	              }
-	            }
-	            let DistanceC = null;
-	            for (let C of relevantPoints) {
-	            	if (JSON.stringify(triangle.points.B) === JSON.stringify(C) || JSON.stringify(triangle.points.A) === JSON.stringify(C)) {
-	            		continue
-	            	}
-	              let dist = distance(
-	                [A.location.x, A.location.y, A.location.z],
-	                [C.location.x, C.location.y, C.location.z],
-	              )
-	              if (dist > 0 || DistanceC === null || DistanceC > dist) {
-	                DistanceC = dist;
-	                triangle.points.C = C;
-	              }
-	            }
-	            triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
-	            for (let dim of dimensions) {
-	              triangle.center[dim] = (
-	                triangle.points.A.location[dim] + 
-	                triangle.points.B.location[dim] + 
-	                triangle.points.C.location[dim]
-	              ) / 3;
-	            }
-	            triangles.push(triangle);
-	          }
-		        if (layer?.sort == 'by_distance') {
-		        	triangles.sort((A, B) => {
-		            const aDist = squaredDistance(A.center, layer.center);
-		            const bDist = squaredDistance(B.center, layer.center);
-		            return aDist < bDist ? -1 : 1;
-		          });
-		        } else {
-		          triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
-		        }
-
-		      } else if (relevantPoints.length > 0 && relevantPoints.length < 3) {
-		        triangles.push(
-		          {
-		            radius: shape.radius,
-		            center: relevantPoints[0].location
-		          }
-		        )
-		      } else if(relevantPoints.length === 0) {
-		        triangles.push(
-		          {
-		            radius: shape.radius,
-		            center: layer.center,
-		          }
-		        )
-		      }
 
 		      for (let existing of relevantPoints) {
 		        occupied.push(existing.location)
 		      }
-		      if (layer.strategy === 'connect') {
-		        for (triangle of triangles) {
-		          let isInsomePolygon = false;
-		          for (const polygon of multipolygon) {
-		            if (!isInsomePolygon) {
-		              isInsomePolygon = pointInPolygon([triangle.center.x, triangle.center.y], polygon);
+		      if (layer.strategy === 'fill') {
+			      const triangles = [];
+			      if (relevantPoints.length > 2) {
+			        for (let A of relevantPoints) {
+		            const triangle = {
+		              points: {
+		                A: A,
+		              },
+		              center: {},
 		            }
-		          }
-
-		          if (isInsomePolygon) {
-		            let collisionDetected = false;
-		            for (const point of occupied) {
-		              const big = randGen.intBetween(0,1)
-		              if (collides3d(point, triangle.center, (big ? layer.density.min : layer.density.max))) {
-		                collisionDetected = true;
+		            let DistanceB = null;
+		            for (let B of relevantPoints) {
+		            	if (JSON.stringify(B) === JSON.stringify(A)) {
+		            		continue
+		            	}
+		              let dist = distance(
+		                [A.location.x, A.location.y, A.location.z],
+		                [B.location.x, B.location.y, B.location.z],
+		              );
+		              if (dist > 0 || DistanceB === null || DistanceB > dist) {
+		                DistanceB = dist;
+		                triangle.points.B = B;
 		              }
 		            }
-		            if (!collisionDetected) {
-	                data.push({
-	                	tags: ['filler', ...layer.fillerTags],
-	                	location: triangle.center,
-	                })
-	                occupied.push(triangle.center)
-
-	                await callback()
+		            let DistanceC = null;
+		            for (let C of relevantPoints) {
+		            	if (JSON.stringify(triangle.points.B) === JSON.stringify(C) || JSON.stringify(triangle.points.A) === JSON.stringify(C)) {
+		            		continue
+		            	}
+		              let dist = distance(
+		                [A.location.x, A.location.y, A.location.z],
+		                [C.location.x, C.location.y, C.location.z],
+		              )
+		              if (dist > 0 || DistanceC === null || DistanceC > dist) {
+		                DistanceC = dist;
+		                triangle.points.C = C;
+		              }
 		            }
+		            triangle.radius = DistanceB < DistanceC ? DistanceB : DistanceC;
+		            for (let dim of dimensions) {
+		              triangle.center[dim] = (
+		                triangle.points.A.location[dim] + 
+		                triangle.points.B.location[dim] + 
+		                triangle.points.C.location[dim]
+		              ) / 3;
+		            }
+		            triangles.push(triangle);
 		          }
-		        }
-		      } else
-		      if (layer.strategy === 'fill') {
+			        triangles.sort((A, B) => A.radius < B.radius ? -1 : 1);
+			        
+			      } else if (relevantPoints.length > 0 && relevantPoints.length < 3) {
+			        triangles.push(
+			          {
+			            radius: shape.radius,
+			            center: relevantPoints[0].location
+			          }
+			        )
+			      } else if(relevantPoints.length === 0) {
+			        triangles.push(
+			          {
+			            radius: shape.radius,
+			            center: layer.center,
+			          }
+			        )
+			      }
 		        for (triangle of triangles) {
 		        	let minX, minY, minZ, maxX, maxY, maxZ
 		          if (triangle.points) {
@@ -295,96 +344,17 @@ async function addFiller(data, callback) {
 		            maxY = Math.max(triangle.points.A.location.y, triangle.points.B.location.y, triangle.points.C.location.y)
 		            maxZ = Math.max(triangle.points.A.location.z, triangle.points.B.location.z, triangle.points.C.location.z)
 		          }
+
 		          const triangleCenter = [triangle.center.x, triangle.center.y, triangle.center.z]
 
-		          const squaredRadius = triangle.radius ** 2;
-
-		          const candidateRecords = records.filter(obj => {
-								const dx = obj.x - triangle.center.x;
-								const dy = obj.y - triangle.center.y;
-								const dz = obj.z - triangle.center.z;
-								const squaredDistance = dx ** 2 + dy ** 2 + dz ** 2;
-								return squaredDistance <= squaredRadius;
-							});
-
-		          //console.debug(`sorting records by distance to point`)
-		          candidateRecords.sort((a, b) => {
-		            if (typeof minX !== 'undefined') {
-		              if (
-		                  (a.x < minX && a.y < minY && a.z < minZ) && 
-		                  (a.y > maxX && a.y > maxY && a.z > maxZ)
-		                ) {
-		                return -1
-		              }
-		              let shortestA = null;
-		              let shortestB = null;
-		              for (const p of ['AB', 'AC', 'BC']) {
-		                let distA = distanceSquaredToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, a)
-		                let distB = distanceSquaredToLine(triangle.points[p[0]].location, triangle.points[p[1]].location, b)
-		                shortestA = shortestA == null || shortestA > distA ? distA : shortestA;
-		                shortestB = shortestB == null || shortestB > distB ? distB : shortestB;
-		              }
-		              return shortestA < shortestB ? -1 : 1;
-		            } else {
-		              let aDist = squaredDistance(
-		                [a.x, a.y, a.z],
-		                triangleCenter,
-		              );
-		              let bDist = squaredDistance(
-		                [b.x, b.y, b.z],
-		                triangleCenter,
-		              );
-		              return aDist < bDist ? -1 : 1;
-		            }
-		          })
-		          
 		          debugFile[shape.id].triangles.push(triangle)
-		        	updateDebugputfile(debugFile)
-		          for (let id in candidateRecords) {
-		            const star = candidateRecords[id];
-
-		            if (collides3d(triangle.center, star, triangle.radius)) {
-		              let collisionDetected = false;
-		              for (const point of occupied) {
-		                const big = randGen.intBetween(0,1)
-		                if (collides(point, star, (big ? layer.density.min : layer.density.max))) {
-		                  collisionDetected = true;
-		                }
-		              }
-
-		              if (!collisionDetected) {
-
-		                let isInsomePolygon = false;
-		                for (const polygon of multipolygon) {
-		                  if (!isInsomePolygon) {
-		                    isInsomePolygon = pointInPolygon([star.x, star.y], polygon);
-		                  }
-		                }
-
-		                //console.debug({isInsomePolygon})
-		                if (isInsomePolygon) {
-		                  const location = {
-		                    "x": star.x,
-		                    "y": star.y,
-		                    "z": star.z,
-		                  };
-
-
-		                  data.push({
-		                    "tags": ['filler', ...layer.fillerTags],
-		                    "filler": true,
-		                    "location": location,
-		                  })
-		                  delete candidateRecords[id];
-		                  //console.debug({found: star})
-		                  occupied.push(star)
-
-			                await callback()
-		                }
-		              }
-		            }
-		          }
+		          await fillCircle(triangle.center, triangle.radius, records, shape, layer, occupied, data, callback)
 		        }
+		      } else
+		      if (layer.strategy === 'cluster') {
+		      	for (let point of relevantPoints) {
+		        	await fillCircle(point.location, layer.radius, records, shape, layer, occupied, data, callback)
+			      }
 		      }
 		    }
 		  }
