@@ -1,0 +1,71 @@
+- name: Lembatta Prime
+  machine_name: lembatta
+  location:
+    x: 13.417
+    y: -159.959
+    z: 
+      near: korinar
+- name: Starbase 91
+  tags: [federation starbase]
+  location:
+    x: 10.343
+    y: -159.459
+    z: 
+      near:
+        lembatta
+- name: Onferin
+  tags: [inhabited]
+  location:
+    x: 15.44
+    y: -159.459
+    z: 
+      near:
+        lembatta
+- name: Onferin
+  tags: [inhabited]
+  location:
+    x: 17
+    y: -159.1
+    z: 
+      near:
+        lembatta
+- name: Xhehenem
+  tags: [inhabited]
+  location:
+    x: 17.33
+    y: -162.2
+    z: 
+      near:
+        lembatta
+- name: Yssab
+  tags: [inhabited]
+  location:
+    x: 18.405
+    y: -166.12
+    z: 
+      near:
+        lembatta
+- name: Bharantrum
+  tags: [inhabited]
+  location:
+    x: 20.1
+    y: -161.5
+    z: 
+      near:
+        lembatta
+- name: Acina
+  tags: [inhabited]
+  location:
+    x: 21.255
+    y: -158.8
+    z: 
+      near:
+        lembatta
+- name: Catoumni
+  tags: [inhabited]
+  location:
+    x: 24.353
+    y: -159.245
+    z: 
+      near:
+        lembatta

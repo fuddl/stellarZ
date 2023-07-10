@@ -14,6 +14,8 @@ const pruneFillerByHeat = require('./pruneFillerByHeat.js');
 
 (async () => {
   let data = yaml.load(await fs.readFile('./catalog.yml', 'utf8'))
+  
+  data.push(yaml.load(await fs.readFile('./catalog_appendix.yml', 'utf8')))
 
   const updateOutputfile = async () => {
     await delay(50)

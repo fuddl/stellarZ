@@ -608,6 +608,17 @@
   orbits:
     - name: No'Mat
       tags: [klingon colony, notable]
+- name: Tika
+  tags: [claimed by klingon empire, notable]
+  location: 
+    x: 42.7
+    y: -146.6
+- name: Korinar
+  machine_name: korinar
+  tags: [claimed by klingon empire, notable]
+  location: 
+    x: 36.229
+    y: -152.59
 - name: Theta Hydrae
   location: wd:Q1029146
   orbits:
