@@ -11,6 +11,7 @@ const addFiller = require('./addFiller.js');
 const addIds = require('./addIds.js');
 const makeConnections = require('./makeConnections.js')
 const pruneFillerByHeat = require('./pruneFillerByHeat.js');
+const addFillerNames = require('./addFillerNames.js');
 
 (async () => {
   let data = yaml.load(await fs.readFile('./catalog.yml', 'utf8'))
@@ -30,8 +31,23 @@ const pruneFillerByHeat = require('./pruneFillerByHeat.js');
   await addFiller(data, updateOutputfile)
   
   data = pruneFillerByHeat(data)
-
+  await addFillerNames(data, updateOutputfile)
+  await updateOutputfile()
+  data = await addFillerNames(data)
   await updateOutputfile()
 
   makeConnections(data)
 })();
+
+// (async () => {
+//   let data = require('../src/catalog.json')
+  
+//   const updateOutputfile = async () => {
+//     await delay(50)
+//     addIds(data)
+//     await fs.writeFile('./src/catalog-test.json', JSON.stringify(data, null, '  '), 'utf8');
+//   }
+
+//   data = await addFillerNames(data)
+//   await updateOutputfile()
+// })();

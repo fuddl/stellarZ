@@ -663,6 +663,16 @@
   "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
   "version" "1.0.0-beta.2"
 
+"gl-vec2@^1.0.0":
+  "integrity" "sha512-YiqaAuNsheWmUV0Sa8k94kBB0D6RWjwZztyO+trEYS8KzJ6OQB/4686gdrf59wld4hHFIvaxynO3nRxpk1Ij/A=="
+  "resolved" "https://registry.npmjs.org/gl-vec2/-/gl-vec2-1.3.0.tgz"
+  "version" "1.3.0"
+
+"gl-vec3@^1.0.3":
+  "integrity" "sha512-jduKUqT0SGH02l8Yl+mV1yVsDfYgQAJyXGxkJQGyxPLHRiW25DwVIRPt6uvhrEMHftJfqhqKthRcyZqNEl9Xdw=="
+  "resolved" "https://registry.npmjs.org/gl-vec3/-/gl-vec3-1.1.3.tgz"
+  "version" "1.1.3"
+
 "glob-base@^0.3.0":
   "integrity" "sha1-27Fk9iIbHAscz4Kuoyi0l98Oo8Q="
   "resolved" "https://registry.npmjs.org/glob-base/-/glob-base-0.3.0.tgz"
@@ -706,6 +716,18 @@
   "version" "1.0.3"
   dependencies:
     "function-bind" "^1.1.1"
+
+"icosphere-fast@^0.0.1":
+  "integrity" "sha512-D54Hj27ZrddiS+n93rT+LZDqd4nDC3T8qiUqqQvrJIjrbzLPa2P04tYje4/TcfkwvcaEZQazh3iIXSxhCkYOow=="
+  "resolved" "https://registry.npmjs.org/icosphere-fast/-/icosphere-fast-0.0.1.tgz"
+  "version" "0.0.1"
+
+"icosphere@^1.0.0":
+  "integrity" "sha512-UUgOSPK2axSPG6uKrnOc302qOmJ39FkRlA7VgLPb3A0EgsNanl/S7i+8HQlKMr09ZLdnGB8G6/Lsuu0kxgdiOA=="
+  "resolved" "https://registry.npmjs.org/icosphere/-/icosphere-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "vectors" "^0.1.0"
 
 "imurmurhash@^0.1.4":
   "integrity" "sha1-khi5srkoojixPcT7a21XbyMUU+o="
@@ -1123,6 +1145,15 @@
   "resolved" "https://registry.npmjs.org/preserve/-/preserve-0.2.0.tgz"
   "version" "0.2.0"
 
+"primitive-icosphere@^1.0.2":
+  "integrity" "sha512-vGTVSGN/NVi5e3x3bV4aUn/jKWIez/lp/oa1JO3XlctYIaalyXWQIWLD5C7HuQUXlsHJllw1rSWqhZjB2lwMAQ=="
+  "resolved" "https://registry.npmjs.org/primitive-icosphere/-/primitive-icosphere-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "gl-vec2" "^1.0.0"
+    "gl-vec3" "^1.0.3"
+    "icosphere" "^1.0.0"
+
 "promise-inflight@^1.0.1":
   "integrity" "sha1-mEcocL8igTL8vdhoEputEsPAKeM="
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
@@ -1211,6 +1242,11 @@
   "version" "2.70.1"
   optionalDependencies:
     "fsevents" "~2.3.2"
+
+"roman-numeral@^0.2.6":
+  "integrity" "sha512-jEPCxziIKY9ig27szc8jTHbd/VFkaIMsL6t0562Tv48rZzA7ivc0Y2C5LndTSeM+d1bZqiWfeGl/TpSKVTTOUQ=="
+  "resolved" "https://registry.npmjs.org/roman-numeral/-/roman-numeral-0.2.6.tgz"
+  "version" "0.2.6"
 
 "roman-numerals@^0.3.2":
   "integrity" "sha1-kH3fkMZOG13OjtXo+wcYMY8vJuY="
@@ -1318,6 +1354,11 @@
   "version" "2.0.2"
   dependencies:
     "imurmurhash" "^0.1.4"
+
+"vectors@^0.1.0":
+  "integrity" "sha512-M+SJegggr8k43NppOL2WgIWZiJ+cFu6Ftc/Cv84yp1N5QepIh3kQx+snGKk/jcSbMtYoWLed1R1A2SKJqZEgsw=="
+  "resolved" "https://registry.npmjs.org/vectors/-/vectors-0.1.0.tgz"
+  "version" "0.1.0"
 
 "vite@^2.8.0", "vite@>=2.0.0-beta.3", "vite@2.x":
   "integrity" "sha512-e4H0QpludOVKkmOsRyqQ7LTcMUDF3mcgyNU4lmi0B5JUbe0ZxeBBl8VoZ8Y6Rfn9eFKYtdXNPcYK97ZwH+K2ug=="

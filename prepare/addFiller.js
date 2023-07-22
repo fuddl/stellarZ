@@ -217,8 +217,7 @@ async function addFiller(data, callback) {
 	const debugFile = {}
 
 	console.debug('adding filler')
-
-	const filler = yaml.load(await fs.readFile('./filler.yml', 'utf8'));
+	
   const gaiaData = await fs.readFile('./resources/1672477955958O-result.csv', 'utf8');
 
   await new Promise((resolve, reject) => {
