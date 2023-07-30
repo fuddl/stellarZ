@@ -588,6 +588,14 @@
     y: -61.9
     # distance to bajor: 20 ly since imposible same plane
     z: -226.642943922
+- name: Prospero
+  machine_name: prospero
+  location:
+    x: 65.483
+    y: -63.934 
+  orbits:
+    - name: Prospero Alpha
+      tags: [notable, federation colony]
 - name: The Binaries
   type: star
   tags: [notable, klingon war battle site, klingon holy site]
@@ -846,12 +854,10 @@
       between: kronos
       and: romulus
 - name: Gamma 400
+  machine_name: starbase_12
   location:
     x: 12.479
     y: -24
-    # we put it between andoria and regulus
-    z: 30.450268756
-
   orbits:
     - name: Starbase 12
       links:
@@ -1921,6 +1927,14 @@
     z: 
       between: cardassia
       and: kronos
+- name: Chantico Nebula
+  type: nebula
+  location:
+    x: 40.608 
+    y: -44.406 
+    z: 
+      between: starbase_12
+      and: prospero
 - name: Kessik
   location:
     x: 30.971
@@ -1936,3 +1950,8 @@
     y: 247.311
     z:
       near: bellatrix
+- name: Deep Space 2
+  tags: [deep space station, notable]
+  location: 
+    x: 27.243 
+    y: -179.203

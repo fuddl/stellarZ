@@ -557,15 +557,14 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
 			}
 		});
 
-		if ((entry?.tags?.includes('notable') && !entry?.tags?.includes('filler'))) {
+		if (entry?.tags?.includes('notable')) {
 			points.push({
 				label: entry.notablePlanets || entry.name,
-				//label: entry.id,
-				id: entry.id + 'mark',
+				id: entry.id + '-mark',
 				pointer: '●',
-				type: 'points',
+				type: 'textMarker',
 				attributes: { class: aura?.class },
-				size: 1,
+				size: 12,
 				color: 'white',
 				x: [entry.location.x],
 				y: [entry.location.y],

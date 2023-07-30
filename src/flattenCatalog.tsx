@@ -4,7 +4,7 @@ const getNotablePlanets = (object) => {
 	const labels = []
 	if (object.orbits) {
 		iterator.bfs(object, 'orbits', (orbit) => {
-			if (orbit?.tags?.includes('notable') && (orbit.type == 'planet' || !orbit?.type)) {
+			if ((orbit?.tags?.includes('notable') || orbit?.tags?.includes('filler')) && (orbit.type == 'planet' || !orbit?.type)) {
 				labels.push(orbit.name)
 			}
 		})

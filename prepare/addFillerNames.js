@@ -9,7 +9,7 @@ const randomness = gen.create(42)
 const schemeRegex = /(.+)\s\b((?:I{1,3}|IV|V|VI{0,3}|IX|X|XI{0,3}|XL|L|LX{0,3}|XC|C|C(?:M|D)|D|D(?:C{0,3}|M)|M{0,3}))\b$/
 
 const addFillerNames = async (data) => {
-	
+
 	const filler = yaml.load(await fs.readFile('filler.yml', 'utf8'))
 	filler.sort((A, B) => randomness.intBetween(-1, 1));
 
@@ -28,6 +28,8 @@ const addFillerNames = async (data) => {
 		    	commonScheme = possibleFiller.name.match(schemeRegex)
 		    }
 		    
+		    possibleFiller.tags.push('filler')
+
 		    object.orbits = [
 		  		{ ...possibleFiller, ...{
 		  			tags: possibleFiller.tags,
