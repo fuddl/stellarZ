@@ -23,6 +23,7 @@ const TextMarker = ({
     yOffset,
     layouts,
     attributes,
+    onClick,
   }) => {
   opacity ||= 1
   size ||= 16
@@ -110,6 +111,7 @@ const TextMarker = ({
       ref={markerRef}
       data-layout={visible}
       {...attributes}
+      onClick={onClick}
     >
       <text
         x={tx}
@@ -151,6 +153,7 @@ const textMarkerPlugin = {
       yOffset,
       layouts,
       attributes,
+      onClick,
     } = element
     return element.x.map((x, i) => (
       <TextMarker
@@ -169,6 +172,7 @@ const textMarkerPlugin = {
           yOffset,
           layouts,
           attributes,
+          onClick,
         }}
         key={`${id}-${i}`}
       />

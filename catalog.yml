@@ -26,6 +26,7 @@
       orbits:
         - name: Luna
           type: moon
+          ord: 1
           diameter: 3476.2
     - name: Mars
       diameter: 6791.432
@@ -40,15 +41,15 @@
         - name: Io
           diameter: 3643.2
           type: moon
-          ord: 5
+          ord: 1
         - name: Europa
           diameter: 3121.6
           type: moon
-          ord: 6
+          ord: 2
         - name: Ganymede
           diameter: 5268.2
           type: moon
-          ord: 7
+          ord: 3
         - name: Callisto
           type: moon
           diameter: 4820.6
@@ -60,12 +61,15 @@
         - name: Enceladus
           type: moon
           diameter: 504
+          ord: 1
         - name: Tethys
           type: moon
           diameter: 1062
+          ord: 2
         - name: Titan
           type: moon
           diameter: 5149
+          ord: 3
     - name: Uranus
       type: giant
       diameter: 51118
@@ -452,10 +456,23 @@
       tags: [inhabited, neutral, notable]
 - name: Iota Geminorum
   location: wd:Q2711940
+  machine_name: iota_geminorum
   orbits:
     - name: Iota Geminorum IV
       ord: 4
       tags: [habitable, notable]
+- name: Tribble Prime
+  tags: [notable]
+  location:
+    x: 23.131 
+    y: -117.155
+    y: 
+      near: iota_geminorum
+- name: Cajitar IV
+  tags: [notable, klingon colony, federation colony]
+  location:
+    x: 30.848 
+    y: -142.925 
 - name: Beta Caeli
   location: wd:Q3236154
   orbits:
@@ -664,6 +681,7 @@
   orbits:
     - name: Canopus II
       tags: [federation member, notable]
+      ordinal: 2
 - name: 94 Aquarii
   type: star
   location: wd:Q67622055
@@ -889,10 +907,14 @@
     ma:en: Starbase_2
   tags: [notable, federation starbase]
   location:
-    x: -5.546
-    y: -69.5
-    # connects risa & k'normia
-    z: -33.360341721
+    # location according to star charts
+    # x: -5.546
+    # y: -69.5
+    
+    # location according to Subspace fissure chart
+    x: -27.084
+    y: -193.521
+
 - name: Starbase 46
   tags: [notable, federation starbase]
   location:
@@ -976,8 +998,13 @@
   type: planet
   tags: [notable, federation colony, taurus reach]
   location:
-    x: 81.295
-    y: -199.678
+    # x: 81.295
+    # y: -199.678
+
+    # location according to subspace fission chart
+    x: 76.347
+    y: -184.605
+
 - name: Gorn Hegemony
   tags: [center of terriory, gorn territory]
   type: region
@@ -997,10 +1024,29 @@
     ma:en: Starbase_4
   tags: [notable, federation starbase]
   location:
+    # according to chart seen in _A Quality of Mercy_
     x: 8.359
     y: 32.375
-    # todo
-    z: 32.341172132605735
+
+- name: Majalis
+  tags: [notable, neutral]
+  location:
+    x: -55.241
+    y: -152.536
+
+- name: Hetemit IX  
+  tags: [notable, illyrian colony]
+  location:
+    x: -90.17
+    y: -117.155
+
+- name: Starbase 4
+  tags: [notable, federation starbase]
+  location:
+    # according to chart seen in _Subspace Rhapsody_
+    x: -74.26 
+    y: -177.961
+
 - name: Starbase 10
   links:
     ma:en: Starbase_10
@@ -1787,8 +1833,13 @@
 - name: Ventax
   tags: [notable]
   location:
-    x: 8.781 
-    y: -185.526
+    # star charts
+    # x: 8.781 
+    # y: -185.526
+    
+    # subspace fissur chart
+    x: 7.489 
+    y: -187.035
 - name: Gateway
   tags: [notable, quarantained]
   location:
@@ -1909,8 +1960,13 @@
 - name: Renavi
   tags: [notable, inhabited]
   location:
-    x: 31.511
-    y: -169.698
+    # star charts
+    # x: 31.511
+    # y: -169.698
+
+    # subspace fissue chart
+    x: 31.265 
+    y: -171.184 
 - name: Kazar
   type: planet 
   location:
@@ -1955,3 +2011,30 @@
   location: 
     x: 27.243 
     y: -179.203
+- name: Wurna Minor 
+  tags: [notable]
+  location:
+    x: -29.872
+    y: -106.691
+- name: Davlos
+  tags: [notable]
+  location: wd:Q5178257
+    # x: 8.37 
+    # y: 107.745
+- name: Galdonterre
+  tags: [notable]
+  location: 
+    x: 49.15 
+    y: -178.582
+- name: D'Ryb J
+  tags: [notable, federation colony]
+  location: 
+    x: 23.235 
+    y: -107.158 
+  orbits:
+    - type: planet 
+      orbits:
+        - name: J'Gal
+          type: moon 
+
+

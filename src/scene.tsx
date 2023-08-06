@@ -435,7 +435,7 @@ function localSpaceGrid(center) {
 
 const localSpaceCenter = {x: 16, y: -142, z: -230}
 
-function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
+function Scene(viewSettings, dataOffset, setDataOffset, catalog, setSystem) {
 	const sceneSettings = {
 		cubeRange: 20,
 		cubeZoffset: 0,
@@ -563,7 +563,13 @@ function Scene(viewSettings, dataOffset, setDataOffset, catalog, debug) {
 				id: entry.id + '-mark',
 				pointer: '●',
 				type: 'textMarker',
-				attributes: { class: aura?.class },
+				attributes: {
+					class: aura?.class,
+					style: { cursor: 'pointer' }
+				},
+				onClick: () => {
+					setSystem(entry.id)
+				},
 				size: 12,
 				color: 'white',
 				x: [entry.location.x],

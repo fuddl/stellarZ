@@ -8,11 +8,13 @@ import parseSVG from 'svg-path-parser'
 import catalog from './catalog.json'
 import validLocation from './valid-location.js'
 import flatten from './flattenCatalog.tsx'
-import fillerDebug from './fillerDebug.json'
+import System from './system.tsx'
 
-flatten(catalog)
+const flattenedCatalog = structuredClone(catalog)
 
-const renderableCatalog = catalog.filter(entry => !validLocation(entry));
+flatten(flattenedCatalog)
+
+const renderableCatalog = flattenedCatalog.filter(entry => !validLocation(entry));
 
 const zoomDuration = 100;
 const zoomSpeed = 16;
@@ -26,15 +28,14 @@ const maxCamZoom = 15;
 const minZoom = .5;
 const maxZoom = 10;
 
-const windowDimensions = function() {
+const windowDimensions = function(half) {
   return {
-    height: window.innerHeight,
+    height: half ? window.innerHeight / 2 : window.innerHeight,
     width: window.innerWidth,
   };
 }
 
 function App() {
-  const [dimensions, setDimensions] = useState(windowDimensions());
   const [targetZoom, setTargetZoom] = useState(1);
   const [zoom, setZoom] = useState(20);
   const [zoomStep, setZoomStep] = useState(0);
@@ -51,21 +52,23 @@ function App() {
   const [ flat, setFlat ] = useState(true)
   const [ autoRotate, setAutoRotate] = useState(true)
   const [ frame, setFrame ] = useState(0)
-
+  const [ system, setSystem ] = useState(0)
+  const systemVisible = system > 0
+  const [ dimensions, setDimensions ] = useState(windowDimensions(systemVisible));
 
   const nextFrame = () => {
     setFrame((frame) => frame + 1.2)
   }
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (!flat && !grabbing) {
-        setCubeRz((cubeRz) => cubeRz - 1)
-      }
-      nextFrame()
-    }, 40)
-    return () => clearInterval(timer)
-  }, [])
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     if (!flat && !grabbing) {
+  //       setCubeRz((cubeRz) => cubeRz - 1)
+  //     }
+  //     nextFrame()
+  //   }, 40)
+  //   return () => clearInterval(timer)
+  // }, [])
 
   useEffect(() => {
       setZoomStep((targetZoom - zoom) / Math.ceil(zoomDuration / zoomSpeed));
@@ -75,9 +78,13 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setDimensions(windowDimensions())
+      setDimensions(windowDimensions(system))
     }, false);
   }, []);
+
+  useEffect(() => {
+    setDimensions(windowDimensions(system))
+  }, [system]);
 
   useEffect(() => {
       if (easing) {
@@ -94,10 +101,6 @@ function App() {
     },
     [targetZoom, zoom, zoomStep]
   );
-
-
-
-
 
   const viewSettings = {
     camTx: 0,
@@ -116,15 +119,13 @@ function App() {
     defaultCamOrientation: "z-forward-x-right",
   }
 
-  const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog, fillerDebug);
+  const data = Scene(viewSettings, dataOffset, setDataOffset, renderableCatalog, setSystem);
 
   return (
     <div
       style={{
         width: '100%',
         height: window.innerHeight,
-        cursor: grabbing ? 'grabbing' : 'grab',
-        userSelect: !grabbing ? 'initial' : 'none',
       }}
       onWheel={(e) => {
         e.preventDefault()
@@ -161,24 +162,31 @@ function App() {
       onDoubleClick={()=> {
         setZoom(zoom + 2)
       }}
-    >
-      <BareMinimum2d
-        container={{
-          color: 'black',
-          opacity: 'black',
-          xRange: window.innerWidth,
-          yRange: window.innerHeight
-        }}
-        data={data}
-        plugins={plugins}
-      />
-      <aside>
-        <button onClick={() => { setZoom(Math.min(maxZoom, zoom - 1)) }}>+</button>
-        <button onClick={() => { setZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
-        <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
-        <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
-        
-      </aside>
+    >   
+      <div style={{
+        height: `${dimensions.height}px`,
+        cursor: grabbing ? 'grabbing' : 'grab',
+        userSelect: !grabbing ? 'initial' : 'none',
+        position: 'relative',
+      }}>
+        <BareMinimum2d
+          container={{
+            color: 'black',
+            opacity: 'black',
+            xRange: dimensions.width,
+            yRange: dimensions.height,
+          }}
+          data={data}
+          plugins={plugins}
+        />
+        <aside>
+          <button onClick={() => { setZoom(Math.min(maxZoom, zoom - 1)) }}>+</button>
+          <button onClick={() => { setZoom(Math.max(minZoom, zoom + 1)) }}>-</button>
+          <button onClick={() => { setFlat(!flat) }}>{`${(flat ? '2' : '3')}D`}</button>
+          <input type="number" value={zoom} size="2" step=".01" min={minZoom} max={maxZoom} onChange={(e) => { setZoom(Math.max(minZoom, Math.min(maxZoom, e.value))) }} />
+        </aside>
+      </div>
+      { systemVisible ? <System id={ system } height={ window.innerHeight / 2} /> : null }
       <Navigator flat={flat} coordinates={dataOffset} />
       <Assets.Gradients />
     </div>
